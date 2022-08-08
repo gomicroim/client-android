@@ -53,7 +53,8 @@
             android:layout_height="@dimen/line_height"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="@dimen/margin_normal"
-            android:layout_toEndOf="@+id/img_account"/>
+            android:layout_toEndOf="@+id/img_account"
+            android:background="@color/orange_light"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -102,7 +103,8 @@
             android:layout_height="@dimen/line_height"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="@dimen/margin_normal"
-            android:layout_toEndOf="@+id/img_pw" />
+            android:layout_toEndOf="@+id/img_pw"
+            android:background="@color/orange_light"/>
     </RelativeLayout>
 
     <LinearLayout

@@ -53,4 +53,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
     }
+
+    private void login() {
+
+    }
 }
