@@ -1,4 +1,4 @@
-package com.gomicroim.lib.transport;
+package com.gomicroim.lib.helper;
 
 import android.os.Handler;
 import android.util.Log;
@@ -232,7 +232,7 @@ public class OkHttpUtils {
                                   @NonNull IOException e) {
         Log.e(TAG, "响应失败===》" + e.getMessage());
         handler.post(() -> {
-            res.error(e.getMessage());
+            res.onException(e);
         });
     }
 
@@ -243,7 +243,7 @@ public class OkHttpUtils {
         Log.i(TAG, "响应成功===》" + respBody);
         handler.post(() -> {
             try {
-                res.success(respBody);
+                res.onSuccess(respBody);
             } catch (JSONException e) {
                 e.printStackTrace();
                 //ActivityUtils.showLogToast("程序出现异常:" + e.getMessage());
