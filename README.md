@@ -1,4 +1,8 @@
-# Depends
+# client-android
+
+android chat client write by java and android framework 7.0.
+
+## Depends
 
 - okhttp：http库
 - okio：tcp库
