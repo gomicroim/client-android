@@ -1,7 +1,8 @@
 package com.gomicroim.lib.service;
 
+import com.gomicroim.lib.Observer;
+import com.gomicroim.lib.model.constant.StatusCode;
 import com.gomicroim.lib.model.dto.DeviceReply;
-import com.gomicroim.lib.transport.AbortableFuture;
 import com.gomicroim.lib.model.dto.DeviceReq;
 import com.gomicroim.lib.transport.InvocationFuture;
 import com.gomicroim.lib.model.dto.LoginInfo;
@@ -24,4 +25,13 @@ public interface LoginService {
      * @return 结果回调
      */
     InvocationFuture<LoginInfo> login(String phone, String code, String appVersion);
+
+    /**
+     * 注册/注销在线状态变化观察者。
+     * 注册后，Observer的onEvent方法会被立即调用一次，告知观察者当前状态。
+     *
+     * @param observer 观察者, 参数为当前状态
+     * @param register true为注册，false为注销
+     */
+    void observeOnlineStatus(Observer<StatusCode> observer, boolean register);
 }

@@ -2,12 +2,13 @@ package com.gomicroim.lib.service;
 
 import android.util.Log;
 
+import com.gomicroim.lib.Observer;
 import com.gomicroim.lib.helper.HttpResponseCallBack;
 import com.gomicroim.lib.helper.OkHttpUtils;
+import com.gomicroim.lib.model.constant.StatusCode;
 import com.gomicroim.lib.model.dto.DeviceReply;
 import com.gomicroim.lib.model.dto.DeviceReq;
 import com.gomicroim.lib.model.dto.LoginInfo;
-import com.gomicroim.lib.transport.AbortableFuture;
 import com.gomicroim.lib.transport.InvocationFuture;
 import com.gomicroim.lib.transport.InvocationFutureImpl;
 import com.google.gson.Gson;
@@ -71,5 +72,10 @@ public class LoginServiceImpl implements LoginService {
         });
 
         return cb;
+    }
+
+    @Override
+    public void observeOnlineStatus(Observer<StatusCode> observer, boolean register) {
+
     }
 }

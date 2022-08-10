@@ -9,7 +9,7 @@ import com.gomicroim.lib.service.LoginServiceImpl;
  */
 public class Api {
     private static ApiOptions apiOptions = ApiOptions.DEFAULT;
-    private static LoginService loginService;
+    private static LoginService loginService = new LoginServiceImpl();
 
     /**
      * 获取API配置信息
@@ -39,6 +39,6 @@ public class Api {
      * @return 实例
      */
     public static LoginService getLoginService() {
-        return new LoginServiceImpl();
+        return loginService;
     }
 }
