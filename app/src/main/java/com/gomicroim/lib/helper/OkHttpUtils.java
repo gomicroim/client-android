@@ -1,9 +1,5 @@
 package com.gomicroim.lib.helper;
 
-import android.os.Handler;
-
-import androidx.annotation.NonNull;
-
 import com.gomicroim.lib.service.LoginServiceImpl;
 import com.google.gson.JsonSyntaxException;
 
@@ -38,9 +34,6 @@ public class OkHttpUtils {
     private static String TOKEN = "";
     private static String BASE_URL = "";
     private static Logger LOG = LoggerFactory.getLogger(LoginServiceImpl.class);
-
-    // handler主要用于异步请求数据之后更新UI
-    private static final Handler handler = new Handler();
 
     /**
      * 设置请求的token
@@ -151,6 +144,9 @@ public class OkHttpUtils {
      */
     public static void postAsyncJson(String url, String json, HttpResponseCallBack callback) {
         url = getUrl(url);
+        if (json == null) {
+            json = "{}";
+        }
         OkHttpClient client = new OkHttpClient();
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json"), json);
         Request request = new Request.
@@ -249,31 +245,31 @@ public class OkHttpUtils {
     }
 
     private static String getUrl(String uri) {
-        return BASE_URL + uri;
+        // return BASE_URL + uri;
+        if (uri.contains("?")) {
+            return String.format("%s%s&format=json&skip=true", BASE_URL, uri);
+        }
+        return String.format("%s%s?format=json&skip=true", BASE_URL, uri);
     }
 
-    private static void onFailure(@NonNull HttpResponseCallBack res,
-                                  @NonNull Call call,
-                                  @NonNull IOException e) {
+    private static void onFailure(@NotNull HttpResponseCallBack res,
+                                  @NotNull Call call,
+                                  @NotNull IOException e) {
         LOG.error("响应失败===》{}", e.getMessage());
-        handler.post(() -> {
-            res.onException(e);
-        });
+        res.onException(e);
     }
 
-    private static void onResponse(@NonNull HttpResponseCallBack res,
-                                   @NonNull Call call,
-                                   @NonNull Response response) throws IOException {
+    private static void onResponse(@NotNull HttpResponseCallBack res,
+                                   @NotNull Call call,
+                                   @NotNull Response response) throws IOException {
         String respBody = response.body().string();
         LOG.debug("响应成功===》{}", respBody);
-        handler.post(() -> {
-            try {
-                res.onSuccess(respBody);
-            } catch (JsonSyntaxException e) {
-                e.printStackTrace();
-                res.onException(e);
-                //ActivityUtils.showLogToast("程序出现异常:" + e.getMessage());
-            }
-        });
+        try {
+            res.onSuccess(respBody);
+        } catch (JsonSyntaxException e) {
+            e.printStackTrace();
+            res.onException(e);
+            //ActivityUtils.showLogToast("程序出现异常:" + e.getMessage());
+        }
     }
 }

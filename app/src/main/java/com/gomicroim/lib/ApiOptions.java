@@ -1,12 +1,12 @@
 package com.gomicroim.lib;
 
-import androidx.annotation.NonNull;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * 全局API配置
  */
 public class ApiOptions {
-    @NonNull
+    @NotNull
     public static final ApiOptions DEFAULT = new ApiOptions();
 
     public ApiOptions() {

@@ -4,8 +4,6 @@ import com.gomicroim.lib.helper.OkHttpUtils;
 import com.gomicroim.lib.service.LoginService;
 import com.gomicroim.lib.service.LoginServiceImpl;
 
-import okhttp3.OkHttpClient;
-
 /**
  * API封装，对外暴露所有接口
  */

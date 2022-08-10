@@ -18,7 +18,7 @@ public class LoginServiceImpl implements LoginService {
     public InvocationFuture<DeviceReply> deviceRegister(DeviceReq devInfo) {
         InvocationFutureImpl<DeviceReply> cb = new InvocationFutureImpl<>();
 
-        OkHttpUtils.getAsync(URL_DEVICE_REGISTER, null, new HttpResponseCallBack() {
+        OkHttpUtils.postAsyncJson(URL_DEVICE_REGISTER, null, new HttpResponseCallBack() {
             @Override
             public void onSuccess(String json) throws JsonSyntaxException {
                 DeviceReply result = new Gson().fromJson(json, DeviceReply.class);
