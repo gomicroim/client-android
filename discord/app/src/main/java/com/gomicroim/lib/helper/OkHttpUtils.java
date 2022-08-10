@@ -1,12 +1,15 @@
 package com.gomicroim.lib.helper;
 
 import android.os.Handler;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.gomicroim.lib.service.LoginServiceImpl;
+import com.google.gson.JsonSyntaxException;
+
 import org.jetbrains.annotations.NotNull;
-import org.json.JSONException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.Map;
@@ -33,6 +36,8 @@ public class OkHttpUtils {
 
     private static final String TAG = "OkHttpUtils";
     private static String TOKEN = "";
+    private static String BASE_URL = "";
+    private static Logger LOG = LoggerFactory.getLogger(LoginServiceImpl.class);
 
     // handler主要用于异步请求数据之后更新UI
     private static final Handler handler = new Handler();
@@ -47,6 +52,15 @@ public class OkHttpUtils {
     }
 
     /**
+     * 设置基础url，后续的请求都在此基础上追加
+     *
+     * @param baseUrl 基础url
+     */
+    public static void setBaseUrl(String baseUrl) {
+        BASE_URL = baseUrl;
+    }
+
+    /**
      * GET异步请求
      *
      * @param url      地址
@@ -54,7 +68,8 @@ public class OkHttpUtils {
      * @param callback 结果
      */
     public static void getAsync(String url, Map<String, String> param, HttpResponseCallBack callback) {
-        Log.i(TAG, "请求地址===》" + url);
+        url = getUrl(url);
+        LOG.info("请求地址===》{}", url);
 
         if (param != null) {
             StringBuilder urlBuilder = new StringBuilder();
@@ -94,6 +109,7 @@ public class OkHttpUtils {
      * @param callback 响应回调
      */
     public static void postAsyncFormData(String url, Map<String, String> formData, HttpResponseCallBack callback) {
+        url = getUrl(url);
         OkHttpClient client = new OkHttpClient().newBuilder().
                 callTimeout(30, TimeUnit.SECONDS)
                 .build();
@@ -112,7 +128,7 @@ public class OkHttpUtils {
                 .post(formBody)
                 .build();
 
-        Log.i(TAG, "开始发送请求：请求地址【" + url + "】,请求参数==>" + showData);
+        LOG.info("开始发送请求：请求地址: {},请求参数: {}", url, showData);
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NotNull Call call, @NotNull IOException e) {
@@ -134,6 +150,7 @@ public class OkHttpUtils {
      * @param callback 响应回调
      */
     public static void postAsyncJson(String url, String json, HttpResponseCallBack callback) {
+        url = getUrl(url);
         OkHttpClient client = new OkHttpClient();
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json"), json);
         Request request = new Request.
@@ -143,7 +160,7 @@ public class OkHttpUtils {
                 .post(requestBody)
                 .build();
 
-        Log.i(TAG, "开始发送请求：请求地址【" + url + "】,请求参数==>" + json);
+        LOG.info("开始发送请求：请求地址: {},请求参数: {}", url, json);
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NotNull Call call, @NotNull IOException e) {
@@ -165,6 +182,8 @@ public class OkHttpUtils {
      * @param callback 响应回调
      */
     public static void putAsyncJson(String url, String json, HttpResponseCallBack callback) {
+        url = getUrl(url);
+
         OkHttpClient client = new OkHttpClient();
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json"), json);
         Request request = new Request.
@@ -174,7 +193,7 @@ public class OkHttpUtils {
                 .put(requestBody)
                 .build();
 
-        Log.i(TAG, "开始发送请求：请求地址【" + url + "】,请求参数==>" + json);
+        LOG.info("开始发送请求：请求地址: {},请求参数: {}", url, json);
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NotNull Call call, @NotNull IOException e) {
@@ -196,6 +215,8 @@ public class OkHttpUtils {
      * @param callback 响应回调
      */
     public static void putAsyncForm(String url, Map<String, String> formData, HttpResponseCallBack callback) {
+        url = getUrl(url);
+
         OkHttpClient client = new OkHttpClient().newBuilder().
                 callTimeout(30, TimeUnit.SECONDS)
                 .build();
@@ -213,7 +234,7 @@ public class OkHttpUtils {
                 .url(url)
                 .put(formBody)
                 .build();
-        Log.i(TAG, "开始发送请求：请求地址【" + url + "】,请求参数==>" + showData);
+        LOG.info("开始发送请求：请求地址: {},请求参数: {}", url, showData);
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NotNull Call call, @NotNull IOException e) {
@@ -227,10 +248,14 @@ public class OkHttpUtils {
         });
     }
 
+    private static String getUrl(String uri) {
+        return BASE_URL + uri;
+    }
+
     private static void onFailure(@NonNull HttpResponseCallBack res,
                                   @NonNull Call call,
                                   @NonNull IOException e) {
-        Log.e(TAG, "响应失败===》" + e.getMessage());
+        LOG.error("响应失败===》{}", e.getMessage());
         handler.post(() -> {
             res.onException(e);
         });
@@ -240,12 +265,13 @@ public class OkHttpUtils {
                                    @NonNull Call call,
                                    @NonNull Response response) throws IOException {
         String respBody = response.body().string();
-        Log.i(TAG, "响应成功===》" + respBody);
+        LOG.debug("响应成功===》{}", respBody);
         handler.post(() -> {
             try {
                 res.onSuccess(respBody);
-            } catch (JSONException e) {
+            } catch (JsonSyntaxException e) {
                 e.printStackTrace();
+                res.onException(e);
                 //ActivityUtils.showLogToast("程序出现异常:" + e.getMessage());
             }
         });

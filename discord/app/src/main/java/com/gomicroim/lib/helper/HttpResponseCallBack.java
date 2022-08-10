@@ -1,9 +1,9 @@
 package com.gomicroim.lib.helper;
 
-import org.json.JSONException;
+import com.google.gson.JsonSyntaxException;
 
 public interface HttpResponseCallBack {
-    void onSuccess(String json) throws JSONException;
+    void onSuccess(String json) throws JsonSyntaxException;
 
     void onException(Throwable exception);
 }

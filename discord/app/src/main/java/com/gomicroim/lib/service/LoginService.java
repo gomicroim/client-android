@@ -1,9 +1,10 @@
 package com.gomicroim.lib.service;
 
+import com.gomicroim.lib.model.dto.DeviceReply;
 import com.gomicroim.lib.transport.AbortableFuture;
-import com.gomicroim.lib.model.Device;
-import com.gomicroim.lib.transport.RequestCallback;
-import com.gomicroim.lib.model.LoginInfo;
+import com.gomicroim.lib.model.dto.DeviceReq;
+import com.gomicroim.lib.transport.InvocationFuture;
+import com.gomicroim.lib.model.dto.LoginInfo;
 
 /**
  * 登录业务
@@ -12,7 +13,7 @@ public interface LoginService {
     /**
      * 设备注册
      */
-    RequestCallback<Device> deviceRegister(Device devInfo);
+    InvocationFuture<DeviceReply> deviceRegister(DeviceReq devInfo);
 
     /**
      * 登录认证
