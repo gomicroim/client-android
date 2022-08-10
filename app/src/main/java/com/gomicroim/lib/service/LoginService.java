@@ -18,9 +18,10 @@ public interface LoginService {
     /**
      * 登录认证
      *
-     * @param phone：手机号
-     * @param code：验证码
+     * @param phone      手机号
+     * @param code       验证码
+     * @param appVersion 客户端版本
      * @return 结果回调
      */
-    AbortableFuture<LoginInfo> login(String phone, String code);
+    InvocationFuture<LoginInfo> login(String phone, String code, String appVersion);
 }

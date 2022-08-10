@@ -54,7 +54,7 @@ public class OkHttpUtils {
     }
 
     /**
-     * GET异步请求
+     * 异步GET请求
      *
      * @param url      地址
      * @param param    参数
@@ -95,7 +95,7 @@ public class OkHttpUtils {
     }
 
     /**
-     * 表单提交数据
+     * 异步 POST 请求，x-www-form-urlencoded 表单提交数据
      *
      * @param url      请求地址
      * @param formData 表单回调
@@ -136,7 +136,7 @@ public class OkHttpUtils {
     }
 
     /**
-     * POST 请求，json格式
+     * 异步 POST 请求，application/json 格式
      *
      * @param url      请求地址
      * @param json     json数据
@@ -171,7 +171,7 @@ public class OkHttpUtils {
     }
 
     /**
-     * PUT 请求，json格式
+     * 异步 PUT 请求，application/json 格式
      *
      * @param url      请求地址
      * @param json     json数据
@@ -204,7 +204,7 @@ public class OkHttpUtils {
     }
 
     /**
-     * PUT 请求, form-data表单
+     * 异步 PUT 请求, x-www-form-urlencoded 表单提交数据
      *
      * @param url      请求地址
      * @param formData 表单数据
