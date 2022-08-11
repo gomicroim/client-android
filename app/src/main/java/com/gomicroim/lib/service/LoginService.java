@@ -27,11 +27,10 @@ public interface LoginService {
     InvocationFuture<LoginInfo> login(String phone, String code, String appVersion);
 
     /**
-     * 注册/注销在线状态变化观察者。
-     * 注册后，Observer的onEvent方法会被立即调用一次，告知观察者当前状态。
+     * 连接观察器
      *
-     * @param observer 观察者, 参数为当前状态
-     * @param register true为注册，false为注销
+     * @param observer 观察器
+     * @param register true: 注册, false: 注销
      */
     void observeOnlineStatus(Observer<StatusCode> observer, boolean register);
 }

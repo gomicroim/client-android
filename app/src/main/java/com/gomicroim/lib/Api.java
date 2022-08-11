@@ -3,13 +3,16 @@ package com.gomicroim.lib;
 import com.gomicroim.lib.helper.OkHttpUtils;
 import com.gomicroim.lib.service.LoginService;
 import com.gomicroim.lib.service.LoginServiceImpl;
+import com.gomicroim.lib.service.WsPushService;
+import com.gomicroim.lib.service.WsPushServiceImpl;
 
 /**
  * API封装，对外暴露所有接口
  */
 public class Api {
     private static ApiOptions apiOptions = ApiOptions.DEFAULT;
-    private static LoginService loginService = new LoginServiceImpl();
+    private static final LoginService loginService = new LoginServiceImpl();
+    private static final WsPushService wsPushService = new WsPushServiceImpl();
 
     /**
      * 获取API配置信息
@@ -40,5 +43,14 @@ public class Api {
      */
     public static LoginService getLoginService() {
         return loginService;
+    }
+
+    /**
+     * 获取 WS连接 Service实例
+     *
+     * @return 实例
+     */
+    public static WsPushService getWsPushService() {
+        return wsPushService;
     }
 }

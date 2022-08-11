@@ -45,6 +45,13 @@ public class OkHttpUtils {
     }
 
     /**
+     * 获取请求的token
+     */
+    public static String getToken() {
+        return TOKEN;
+    }
+
+    /**
      * 设置基础url，后续的请求都在此基础上追加
      *
      * @param baseUrl 基础url

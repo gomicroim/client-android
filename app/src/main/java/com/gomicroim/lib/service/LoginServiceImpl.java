@@ -2,6 +2,7 @@ package com.gomicroim.lib.service;
 
 import android.util.Log;
 
+import com.gomicroim.lib.Api;
 import com.gomicroim.lib.Observer;
 import com.gomicroim.lib.helper.HttpResponseCallBack;
 import com.gomicroim.lib.helper.OkHttpUtils;
@@ -76,6 +77,6 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public void observeOnlineStatus(Observer<StatusCode> observer, boolean register) {
-
+        // Api.getWsPushService().observeOnlineStatus(observer, register);
     }
 }

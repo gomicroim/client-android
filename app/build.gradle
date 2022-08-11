@@ -52,6 +52,9 @@ dependencies {
     // 只在运行时引入，否则单元测试无法执行
     runtimeOnly 'com.github.tony19:logback-android:2.0.0'
     implementation files('libs/sun.misc.BASE64Decoder.jar')
+    // protobuf-java
+    // https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java
+    implementation group: 'com.google.protobuf', name: 'protobuf-java', version: '3.21.4'
 
     testImplementation 'junit:junit:4.13.2'
     // better than nothing :/ https://github.com/tony19/logback-android/issues/151
