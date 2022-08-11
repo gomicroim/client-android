@@ -1,4 +1,4 @@
-package com.gomicroim.util;
+package com.gomicroim.discord.util;
 
 import java.io.IOException;
 

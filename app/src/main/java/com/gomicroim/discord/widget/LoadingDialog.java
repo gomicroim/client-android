@@ -1,4 +1,4 @@
-package com.gomicroim.widget;
+package com.gomicroim.discord.widget;
 
 import android.app.ProgressDialog;
 import android.content.Context;

@@ -11,7 +11,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import com.gomicroim.widget.LoadingDialog;
+import com.gomicroim.discord.widget.LoadingDialog;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
     private EditText etName;
