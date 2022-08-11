@@ -1,4 +1,4 @@
-package com.gomicroim.discord;
+package com.gomicroim.lib;
 
 import com.gomicroim.lib.Api;
 import com.gomicroim.lib.ApiOptions;

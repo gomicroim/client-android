@@ -1,7 +1,5 @@
-package com.gomicroim.discord;
+package com.gomicroim.lib;
 
-import com.gomicroim.lib.Api;
-import com.gomicroim.lib.ApiOptions;
 import com.gomicroim.lib.model.dto.DeviceReply;
 import com.gomicroim.lib.model.dto.DeviceReq;
 import com.gomicroim.lib.model.dto.LoginReply;
