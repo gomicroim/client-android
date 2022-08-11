@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#fff"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    tools:context=".login.LoginActivity">
 
     <!-- 图标logo -->
     <ImageView
@@ -129,16 +129,6 @@
             android:text="@string/check_password"
             android:textSize="@dimen/text_size_normal" />
 
-        <CheckBox
-            android:id="@+id/checkBox_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:checked="false"
-            android:padding="@dimen/dp_10"
-            android:text="@string/check_login"
-            android:textSize="@dimen/text_size_normal" />
     </LinearLayout>
 
     <Button

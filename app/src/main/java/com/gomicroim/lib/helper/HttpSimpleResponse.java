@@ -1,5 +1,6 @@
 package com.gomicroim.lib.helper;
 
+import com.gomicroim.lib.transport.InvocationFuture;
 import com.gomicroim.lib.transport.RequestCallback;
 
 /**
@@ -8,19 +9,19 @@ import com.gomicroim.lib.transport.RequestCallback;
  * @param <T>
  */
 public abstract class HttpSimpleResponse<T> implements HttpResponseCallBack {
-    private final RequestCallback<T> callback;
+    private final InvocationFuture<T> callback;
 
-    public HttpSimpleResponse(RequestCallback<T> cb) {
+    public HttpSimpleResponse(InvocationFuture<T> cb) {
         callback = cb;
     }
 
     @Override
     public void onFailed(int httpCode, String msg, String body) {
-        callback.onFailed(httpCode);
+        callback.getCallback().onFailed(httpCode, msg);
     }
 
     @Override
     public void onException(Throwable exception) {
-        callback.onException(exception);
+        callback.getCallback().onException(exception);
     }
 }

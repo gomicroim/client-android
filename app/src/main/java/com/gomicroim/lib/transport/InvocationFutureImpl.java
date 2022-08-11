@@ -17,7 +17,7 @@ public class InvocationFutureImpl<T> implements InvocationFuture<T> {
                 }
 
                 @Override
-                public void onFailed(int code) {
+                public void onFailed(int code, String message) {
                 }
 
                 @Override

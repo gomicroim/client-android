@@ -26,7 +26,7 @@ public class LoginServiceImpl implements LoginService {
         InvocationFutureImpl<DeviceReply> cb = new InvocationFutureImpl<>();
 
         OkHttpUtils.postAsyncJson(URL_DEVICE_REGISTER, null,
-                new HttpSimpleResponse<DeviceReply>(cb.getCallback()) {
+                new HttpSimpleResponse<DeviceReply>(cb) {
                     @Override
                     public void onSuccess(String json) throws JsonSyntaxException {
                         DeviceReply result = new Gson().fromJson(json, DeviceReply.class);
@@ -50,7 +50,7 @@ public class LoginServiceImpl implements LoginService {
         param.put("shumei_device_id", "");
         param.put("phone", phone);
         param.put("code", code);
-        OkHttpUtils.postAsyncFormData(URL_AUTH_LOGIN, param, new HttpSimpleResponse<LoginReply>(cb.getCallback()) {
+        OkHttpUtils.postAsyncFormData(URL_AUTH_LOGIN, param, new HttpSimpleResponse<LoginReply>(cb) {
             @Override
             public void onSuccess(String json) throws JsonSyntaxException {
                 LoginReply loginInfo = new Gson().fromJson(json, LoginReply.class);

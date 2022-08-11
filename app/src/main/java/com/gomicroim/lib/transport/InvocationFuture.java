@@ -10,4 +10,11 @@ public interface InvocationFuture<T> {
      * @param callback: 回调结果
      */
     void setCallback(RequestCallback<T> callback);
+
+    /**
+     * 获取设置的结果回调
+     *
+     * @return 回调
+     */
+    RequestCallback<T> getCallback();
 }
