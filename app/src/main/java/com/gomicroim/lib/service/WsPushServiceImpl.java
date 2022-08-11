@@ -10,6 +10,7 @@ import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.EOFException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -27,6 +28,14 @@ import okio.ByteString;
 public class WsPushServiceImpl extends WebSocketListener implements WsPushService {
     private WebSocket webSocket;
     private StatusCode statusCode;
+    private String token;
+    private String wsUrl;
+
+    // 重连
+    private boolean reConnect = true;
+    private long reConnectCount = 0;
+    private static final long MAX_RE_CONNECT_WAIT_TIME = 4;
+
     private final Logger log = LoggerFactory.getLogger(WsPushServiceImpl.class);
     private final LinkedList<WsPushListener> listeners = new LinkedList<>();
 
@@ -41,17 +50,31 @@ public class WsPushServiceImpl extends WebSocketListener implements WsPushServic
     @Override
     public void onFailure(@NotNull WebSocket webSocket, @NotNull Throwable t, @Nullable Response response) {
         super.onFailure(webSocket, t, response);
+        int httpCode = 0;
+        String httpMsg = "";
 
         String bodyStr = "";
         try {
-            assert response != null;
-            bodyStr = response.body().string();
+            if (response != null) {
+                if (response.body() != null) {
+                    bodyStr = response.body().string();
+                }
+                httpCode = response.code();
+                httpMsg = response.message();
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        log.info("onFailure, response: {},body: {}", response, bodyStr);
+        log.info("onFailure, response: {},body: {}, code: {}, msg: {}, Throwable:{}", response, bodyStr,
+                httpCode, httpMsg, t);
 
         updateStatusCode(StatusCode.UN_LOGIN);
+
+        if (!bodyStr.equals("")) {
+            reConnect = false;
+            return;
+        }
+        reConnect();
     }
 
     @Override
@@ -73,6 +96,9 @@ public class WsPushServiceImpl extends WebSocketListener implements WsPushServic
     public void connect(String token, String wsUrl) {
         disconnect();
         updateStatusCode(StatusCode.CONNECTING);
+        reConnect = true;
+        this.token = token;
+        this.wsUrl = wsUrl;
 
         OkHttpClient client = new OkHttpClient.Builder()
                 .readTimeout(5, TimeUnit.SECONDS)
@@ -87,8 +113,29 @@ public class WsPushServiceImpl extends WebSocketListener implements WsPushServic
         webSocket = client.newWebSocket(request, this);
     }
 
+    private void reConnect() {
+        if (reConnect) {
+            reConnectCount++;
+            if (reConnectCount > MAX_RE_CONNECT_WAIT_TIME) {
+                reConnectCount = 1;
+            }
+            // 2s 4s 8s 16s
+            double sleepTime = Math.pow(2, reConnectCount) * 1000;
+            try {
+                Thread.sleep((long) sleepTime);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            if (reConnect) {
+                connect(this.token, this.wsUrl);
+            }
+        }
+    }
+
     @Override
     public void disconnect() {
+        reConnect = false;
         if (webSocket != null) {
             webSocket.close(1000, "manual close");
             webSocket = null;

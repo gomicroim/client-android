@@ -4,7 +4,7 @@ import com.gomicroim.lib.Api;
 import com.gomicroim.lib.ApiOptions;
 import com.gomicroim.lib.model.dto.DeviceReply;
 import com.gomicroim.lib.model.dto.DeviceReq;
-import com.gomicroim.lib.model.dto.LoginInfo;
+import com.gomicroim.lib.model.dto.LoginReply;
 import com.gomicroim.lib.transport.RequestCallback;
 
 import org.junit.Test;
@@ -17,7 +17,7 @@ public class LoginServiceTest {
 
     @Test
     public void TestDeviceRegister() throws InterruptedException {
-        Api.init(ApiOptions.DEFAULT);
+        Api.init(ApiOptions.DEFAULT, null);
         Api.getLoginService().deviceRegister(new DeviceReq()).setCallback(new RequestCallback<DeviceReply>() {
             @Override
             public void onSuccess(DeviceReply param) {
@@ -39,12 +39,12 @@ public class LoginServiceTest {
 
     @Test
     public void TestAuthLogin() throws InterruptedException {
-        Api.init(ApiOptions.DEFAULT);
+        Api.init(ApiOptions.DEFAULT, null);
         Api.getLoginService().deviceRegister(new DeviceReq());
         Thread.sleep(1000);
-        Api.getLoginService().login("8617300000000", "000000", "1.0").setCallback(new RequestCallback<LoginInfo>() {
+        Api.getLoginService().login("8617300000000", "000000", "1.0").setCallback(new RequestCallback<LoginReply>() {
             @Override
-            public void onSuccess(LoginInfo param) {
+            public void onSuccess(LoginReply param) {
                 log.info("onSuccess: " + param.toString());
             }
 

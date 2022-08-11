@@ -1,6 +1,6 @@
 package com.gomicroim.lib.model.dto;
 
-public class LoginInfo {
+public class LoginReply {
     public String accessToken;
     public int accessExpires;
     public String refreshToken;

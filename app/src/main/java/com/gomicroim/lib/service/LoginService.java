@@ -5,7 +5,7 @@ import com.gomicroim.lib.model.constant.StatusCode;
 import com.gomicroim.lib.model.dto.DeviceReply;
 import com.gomicroim.lib.model.dto.DeviceReq;
 import com.gomicroim.lib.transport.InvocationFuture;
-import com.gomicroim.lib.model.dto.LoginInfo;
+import com.gomicroim.lib.model.dto.LoginReply;
 
 /**
  * 登录业务
@@ -24,7 +24,7 @@ public interface LoginService {
      * @param appVersion 客户端版本
      * @return 结果回调
      */
-    InvocationFuture<LoginInfo> login(String phone, String code, String appVersion);
+    InvocationFuture<LoginReply> login(String phone, String code, String appVersion);
 
     /**
      * 连接观察器

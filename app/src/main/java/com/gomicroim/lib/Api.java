@@ -27,13 +27,19 @@ public class Api {
     }
 
     /**
-     * 初始化API
+     * 初始化API（启动后台服务，若已经存在用户登录信息， SDK 将进行自动登录）
      *
-     * @param options 配置信息
+     * @param options   配置信息
+     * @param loginInfo 如果设置该值，则将自动登录
      */
-    public static void init(ApiOptions options) {
+    public static void init(ApiOptions options, LoginInfo loginInfo) {
         apiOptions = options;
         OkHttpUtils.setBaseUrl(apiOptions.apiServerAddress);
+        if (loginInfo != null) {
+            OkHttpUtils.setToken(loginInfo.getToken());
+            // auto connect
+            Api.getWsPushService().connect(loginInfo.getToken(), Api.getOptions().gatewayAddress);
+        }
     }
 
     /**

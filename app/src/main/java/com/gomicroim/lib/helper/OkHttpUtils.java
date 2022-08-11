@@ -16,6 +16,7 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
 import okhttp3.MediaType;
+import okhttp3.OkHttp;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
@@ -269,10 +270,18 @@ public class OkHttpUtils {
     private static void onResponse(@NotNull HttpResponseCallBack res,
                                    @NotNull Call call,
                                    @NotNull Response response) throws IOException {
-        String respBody = response.body().string();
+        String respBody = "{}";
+        if (response.body() != null) {
+            respBody = response.body().string();
+        }
+
         LOG.debug("响应成功===》{}", respBody);
         try {
-            res.onSuccess(respBody);
+            if (response.code() != 200) {
+                res.onFailed(response.code(), response.message(), respBody);
+            } else {
+                res.onSuccess(respBody);
+            }
         } catch (JsonSyntaxException e) {
             e.printStackTrace();
             res.onException(e);
