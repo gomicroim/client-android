@@ -9,7 +9,7 @@ public class SharedPreferencesHelper {
 
     private static final String KEY_PHONE = "phone";
     private static final String KEY_PWD_CHECK = "rememberPwdChecked";
-    private static final String KEY_DEVICE_ID = "deviceId";
+    private static final String KEY_TOKEN = "token";
 
     public SharedPreferencesHelper(Context context) {
         preferencesUtils = new SharedPreferencesUtils(context);
@@ -31,11 +31,11 @@ public class SharedPreferencesHelper {
         return preferencesUtils.getString(KEY_PHONE);
     }
 
-    public void saveDeviceId(String deviceId) {
-        preferencesUtils.putValues(new SharedPreferencesUtils.ContentValue(KEY_DEVICE_ID, deviceId));
+    public void saveToken(String token) {
+        preferencesUtils.putValues(new SharedPreferencesUtils.ContentValue(KEY_TOKEN, token));
     }
 
-    public String readDeviceId() {
-        return preferencesUtils.getString(KEY_DEVICE_ID);
+    public String readToken() {
+        return preferencesUtils.getString(KEY_TOKEN);
     }
 }

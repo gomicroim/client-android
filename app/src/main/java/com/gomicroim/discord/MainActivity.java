@@ -1,76 +1,53 @@
 package com.gomicroim.discord;
 
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.View;
+import com.gomicroim.lib.Api;
+import com.gomicroim.lib.model.constant.StatusCode;
+import com.gomicroim.lib.protos.websocket.Websocket;
+import com.gomicroim.lib.service.WsPushListener;
 
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
-import com.gomicroim.discord.databinding.ActivityMainBinding;
-
-import android.view.Menu;
-import android.view.MenuItem;
-
-public class MainActivity extends AppCompatActivity {
-
-    private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
+public class MainActivity extends AppCompatActivity implements WsPushListener {
+    private ListView lvMsg;
+    private TextView tvNetwork;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        lvMsg = findViewById(R.id.lvMsg);
+        tvNetwork = findViewById(R.id.tvNetwork);
 
-        setSupportActionBar(binding.toolbar);
+        //Api.getWsPushService().observer(this, true);
+    }
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+    @Override
+    public void onMessage(Websocket.S2CWebsocketMessage message) {
 
-        binding.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+    }
+
+    @Override
+    public void onStatusCodeChanged(StatusCode before, StatusCode after) {
+        runOnUiThread(() -> {
+            switch (after) {
+                case NET_BROKEN:
+                    tvNetwork.setText("网络连接中断");
+                case LOGINED:
+                    tvNetwork.setText("登录成功");
+                case LOGINING:
+                    tvNetwork.setText("登录中...");
+                case CONNECTING:
+                    tvNetwork.setText("连接中...");
+                case UN_LOGIN:
+                    tvNetwork.setText("登录失败");
+                default:
+                    tvNetwork.setText("未知");
             }
         });
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        return NavigationUI.navigateUp(navController, appBarConfiguration)
-                || super.onSupportNavigateUp();
     }
 }

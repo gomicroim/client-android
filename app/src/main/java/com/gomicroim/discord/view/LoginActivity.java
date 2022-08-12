@@ -24,6 +24,7 @@ import com.gomicroim.lib.model.dto.DeviceReq;
 import com.gomicroim.lib.model.dto.LoginReply;
 import com.gomicroim.lib.transport.RequestCallback;
 import com.gomicroim.lib.util.AndroidDeviceId;
+import com.gomicroim.lib.util.StringUtils;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
     private EditText etName;
@@ -40,6 +41,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        preferencesHelper = new SharedPreferencesHelper(LoginActivity.this);
+
         btnLogin = findViewById(R.id.btn_login);
         etName = findViewById(R.id.et_account);
         etPassword = findViewById(R.id.et_password);
@@ -51,13 +54,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         cbRememberPwd.setOnCheckedChangeListener(this);
         ivSeePassword.setOnClickListener(this);
 
-        Api.init(ApiOptions.DEFAULT, getLoginInfo());
-
-        preferencesHelper = new SharedPreferencesHelper(LoginActivity.this);
         loadData();
+        autoLogin();
+        Api.init(ApiOptions.DEFAULT, getLoginInfo());
     }
 
     public LoginInfo getLoginInfo() {
+        String token = preferencesHelper.readToken();
+        if (!StringUtils.isEmpty(token)) {
+            return new LoginInfo(token);
+        }
         return null;
     }
 
@@ -80,6 +86,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         cbRememberPwd.setChecked(preferencesHelper.readRememberPwdChecked());
     }
 
+    private void autoLogin() {
+        if (getLoginInfo() != null) {
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            finish();
+        }
+    }
+
     private void login() {
         showLoading();
 
@@ -100,6 +113,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onSuccess(LoginReply param) {
                         runOnUiThread(() -> {
+                            // 保存token，下次自动登录
+                            preferencesHelper.saveToken(param.accessToken);
+
                             hideLoading();
                             startActivity(new Intent(LoginActivity.this, MainActivity.class));
                             finish();
