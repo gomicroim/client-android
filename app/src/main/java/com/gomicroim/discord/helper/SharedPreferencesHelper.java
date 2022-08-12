@@ -1,4 +1,4 @@
-package com.gomicroim.discord.login;
+package com.gomicroim.discord.helper;
 
 import android.content.Context;
 
@@ -9,6 +9,7 @@ public class SharedPreferencesHelper {
 
     private static final String KEY_PHONE = "phone";
     private static final String KEY_PWD_CHECK = "rememberPwdChecked";
+    private static final String KEY_DEVICE_ID = "deviceId";
 
     public SharedPreferencesHelper(Context context) {
         preferencesUtils = new SharedPreferencesUtils(context);
@@ -28,5 +29,13 @@ public class SharedPreferencesHelper {
 
     public String readPhone() {
         return preferencesUtils.getString(KEY_PHONE);
+    }
+
+    public void saveDeviceId(String deviceId) {
+        preferencesUtils.putValues(new SharedPreferencesUtils.ContentValue(KEY_DEVICE_ID, deviceId));
+    }
+
+    public String readDeviceId() {
+        return preferencesUtils.getString(KEY_DEVICE_ID);
     }
 }

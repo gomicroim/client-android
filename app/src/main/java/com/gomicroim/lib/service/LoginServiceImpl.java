@@ -14,26 +14,32 @@ import com.gomicroim.lib.transport.InvocationFutureImpl;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class LoginServiceImpl implements LoginService {
     private static final String URL_DEVICE_REGISTER = "/auth/device/register";
     private static final String URL_AUTH_LOGIN = "/auth/login";
+    private Logger log = LoggerFactory.getLogger(LoginServiceImpl.class);
 
     @Override
     public InvocationFuture<DeviceReply> deviceRegister(DeviceReq devInfo) {
         InvocationFutureImpl<DeviceReply> cb = new InvocationFutureImpl<>();
 
-        OkHttpUtils.postAsyncJson(URL_DEVICE_REGISTER, null,
+        String json = new Gson().toJson(devInfo);
+        log.debug("deviceRegister, deviceInfo:{}", json);
+
+        OkHttpUtils.postAsyncJson(URL_DEVICE_REGISTER, json,
                 new HttpSimpleResponse<DeviceReply>(cb) {
                     @Override
                     public void onSuccess(String json) throws JsonSyntaxException {
                         DeviceReply result = new Gson().fromJson(json, DeviceReply.class);
-                        cb.getCallback().onSuccess(result);
-
                         // save token
                         OkHttpUtils.setToken(result.guestToken);
+                        cb.getCallback().onSuccess(result);
                     }
                 });
         return cb;

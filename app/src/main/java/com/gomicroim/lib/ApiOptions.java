@@ -14,6 +14,6 @@ public class ApiOptions {
 
     //public String apiServerAddress = "http://192.168.200.197:9000";
     //public String gatewayAddress = "ws://192.168.200.197:8000/websocket";
-    public String apiServerAddress = "https://api.dev.shuodev.com";
-    public String gatewayAddress = "wss://ws-gw.dev.shuodev.com/websocket";
+    public String apiServerAddress = "https://webapp.dev.shuodev.com/api";
+    public String gatewayAddress = "wss://api.dev.shuodev.com/websocket";
 }

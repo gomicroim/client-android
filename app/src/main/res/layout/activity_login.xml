@@ -84,7 +84,7 @@
             android:layout_toEndOf="@+id/img_pw"
             android:background="@null"
             android:hint="@string/password"
-            android:inputType="textPassword"
+            android:text="@string/default_code"
             android:maxLines="1"
             android:textColor="@android:color/black"
             android:textSize="@dimen/text_size_normal" />

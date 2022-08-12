@@ -1,5 +1,7 @@
 package com.gomicroim.lib.service;
 
+import android.annotation.SuppressLint;
+
 import com.gomicroim.lib.Observer;
 import com.gomicroim.lib.helper.OkHttpUtils;
 import com.gomicroim.lib.model.constant.StatusCode;
@@ -11,9 +13,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.EOFException;
+import java.security.SecureRandom;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -100,6 +112,8 @@ public class WsPushServiceImpl extends WebSocketListener implements WsPushServic
         this.token = token;
         this.wsUrl = wsUrl;
 
+        log.info("connect wsServer: {}", wsUrl);
+
         OkHttpClient client = new OkHttpClient.Builder()
                 .readTimeout(5, TimeUnit.SECONDS)
                 .writeTimeout(5, TimeUnit.SECONDS)
@@ -110,6 +124,7 @@ public class WsPushServiceImpl extends WebSocketListener implements WsPushServic
                 .url(wsUrl)
                 .addHeader("authorization", "Bearer " + token)
                 .build();
+
         webSocket = client.newWebSocket(request, this);
     }
 

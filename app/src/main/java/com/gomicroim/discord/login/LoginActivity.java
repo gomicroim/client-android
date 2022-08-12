@@ -14,14 +14,16 @@ import android.widget.Toast;
 
 import com.gomicroim.discord.MainActivity;
 import com.gomicroim.discord.R;
-import com.gomicroim.discord.util.SharedPreferencesUtils;
+import com.gomicroim.discord.helper.SharedPreferencesHelper;
 import com.gomicroim.discord.widget.LoadingDialog;
 import com.gomicroim.lib.Api;
 import com.gomicroim.lib.ApiOptions;
 import com.gomicroim.lib.LoginInfo;
+import com.gomicroim.lib.model.dto.DeviceReply;
 import com.gomicroim.lib.model.dto.DeviceReq;
 import com.gomicroim.lib.model.dto.LoginReply;
 import com.gomicroim.lib.transport.RequestCallback;
+import com.gomicroim.lib.util.AndroidDeviceId;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
     private EditText etName;
@@ -49,8 +51,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         ivSeePassword.setOnClickListener(this);
 
         Api.init(ApiOptions.DEFAULT, getLoginInfo());
-        // register
-        Api.getLoginService().deviceRegister(new DeviceReq());
 
         preferencesHelper = new SharedPreferencesHelper(LoginActivity.this);
         loadData();
@@ -82,30 +82,60 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void login() {
         preferencesHelper.savePhone(etName.getText().toString().trim());
 
-        Api.getLoginService().login("86" + etName.getText().toString().trim(),
-                etPassword.getText().toString().trim(),
-                "1.0").setCallback(new RequestCallback<LoginReply>() {
+        LoginActivity that = this;
+
+        String deviceId = new AndroidDeviceId(this).getUniqueDeviceId();
+        // register
+        Api.getLoginService().deviceRegister(new DeviceReq(deviceId, "android")).setCallback(new RequestCallback<DeviceReply>() {
             @Override
-            public void onSuccess(LoginReply param) {
-                runOnUiThread(() -> {
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                    finish();
+            public void onSuccess(DeviceReply param) {
+
+                // login
+                Api.getLoginService().login("86" + etName.getText().toString().trim(),
+                        etPassword.getText().toString().trim(),
+                        "1.0").setCallback(new RequestCallback<LoginReply>() {
+                    @Override
+                    public void onSuccess(LoginReply param) {
+                        runOnUiThread(() -> {
+                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                            finish();
+                        });
+                    }
+
+                    @Override
+                    public void onFailed(int code, String message) {
+                        that.onFailed(code, message);
+                    }
+
+                    @Override
+                    public void onException(Throwable exception) {
+                        that.onException(exception);
+                    }
                 });
             }
 
             @Override
             public void onFailed(int code, String message) {
-                runOnUiThread(() -> {
-                    Toast.makeText(LoginActivity.this, "登录失败:" + message, Toast.LENGTH_SHORT).show();
-                });
+                that.onFailed(code, message);
             }
 
             @Override
             public void onException(Throwable exception) {
-                runOnUiThread(() -> {
-                    Toast.makeText(LoginActivity.this, "登录异常", Toast.LENGTH_SHORT).show();
-                });
+                that.onException(exception);
             }
+        });
+    }
+
+
+    public void onFailed(int code, String message) {
+        runOnUiThread(() -> {
+            Toast.makeText(LoginActivity.this, "登录失败:" + message, Toast.LENGTH_SHORT).show();
+        });
+    }
+
+    public void onException(Throwable exception) {
+        runOnUiThread(() -> {
+            Toast.makeText(LoginActivity.this, "登录异常", Toast.LENGTH_SHORT).show();
         });
     }
 }
