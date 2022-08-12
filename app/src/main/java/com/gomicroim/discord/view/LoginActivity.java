@@ -1,4 +1,4 @@
-package com.gomicroim.discord.login;
+package com.gomicroim.discord.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private CheckBox cbRememberPwd;
     private ImageView ivSeePassword;
 
-    private LoadingDialog mLoadingDialog; //显示正在加载的对话框
+    private LoadingDialog loadingDialog; //显示正在加载的对话框
     private SharedPreferencesHelper preferencesHelper;
 
     @Override
@@ -45,6 +45,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         etPassword = findViewById(R.id.et_password);
         cbRememberPwd = findViewById(R.id.checkBox_password);
         ivSeePassword = findViewById(R.id.iv_see_password);
+
 
         btnLogin.setOnClickListener(this);
         cbRememberPwd.setOnCheckedChangeListener(this);
@@ -80,6 +81,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void login() {
+        showLoading();
+
         preferencesHelper.savePhone(etName.getText().toString().trim());
 
         LoginActivity that = this;
@@ -97,6 +100,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onSuccess(LoginReply param) {
                         runOnUiThread(() -> {
+                            hideLoading();
                             startActivity(new Intent(LoginActivity.this, MainActivity.class));
                             finish();
                         });
@@ -126,16 +130,34 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         });
     }
 
+    // 显示加载的进度款
+    public void showLoading() {
+        if (loadingDialog == null) {
+            loadingDialog = new LoadingDialog(this, getString(R.string.loading), false);
+        }
+        loadingDialog.show();
+    }
+
+    // 隐藏加载的进度框
+    public void hideLoading() {
+        if (loadingDialog != null) {
+            loadingDialog.hide();
+            loadingDialog.dismiss();
+            loadingDialog = null;
+        }
+    }
 
     public void onFailed(int code, String message) {
         runOnUiThread(() -> {
             Toast.makeText(LoginActivity.this, "登录失败:" + message, Toast.LENGTH_SHORT).show();
+            hideLoading();
         });
     }
 
     public void onException(Throwable exception) {
         runOnUiThread(() -> {
             Toast.makeText(LoginActivity.this, "登录异常", Toast.LENGTH_SHORT).show();
+            hideLoading();
         });
     }
 }

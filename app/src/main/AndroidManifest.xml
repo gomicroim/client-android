@@ -20,7 +20,7 @@
         android:theme="@style/Theme.Discord"
         tools:targetApi="31">
         <activity
-            android:name=".login.LoginActivity"
+            android:name=".view.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
