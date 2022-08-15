@@ -13,6 +13,8 @@ import com.gomicroim.lib.model.constant.StatusCode;
 import com.gomicroim.lib.protos.Constants;
 import com.gomicroim.lib.protos.websocket.Websocket;
 import com.gomicroim.lib.service.WsPushListener;
+import com.google.protobuf.Any;
+import com.google.protobuf.InvalidProtocolBufferException;
 
 import java.util.ArrayList;
 
@@ -42,15 +44,24 @@ public class MainActivity extends AppCompatActivity implements WsPushListener {
         runOnUiThread(() -> {
             StringBuilder builder = new StringBuilder();
 
-            builder.append("seq:").append(message.getHeader().getSeq());
-            builder.append(",dataList:[");
+            builder.append("[").append(message.getHeader().getSeq());
+            builder.append("],data:[");
             for (Websocket.WebsocketMessage i : message.getDataListList()) {
                 if (i.getMsgType() == Constants.WSMessageType.NewChatMessage) {
-                    
+                    try {
+                        Websocket.Message textMsg = i.getAnyData().unpack(Websocket.Message.class);
+                        builder.append("{from:").append(textMsg.getUserId()).
+                                append(",room:").append(textMsg.getRoom().getRoomId()).
+                                append(",channelId:").append(textMsg.getChannel().getChannelId()).
+                                append(",text:").append(textMsg.getContent());
+                    } catch (InvalidProtocolBufferException e) {
+                        e.printStackTrace();
+                    }
                 } else {
                     builder.append("wsMsgType:").append(i.getMsgType()).
                             append(",len:").append(i.getAnyData().toByteArray().length);
                 }
+                builder.append("},");
             }
             builder.append("]");
             lvMsgArr.add(builder.toString());

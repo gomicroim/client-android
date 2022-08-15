@@ -74,7 +74,7 @@ public final class Websocket {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -85,7 +85,7 @@ public final class Websocket {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static RoomMemberChangedEventType valueOf(int value) {
       return forNumber(value);
     }
@@ -118,7 +118,7 @@ public final class Websocket {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -129,7 +129,7 @@ public final class Websocket {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.websocket.Websocket.getDescriptor().getEnumTypes().get(0);
+      return Websocket.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final RoomMemberChangedEventType[] VALUES = values();
@@ -137,7 +137,7 @@ public final class Websocket {
     public static RoomMemberChangedEventType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -188,14 +188,14 @@ public final class Websocket {
     private WebSocketHeader() {
     }
 
-    @java.lang.Override
+    @Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected Object newInstance(
         UnusedPrivateParameter unused) {
       return new WebSocketHeader();
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -206,7 +206,7 @@ public final class Websocket {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -244,15 +244,15 @@ public final class Websocket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_WebSocketHeader_descriptor;
+      return Websocket.internal_static_shuo_WebSocketHeader_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_WebSocketHeader_fieldAccessorTable
+      return Websocket.internal_static_shuo_WebSocketHeader_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.class, com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.Builder.class);
+              WebSocketHeader.class, Builder.class);
     }
 
     public static final int SEQ_FIELD_NUMBER = 1;
@@ -265,13 +265,13 @@ public final class Websocket {
      * <code>int32 seq = 1;</code>
      * @return The seq.
      */
-    @java.lang.Override
+    @Override
     public int getSeq() {
       return seq_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -281,7 +281,7 @@ public final class Websocket {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (seq_ != 0) {
@@ -290,7 +290,7 @@ public final class Websocket {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
+    @Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -305,15 +305,15 @@ public final class Websocket {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader)) {
+      if (!(obj instanceof WebSocketHeader)) {
         return super.equals(obj);
       }
-      com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader other = (com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader) obj;
+      WebSocketHeader other = (WebSocketHeader) obj;
 
       if (getSeq()
           != other.getSeq()) return false;
@@ -321,7 +321,7 @@ public final class Websocket {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -335,69 +335,69 @@ public final class Websocket {
       return hash;
     }
 
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader parseFrom(
+    public static WebSocketHeader parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader parseFrom(
+    public static WebSocketHeader parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader parseFrom(
+    public static WebSocketHeader parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader parseFrom(
+    public static WebSocketHeader parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader parseFrom(byte[] data)
+    public static WebSocketHeader parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader parseFrom(
+    public static WebSocketHeader parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader parseFrom(java.io.InputStream input)
+    public static WebSocketHeader parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader parseFrom(
+    public static WebSocketHeader parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader parseDelimitedFrom(java.io.InputStream input)
+    public static WebSocketHeader parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader parseDelimitedFrom(
+    public static WebSocketHeader parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader parseFrom(
+    public static WebSocketHeader parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader parseFrom(
+    public static WebSocketHeader parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -405,23 +405,23 @@ public final class Websocket {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader prototype) {
+    public static Builder newBuilder(WebSocketHeader prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -435,18 +435,18 @@ public final class Websocket {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:shuo.WebSocketHeader)
-        com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeaderOrBuilder {
+        WebSocketHeaderOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_WebSocketHeader_descriptor;
+        return Websocket.internal_static_shuo_WebSocketHeader_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      @Override
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_WebSocketHeader_fieldAccessorTable
+        return Websocket.internal_static_shuo_WebSocketHeader_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.class, com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.Builder.class);
+                WebSocketHeader.class, Builder.class);
       }
 
       // Construct using com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.newBuilder()
@@ -455,7 +455,7 @@ public final class Websocket {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -464,7 +464,7 @@ public final class Websocket {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
+      @Override
       public Builder clear() {
         super.clear();
         seq_ = 0;
@@ -472,78 +472,78 @@ public final class Websocket {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_WebSocketHeader_descriptor;
+        return Websocket.internal_static_shuo_WebSocketHeader_descriptor;
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader getDefaultInstanceForType() {
-        return com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.getDefaultInstance();
+      @Override
+      public WebSocketHeader getDefaultInstanceForType() {
+        return WebSocketHeader.getDefaultInstance();
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader build() {
-        com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader result = buildPartial();
+      @Override
+      public WebSocketHeader build() {
+        WebSocketHeader result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader buildPartial() {
-        com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader result = new com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader(this);
+      @Override
+      public WebSocketHeader buildPartial() {
+        WebSocketHeader result = new WebSocketHeader(this);
         result.seq_ = seq_;
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
+      @Override
       public Builder clone() {
         return super.clone();
       }
-      @java.lang.Override
+      @Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.setField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+      @Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
+      @Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader) {
-          return mergeFrom((com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader)other);
+        if (other instanceof WebSocketHeader) {
+          return mergeFrom((WebSocketHeader)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader other) {
-        if (other == com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.getDefaultInstance()) return this;
+      public Builder mergeFrom(WebSocketHeader other) {
+        if (other == WebSocketHeader.getDefaultInstance()) return this;
         if (other.getSeq() != 0) {
           setSeq(other.getSeq());
         }
@@ -552,21 +552,21 @@ public final class Websocket {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader parsedMessage = null;
+        WebSocketHeader parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader) e.getUnfinishedMessage();
+          parsedMessage = (WebSocketHeader) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -585,7 +585,7 @@ public final class Websocket {
        * <code>int32 seq = 1;</code>
        * @return The seq.
        */
-      @java.lang.Override
+      @Override
       public int getSeq() {
         return seq_;
       }
@@ -618,13 +618,13 @@ public final class Websocket {
         onChanged();
         return this;
       }
-      @java.lang.Override
+      @Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+      @Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -635,18 +635,18 @@ public final class Websocket {
     }
 
     // @@protoc_insertion_point(class_scope:shuo.WebSocketHeader)
-    private static final com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader DEFAULT_INSTANCE;
+    private static final WebSocketHeader DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader();
+      DEFAULT_INSTANCE = new WebSocketHeader();
     }
 
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader getDefaultInstance() {
+    public static WebSocketHeader getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<WebSocketHeader>
         PARSER = new com.google.protobuf.AbstractParser<WebSocketHeader>() {
-      @java.lang.Override
+      @Override
       public WebSocketHeader parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -659,13 +659,13 @@ public final class Websocket {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<WebSocketHeader> getParserForType() {
       return PARSER;
     }
 
-    @java.lang.Override
-    public com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader getDefaultInstanceForType() {
+    @Override
+    public WebSocketHeader getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -692,7 +692,7 @@ public final class Websocket {
      * <code>.shuo.WebSocketHeader header = 1;</code>
      * @return The header.
      */
-    com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader getHeader();
+    WebSocketHeader getHeader();
     /**
      * <pre>
      * 头部
@@ -700,7 +700,7 @@ public final class Websocket {
      *
      * <code>.shuo.WebSocketHeader header = 1;</code>
      */
-    com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeaderOrBuilder getHeaderOrBuilder();
+    WebSocketHeaderOrBuilder getHeaderOrBuilder();
 
     /**
      * <pre>
@@ -709,7 +709,7 @@ public final class Websocket {
      *
      * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
      */
-    java.util.List<com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage> 
+    java.util.List<WebsocketMessage>
         getDataListList();
     /**
      * <pre>
@@ -718,7 +718,7 @@ public final class Websocket {
      *
      * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
      */
-    com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage getDataList(int index);
+    WebsocketMessage getDataList(int index);
     /**
      * <pre>
      * 数据部
@@ -734,7 +734,7 @@ public final class Websocket {
      *
      * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
      */
-    java.util.List<? extends com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessageOrBuilder> 
+    java.util.List<? extends WebsocketMessageOrBuilder>
         getDataListOrBuilderList();
     /**
      * <pre>
@@ -743,7 +743,7 @@ public final class Websocket {
      *
      * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
      */
-    com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessageOrBuilder getDataListOrBuilder(
+    WebsocketMessageOrBuilder getDataListOrBuilder(
         int index);
   }
   /**
@@ -766,14 +766,14 @@ public final class Websocket {
       dataList_ = java.util.Collections.emptyList();
     }
 
-    @java.lang.Override
+    @Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected Object newInstance(
         UnusedPrivateParameter unused) {
       return new S2CWebsocketMessage();
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -784,7 +784,7 @@ public final class Websocket {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -798,11 +798,11 @@ public final class Websocket {
               done = true;
               break;
             case 10: {
-              com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.Builder subBuilder = null;
+              WebSocketHeader.Builder subBuilder = null;
               if (header_ != null) {
                 subBuilder = header_.toBuilder();
               }
-              header_ = input.readMessage(com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.parser(), extensionRegistry);
+              header_ = input.readMessage(WebSocketHeader.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(header_);
                 header_ = subBuilder.buildPartial();
@@ -812,11 +812,11 @@ public final class Websocket {
             }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                dataList_ = new java.util.ArrayList<com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage>();
+                dataList_ = new java.util.ArrayList<WebsocketMessage>();
                 mutable_bitField0_ |= 0x00000001;
               }
               dataList_.add(
-                  input.readMessage(com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage.parser(), extensionRegistry));
+                  input.readMessage(WebsocketMessage.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -843,19 +843,19 @@ public final class Websocket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_S2CWebsocketMessage_descriptor;
+      return Websocket.internal_static_shuo_S2CWebsocketMessage_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_S2CWebsocketMessage_fieldAccessorTable
+      return Websocket.internal_static_shuo_S2CWebsocketMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage.class, com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage.Builder.class);
+              S2CWebsocketMessage.class, Builder.class);
     }
 
     public static final int HEADER_FIELD_NUMBER = 1;
-    private com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader header_;
+    private WebSocketHeader header_;
     /**
      * <pre>
      * 头部
@@ -864,7 +864,7 @@ public final class Websocket {
      * <code>.shuo.WebSocketHeader header = 1;</code>
      * @return Whether the header field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasHeader() {
       return header_ != null;
     }
@@ -876,9 +876,9 @@ public final class Websocket {
      * <code>.shuo.WebSocketHeader header = 1;</code>
      * @return The header.
      */
-    @java.lang.Override
-    public com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader getHeader() {
-      return header_ == null ? com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.getDefaultInstance() : header_;
+    @Override
+    public WebSocketHeader getHeader() {
+      return header_ == null ? WebSocketHeader.getDefaultInstance() : header_;
     }
     /**
      * <pre>
@@ -887,13 +887,13 @@ public final class Websocket {
      *
      * <code>.shuo.WebSocketHeader header = 1;</code>
      */
-    @java.lang.Override
-    public com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeaderOrBuilder getHeaderOrBuilder() {
+    @Override
+    public WebSocketHeaderOrBuilder getHeaderOrBuilder() {
       return getHeader();
     }
 
     public static final int DATA_LIST_FIELD_NUMBER = 2;
-    private java.util.List<com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage> dataList_;
+    private java.util.List<WebsocketMessage> dataList_;
     /**
      * <pre>
      * 数据部
@@ -901,8 +901,8 @@ public final class Websocket {
      *
      * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
      */
-    @java.lang.Override
-    public java.util.List<com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage> getDataListList() {
+    @Override
+    public java.util.List<WebsocketMessage> getDataListList() {
       return dataList_;
     }
     /**
@@ -912,8 +912,8 @@ public final class Websocket {
      *
      * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
      */
-    @java.lang.Override
-    public java.util.List<? extends com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessageOrBuilder> 
+    @Override
+    public java.util.List<? extends WebsocketMessageOrBuilder>
         getDataListOrBuilderList() {
       return dataList_;
     }
@@ -924,7 +924,7 @@ public final class Websocket {
      *
      * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
      */
-    @java.lang.Override
+    @Override
     public int getDataListCount() {
       return dataList_.size();
     }
@@ -935,8 +935,8 @@ public final class Websocket {
      *
      * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
      */
-    @java.lang.Override
-    public com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage getDataList(int index) {
+    @Override
+    public WebsocketMessage getDataList(int index) {
       return dataList_.get(index);
     }
     /**
@@ -946,14 +946,14 @@ public final class Websocket {
      *
      * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
      */
-    @java.lang.Override
-    public com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessageOrBuilder getDataListOrBuilder(
+    @Override
+    public WebsocketMessageOrBuilder getDataListOrBuilder(
         int index) {
       return dataList_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -963,7 +963,7 @@ public final class Websocket {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (header_ != null) {
@@ -975,7 +975,7 @@ public final class Websocket {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
+    @Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -994,15 +994,15 @@ public final class Websocket {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage)) {
+      if (!(obj instanceof S2CWebsocketMessage)) {
         return super.equals(obj);
       }
-      com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage other = (com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage) obj;
+      S2CWebsocketMessage other = (S2CWebsocketMessage) obj;
 
       if (hasHeader() != other.hasHeader()) return false;
       if (hasHeader()) {
@@ -1015,7 +1015,7 @@ public final class Websocket {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -1035,69 +1035,69 @@ public final class Websocket {
       return hash;
     }
 
-    public static com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage parseFrom(
+    public static S2CWebsocketMessage parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage parseFrom(
+    public static S2CWebsocketMessage parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage parseFrom(
+    public static S2CWebsocketMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage parseFrom(
+    public static S2CWebsocketMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage parseFrom(byte[] data)
+    public static S2CWebsocketMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage parseFrom(
+    public static S2CWebsocketMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage parseFrom(java.io.InputStream input)
+    public static S2CWebsocketMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage parseFrom(
+    public static S2CWebsocketMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage parseDelimitedFrom(java.io.InputStream input)
+    public static S2CWebsocketMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage parseDelimitedFrom(
+    public static S2CWebsocketMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage parseFrom(
+    public static S2CWebsocketMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage parseFrom(
+    public static S2CWebsocketMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1105,23 +1105,23 @@ public final class Websocket {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage prototype) {
+    public static Builder newBuilder(S2CWebsocketMessage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -1135,18 +1135,18 @@ public final class Websocket {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:shuo.S2CWebsocketMessage)
-        com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessageOrBuilder {
+        S2CWebsocketMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_S2CWebsocketMessage_descriptor;
+        return Websocket.internal_static_shuo_S2CWebsocketMessage_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      @Override
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_S2CWebsocketMessage_fieldAccessorTable
+        return Websocket.internal_static_shuo_S2CWebsocketMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage.class, com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage.Builder.class);
+                S2CWebsocketMessage.class, Builder.class);
       }
 
       // Construct using com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage.newBuilder()
@@ -1155,7 +1155,7 @@ public final class Websocket {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -1165,7 +1165,7 @@ public final class Websocket {
           getDataListFieldBuilder();
         }
       }
-      @java.lang.Override
+      @Override
       public Builder clear() {
         super.clear();
         if (headerBuilder_ == null) {
@@ -1183,29 +1183,29 @@ public final class Websocket {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_S2CWebsocketMessage_descriptor;
+        return Websocket.internal_static_shuo_S2CWebsocketMessage_descriptor;
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage getDefaultInstanceForType() {
-        return com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage.getDefaultInstance();
+      @Override
+      public S2CWebsocketMessage getDefaultInstanceForType() {
+        return S2CWebsocketMessage.getDefaultInstance();
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage build() {
-        com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage result = buildPartial();
+      @Override
+      public S2CWebsocketMessage build() {
+        S2CWebsocketMessage result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage buildPartial() {
-        com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage result = new com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage(this);
+      @Override
+      public S2CWebsocketMessage buildPartial() {
+        S2CWebsocketMessage result = new S2CWebsocketMessage(this);
         int from_bitField0_ = bitField0_;
         if (headerBuilder_ == null) {
           result.header_ = header_;
@@ -1225,50 +1225,50 @@ public final class Websocket {
         return result;
       }
 
-      @java.lang.Override
+      @Override
       public Builder clone() {
         return super.clone();
       }
-      @java.lang.Override
+      @Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.setField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+      @Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
+      @Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage) {
-          return mergeFrom((com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage)other);
+        if (other instanceof S2CWebsocketMessage) {
+          return mergeFrom((S2CWebsocketMessage)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage other) {
-        if (other == com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage.getDefaultInstance()) return this;
+      public Builder mergeFrom(S2CWebsocketMessage other) {
+        if (other == S2CWebsocketMessage.getDefaultInstance()) return this;
         if (other.hasHeader()) {
           mergeHeader(other.getHeader());
         }
@@ -1303,21 +1303,21 @@ public final class Websocket {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage parsedMessage = null;
+        S2CWebsocketMessage parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage) e.getUnfinishedMessage();
+          parsedMessage = (S2CWebsocketMessage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1328,9 +1328,9 @@ public final class Websocket {
       }
       private int bitField0_;
 
-      private com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader header_;
+      private WebSocketHeader header_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader, com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.Builder, com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeaderOrBuilder> headerBuilder_;
+          WebSocketHeader, WebSocketHeader.Builder, WebSocketHeaderOrBuilder> headerBuilder_;
       /**
        * <pre>
        * 头部
@@ -1350,9 +1350,9 @@ public final class Websocket {
        * <code>.shuo.WebSocketHeader header = 1;</code>
        * @return The header.
        */
-      public com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader getHeader() {
+      public WebSocketHeader getHeader() {
         if (headerBuilder_ == null) {
-          return header_ == null ? com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.getDefaultInstance() : header_;
+          return header_ == null ? WebSocketHeader.getDefaultInstance() : header_;
         } else {
           return headerBuilder_.getMessage();
         }
@@ -1364,7 +1364,7 @@ public final class Websocket {
        *
        * <code>.shuo.WebSocketHeader header = 1;</code>
        */
-      public Builder setHeader(com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader value) {
+      public Builder setHeader(WebSocketHeader value) {
         if (headerBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1385,7 +1385,7 @@ public final class Websocket {
        * <code>.shuo.WebSocketHeader header = 1;</code>
        */
       public Builder setHeader(
-          com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.Builder builderForValue) {
+          WebSocketHeader.Builder builderForValue) {
         if (headerBuilder_ == null) {
           header_ = builderForValue.build();
           onChanged();
@@ -1402,11 +1402,11 @@ public final class Websocket {
        *
        * <code>.shuo.WebSocketHeader header = 1;</code>
        */
-      public Builder mergeHeader(com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader value) {
+      public Builder mergeHeader(WebSocketHeader value) {
         if (headerBuilder_ == null) {
           if (header_ != null) {
             header_ =
-              com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.newBuilder(header_).mergeFrom(value).buildPartial();
+              WebSocketHeader.newBuilder(header_).mergeFrom(value).buildPartial();
           } else {
             header_ = value;
           }
@@ -1442,7 +1442,7 @@ public final class Websocket {
        *
        * <code>.shuo.WebSocketHeader header = 1;</code>
        */
-      public com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.Builder getHeaderBuilder() {
+      public WebSocketHeader.Builder getHeaderBuilder() {
         
         onChanged();
         return getHeaderFieldBuilder().getBuilder();
@@ -1454,12 +1454,12 @@ public final class Websocket {
        *
        * <code>.shuo.WebSocketHeader header = 1;</code>
        */
-      public com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeaderOrBuilder getHeaderOrBuilder() {
+      public WebSocketHeaderOrBuilder getHeaderOrBuilder() {
         if (headerBuilder_ != null) {
           return headerBuilder_.getMessageOrBuilder();
         } else {
           return header_ == null ?
-              com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.getDefaultInstance() : header_;
+              WebSocketHeader.getDefaultInstance() : header_;
         }
       }
       /**
@@ -1470,11 +1470,11 @@ public final class Websocket {
        * <code>.shuo.WebSocketHeader header = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader, com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.Builder, com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeaderOrBuilder> 
+          WebSocketHeader, WebSocketHeader.Builder, WebSocketHeaderOrBuilder>
           getHeaderFieldBuilder() {
         if (headerBuilder_ == null) {
           headerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader, com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.Builder, com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeaderOrBuilder>(
+              WebSocketHeader, WebSocketHeader.Builder, WebSocketHeaderOrBuilder>(
                   getHeader(),
                   getParentForChildren(),
                   isClean());
@@ -1483,17 +1483,17 @@ public final class Websocket {
         return headerBuilder_;
       }
 
-      private java.util.List<com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage> dataList_ =
+      private java.util.List<WebsocketMessage> dataList_ =
         java.util.Collections.emptyList();
       private void ensureDataListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          dataList_ = new java.util.ArrayList<com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage>(dataList_);
+          dataList_ = new java.util.ArrayList<WebsocketMessage>(dataList_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage, com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage.Builder, com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessageOrBuilder> dataListBuilder_;
+          WebsocketMessage, WebsocketMessage.Builder, WebsocketMessageOrBuilder> dataListBuilder_;
 
       /**
        * <pre>
@@ -1502,7 +1502,7 @@ public final class Websocket {
        *
        * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
        */
-      public java.util.List<com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage> getDataListList() {
+      public java.util.List<WebsocketMessage> getDataListList() {
         if (dataListBuilder_ == null) {
           return java.util.Collections.unmodifiableList(dataList_);
         } else {
@@ -1530,7 +1530,7 @@ public final class Websocket {
        *
        * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
        */
-      public com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage getDataList(int index) {
+      public WebsocketMessage getDataList(int index) {
         if (dataListBuilder_ == null) {
           return dataList_.get(index);
         } else {
@@ -1545,7 +1545,7 @@ public final class Websocket {
        * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
        */
       public Builder setDataList(
-          int index, com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage value) {
+          int index, WebsocketMessage value) {
         if (dataListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1566,7 +1566,7 @@ public final class Websocket {
        * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
        */
       public Builder setDataList(
-          int index, com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage.Builder builderForValue) {
+          int index, WebsocketMessage.Builder builderForValue) {
         if (dataListBuilder_ == null) {
           ensureDataListIsMutable();
           dataList_.set(index, builderForValue.build());
@@ -1583,7 +1583,7 @@ public final class Websocket {
        *
        * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
        */
-      public Builder addDataList(com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage value) {
+      public Builder addDataList(WebsocketMessage value) {
         if (dataListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1604,7 +1604,7 @@ public final class Websocket {
        * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
        */
       public Builder addDataList(
-          int index, com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage value) {
+          int index, WebsocketMessage value) {
         if (dataListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1625,7 +1625,7 @@ public final class Websocket {
        * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
        */
       public Builder addDataList(
-          com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage.Builder builderForValue) {
+          WebsocketMessage.Builder builderForValue) {
         if (dataListBuilder_ == null) {
           ensureDataListIsMutable();
           dataList_.add(builderForValue.build());
@@ -1643,7 +1643,7 @@ public final class Websocket {
        * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
        */
       public Builder addDataList(
-          int index, com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage.Builder builderForValue) {
+          int index, WebsocketMessage.Builder builderForValue) {
         if (dataListBuilder_ == null) {
           ensureDataListIsMutable();
           dataList_.add(index, builderForValue.build());
@@ -1661,7 +1661,7 @@ public final class Websocket {
        * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
        */
       public Builder addAllDataList(
-          java.lang.Iterable<? extends com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage> values) {
+          Iterable<? extends WebsocketMessage> values) {
         if (dataListBuilder_ == null) {
           ensureDataListIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1713,7 +1713,7 @@ public final class Websocket {
        *
        * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
        */
-      public com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage.Builder getDataListBuilder(
+      public WebsocketMessage.Builder getDataListBuilder(
           int index) {
         return getDataListFieldBuilder().getBuilder(index);
       }
@@ -1724,7 +1724,7 @@ public final class Websocket {
        *
        * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
        */
-      public com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessageOrBuilder getDataListOrBuilder(
+      public WebsocketMessageOrBuilder getDataListOrBuilder(
           int index) {
         if (dataListBuilder_ == null) {
           return dataList_.get(index);  } else {
@@ -1738,7 +1738,7 @@ public final class Websocket {
        *
        * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
        */
-      public java.util.List<? extends com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessageOrBuilder> 
+      public java.util.List<? extends WebsocketMessageOrBuilder>
            getDataListOrBuilderList() {
         if (dataListBuilder_ != null) {
           return dataListBuilder_.getMessageOrBuilderList();
@@ -1753,9 +1753,9 @@ public final class Websocket {
        *
        * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
        */
-      public com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage.Builder addDataListBuilder() {
+      public WebsocketMessage.Builder addDataListBuilder() {
         return getDataListFieldBuilder().addBuilder(
-            com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage.getDefaultInstance());
+            WebsocketMessage.getDefaultInstance());
       }
       /**
        * <pre>
@@ -1764,10 +1764,10 @@ public final class Websocket {
        *
        * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
        */
-      public com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage.Builder addDataListBuilder(
+      public WebsocketMessage.Builder addDataListBuilder(
           int index) {
         return getDataListFieldBuilder().addBuilder(
-            index, com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage.getDefaultInstance());
+            index, WebsocketMessage.getDefaultInstance());
       }
       /**
        * <pre>
@@ -1776,16 +1776,16 @@ public final class Websocket {
        *
        * <code>repeated .shuo.WebsocketMessage data_list = 2;</code>
        */
-      public java.util.List<com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage.Builder> 
+      public java.util.List<WebsocketMessage.Builder>
            getDataListBuilderList() {
         return getDataListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage, com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage.Builder, com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessageOrBuilder> 
+          WebsocketMessage, WebsocketMessage.Builder, WebsocketMessageOrBuilder>
           getDataListFieldBuilder() {
         if (dataListBuilder_ == null) {
           dataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage, com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage.Builder, com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessageOrBuilder>(
+              WebsocketMessage, WebsocketMessage.Builder, WebsocketMessageOrBuilder>(
                   dataList_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -1794,13 +1794,13 @@ public final class Websocket {
         }
         return dataListBuilder_;
       }
-      @java.lang.Override
+      @Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+      @Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1811,18 +1811,18 @@ public final class Websocket {
     }
 
     // @@protoc_insertion_point(class_scope:shuo.S2CWebsocketMessage)
-    private static final com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage DEFAULT_INSTANCE;
+    private static final S2CWebsocketMessage DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage();
+      DEFAULT_INSTANCE = new S2CWebsocketMessage();
     }
 
-    public static com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage getDefaultInstance() {
+    public static S2CWebsocketMessage getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<S2CWebsocketMessage>
         PARSER = new com.google.protobuf.AbstractParser<S2CWebsocketMessage>() {
-      @java.lang.Override
+      @Override
       public S2CWebsocketMessage parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1835,13 +1835,8151 @@ public final class Websocket {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<S2CWebsocketMessage> getParserForType() {
       return PARSER;
     }
 
-    @java.lang.Override
-    public com.gomicroim.lib.protos.websocket.Websocket.S2CWebsocketMessage getDefaultInstanceForType() {
+    @Override
+    public S2CWebsocketMessage getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MessageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:shuo.Message)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *聊天记录id 一定有值
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     * @return The id.
+     */
+    String getId();
+    /**
+     * <pre>
+     *聊天记录id 一定有值
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <pre>
+     *发送者 一定有值x
+     * </pre>
+     *
+     * <code>int64 user_id = 2;</code>
+     * @return The userId.
+     */
+    long getUserId();
+
+    /**
+     * <pre>
+     *内容 可能为空字符串（图片或表情包时）
+     * </pre>
+     *
+     * <code>string content = 3;</code>
+     * @return The content.
+     */
+    String getContent();
+    /**
+     * <pre>
+     *内容 可能为空字符串（图片或表情包时）
+     * </pre>
+     *
+     * <code>string content = 3;</code>
+     * @return The bytes for content.
+     */
+    com.google.protobuf.ByteString
+        getContentBytes();
+
+    /**
+     * <pre>
+     *接收者  &#64;user:123 / &#64;channel:all // 和chat接口的mention参数一样
+     * </pre>
+     *
+     * <code>string mention = 4;</code>
+     * @return The mention.
+     */
+    String getMention();
+    /**
+     * <pre>
+     *接收者  &#64;user:123 / &#64;channel:all // 和chat接口的mention参数一样
+     * </pre>
+     *
+     * <code>string mention = 4;</code>
+     * @return The bytes for mention.
+     */
+    com.google.protobuf.ByteString
+        getMentionBytes();
+
+    /**
+     * <pre>
+     * 可能为空 当消息是回复时有值
+     * </pre>
+     *
+     * <code>string root_id = 5;</code>
+     * @return The rootId.
+     */
+    String getRootId();
+    /**
+     * <pre>
+     * 可能为空 当消息是回复时有值
+     * </pre>
+     *
+     * <code>string root_id = 5;</code>
+     * @return The bytes for rootId.
+     */
+    com.google.protobuf.ByteString
+        getRootIdBytes();
+
+    /**
+     * <pre>
+     * 可能为空 当消息是回复时有值
+     * </pre>
+     *
+     * <code>string reply_id = 6;</code>
+     * @return The replyId.
+     */
+    String getReplyId();
+    /**
+     * <pre>
+     * 可能为空 当消息是回复时有值
+     * </pre>
+     *
+     * <code>string reply_id = 6;</code>
+     * @return The bytes for replyId.
+     */
+    com.google.protobuf.ByteString
+        getReplyIdBytes();
+
+    /**
+     * <pre>
+     *被回复数 // 有值
+     * </pre>
+     *
+     * <code>int32 reply_count = 7;</code>
+     * @return The replyCount.
+     */
+    int getReplyCount();
+
+    /**
+     * <pre>
+     *被点赞数 //有值
+     * </pre>
+     *
+     * <code>int32 up_count = 8;</code>
+     * @return The upCount.
+     */
+    int getUpCount();
+
+    /**
+     * <pre>
+     * 使用Channel替代
+     * </pre>
+     *
+     * <code>string channel_id = 10 [deprecated = true];</code>
+     * @deprecated
+     * @return The channelId.
+     */
+    @Deprecated String getChannelId();
+    /**
+     * <pre>
+     * 使用Channel替代
+     * </pre>
+     *
+     * <code>string channel_id = 10 [deprecated = true];</code>
+     * @deprecated
+     * @return The bytes for channelId.
+     */
+    @Deprecated com.google.protobuf.ByteString
+        getChannelIdBytes();
+
+    /**
+     * <pre>
+     * 使用Room替代
+     * </pre>
+     *
+     * <code>string room_id = 11 [deprecated = true];</code>
+     * @deprecated
+     * @return The roomId.
+     */
+    @Deprecated String getRoomId();
+    /**
+     * <pre>
+     * 使用Room替代
+     * </pre>
+     *
+     * <code>string room_id = 11 [deprecated = true];</code>
+     * @deprecated
+     * @return The bytes for roomId.
+     */
+    @Deprecated com.google.protobuf.ByteString
+        getRoomIdBytes();
+
+    /**
+     * <pre>
+     * 字符串形式时间戳 // 有值
+     * </pre>
+     *
+     * <code>int64 timestamp = 13;</code>
+     * @return The timestamp.
+     */
+    long getTimestamp();
+
+    /**
+     * <pre>
+     * 未编辑过的消息为0
+     * </pre>
+     *
+     * <code>int64 edit_timestamp = 14;</code>
+     * @return The editTimestamp.
+     */
+    long getEditTimestamp();
+
+    /**
+     * <pre>
+     * 未删除的消息为0
+     * </pre>
+     *
+     * <code>int64 delete_timestamp = 15;</code>
+     * @return The deleteTimestamp.
+     */
+    long getDeleteTimestamp();
+
+    /**
+     * <pre>
+     * repeated Attitude attitudes = 16 [deprecated = true];// 使用reaction_list替代
+     * repeated UserProfile mentions = 17 [deprecated = true]; // 不一定有
+     * </pre>
+     *
+     * <code>string plain_text = 18;</code>
+     * @return The plainText.
+     */
+    String getPlainText();
+    /**
+     * <pre>
+     * repeated Attitude attitudes = 16 [deprecated = true];// 使用reaction_list替代
+     * repeated UserProfile mentions = 17 [deprecated = true]; // 不一定有
+     * </pre>
+     *
+     * <code>string plain_text = 18;</code>
+     * @return The bytes for plainText.
+     */
+    com.google.protobuf.ByteString
+        getPlainTextBytes();
+
+    /**
+     * <pre>
+     * repeated Reaction reactions = 19 [deprecated = true]; // 使用reaction_list替代
+     * </pre>
+     *
+     * <code>.shuo.Message.Room room = 20;</code>
+     * @return Whether the room field is set.
+     */
+    boolean hasRoom();
+    /**
+     * <pre>
+     * repeated Reaction reactions = 19 [deprecated = true]; // 使用reaction_list替代
+     * </pre>
+     *
+     * <code>.shuo.Message.Room room = 20;</code>
+     * @return The room.
+     */
+    Message.Room getRoom();
+    /**
+     * <pre>
+     * repeated Reaction reactions = 19 [deprecated = true]; // 使用reaction_list替代
+     * </pre>
+     *
+     * <code>.shuo.Message.Room room = 20;</code>
+     */
+    Message.RoomOrBuilder getRoomOrBuilder();
+
+    /**
+     * <pre>
+     * 一定有
+     * </pre>
+     *
+     * <code>.shuo.Message.Channel channel = 21;</code>
+     * @return Whether the channel field is set.
+     */
+    boolean hasChannel();
+    /**
+     * <pre>
+     * 一定有
+     * </pre>
+     *
+     * <code>.shuo.Message.Channel channel = 21;</code>
+     * @return The channel.
+     */
+    Message.Channel getChannel();
+    /**
+     * <pre>
+     * 一定有
+     * </pre>
+     *
+     * <code>.shuo.Message.Channel channel = 21;</code>
+     */
+    Message.ChannelOrBuilder getChannelOrBuilder();
+
+    /**
+     * <pre>
+     * repeated LinkMeta link_metas = 22; // 可能空
+     * repeated Image images = 23; // 可能空
+     * </pre>
+     *
+     * <code>string cid = 24;</code>
+     * @return The cid.
+     */
+    String getCid();
+    /**
+     * <pre>
+     * repeated LinkMeta link_metas = 22; // 可能空
+     * repeated Image images = 23; // 可能空
+     * </pre>
+     *
+     * <code>string cid = 24;</code>
+     * @return The bytes for cid.
+     */
+    com.google.protobuf.ByteString
+        getCidBytes();
+
+    /**
+     * <pre>
+     * 使用 message_type 代替
+     * </pre>
+     *
+     * <code>string type = 25 [deprecated = true];</code>
+     * @deprecated
+     * @return The type.
+     */
+    @Deprecated String getType();
+    /**
+     * <pre>
+     * 使用 message_type 代替
+     * </pre>
+     *
+     * <code>string type = 25 [deprecated = true];</code>
+     * @deprecated
+     * @return The bytes for type.
+     */
+    @Deprecated com.google.protobuf.ByteString
+        getTypeBytes();
+
+    /**
+     * <pre>
+     *   - text 文本消息
+     *  - sticker 贴图（表情包）
+     *  - refer_message 分享/转发消息
+     *  - refer_room 分享房间
+     * Sticker sticker = 26;
+     * RoomMember sender = 27;
+     * </pre>
+     *
+     * <code>int32 audit_status = 28;</code>
+     * @return The auditStatus.
+     */
+    int getAuditStatus();
+
+    /**
+     * <pre>
+     * type = refer_message 转发消息
+     * </pre>
+     *
+     * <code>optional .shuo.Message refer_message = 30;</code>
+     * @return Whether the referMessage field is set.
+     */
+    boolean hasReferMessage();
+    /**
+     * <pre>
+     * type = refer_message 转发消息
+     * </pre>
+     *
+     * <code>optional .shuo.Message refer_message = 30;</code>
+     * @return The referMessage.
+     */
+    Message getReferMessage();
+    /**
+     * <pre>
+     * type = refer_message 转发消息
+     * </pre>
+     *
+     * <code>optional .shuo.Message refer_message = 30;</code>
+     */
+    MessageOrBuilder getReferMessageOrBuilder();
+
+    /**
+     * <pre>
+     * type = refer_room 分享房间
+     * optional ReferRoom refer_room = 31;
+     * </pre>
+     *
+     * <code>.shuo.MessageType message_type = 32;</code>
+     * @return The enum numeric value on the wire for messageType.
+     */
+    int getMessageTypeValue();
+    /**
+     * <pre>
+     * type = refer_room 分享房间
+     * optional ReferRoom refer_room = 31;
+     * </pre>
+     *
+     * <code>.shuo.MessageType message_type = 32;</code>
+     * @return The messageType.
+     */
+    com.gomicroim.lib.protos.Constants.MessageType getMessageType();
+
+    /**
+     * <code>.shuo.MessageStatus status = 33;</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    int getStatusValue();
+    /**
+     * <code>.shuo.MessageStatus status = 33;</code>
+     * @return The status.
+     */
+    com.gomicroim.lib.protos.Constants.MessageStatus getStatus();
+
+    /**
+     * <pre>
+     * map&lt;string, MessageMention&gt; mentions_map = 34;
+     * repeated MessageReaction reaction_list = 35;
+     * 消息是否置顶，
+     * </pre>
+     *
+     * <code>bool is_pin = 36;</code>
+     * @return The isPin.
+     */
+    boolean getIsPin();
+
+    /**
+     * <pre>
+     * 置顶时间字符串形式时间戳
+     * </pre>
+     *
+     * <code>int64 pin_timestamp = 38;</code>
+     * @return The pinTimestamp.
+     */
+    long getPinTimestamp();
+
+    /**
+     * <pre>
+     * 展示在"全部消息"
+     * </pre>
+     *
+     * <code>bool show_in_all = 39;</code>
+     * @return The showInAll.
+     */
+    boolean getShowInAll();
+
+    /**
+     * <pre>
+     * 是否热门
+     * </pre>
+     *
+     * <code>bool is_hot = 40;</code>
+     * @return The isHot.
+     */
+    boolean getIsHot();
+
+    /**
+     * <code>bool edited = 41;</code>
+     * @return The edited.
+     */
+    boolean getEdited();
+
+    /**
+     * <pre>
+     * 回复是否需要展示在对应的频道中
+     * </pre>
+     *
+     * <code>bool show_in_channel = 42;</code>
+     * @return The showInChannel.
+     */
+    boolean getShowInChannel();
+
+    /**
+     * <pre>
+     * optional ReferChannel refer_channel = 43;
+     * </pre>
+     *
+     * <code>bool private_channel = 44;</code>
+     * @return The privateChannel.
+     */
+    boolean getPrivateChannel();
+
+    /**
+     * <pre>
+     * 是否临时聊天
+     * </pre>
+     *
+     * <code>bool tmp_chat = 45;</code>
+     * @return The tmpChat.
+     */
+    boolean getTmpChat();
+
+    /**
+     * <pre>
+     * optional ReferTeam refer_team = 46;
+     * RoomMemberLevelResp memberLevel = 47; //用户房间内的等级
+     * </pre>
+     *
+     * <code>bool show_in_chat_list = 48;</code>
+     * @return The showInChatList.
+     */
+    boolean getShowInChatList();
+
+    /**
+     * <pre>
+     *仅用于本地每次标识
+     * </pre>
+     *
+     * <code>string local_identical = 52;</code>
+     * @return The localIdentical.
+     */
+    String getLocalIdentical();
+    /**
+     * <pre>
+     *仅用于本地每次标识
+     * </pre>
+     *
+     * <code>string local_identical = 52;</code>
+     * @return The bytes for localIdentical.
+     */
+    com.google.protobuf.ByteString
+        getLocalIdenticalBytes();
+
+    /**
+     * <code>.shuo.Message.LevelUp level_up = 53;</code>
+     * @return Whether the levelUp field is set.
+     */
+    boolean hasLevelUp();
+    /**
+     * <code>.shuo.Message.LevelUp level_up = 53;</code>
+     * @return The levelUp.
+     */
+    Message.LevelUp getLevelUp();
+    /**
+     * <code>.shuo.Message.LevelUp level_up = 53;</code>
+     */
+    Message.LevelUpOrBuilder getLevelUpOrBuilder();
+
+    /**
+     * <pre>
+     * optional PlaymateCard playmate_card = 56; // 玩伴卡
+     * </pre>
+     *
+     * <code>bool is_auto = 57;</code>
+     * @return The isAuto.
+     */
+    boolean getIsAuto();
+  }
+  /**
+   * <pre>
+   * 消息
+   * </pre>
+   *
+   * Protobuf type {@code shuo.Message}
+   */
+  public static final class Message extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:shuo.Message)
+      MessageOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Message.newBuilder() to construct.
+    private Message(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Message() {
+      id_ = "";
+      content_ = "";
+      mention_ = "";
+      rootId_ = "";
+      replyId_ = "";
+      channelId_ = "";
+      roomId_ = "";
+      plainText_ = "";
+      cid_ = "";
+      type_ = "";
+      messageType_ = 0;
+      status_ = 0;
+      localIdentical_ = "";
+    }
+
+    @Override
+    @SuppressWarnings({"unused"})
+    protected Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Message();
+    }
+
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Message(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 16: {
+
+              userId_ = input.readInt64();
+              break;
+            }
+            case 26: {
+              String s = input.readStringRequireUtf8();
+
+              content_ = s;
+              break;
+            }
+            case 34: {
+              String s = input.readStringRequireUtf8();
+
+              mention_ = s;
+              break;
+            }
+            case 42: {
+              String s = input.readStringRequireUtf8();
+
+              rootId_ = s;
+              break;
+            }
+            case 50: {
+              String s = input.readStringRequireUtf8();
+
+              replyId_ = s;
+              break;
+            }
+            case 56: {
+
+              replyCount_ = input.readInt32();
+              break;
+            }
+            case 64: {
+
+              upCount_ = input.readInt32();
+              break;
+            }
+            case 82: {
+              String s = input.readStringRequireUtf8();
+
+              channelId_ = s;
+              break;
+            }
+            case 90: {
+              String s = input.readStringRequireUtf8();
+
+              roomId_ = s;
+              break;
+            }
+            case 104: {
+
+              timestamp_ = input.readInt64();
+              break;
+            }
+            case 112: {
+
+              editTimestamp_ = input.readInt64();
+              break;
+            }
+            case 120: {
+
+              deleteTimestamp_ = input.readInt64();
+              break;
+            }
+            case 146: {
+              String s = input.readStringRequireUtf8();
+
+              plainText_ = s;
+              break;
+            }
+            case 162: {
+              Room.Builder subBuilder = null;
+              if (room_ != null) {
+                subBuilder = room_.toBuilder();
+              }
+              room_ = input.readMessage(Room.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(room_);
+                room_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 170: {
+              Channel.Builder subBuilder = null;
+              if (channel_ != null) {
+                subBuilder = channel_.toBuilder();
+              }
+              channel_ = input.readMessage(Channel.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(channel_);
+                channel_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 194: {
+              String s = input.readStringRequireUtf8();
+
+              cid_ = s;
+              break;
+            }
+            case 202: {
+              String s = input.readStringRequireUtf8();
+
+              type_ = s;
+              break;
+            }
+            case 224: {
+
+              auditStatus_ = input.readInt32();
+              break;
+            }
+            case 242: {
+              Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) != 0)) {
+                subBuilder = referMessage_.toBuilder();
+              }
+              referMessage_ = input.readMessage(Message.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(referMessage_);
+                referMessage_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            case 256: {
+              int rawValue = input.readEnum();
+
+              messageType_ = rawValue;
+              break;
+            }
+            case 264: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+            case 288: {
+
+              isPin_ = input.readBool();
+              break;
+            }
+            case 304: {
+
+              pinTimestamp_ = input.readInt64();
+              break;
+            }
+            case 312: {
+
+              showInAll_ = input.readBool();
+              break;
+            }
+            case 320: {
+
+              isHot_ = input.readBool();
+              break;
+            }
+            case 328: {
+
+              edited_ = input.readBool();
+              break;
+            }
+            case 336: {
+
+              showInChannel_ = input.readBool();
+              break;
+            }
+            case 352: {
+
+              privateChannel_ = input.readBool();
+              break;
+            }
+            case 360: {
+
+              tmpChat_ = input.readBool();
+              break;
+            }
+            case 384: {
+
+              showInChatList_ = input.readBool();
+              break;
+            }
+            case 418: {
+              String s = input.readStringRequireUtf8();
+
+              localIdentical_ = s;
+              break;
+            }
+            case 426: {
+              LevelUp.Builder subBuilder = null;
+              if (levelUp_ != null) {
+                subBuilder = levelUp_.toBuilder();
+              }
+              levelUp_ = input.readMessage(LevelUp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(levelUp_);
+                levelUp_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 456: {
+
+              isAuto_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return Websocket.internal_static_shuo_Message_descriptor;
+    }
+
+    @Override
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return Websocket.internal_static_shuo_Message_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              Message.class, Builder.class);
+    }
+
+    public interface RoomOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:shuo.Message.Room)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>string room_id = 1;</code>
+       * @return The roomId.
+       */
+      String getRoomId();
+      /**
+       * <code>string room_id = 1;</code>
+       * @return The bytes for roomId.
+       */
+      com.google.protobuf.ByteString
+          getRoomIdBytes();
+
+      /**
+       * <code>string room_name = 2;</code>
+       * @return The roomName.
+       */
+      String getRoomName();
+      /**
+       * <code>string room_name = 2;</code>
+       * @return The bytes for roomName.
+       */
+      com.google.protobuf.ByteString
+          getRoomNameBytes();
+
+      /**
+       * <pre>
+       * Image icon = 3;
+       * repeated RoomTag game_tags = 4;
+       * </pre>
+       *
+       * <code>string intro = 5;</code>
+       * @return The intro.
+       */
+      String getIntro();
+      /**
+       * <pre>
+       * Image icon = 3;
+       * repeated RoomTag game_tags = 4;
+       * </pre>
+       *
+       * <code>string intro = 5;</code>
+       * @return The bytes for intro.
+       */
+      com.google.protobuf.ByteString
+          getIntroBytes();
+
+      /**
+       * <pre>
+       * 主题色 // argb 十进制 注意有a
+       * </pre>
+       *
+       * <code>int64 primary = 6;</code>
+       * @return The primary.
+       */
+      long getPrimary();
+    }
+    /**
+     * Protobuf type {@code shuo.Message.Room}
+     */
+    public static final class Room extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:shuo.Message.Room)
+        RoomOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use Room.newBuilder() to construct.
+      private Room(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private Room() {
+        roomId_ = "";
+        roomName_ = "";
+        intro_ = "";
+      }
+
+      @Override
+      @SuppressWarnings({"unused"})
+      protected Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new Room();
+      }
+
+      @Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private Room(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                String s = input.readStringRequireUtf8();
+
+                roomId_ = s;
+                break;
+              }
+              case 18: {
+                String s = input.readStringRequireUtf8();
+
+                roomName_ = s;
+                break;
+              }
+              case 42: {
+                String s = input.readStringRequireUtf8();
+
+                intro_ = s;
+                break;
+              }
+              case 48: {
+
+                primary_ = input.readInt64();
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return Websocket.internal_static_shuo_Message_Room_descriptor;
+      }
+
+      @Override
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return Websocket.internal_static_shuo_Message_Room_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Room.class, Builder.class);
+      }
+
+      public static final int ROOM_ID_FIELD_NUMBER = 1;
+      private volatile Object roomId_;
+      /**
+       * <code>string room_id = 1;</code>
+       * @return The roomId.
+       */
+      @Override
+      public String getRoomId() {
+        Object ref = roomId_;
+        if (ref instanceof String) {
+          return (String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          roomId_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string room_id = 1;</code>
+       * @return The bytes for roomId.
+       */
+      @Override
+      public com.google.protobuf.ByteString
+          getRoomIdBytes() {
+        Object ref = roomId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          roomId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int ROOM_NAME_FIELD_NUMBER = 2;
+      private volatile Object roomName_;
+      /**
+       * <code>string room_name = 2;</code>
+       * @return The roomName.
+       */
+      @Override
+      public String getRoomName() {
+        Object ref = roomName_;
+        if (ref instanceof String) {
+          return (String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          roomName_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string room_name = 2;</code>
+       * @return The bytes for roomName.
+       */
+      @Override
+      public com.google.protobuf.ByteString
+          getRoomNameBytes() {
+        Object ref = roomName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          roomName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int INTRO_FIELD_NUMBER = 5;
+      private volatile Object intro_;
+      /**
+       * <pre>
+       * Image icon = 3;
+       * repeated RoomTag game_tags = 4;
+       * </pre>
+       *
+       * <code>string intro = 5;</code>
+       * @return The intro.
+       */
+      @Override
+      public String getIntro() {
+        Object ref = intro_;
+        if (ref instanceof String) {
+          return (String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          intro_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * Image icon = 3;
+       * repeated RoomTag game_tags = 4;
+       * </pre>
+       *
+       * <code>string intro = 5;</code>
+       * @return The bytes for intro.
+       */
+      @Override
+      public com.google.protobuf.ByteString
+          getIntroBytes() {
+        Object ref = intro_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          intro_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int PRIMARY_FIELD_NUMBER = 6;
+      private long primary_;
+      /**
+       * <pre>
+       * 主题色 // argb 十进制 注意有a
+       * </pre>
+       *
+       * <code>int64 primary = 6;</code>
+       * @return The primary.
+       */
+      @Override
+      public long getPrimary() {
+        return primary_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roomId_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, roomId_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roomName_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, roomName_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(intro_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 5, intro_);
+        }
+        if (primary_ != 0L) {
+          output.writeInt64(6, primary_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roomId_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, roomId_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roomName_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, roomName_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(intro_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, intro_);
+        }
+        if (primary_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt64Size(6, primary_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @Override
+      public boolean equals(final Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof Room)) {
+          return super.equals(obj);
+        }
+        Room other = (Room) obj;
+
+        if (!getRoomId()
+            .equals(other.getRoomId())) return false;
+        if (!getRoomName()
+            .equals(other.getRoomName())) return false;
+        if (!getIntro()
+            .equals(other.getIntro())) return false;
+        if (getPrimary()
+            != other.getPrimary()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getRoomId().hashCode();
+        hash = (37 * hash) + ROOM_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getRoomName().hashCode();
+        hash = (37 * hash) + INTRO_FIELD_NUMBER;
+        hash = (53 * hash) + getIntro().hashCode();
+        hash = (37 * hash) + PRIMARY_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getPrimary());
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static Room parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static Room parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static Room parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static Room parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static Room parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static Room parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static Room parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static Room parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static Room parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static Room parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static Room parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static Room parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(Room prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @Override
+      protected Builder newBuilderForType(
+          BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code shuo.Message.Room}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:shuo.Message.Room)
+          RoomOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return Websocket.internal_static_shuo_Message_Room_descriptor;
+        }
+
+        @Override
+        protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return Websocket.internal_static_shuo_Message_Room_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  Room.class, Builder.class);
+        }
+
+        // Construct using com.gomicroim.lib.protos.websocket.Websocket.Message.Room.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @Override
+        public Builder clear() {
+          super.clear();
+          roomId_ = "";
+
+          roomName_ = "";
+
+          intro_ = "";
+
+          primary_ = 0L;
+
+          return this;
+        }
+
+        @Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return Websocket.internal_static_shuo_Message_Room_descriptor;
+        }
+
+        @Override
+        public Room getDefaultInstanceForType() {
+          return Room.getDefaultInstance();
+        }
+
+        @Override
+        public Room build() {
+          Room result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @Override
+        public Room buildPartial() {
+          Room result = new Room(this);
+          result.roomId_ = roomId_;
+          result.roomName_ = roomName_;
+          result.intro_ = intro_;
+          result.primary_ = primary_;
+          onBuilt();
+          return result;
+        }
+
+        @Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return super.setField(field, value);
+        }
+        @Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof Room) {
+            return mergeFrom((Room)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(Room other) {
+          if (other == Room.getDefaultInstance()) return this;
+          if (!other.getRoomId().isEmpty()) {
+            roomId_ = other.roomId_;
+            onChanged();
+          }
+          if (!other.getRoomName().isEmpty()) {
+            roomName_ = other.roomName_;
+            onChanged();
+          }
+          if (!other.getIntro().isEmpty()) {
+            intro_ = other.intro_;
+            onChanged();
+          }
+          if (other.getPrimary() != 0L) {
+            setPrimary(other.getPrimary());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          Room parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (Room) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private Object roomId_ = "";
+        /**
+         * <code>string room_id = 1;</code>
+         * @return The roomId.
+         */
+        public String getRoomId() {
+          Object ref = roomId_;
+          if (!(ref instanceof String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            String s = bs.toStringUtf8();
+            roomId_ = s;
+            return s;
+          } else {
+            return (String) ref;
+          }
+        }
+        /**
+         * <code>string room_id = 1;</code>
+         * @return The bytes for roomId.
+         */
+        public com.google.protobuf.ByteString
+            getRoomIdBytes() {
+          Object ref = roomId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (String) ref);
+            roomId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string room_id = 1;</code>
+         * @param value The roomId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRoomId(
+            String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          roomId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string room_id = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearRoomId() {
+          
+          roomId_ = getDefaultInstance().getRoomId();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string room_id = 1;</code>
+         * @param value The bytes for roomId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRoomIdBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          roomId_ = value;
+          onChanged();
+          return this;
+        }
+
+        private Object roomName_ = "";
+        /**
+         * <code>string room_name = 2;</code>
+         * @return The roomName.
+         */
+        public String getRoomName() {
+          Object ref = roomName_;
+          if (!(ref instanceof String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            String s = bs.toStringUtf8();
+            roomName_ = s;
+            return s;
+          } else {
+            return (String) ref;
+          }
+        }
+        /**
+         * <code>string room_name = 2;</code>
+         * @return The bytes for roomName.
+         */
+        public com.google.protobuf.ByteString
+            getRoomNameBytes() {
+          Object ref = roomName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (String) ref);
+            roomName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string room_name = 2;</code>
+         * @param value The roomName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRoomName(
+            String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          roomName_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string room_name = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearRoomName() {
+          
+          roomName_ = getDefaultInstance().getRoomName();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string room_name = 2;</code>
+         * @param value The bytes for roomName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRoomNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          roomName_ = value;
+          onChanged();
+          return this;
+        }
+
+        private Object intro_ = "";
+        /**
+         * <pre>
+         * Image icon = 3;
+         * repeated RoomTag game_tags = 4;
+         * </pre>
+         *
+         * <code>string intro = 5;</code>
+         * @return The intro.
+         */
+        public String getIntro() {
+          Object ref = intro_;
+          if (!(ref instanceof String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            String s = bs.toStringUtf8();
+            intro_ = s;
+            return s;
+          } else {
+            return (String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Image icon = 3;
+         * repeated RoomTag game_tags = 4;
+         * </pre>
+         *
+         * <code>string intro = 5;</code>
+         * @return The bytes for intro.
+         */
+        public com.google.protobuf.ByteString
+            getIntroBytes() {
+          Object ref = intro_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (String) ref);
+            intro_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * Image icon = 3;
+         * repeated RoomTag game_tags = 4;
+         * </pre>
+         *
+         * <code>string intro = 5;</code>
+         * @param value The intro to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIntro(
+            String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          intro_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Image icon = 3;
+         * repeated RoomTag game_tags = 4;
+         * </pre>
+         *
+         * <code>string intro = 5;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearIntro() {
+          
+          intro_ = getDefaultInstance().getIntro();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * Image icon = 3;
+         * repeated RoomTag game_tags = 4;
+         * </pre>
+         *
+         * <code>string intro = 5;</code>
+         * @param value The bytes for intro to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIntroBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          intro_ = value;
+          onChanged();
+          return this;
+        }
+
+        private long primary_ ;
+        /**
+         * <pre>
+         * 主题色 // argb 十进制 注意有a
+         * </pre>
+         *
+         * <code>int64 primary = 6;</code>
+         * @return The primary.
+         */
+        @Override
+        public long getPrimary() {
+          return primary_;
+        }
+        /**
+         * <pre>
+         * 主题色 // argb 十进制 注意有a
+         * </pre>
+         *
+         * <code>int64 primary = 6;</code>
+         * @param value The primary to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPrimary(long value) {
+          
+          primary_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * 主题色 // argb 十进制 注意有a
+         * </pre>
+         *
+         * <code>int64 primary = 6;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearPrimary() {
+          
+          primary_ = 0L;
+          onChanged();
+          return this;
+        }
+        @Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:shuo.Message.Room)
+      }
+
+      // @@protoc_insertion_point(class_scope:shuo.Message.Room)
+      private static final Room DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new Room();
+      }
+
+      public static Room getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Room>
+          PARSER = new com.google.protobuf.AbstractParser<Room>() {
+        @Override
+        public Room parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Room(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<Room> parser() {
+        return PARSER;
+      }
+
+      @Override
+      public com.google.protobuf.Parser<Room> getParserForType() {
+        return PARSER;
+      }
+
+      @Override
+      public Room getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public interface ChannelOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:shuo.Message.Channel)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>string channel_id = 1;</code>
+       * @return The channelId.
+       */
+      String getChannelId();
+      /**
+       * <code>string channel_id = 1;</code>
+       * @return The bytes for channelId.
+       */
+      com.google.protobuf.ByteString
+          getChannelIdBytes();
+
+      /**
+       * <code>string channel_name = 2;</code>
+       * @return The channelName.
+       */
+      String getChannelName();
+      /**
+       * <code>string channel_name = 2;</code>
+       * @return The bytes for channelName.
+       */
+      com.google.protobuf.ByteString
+          getChannelNameBytes();
+
+      /**
+       * <code>bool is_main = 3;</code>
+       * @return The isMain.
+       */
+      boolean getIsMain();
+
+      /**
+       * <code>.shuo.ChannelType type = 4;</code>
+       * @return The enum numeric value on the wire for type.
+       */
+      int getTypeValue();
+      /**
+       * <code>.shuo.ChannelType type = 4;</code>
+       * @return The type.
+       */
+      com.gomicroim.lib.protos.Constants.ChannelType getType();
+
+      /**
+       * <code>.shuo.ChannelStatus status = 5;</code>
+       * @return The enum numeric value on the wire for status.
+       */
+      int getStatusValue();
+      /**
+       * <code>.shuo.ChannelStatus status = 5;</code>
+       * @return The status.
+       */
+      com.gomicroim.lib.protos.Constants.ChannelStatus getStatus();
+    }
+    /**
+     * Protobuf type {@code shuo.Message.Channel}
+     */
+    public static final class Channel extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:shuo.Message.Channel)
+        ChannelOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use Channel.newBuilder() to construct.
+      private Channel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private Channel() {
+        channelId_ = "";
+        channelName_ = "";
+        type_ = 0;
+        status_ = 0;
+      }
+
+      @Override
+      @SuppressWarnings({"unused"})
+      protected Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new Channel();
+      }
+
+      @Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private Channel(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                String s = input.readStringRequireUtf8();
+
+                channelId_ = s;
+                break;
+              }
+              case 18: {
+                String s = input.readStringRequireUtf8();
+
+                channelName_ = s;
+                break;
+              }
+              case 24: {
+
+                isMain_ = input.readBool();
+                break;
+              }
+              case 32: {
+                int rawValue = input.readEnum();
+
+                type_ = rawValue;
+                break;
+              }
+              case 40: {
+                int rawValue = input.readEnum();
+
+                status_ = rawValue;
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return Websocket.internal_static_shuo_Message_Channel_descriptor;
+      }
+
+      @Override
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return Websocket.internal_static_shuo_Message_Channel_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Channel.class, Builder.class);
+      }
+
+      public static final int CHANNEL_ID_FIELD_NUMBER = 1;
+      private volatile Object channelId_;
+      /**
+       * <code>string channel_id = 1;</code>
+       * @return The channelId.
+       */
+      @Override
+      public String getChannelId() {
+        Object ref = channelId_;
+        if (ref instanceof String) {
+          return (String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          channelId_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string channel_id = 1;</code>
+       * @return The bytes for channelId.
+       */
+      @Override
+      public com.google.protobuf.ByteString
+          getChannelIdBytes() {
+        Object ref = channelId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          channelId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int CHANNEL_NAME_FIELD_NUMBER = 2;
+      private volatile Object channelName_;
+      /**
+       * <code>string channel_name = 2;</code>
+       * @return The channelName.
+       */
+      @Override
+      public String getChannelName() {
+        Object ref = channelName_;
+        if (ref instanceof String) {
+          return (String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          channelName_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string channel_name = 2;</code>
+       * @return The bytes for channelName.
+       */
+      @Override
+      public com.google.protobuf.ByteString
+          getChannelNameBytes() {
+        Object ref = channelName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          channelName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int IS_MAIN_FIELD_NUMBER = 3;
+      private boolean isMain_;
+      /**
+       * <code>bool is_main = 3;</code>
+       * @return The isMain.
+       */
+      @Override
+      public boolean getIsMain() {
+        return isMain_;
+      }
+
+      public static final int TYPE_FIELD_NUMBER = 4;
+      private int type_;
+      /**
+       * <code>.shuo.ChannelType type = 4;</code>
+       * @return The enum numeric value on the wire for type.
+       */
+      @Override public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <code>.shuo.ChannelType type = 4;</code>
+       * @return The type.
+       */
+      @Override public com.gomicroim.lib.protos.Constants.ChannelType getType() {
+        @SuppressWarnings("deprecation")
+        com.gomicroim.lib.protos.Constants.ChannelType result = com.gomicroim.lib.protos.Constants.ChannelType.valueOf(type_);
+        return result == null ? com.gomicroim.lib.protos.Constants.ChannelType.UNRECOGNIZED : result;
+      }
+
+      public static final int STATUS_FIELD_NUMBER = 5;
+      private int status_;
+      /**
+       * <code>.shuo.ChannelStatus status = 5;</code>
+       * @return The enum numeric value on the wire for status.
+       */
+      @Override public int getStatusValue() {
+        return status_;
+      }
+      /**
+       * <code>.shuo.ChannelStatus status = 5;</code>
+       * @return The status.
+       */
+      @Override public com.gomicroim.lib.protos.Constants.ChannelStatus getStatus() {
+        @SuppressWarnings("deprecation")
+        com.gomicroim.lib.protos.Constants.ChannelStatus result = com.gomicroim.lib.protos.Constants.ChannelStatus.valueOf(status_);
+        return result == null ? com.gomicroim.lib.protos.Constants.ChannelStatus.UNRECOGNIZED : result;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channelId_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, channelId_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channelName_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, channelName_);
+        }
+        if (isMain_ != false) {
+          output.writeBool(3, isMain_);
+        }
+        if (type_ != com.gomicroim.lib.protos.Constants.ChannelType.ChannelTypeUndefined.getNumber()) {
+          output.writeEnum(4, type_);
+        }
+        if (status_ != com.gomicroim.lib.protos.Constants.ChannelStatus.ChannelStatusUndefined.getNumber()) {
+          output.writeEnum(5, status_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channelId_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, channelId_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channelName_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, channelName_);
+        }
+        if (isMain_ != false) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBoolSize(3, isMain_);
+        }
+        if (type_ != com.gomicroim.lib.protos.Constants.ChannelType.ChannelTypeUndefined.getNumber()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(4, type_);
+        }
+        if (status_ != com.gomicroim.lib.protos.Constants.ChannelStatus.ChannelStatusUndefined.getNumber()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(5, status_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @Override
+      public boolean equals(final Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof Channel)) {
+          return super.equals(obj);
+        }
+        Channel other = (Channel) obj;
+
+        if (!getChannelId()
+            .equals(other.getChannelId())) return false;
+        if (!getChannelName()
+            .equals(other.getChannelName())) return false;
+        if (getIsMain()
+            != other.getIsMain()) return false;
+        if (type_ != other.type_) return false;
+        if (status_ != other.status_) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + CHANNEL_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getChannelId().hashCode();
+        hash = (37 * hash) + CHANNEL_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getChannelName().hashCode();
+        hash = (37 * hash) + IS_MAIN_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getIsMain());
+        hash = (37 * hash) + TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + type_;
+        hash = (37 * hash) + STATUS_FIELD_NUMBER;
+        hash = (53 * hash) + status_;
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static Channel parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static Channel parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static Channel parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static Channel parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static Channel parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static Channel parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static Channel parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static Channel parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static Channel parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static Channel parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static Channel parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static Channel parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(Channel prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @Override
+      protected Builder newBuilderForType(
+          BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code shuo.Message.Channel}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:shuo.Message.Channel)
+          ChannelOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return Websocket.internal_static_shuo_Message_Channel_descriptor;
+        }
+
+        @Override
+        protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return Websocket.internal_static_shuo_Message_Channel_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  Channel.class, Builder.class);
+        }
+
+        // Construct using com.gomicroim.lib.protos.websocket.Websocket.Message.Channel.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @Override
+        public Builder clear() {
+          super.clear();
+          channelId_ = "";
+
+          channelName_ = "";
+
+          isMain_ = false;
+
+          type_ = 0;
+
+          status_ = 0;
+
+          return this;
+        }
+
+        @Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return Websocket.internal_static_shuo_Message_Channel_descriptor;
+        }
+
+        @Override
+        public Channel getDefaultInstanceForType() {
+          return Channel.getDefaultInstance();
+        }
+
+        @Override
+        public Channel build() {
+          Channel result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @Override
+        public Channel buildPartial() {
+          Channel result = new Channel(this);
+          result.channelId_ = channelId_;
+          result.channelName_ = channelName_;
+          result.isMain_ = isMain_;
+          result.type_ = type_;
+          result.status_ = status_;
+          onBuilt();
+          return result;
+        }
+
+        @Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return super.setField(field, value);
+        }
+        @Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof Channel) {
+            return mergeFrom((Channel)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(Channel other) {
+          if (other == Channel.getDefaultInstance()) return this;
+          if (!other.getChannelId().isEmpty()) {
+            channelId_ = other.channelId_;
+            onChanged();
+          }
+          if (!other.getChannelName().isEmpty()) {
+            channelName_ = other.channelName_;
+            onChanged();
+          }
+          if (other.getIsMain() != false) {
+            setIsMain(other.getIsMain());
+          }
+          if (other.type_ != 0) {
+            setTypeValue(other.getTypeValue());
+          }
+          if (other.status_ != 0) {
+            setStatusValue(other.getStatusValue());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          Channel parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (Channel) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private Object channelId_ = "";
+        /**
+         * <code>string channel_id = 1;</code>
+         * @return The channelId.
+         */
+        public String getChannelId() {
+          Object ref = channelId_;
+          if (!(ref instanceof String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            String s = bs.toStringUtf8();
+            channelId_ = s;
+            return s;
+          } else {
+            return (String) ref;
+          }
+        }
+        /**
+         * <code>string channel_id = 1;</code>
+         * @return The bytes for channelId.
+         */
+        public com.google.protobuf.ByteString
+            getChannelIdBytes() {
+          Object ref = channelId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (String) ref);
+            channelId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string channel_id = 1;</code>
+         * @param value The channelId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setChannelId(
+            String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          channelId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string channel_id = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearChannelId() {
+          
+          channelId_ = getDefaultInstance().getChannelId();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string channel_id = 1;</code>
+         * @param value The bytes for channelId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setChannelIdBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          channelId_ = value;
+          onChanged();
+          return this;
+        }
+
+        private Object channelName_ = "";
+        /**
+         * <code>string channel_name = 2;</code>
+         * @return The channelName.
+         */
+        public String getChannelName() {
+          Object ref = channelName_;
+          if (!(ref instanceof String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            String s = bs.toStringUtf8();
+            channelName_ = s;
+            return s;
+          } else {
+            return (String) ref;
+          }
+        }
+        /**
+         * <code>string channel_name = 2;</code>
+         * @return The bytes for channelName.
+         */
+        public com.google.protobuf.ByteString
+            getChannelNameBytes() {
+          Object ref = channelName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (String) ref);
+            channelName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string channel_name = 2;</code>
+         * @param value The channelName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setChannelName(
+            String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          channelName_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string channel_name = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearChannelName() {
+          
+          channelName_ = getDefaultInstance().getChannelName();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string channel_name = 2;</code>
+         * @param value The bytes for channelName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setChannelNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          channelName_ = value;
+          onChanged();
+          return this;
+        }
+
+        private boolean isMain_ ;
+        /**
+         * <code>bool is_main = 3;</code>
+         * @return The isMain.
+         */
+        @Override
+        public boolean getIsMain() {
+          return isMain_;
+        }
+        /**
+         * <code>bool is_main = 3;</code>
+         * @param value The isMain to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIsMain(boolean value) {
+          
+          isMain_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>bool is_main = 3;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearIsMain() {
+          
+          isMain_ = false;
+          onChanged();
+          return this;
+        }
+
+        private int type_ = 0;
+        /**
+         * <code>.shuo.ChannelType type = 4;</code>
+         * @return The enum numeric value on the wire for type.
+         */
+        @Override public int getTypeValue() {
+          return type_;
+        }
+        /**
+         * <code>.shuo.ChannelType type = 4;</code>
+         * @param value The enum numeric value on the wire for type to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTypeValue(int value) {
+          
+          type_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>.shuo.ChannelType type = 4;</code>
+         * @return The type.
+         */
+        @Override
+        public com.gomicroim.lib.protos.Constants.ChannelType getType() {
+          @SuppressWarnings("deprecation")
+          com.gomicroim.lib.protos.Constants.ChannelType result = com.gomicroim.lib.protos.Constants.ChannelType.valueOf(type_);
+          return result == null ? com.gomicroim.lib.protos.Constants.ChannelType.UNRECOGNIZED : result;
+        }
+        /**
+         * <code>.shuo.ChannelType type = 4;</code>
+         * @param value The type to set.
+         * @return This builder for chaining.
+         */
+        public Builder setType(com.gomicroim.lib.protos.Constants.ChannelType value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          
+          type_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>.shuo.ChannelType type = 4;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearType() {
+          
+          type_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int status_ = 0;
+        /**
+         * <code>.shuo.ChannelStatus status = 5;</code>
+         * @return The enum numeric value on the wire for status.
+         */
+        @Override public int getStatusValue() {
+          return status_;
+        }
+        /**
+         * <code>.shuo.ChannelStatus status = 5;</code>
+         * @param value The enum numeric value on the wire for status to set.
+         * @return This builder for chaining.
+         */
+        public Builder setStatusValue(int value) {
+          
+          status_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>.shuo.ChannelStatus status = 5;</code>
+         * @return The status.
+         */
+        @Override
+        public com.gomicroim.lib.protos.Constants.ChannelStatus getStatus() {
+          @SuppressWarnings("deprecation")
+          com.gomicroim.lib.protos.Constants.ChannelStatus result = com.gomicroim.lib.protos.Constants.ChannelStatus.valueOf(status_);
+          return result == null ? com.gomicroim.lib.protos.Constants.ChannelStatus.UNRECOGNIZED : result;
+        }
+        /**
+         * <code>.shuo.ChannelStatus status = 5;</code>
+         * @param value The status to set.
+         * @return This builder for chaining.
+         */
+        public Builder setStatus(com.gomicroim.lib.protos.Constants.ChannelStatus value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          
+          status_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>.shuo.ChannelStatus status = 5;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearStatus() {
+          
+          status_ = 0;
+          onChanged();
+          return this;
+        }
+        @Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:shuo.Message.Channel)
+      }
+
+      // @@protoc_insertion_point(class_scope:shuo.Message.Channel)
+      private static final Channel DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new Channel();
+      }
+
+      public static Channel getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Channel>
+          PARSER = new com.google.protobuf.AbstractParser<Channel>() {
+        @Override
+        public Channel parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Channel(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<Channel> parser() {
+        return PARSER;
+      }
+
+      @Override
+      public com.google.protobuf.Parser<Channel> getParserForType() {
+        return PARSER;
+      }
+
+      @Override
+      public Channel getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public interface LevelUpOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:shuo.Message.LevelUp)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>int32 level = 1;</code>
+       * @return The level.
+       */
+      int getLevel();
+
+      /**
+       * <code>string title = 2;</code>
+       * @return The title.
+       */
+      String getTitle();
+      /**
+       * <code>string title = 2;</code>
+       * @return The bytes for title.
+       */
+      com.google.protobuf.ByteString
+          getTitleBytes();
+
+      /**
+       * <code>string plaintext = 3;</code>
+       * @return The plaintext.
+       */
+      String getPlaintext();
+      /**
+       * <code>string plaintext = 3;</code>
+       * @return The bytes for plaintext.
+       */
+      com.google.protobuf.ByteString
+          getPlaintextBytes();
+    }
+    /**
+     * Protobuf type {@code shuo.Message.LevelUp}
+     */
+    public static final class LevelUp extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:shuo.Message.LevelUp)
+        LevelUpOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use LevelUp.newBuilder() to construct.
+      private LevelUp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private LevelUp() {
+        title_ = "";
+        plaintext_ = "";
+      }
+
+      @Override
+      @SuppressWarnings({"unused"})
+      protected Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new LevelUp();
+      }
+
+      @Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private LevelUp(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+
+                level_ = input.readInt32();
+                break;
+              }
+              case 18: {
+                String s = input.readStringRequireUtf8();
+
+                title_ = s;
+                break;
+              }
+              case 26: {
+                String s = input.readStringRequireUtf8();
+
+                plaintext_ = s;
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return Websocket.internal_static_shuo_Message_LevelUp_descriptor;
+      }
+
+      @Override
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return Websocket.internal_static_shuo_Message_LevelUp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                LevelUp.class, Builder.class);
+      }
+
+      public static final int LEVEL_FIELD_NUMBER = 1;
+      private int level_;
+      /**
+       * <code>int32 level = 1;</code>
+       * @return The level.
+       */
+      @Override
+      public int getLevel() {
+        return level_;
+      }
+
+      public static final int TITLE_FIELD_NUMBER = 2;
+      private volatile Object title_;
+      /**
+       * <code>string title = 2;</code>
+       * @return The title.
+       */
+      @Override
+      public String getTitle() {
+        Object ref = title_;
+        if (ref instanceof String) {
+          return (String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          title_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string title = 2;</code>
+       * @return The bytes for title.
+       */
+      @Override
+      public com.google.protobuf.ByteString
+          getTitleBytes() {
+        Object ref = title_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          title_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int PLAINTEXT_FIELD_NUMBER = 3;
+      private volatile Object plaintext_;
+      /**
+       * <code>string plaintext = 3;</code>
+       * @return The plaintext.
+       */
+      @Override
+      public String getPlaintext() {
+        Object ref = plaintext_;
+        if (ref instanceof String) {
+          return (String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          plaintext_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string plaintext = 3;</code>
+       * @return The bytes for plaintext.
+       */
+      @Override
+      public com.google.protobuf.ByteString
+          getPlaintextBytes() {
+        Object ref = plaintext_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          plaintext_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (level_ != 0) {
+          output.writeInt32(1, level_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, title_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(plaintext_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, plaintext_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (level_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(1, level_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, title_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(plaintext_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, plaintext_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @Override
+      public boolean equals(final Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof LevelUp)) {
+          return super.equals(obj);
+        }
+        LevelUp other = (LevelUp) obj;
+
+        if (getLevel()
+            != other.getLevel()) return false;
+        if (!getTitle()
+            .equals(other.getTitle())) return false;
+        if (!getPlaintext()
+            .equals(other.getPlaintext())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + LEVEL_FIELD_NUMBER;
+        hash = (53 * hash) + getLevel();
+        hash = (37 * hash) + TITLE_FIELD_NUMBER;
+        hash = (53 * hash) + getTitle().hashCode();
+        hash = (37 * hash) + PLAINTEXT_FIELD_NUMBER;
+        hash = (53 * hash) + getPlaintext().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static LevelUp parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static LevelUp parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static LevelUp parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static LevelUp parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static LevelUp parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static LevelUp parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static LevelUp parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static LevelUp parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static LevelUp parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static LevelUp parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static LevelUp parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static LevelUp parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(LevelUp prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @Override
+      protected Builder newBuilderForType(
+          BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code shuo.Message.LevelUp}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:shuo.Message.LevelUp)
+          LevelUpOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return Websocket.internal_static_shuo_Message_LevelUp_descriptor;
+        }
+
+        @Override
+        protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return Websocket.internal_static_shuo_Message_LevelUp_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  LevelUp.class, Builder.class);
+        }
+
+        // Construct using com.gomicroim.lib.protos.websocket.Websocket.Message.LevelUp.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @Override
+        public Builder clear() {
+          super.clear();
+          level_ = 0;
+
+          title_ = "";
+
+          plaintext_ = "";
+
+          return this;
+        }
+
+        @Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return Websocket.internal_static_shuo_Message_LevelUp_descriptor;
+        }
+
+        @Override
+        public LevelUp getDefaultInstanceForType() {
+          return LevelUp.getDefaultInstance();
+        }
+
+        @Override
+        public LevelUp build() {
+          LevelUp result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @Override
+        public LevelUp buildPartial() {
+          LevelUp result = new LevelUp(this);
+          result.level_ = level_;
+          result.title_ = title_;
+          result.plaintext_ = plaintext_;
+          onBuilt();
+          return result;
+        }
+
+        @Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return super.setField(field, value);
+        }
+        @Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof LevelUp) {
+            return mergeFrom((LevelUp)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(LevelUp other) {
+          if (other == LevelUp.getDefaultInstance()) return this;
+          if (other.getLevel() != 0) {
+            setLevel(other.getLevel());
+          }
+          if (!other.getTitle().isEmpty()) {
+            title_ = other.title_;
+            onChanged();
+          }
+          if (!other.getPlaintext().isEmpty()) {
+            plaintext_ = other.plaintext_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          LevelUp parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (LevelUp) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private int level_ ;
+        /**
+         * <code>int32 level = 1;</code>
+         * @return The level.
+         */
+        @Override
+        public int getLevel() {
+          return level_;
+        }
+        /**
+         * <code>int32 level = 1;</code>
+         * @param value The level to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLevel(int value) {
+          
+          level_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>int32 level = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearLevel() {
+          
+          level_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private Object title_ = "";
+        /**
+         * <code>string title = 2;</code>
+         * @return The title.
+         */
+        public String getTitle() {
+          Object ref = title_;
+          if (!(ref instanceof String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            String s = bs.toStringUtf8();
+            title_ = s;
+            return s;
+          } else {
+            return (String) ref;
+          }
+        }
+        /**
+         * <code>string title = 2;</code>
+         * @return The bytes for title.
+         */
+        public com.google.protobuf.ByteString
+            getTitleBytes() {
+          Object ref = title_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (String) ref);
+            title_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string title = 2;</code>
+         * @param value The title to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTitle(
+            String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          title_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string title = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearTitle() {
+          
+          title_ = getDefaultInstance().getTitle();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string title = 2;</code>
+         * @param value The bytes for title to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTitleBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          title_ = value;
+          onChanged();
+          return this;
+        }
+
+        private Object plaintext_ = "";
+        /**
+         * <code>string plaintext = 3;</code>
+         * @return The plaintext.
+         */
+        public String getPlaintext() {
+          Object ref = plaintext_;
+          if (!(ref instanceof String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            String s = bs.toStringUtf8();
+            plaintext_ = s;
+            return s;
+          } else {
+            return (String) ref;
+          }
+        }
+        /**
+         * <code>string plaintext = 3;</code>
+         * @return The bytes for plaintext.
+         */
+        public com.google.protobuf.ByteString
+            getPlaintextBytes() {
+          Object ref = plaintext_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (String) ref);
+            plaintext_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string plaintext = 3;</code>
+         * @param value The plaintext to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPlaintext(
+            String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          plaintext_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string plaintext = 3;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearPlaintext() {
+          
+          plaintext_ = getDefaultInstance().getPlaintext();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string plaintext = 3;</code>
+         * @param value The bytes for plaintext to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPlaintextBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          plaintext_ = value;
+          onChanged();
+          return this;
+        }
+        @Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:shuo.Message.LevelUp)
+      }
+
+      // @@protoc_insertion_point(class_scope:shuo.Message.LevelUp)
+      private static final LevelUp DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new LevelUp();
+      }
+
+      public static LevelUp getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<LevelUp>
+          PARSER = new com.google.protobuf.AbstractParser<LevelUp>() {
+        @Override
+        public LevelUp parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new LevelUp(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<LevelUp> parser() {
+        return PARSER;
+      }
+
+      @Override
+      public com.google.protobuf.Parser<LevelUp> getParserForType() {
+        return PARSER;
+      }
+
+      @Override
+      public LevelUp getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    private int bitField0_;
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile Object id_;
+    /**
+     * <pre>
+     *聊天记录id 一定有值
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     * @return The id.
+     */
+    @Override
+    public String getId() {
+      Object ref = id_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *聊天记录id 一定有值
+     * </pre>
+     *
+     * <code>string id = 1;</code>
+     * @return The bytes for id.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      Object ref = id_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 2;
+    private long userId_;
+    /**
+     * <pre>
+     *发送者 一定有值x
+     * </pre>
+     *
+     * <code>int64 user_id = 2;</code>
+     * @return The userId.
+     */
+    @Override
+    public long getUserId() {
+      return userId_;
+    }
+
+    public static final int CONTENT_FIELD_NUMBER = 3;
+    private volatile Object content_;
+    /**
+     * <pre>
+     *内容 可能为空字符串（图片或表情包时）
+     * </pre>
+     *
+     * <code>string content = 3;</code>
+     * @return The content.
+     */
+    @Override
+    public String getContent() {
+      Object ref = content_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        content_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *内容 可能为空字符串（图片或表情包时）
+     * </pre>
+     *
+     * <code>string content = 3;</code>
+     * @return The bytes for content.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getContentBytes() {
+      Object ref = content_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        content_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MENTION_FIELD_NUMBER = 4;
+    private volatile Object mention_;
+    /**
+     * <pre>
+     *接收者  &#64;user:123 / &#64;channel:all // 和chat接口的mention参数一样
+     * </pre>
+     *
+     * <code>string mention = 4;</code>
+     * @return The mention.
+     */
+    @Override
+    public String getMention() {
+      Object ref = mention_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        mention_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *接收者  &#64;user:123 / &#64;channel:all // 和chat接口的mention参数一样
+     * </pre>
+     *
+     * <code>string mention = 4;</code>
+     * @return The bytes for mention.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getMentionBytes() {
+      Object ref = mention_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        mention_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROOT_ID_FIELD_NUMBER = 5;
+    private volatile Object rootId_;
+    /**
+     * <pre>
+     * 可能为空 当消息是回复时有值
+     * </pre>
+     *
+     * <code>string root_id = 5;</code>
+     * @return The rootId.
+     */
+    @Override
+    public String getRootId() {
+      Object ref = rootId_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        rootId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 可能为空 当消息是回复时有值
+     * </pre>
+     *
+     * <code>string root_id = 5;</code>
+     * @return The bytes for rootId.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getRootIdBytes() {
+      Object ref = rootId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        rootId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REPLY_ID_FIELD_NUMBER = 6;
+    private volatile Object replyId_;
+    /**
+     * <pre>
+     * 可能为空 当消息是回复时有值
+     * </pre>
+     *
+     * <code>string reply_id = 6;</code>
+     * @return The replyId.
+     */
+    @Override
+    public String getReplyId() {
+      Object ref = replyId_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        replyId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 可能为空 当消息是回复时有值
+     * </pre>
+     *
+     * <code>string reply_id = 6;</code>
+     * @return The bytes for replyId.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getReplyIdBytes() {
+      Object ref = replyId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        replyId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REPLY_COUNT_FIELD_NUMBER = 7;
+    private int replyCount_;
+    /**
+     * <pre>
+     *被回复数 // 有值
+     * </pre>
+     *
+     * <code>int32 reply_count = 7;</code>
+     * @return The replyCount.
+     */
+    @Override
+    public int getReplyCount() {
+      return replyCount_;
+    }
+
+    public static final int UP_COUNT_FIELD_NUMBER = 8;
+    private int upCount_;
+    /**
+     * <pre>
+     *被点赞数 //有值
+     * </pre>
+     *
+     * <code>int32 up_count = 8;</code>
+     * @return The upCount.
+     */
+    @Override
+    public int getUpCount() {
+      return upCount_;
+    }
+
+    public static final int CHANNEL_ID_FIELD_NUMBER = 10;
+    private volatile Object channelId_;
+    /**
+     * <pre>
+     * 使用Channel替代
+     * </pre>
+     *
+     * <code>string channel_id = 10 [deprecated = true];</code>
+     * @deprecated
+     * @return The channelId.
+     */
+    @Override
+    @Deprecated public String getChannelId() {
+      Object ref = channelId_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        channelId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 使用Channel替代
+     * </pre>
+     *
+     * <code>string channel_id = 10 [deprecated = true];</code>
+     * @deprecated
+     * @return The bytes for channelId.
+     */
+    @Override
+    @Deprecated public com.google.protobuf.ByteString
+        getChannelIdBytes() {
+      Object ref = channelId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        channelId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROOM_ID_FIELD_NUMBER = 11;
+    private volatile Object roomId_;
+    /**
+     * <pre>
+     * 使用Room替代
+     * </pre>
+     *
+     * <code>string room_id = 11 [deprecated = true];</code>
+     * @deprecated
+     * @return The roomId.
+     */
+    @Override
+    @Deprecated public String getRoomId() {
+      Object ref = roomId_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        roomId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 使用Room替代
+     * </pre>
+     *
+     * <code>string room_id = 11 [deprecated = true];</code>
+     * @deprecated
+     * @return The bytes for roomId.
+     */
+    @Override
+    @Deprecated public com.google.protobuf.ByteString
+        getRoomIdBytes() {
+      Object ref = roomId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        roomId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TIMESTAMP_FIELD_NUMBER = 13;
+    private long timestamp_;
+    /**
+     * <pre>
+     * 字符串形式时间戳 // 有值
+     * </pre>
+     *
+     * <code>int64 timestamp = 13;</code>
+     * @return The timestamp.
+     */
+    @Override
+    public long getTimestamp() {
+      return timestamp_;
+    }
+
+    public static final int EDIT_TIMESTAMP_FIELD_NUMBER = 14;
+    private long editTimestamp_;
+    /**
+     * <pre>
+     * 未编辑过的消息为0
+     * </pre>
+     *
+     * <code>int64 edit_timestamp = 14;</code>
+     * @return The editTimestamp.
+     */
+    @Override
+    public long getEditTimestamp() {
+      return editTimestamp_;
+    }
+
+    public static final int DELETE_TIMESTAMP_FIELD_NUMBER = 15;
+    private long deleteTimestamp_;
+    /**
+     * <pre>
+     * 未删除的消息为0
+     * </pre>
+     *
+     * <code>int64 delete_timestamp = 15;</code>
+     * @return The deleteTimestamp.
+     */
+    @Override
+    public long getDeleteTimestamp() {
+      return deleteTimestamp_;
+    }
+
+    public static final int PLAIN_TEXT_FIELD_NUMBER = 18;
+    private volatile Object plainText_;
+    /**
+     * <pre>
+     * repeated Attitude attitudes = 16 [deprecated = true];// 使用reaction_list替代
+     * repeated UserProfile mentions = 17 [deprecated = true]; // 不一定有
+     * </pre>
+     *
+     * <code>string plain_text = 18;</code>
+     * @return The plainText.
+     */
+    @Override
+    public String getPlainText() {
+      Object ref = plainText_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        plainText_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * repeated Attitude attitudes = 16 [deprecated = true];// 使用reaction_list替代
+     * repeated UserProfile mentions = 17 [deprecated = true]; // 不一定有
+     * </pre>
+     *
+     * <code>string plain_text = 18;</code>
+     * @return The bytes for plainText.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getPlainTextBytes() {
+      Object ref = plainText_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        plainText_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROOM_FIELD_NUMBER = 20;
+    private Room room_;
+    /**
+     * <pre>
+     * repeated Reaction reactions = 19 [deprecated = true]; // 使用reaction_list替代
+     * </pre>
+     *
+     * <code>.shuo.Message.Room room = 20;</code>
+     * @return Whether the room field is set.
+     */
+    @Override
+    public boolean hasRoom() {
+      return room_ != null;
+    }
+    /**
+     * <pre>
+     * repeated Reaction reactions = 19 [deprecated = true]; // 使用reaction_list替代
+     * </pre>
+     *
+     * <code>.shuo.Message.Room room = 20;</code>
+     * @return The room.
+     */
+    @Override
+    public Room getRoom() {
+      return room_ == null ? Room.getDefaultInstance() : room_;
+    }
+    /**
+     * <pre>
+     * repeated Reaction reactions = 19 [deprecated = true]; // 使用reaction_list替代
+     * </pre>
+     *
+     * <code>.shuo.Message.Room room = 20;</code>
+     */
+    @Override
+    public RoomOrBuilder getRoomOrBuilder() {
+      return getRoom();
+    }
+
+    public static final int CHANNEL_FIELD_NUMBER = 21;
+    private Channel channel_;
+    /**
+     * <pre>
+     * 一定有
+     * </pre>
+     *
+     * <code>.shuo.Message.Channel channel = 21;</code>
+     * @return Whether the channel field is set.
+     */
+    @Override
+    public boolean hasChannel() {
+      return channel_ != null;
+    }
+    /**
+     * <pre>
+     * 一定有
+     * </pre>
+     *
+     * <code>.shuo.Message.Channel channel = 21;</code>
+     * @return The channel.
+     */
+    @Override
+    public Channel getChannel() {
+      return channel_ == null ? Channel.getDefaultInstance() : channel_;
+    }
+    /**
+     * <pre>
+     * 一定有
+     * </pre>
+     *
+     * <code>.shuo.Message.Channel channel = 21;</code>
+     */
+    @Override
+    public ChannelOrBuilder getChannelOrBuilder() {
+      return getChannel();
+    }
+
+    public static final int CID_FIELD_NUMBER = 24;
+    private volatile Object cid_;
+    /**
+     * <pre>
+     * repeated LinkMeta link_metas = 22; // 可能空
+     * repeated Image images = 23; // 可能空
+     * </pre>
+     *
+     * <code>string cid = 24;</code>
+     * @return The cid.
+     */
+    @Override
+    public String getCid() {
+      Object ref = cid_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        cid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * repeated LinkMeta link_metas = 22; // 可能空
+     * repeated Image images = 23; // 可能空
+     * </pre>
+     *
+     * <code>string cid = 24;</code>
+     * @return The bytes for cid.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getCidBytes() {
+      Object ref = cid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        cid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 25;
+    private volatile Object type_;
+    /**
+     * <pre>
+     * 使用 message_type 代替
+     * </pre>
+     *
+     * <code>string type = 25 [deprecated = true];</code>
+     * @deprecated
+     * @return The type.
+     */
+    @Override
+    @Deprecated public String getType() {
+      Object ref = type_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 使用 message_type 代替
+     * </pre>
+     *
+     * <code>string type = 25 [deprecated = true];</code>
+     * @deprecated
+     * @return The bytes for type.
+     */
+    @Override
+    @Deprecated public com.google.protobuf.ByteString
+        getTypeBytes() {
+      Object ref = type_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AUDIT_STATUS_FIELD_NUMBER = 28;
+    private int auditStatus_;
+    /**
+     * <pre>
+     *   - text 文本消息
+     *  - sticker 贴图（表情包）
+     *  - refer_message 分享/转发消息
+     *  - refer_room 分享房间
+     * Sticker sticker = 26;
+     * RoomMember sender = 27;
+     * </pre>
+     *
+     * <code>int32 audit_status = 28;</code>
+     * @return The auditStatus.
+     */
+    @Override
+    public int getAuditStatus() {
+      return auditStatus_;
+    }
+
+    public static final int REFER_MESSAGE_FIELD_NUMBER = 30;
+    private Message referMessage_;
+    /**
+     * <pre>
+     * type = refer_message 转发消息
+     * </pre>
+     *
+     * <code>optional .shuo.Message refer_message = 30;</code>
+     * @return Whether the referMessage field is set.
+     */
+    @Override
+    public boolean hasReferMessage() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * type = refer_message 转发消息
+     * </pre>
+     *
+     * <code>optional .shuo.Message refer_message = 30;</code>
+     * @return The referMessage.
+     */
+    @Override
+    public Message getReferMessage() {
+      return referMessage_ == null ? Message.getDefaultInstance() : referMessage_;
+    }
+    /**
+     * <pre>
+     * type = refer_message 转发消息
+     * </pre>
+     *
+     * <code>optional .shuo.Message refer_message = 30;</code>
+     */
+    @Override
+    public MessageOrBuilder getReferMessageOrBuilder() {
+      return referMessage_ == null ? Message.getDefaultInstance() : referMessage_;
+    }
+
+    public static final int MESSAGE_TYPE_FIELD_NUMBER = 32;
+    private int messageType_;
+    /**
+     * <pre>
+     * type = refer_room 分享房间
+     * optional ReferRoom refer_room = 31;
+     * </pre>
+     *
+     * <code>.shuo.MessageType message_type = 32;</code>
+     * @return The enum numeric value on the wire for messageType.
+     */
+    @Override public int getMessageTypeValue() {
+      return messageType_;
+    }
+    /**
+     * <pre>
+     * type = refer_room 分享房间
+     * optional ReferRoom refer_room = 31;
+     * </pre>
+     *
+     * <code>.shuo.MessageType message_type = 32;</code>
+     * @return The messageType.
+     */
+    @Override public com.gomicroim.lib.protos.Constants.MessageType getMessageType() {
+      @SuppressWarnings("deprecation")
+      com.gomicroim.lib.protos.Constants.MessageType result = com.gomicroim.lib.protos.Constants.MessageType.valueOf(messageType_);
+      return result == null ? com.gomicroim.lib.protos.Constants.MessageType.UNRECOGNIZED : result;
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 33;
+    private int status_;
+    /**
+     * <code>.shuo.MessageStatus status = 33;</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    @Override public int getStatusValue() {
+      return status_;
+    }
+    /**
+     * <code>.shuo.MessageStatus status = 33;</code>
+     * @return The status.
+     */
+    @Override public com.gomicroim.lib.protos.Constants.MessageStatus getStatus() {
+      @SuppressWarnings("deprecation")
+      com.gomicroim.lib.protos.Constants.MessageStatus result = com.gomicroim.lib.protos.Constants.MessageStatus.valueOf(status_);
+      return result == null ? com.gomicroim.lib.protos.Constants.MessageStatus.UNRECOGNIZED : result;
+    }
+
+    public static final int IS_PIN_FIELD_NUMBER = 36;
+    private boolean isPin_;
+    /**
+     * <pre>
+     * map&lt;string, MessageMention&gt; mentions_map = 34;
+     * repeated MessageReaction reaction_list = 35;
+     * 消息是否置顶，
+     * </pre>
+     *
+     * <code>bool is_pin = 36;</code>
+     * @return The isPin.
+     */
+    @Override
+    public boolean getIsPin() {
+      return isPin_;
+    }
+
+    public static final int PIN_TIMESTAMP_FIELD_NUMBER = 38;
+    private long pinTimestamp_;
+    /**
+     * <pre>
+     * 置顶时间字符串形式时间戳
+     * </pre>
+     *
+     * <code>int64 pin_timestamp = 38;</code>
+     * @return The pinTimestamp.
+     */
+    @Override
+    public long getPinTimestamp() {
+      return pinTimestamp_;
+    }
+
+    public static final int SHOW_IN_ALL_FIELD_NUMBER = 39;
+    private boolean showInAll_;
+    /**
+     * <pre>
+     * 展示在"全部消息"
+     * </pre>
+     *
+     * <code>bool show_in_all = 39;</code>
+     * @return The showInAll.
+     */
+    @Override
+    public boolean getShowInAll() {
+      return showInAll_;
+    }
+
+    public static final int IS_HOT_FIELD_NUMBER = 40;
+    private boolean isHot_;
+    /**
+     * <pre>
+     * 是否热门
+     * </pre>
+     *
+     * <code>bool is_hot = 40;</code>
+     * @return The isHot.
+     */
+    @Override
+    public boolean getIsHot() {
+      return isHot_;
+    }
+
+    public static final int EDITED_FIELD_NUMBER = 41;
+    private boolean edited_;
+    /**
+     * <code>bool edited = 41;</code>
+     * @return The edited.
+     */
+    @Override
+    public boolean getEdited() {
+      return edited_;
+    }
+
+    public static final int SHOW_IN_CHANNEL_FIELD_NUMBER = 42;
+    private boolean showInChannel_;
+    /**
+     * <pre>
+     * 回复是否需要展示在对应的频道中
+     * </pre>
+     *
+     * <code>bool show_in_channel = 42;</code>
+     * @return The showInChannel.
+     */
+    @Override
+    public boolean getShowInChannel() {
+      return showInChannel_;
+    }
+
+    public static final int PRIVATE_CHANNEL_FIELD_NUMBER = 44;
+    private boolean privateChannel_;
+    /**
+     * <pre>
+     * optional ReferChannel refer_channel = 43;
+     * </pre>
+     *
+     * <code>bool private_channel = 44;</code>
+     * @return The privateChannel.
+     */
+    @Override
+    public boolean getPrivateChannel() {
+      return privateChannel_;
+    }
+
+    public static final int TMP_CHAT_FIELD_NUMBER = 45;
+    private boolean tmpChat_;
+    /**
+     * <pre>
+     * 是否临时聊天
+     * </pre>
+     *
+     * <code>bool tmp_chat = 45;</code>
+     * @return The tmpChat.
+     */
+    @Override
+    public boolean getTmpChat() {
+      return tmpChat_;
+    }
+
+    public static final int SHOW_IN_CHAT_LIST_FIELD_NUMBER = 48;
+    private boolean showInChatList_;
+    /**
+     * <pre>
+     * optional ReferTeam refer_team = 46;
+     * RoomMemberLevelResp memberLevel = 47; //用户房间内的等级
+     * </pre>
+     *
+     * <code>bool show_in_chat_list = 48;</code>
+     * @return The showInChatList.
+     */
+    @Override
+    public boolean getShowInChatList() {
+      return showInChatList_;
+    }
+
+    public static final int LOCAL_IDENTICAL_FIELD_NUMBER = 52;
+    private volatile Object localIdentical_;
+    /**
+     * <pre>
+     *仅用于本地每次标识
+     * </pre>
+     *
+     * <code>string local_identical = 52;</code>
+     * @return The localIdentical.
+     */
+    @Override
+    public String getLocalIdentical() {
+      Object ref = localIdentical_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        localIdentical_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *仅用于本地每次标识
+     * </pre>
+     *
+     * <code>string local_identical = 52;</code>
+     * @return The bytes for localIdentical.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getLocalIdenticalBytes() {
+      Object ref = localIdentical_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        localIdentical_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LEVEL_UP_FIELD_NUMBER = 53;
+    private LevelUp levelUp_;
+    /**
+     * <code>.shuo.Message.LevelUp level_up = 53;</code>
+     * @return Whether the levelUp field is set.
+     */
+    @Override
+    public boolean hasLevelUp() {
+      return levelUp_ != null;
+    }
+    /**
+     * <code>.shuo.Message.LevelUp level_up = 53;</code>
+     * @return The levelUp.
+     */
+    @Override
+    public LevelUp getLevelUp() {
+      return levelUp_ == null ? LevelUp.getDefaultInstance() : levelUp_;
+    }
+    /**
+     * <code>.shuo.Message.LevelUp level_up = 53;</code>
+     */
+    @Override
+    public LevelUpOrBuilder getLevelUpOrBuilder() {
+      return getLevelUp();
+    }
+
+    public static final int IS_AUTO_FIELD_NUMBER = 57;
+    private boolean isAuto_;
+    /**
+     * <pre>
+     * optional PlaymateCard playmate_card = 56; // 玩伴卡
+     * </pre>
+     *
+     * <code>bool is_auto = 57;</code>
+     * @return The isAuto.
+     */
+    @Override
+    public boolean getIsAuto() {
+      return isAuto_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (userId_ != 0L) {
+        output.writeInt64(2, userId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, content_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mention_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, mention_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, rootId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(replyId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, replyId_);
+      }
+      if (replyCount_ != 0) {
+        output.writeInt32(7, replyCount_);
+      }
+      if (upCount_ != 0) {
+        output.writeInt32(8, upCount_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channelId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, channelId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roomId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, roomId_);
+      }
+      if (timestamp_ != 0L) {
+        output.writeInt64(13, timestamp_);
+      }
+      if (editTimestamp_ != 0L) {
+        output.writeInt64(14, editTimestamp_);
+      }
+      if (deleteTimestamp_ != 0L) {
+        output.writeInt64(15, deleteTimestamp_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(plainText_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 18, plainText_);
+      }
+      if (room_ != null) {
+        output.writeMessage(20, getRoom());
+      }
+      if (channel_ != null) {
+        output.writeMessage(21, getChannel());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cid_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 24, cid_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 25, type_);
+      }
+      if (auditStatus_ != 0) {
+        output.writeInt32(28, auditStatus_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(30, getReferMessage());
+      }
+      if (messageType_ != com.gomicroim.lib.protos.Constants.MessageType.MessageTypeUndefined.getNumber()) {
+        output.writeEnum(32, messageType_);
+      }
+      if (status_ != com.gomicroim.lib.protos.Constants.MessageStatus.MessageStatusUnknown.getNumber()) {
+        output.writeEnum(33, status_);
+      }
+      if (isPin_ != false) {
+        output.writeBool(36, isPin_);
+      }
+      if (pinTimestamp_ != 0L) {
+        output.writeInt64(38, pinTimestamp_);
+      }
+      if (showInAll_ != false) {
+        output.writeBool(39, showInAll_);
+      }
+      if (isHot_ != false) {
+        output.writeBool(40, isHot_);
+      }
+      if (edited_ != false) {
+        output.writeBool(41, edited_);
+      }
+      if (showInChannel_ != false) {
+        output.writeBool(42, showInChannel_);
+      }
+      if (privateChannel_ != false) {
+        output.writeBool(44, privateChannel_);
+      }
+      if (tmpChat_ != false) {
+        output.writeBool(45, tmpChat_);
+      }
+      if (showInChatList_ != false) {
+        output.writeBool(48, showInChatList_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(localIdentical_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 52, localIdentical_);
+      }
+      if (levelUp_ != null) {
+        output.writeMessage(53, getLevelUp());
+      }
+      if (isAuto_ != false) {
+        output.writeBool(57, isAuto_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (userId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, userId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, content_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mention_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, mention_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, rootId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(replyId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, replyId_);
+      }
+      if (replyCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, replyCount_);
+      }
+      if (upCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(8, upCount_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channelId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, channelId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roomId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, roomId_);
+      }
+      if (timestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(13, timestamp_);
+      }
+      if (editTimestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(14, editTimestamp_);
+      }
+      if (deleteTimestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(15, deleteTimestamp_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(plainText_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, plainText_);
+      }
+      if (room_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(20, getRoom());
+      }
+      if (channel_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(21, getChannel());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cid_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, cid_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, type_);
+      }
+      if (auditStatus_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(28, auditStatus_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(30, getReferMessage());
+      }
+      if (messageType_ != com.gomicroim.lib.protos.Constants.MessageType.MessageTypeUndefined.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(32, messageType_);
+      }
+      if (status_ != com.gomicroim.lib.protos.Constants.MessageStatus.MessageStatusUnknown.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(33, status_);
+      }
+      if (isPin_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(36, isPin_);
+      }
+      if (pinTimestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(38, pinTimestamp_);
+      }
+      if (showInAll_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(39, showInAll_);
+      }
+      if (isHot_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(40, isHot_);
+      }
+      if (edited_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(41, edited_);
+      }
+      if (showInChannel_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(42, showInChannel_);
+      }
+      if (privateChannel_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(44, privateChannel_);
+      }
+      if (tmpChat_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(45, tmpChat_);
+      }
+      if (showInChatList_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(48, showInChatList_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(localIdentical_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(52, localIdentical_);
+      }
+      if (levelUp_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(53, getLevelUp());
+      }
+      if (isAuto_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(57, isAuto_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof Message)) {
+        return super.equals(obj);
+      }
+      Message other = (Message) obj;
+
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (getUserId()
+          != other.getUserId()) return false;
+      if (!getContent()
+          .equals(other.getContent())) return false;
+      if (!getMention()
+          .equals(other.getMention())) return false;
+      if (!getRootId()
+          .equals(other.getRootId())) return false;
+      if (!getReplyId()
+          .equals(other.getReplyId())) return false;
+      if (getReplyCount()
+          != other.getReplyCount()) return false;
+      if (getUpCount()
+          != other.getUpCount()) return false;
+      if (!getChannelId()
+          .equals(other.getChannelId())) return false;
+      if (!getRoomId()
+          .equals(other.getRoomId())) return false;
+      if (getTimestamp()
+          != other.getTimestamp()) return false;
+      if (getEditTimestamp()
+          != other.getEditTimestamp()) return false;
+      if (getDeleteTimestamp()
+          != other.getDeleteTimestamp()) return false;
+      if (!getPlainText()
+          .equals(other.getPlainText())) return false;
+      if (hasRoom() != other.hasRoom()) return false;
+      if (hasRoom()) {
+        if (!getRoom()
+            .equals(other.getRoom())) return false;
+      }
+      if (hasChannel() != other.hasChannel()) return false;
+      if (hasChannel()) {
+        if (!getChannel()
+            .equals(other.getChannel())) return false;
+      }
+      if (!getCid()
+          .equals(other.getCid())) return false;
+      if (!getType()
+          .equals(other.getType())) return false;
+      if (getAuditStatus()
+          != other.getAuditStatus()) return false;
+      if (hasReferMessage() != other.hasReferMessage()) return false;
+      if (hasReferMessage()) {
+        if (!getReferMessage()
+            .equals(other.getReferMessage())) return false;
+      }
+      if (messageType_ != other.messageType_) return false;
+      if (status_ != other.status_) return false;
+      if (getIsPin()
+          != other.getIsPin()) return false;
+      if (getPinTimestamp()
+          != other.getPinTimestamp()) return false;
+      if (getShowInAll()
+          != other.getShowInAll()) return false;
+      if (getIsHot()
+          != other.getIsHot()) return false;
+      if (getEdited()
+          != other.getEdited()) return false;
+      if (getShowInChannel()
+          != other.getShowInChannel()) return false;
+      if (getPrivateChannel()
+          != other.getPrivateChannel()) return false;
+      if (getTmpChat()
+          != other.getTmpChat()) return false;
+      if (getShowInChatList()
+          != other.getShowInChatList()) return false;
+      if (!getLocalIdentical()
+          .equals(other.getLocalIdentical())) return false;
+      if (hasLevelUp() != other.hasLevelUp()) return false;
+      if (hasLevelUp()) {
+        if (!getLevelUp()
+            .equals(other.getLevelUp())) return false;
+      }
+      if (getIsAuto()
+          != other.getIsAuto()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getUserId());
+      hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+      hash = (53 * hash) + getContent().hashCode();
+      hash = (37 * hash) + MENTION_FIELD_NUMBER;
+      hash = (53 * hash) + getMention().hashCode();
+      hash = (37 * hash) + ROOT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRootId().hashCode();
+      hash = (37 * hash) + REPLY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getReplyId().hashCode();
+      hash = (37 * hash) + REPLY_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getReplyCount();
+      hash = (37 * hash) + UP_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getUpCount();
+      hash = (37 * hash) + CHANNEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getChannelId().hashCode();
+      hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRoomId().hashCode();
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTimestamp());
+      hash = (37 * hash) + EDIT_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getEditTimestamp());
+      hash = (37 * hash) + DELETE_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getDeleteTimestamp());
+      hash = (37 * hash) + PLAIN_TEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getPlainText().hashCode();
+      if (hasRoom()) {
+        hash = (37 * hash) + ROOM_FIELD_NUMBER;
+        hash = (53 * hash) + getRoom().hashCode();
+      }
+      if (hasChannel()) {
+        hash = (37 * hash) + CHANNEL_FIELD_NUMBER;
+        hash = (53 * hash) + getChannel().hashCode();
+      }
+      hash = (37 * hash) + CID_FIELD_NUMBER;
+      hash = (53 * hash) + getCid().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
+      hash = (37 * hash) + AUDIT_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getAuditStatus();
+      if (hasReferMessage()) {
+        hash = (37 * hash) + REFER_MESSAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getReferMessage().hashCode();
+      }
+      hash = (37 * hash) + MESSAGE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + messageType_;
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+      hash = (37 * hash) + IS_PIN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsPin());
+      hash = (37 * hash) + PIN_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPinTimestamp());
+      hash = (37 * hash) + SHOW_IN_ALL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getShowInAll());
+      hash = (37 * hash) + IS_HOT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsHot());
+      hash = (37 * hash) + EDITED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getEdited());
+      hash = (37 * hash) + SHOW_IN_CHANNEL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getShowInChannel());
+      hash = (37 * hash) + PRIVATE_CHANNEL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getPrivateChannel());
+      hash = (37 * hash) + TMP_CHAT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getTmpChat());
+      hash = (37 * hash) + SHOW_IN_CHAT_LIST_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getShowInChatList());
+      hash = (37 * hash) + LOCAL_IDENTICAL_FIELD_NUMBER;
+      hash = (53 * hash) + getLocalIdentical().hashCode();
+      if (hasLevelUp()) {
+        hash = (37 * hash) + LEVEL_UP_FIELD_NUMBER;
+        hash = (53 * hash) + getLevelUp().hashCode();
+      }
+      hash = (37 * hash) + IS_AUTO_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsAuto());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static Message parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Message parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Message parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Message parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Message parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Message parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Message parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Message parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Message parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static Message parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Message parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Message parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(Message prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 消息
+     * </pre>
+     *
+     * Protobuf type {@code shuo.Message}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:shuo.Message)
+        MessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return Websocket.internal_static_shuo_Message_descriptor;
+      }
+
+      @Override
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return Websocket.internal_static_shuo_Message_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Message.class, Builder.class);
+      }
+
+      // Construct using com.gomicroim.lib.protos.websocket.Websocket.Message.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getReferMessageFieldBuilder();
+        }
+      }
+      @Override
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        userId_ = 0L;
+
+        content_ = "";
+
+        mention_ = "";
+
+        rootId_ = "";
+
+        replyId_ = "";
+
+        replyCount_ = 0;
+
+        upCount_ = 0;
+
+        channelId_ = "";
+
+        roomId_ = "";
+
+        timestamp_ = 0L;
+
+        editTimestamp_ = 0L;
+
+        deleteTimestamp_ = 0L;
+
+        plainText_ = "";
+
+        if (roomBuilder_ == null) {
+          room_ = null;
+        } else {
+          room_ = null;
+          roomBuilder_ = null;
+        }
+        if (channelBuilder_ == null) {
+          channel_ = null;
+        } else {
+          channel_ = null;
+          channelBuilder_ = null;
+        }
+        cid_ = "";
+
+        type_ = "";
+
+        auditStatus_ = 0;
+
+        if (referMessageBuilder_ == null) {
+          referMessage_ = null;
+        } else {
+          referMessageBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        messageType_ = 0;
+
+        status_ = 0;
+
+        isPin_ = false;
+
+        pinTimestamp_ = 0L;
+
+        showInAll_ = false;
+
+        isHot_ = false;
+
+        edited_ = false;
+
+        showInChannel_ = false;
+
+        privateChannel_ = false;
+
+        tmpChat_ = false;
+
+        showInChatList_ = false;
+
+        localIdentical_ = "";
+
+        if (levelUpBuilder_ == null) {
+          levelUp_ = null;
+        } else {
+          levelUp_ = null;
+          levelUpBuilder_ = null;
+        }
+        isAuto_ = false;
+
+        return this;
+      }
+
+      @Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return Websocket.internal_static_shuo_Message_descriptor;
+      }
+
+      @Override
+      public Message getDefaultInstanceForType() {
+        return Message.getDefaultInstance();
+      }
+
+      @Override
+      public Message build() {
+        Message result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @Override
+      public Message buildPartial() {
+        Message result = new Message(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.id_ = id_;
+        result.userId_ = userId_;
+        result.content_ = content_;
+        result.mention_ = mention_;
+        result.rootId_ = rootId_;
+        result.replyId_ = replyId_;
+        result.replyCount_ = replyCount_;
+        result.upCount_ = upCount_;
+        result.channelId_ = channelId_;
+        result.roomId_ = roomId_;
+        result.timestamp_ = timestamp_;
+        result.editTimestamp_ = editTimestamp_;
+        result.deleteTimestamp_ = deleteTimestamp_;
+        result.plainText_ = plainText_;
+        if (roomBuilder_ == null) {
+          result.room_ = room_;
+        } else {
+          result.room_ = roomBuilder_.build();
+        }
+        if (channelBuilder_ == null) {
+          result.channel_ = channel_;
+        } else {
+          result.channel_ = channelBuilder_.build();
+        }
+        result.cid_ = cid_;
+        result.type_ = type_;
+        result.auditStatus_ = auditStatus_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          if (referMessageBuilder_ == null) {
+            result.referMessage_ = referMessage_;
+          } else {
+            result.referMessage_ = referMessageBuilder_.build();
+          }
+          to_bitField0_ |= 0x00000001;
+        }
+        result.messageType_ = messageType_;
+        result.status_ = status_;
+        result.isPin_ = isPin_;
+        result.pinTimestamp_ = pinTimestamp_;
+        result.showInAll_ = showInAll_;
+        result.isHot_ = isHot_;
+        result.edited_ = edited_;
+        result.showInChannel_ = showInChannel_;
+        result.privateChannel_ = privateChannel_;
+        result.tmpChat_ = tmpChat_;
+        result.showInChatList_ = showInChatList_;
+        result.localIdentical_ = localIdentical_;
+        if (levelUpBuilder_ == null) {
+          result.levelUp_ = levelUp_;
+        } else {
+          result.levelUp_ = levelUpBuilder_.build();
+        }
+        result.isAuto_ = isAuto_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return super.setField(field, value);
+      }
+      @Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof Message) {
+          return mergeFrom((Message)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(Message other) {
+        if (other == Message.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (other.getUserId() != 0L) {
+          setUserId(other.getUserId());
+        }
+        if (!other.getContent().isEmpty()) {
+          content_ = other.content_;
+          onChanged();
+        }
+        if (!other.getMention().isEmpty()) {
+          mention_ = other.mention_;
+          onChanged();
+        }
+        if (!other.getRootId().isEmpty()) {
+          rootId_ = other.rootId_;
+          onChanged();
+        }
+        if (!other.getReplyId().isEmpty()) {
+          replyId_ = other.replyId_;
+          onChanged();
+        }
+        if (other.getReplyCount() != 0) {
+          setReplyCount(other.getReplyCount());
+        }
+        if (other.getUpCount() != 0) {
+          setUpCount(other.getUpCount());
+        }
+        if (!other.getChannelId().isEmpty()) {
+          channelId_ = other.channelId_;
+          onChanged();
+        }
+        if (!other.getRoomId().isEmpty()) {
+          roomId_ = other.roomId_;
+          onChanged();
+        }
+        if (other.getTimestamp() != 0L) {
+          setTimestamp(other.getTimestamp());
+        }
+        if (other.getEditTimestamp() != 0L) {
+          setEditTimestamp(other.getEditTimestamp());
+        }
+        if (other.getDeleteTimestamp() != 0L) {
+          setDeleteTimestamp(other.getDeleteTimestamp());
+        }
+        if (!other.getPlainText().isEmpty()) {
+          plainText_ = other.plainText_;
+          onChanged();
+        }
+        if (other.hasRoom()) {
+          mergeRoom(other.getRoom());
+        }
+        if (other.hasChannel()) {
+          mergeChannel(other.getChannel());
+        }
+        if (!other.getCid().isEmpty()) {
+          cid_ = other.cid_;
+          onChanged();
+        }
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          onChanged();
+        }
+        if (other.getAuditStatus() != 0) {
+          setAuditStatus(other.getAuditStatus());
+        }
+        if (other.hasReferMessage()) {
+          mergeReferMessage(other.getReferMessage());
+        }
+        if (other.messageType_ != 0) {
+          setMessageTypeValue(other.getMessageTypeValue());
+        }
+        if (other.status_ != 0) {
+          setStatusValue(other.getStatusValue());
+        }
+        if (other.getIsPin() != false) {
+          setIsPin(other.getIsPin());
+        }
+        if (other.getPinTimestamp() != 0L) {
+          setPinTimestamp(other.getPinTimestamp());
+        }
+        if (other.getShowInAll() != false) {
+          setShowInAll(other.getShowInAll());
+        }
+        if (other.getIsHot() != false) {
+          setIsHot(other.getIsHot());
+        }
+        if (other.getEdited() != false) {
+          setEdited(other.getEdited());
+        }
+        if (other.getShowInChannel() != false) {
+          setShowInChannel(other.getShowInChannel());
+        }
+        if (other.getPrivateChannel() != false) {
+          setPrivateChannel(other.getPrivateChannel());
+        }
+        if (other.getTmpChat() != false) {
+          setTmpChat(other.getTmpChat());
+        }
+        if (other.getShowInChatList() != false) {
+          setShowInChatList(other.getShowInChatList());
+        }
+        if (!other.getLocalIdentical().isEmpty()) {
+          localIdentical_ = other.localIdentical_;
+          onChanged();
+        }
+        if (other.hasLevelUp()) {
+          mergeLevelUp(other.getLevelUp());
+        }
+        if (other.getIsAuto() != false) {
+          setIsAuto(other.getIsAuto());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        Message parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (Message) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private Object id_ = "";
+      /**
+       * <pre>
+       *聊天记录id 一定有值
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       * @return The id.
+       */
+      public String getId() {
+        Object ref = id_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *聊天记录id 一定有值
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *聊天记录id 一定有值
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *聊天记录id 一定有值
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *聊天记录id 一定有值
+       * </pre>
+       *
+       * <code>string id = 1;</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long userId_ ;
+      /**
+       * <pre>
+       *发送者 一定有值x
+       * </pre>
+       *
+       * <code>int64 user_id = 2;</code>
+       * @return The userId.
+       */
+      @Override
+      public long getUserId() {
+        return userId_;
+      }
+      /**
+       * <pre>
+       *发送者 一定有值x
+       * </pre>
+       *
+       * <code>int64 user_id = 2;</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(long value) {
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *发送者 一定有值x
+       * </pre>
+       *
+       * <code>int64 user_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private Object content_ = "";
+      /**
+       * <pre>
+       *内容 可能为空字符串（图片或表情包时）
+       * </pre>
+       *
+       * <code>string content = 3;</code>
+       * @return The content.
+       */
+      public String getContent() {
+        Object ref = content_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          content_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *内容 可能为空字符串（图片或表情包时）
+       * </pre>
+       *
+       * <code>string content = 3;</code>
+       * @return The bytes for content.
+       */
+      public com.google.protobuf.ByteString
+          getContentBytes() {
+        Object ref = content_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          content_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *内容 可能为空字符串（图片或表情包时）
+       * </pre>
+       *
+       * <code>string content = 3;</code>
+       * @param value The content to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContent(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        content_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *内容 可能为空字符串（图片或表情包时）
+       * </pre>
+       *
+       * <code>string content = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearContent() {
+        
+        content_ = getDefaultInstance().getContent();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *内容 可能为空字符串（图片或表情包时）
+       * </pre>
+       *
+       * <code>string content = 3;</code>
+       * @param value The bytes for content to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        content_ = value;
+        onChanged();
+        return this;
+      }
+
+      private Object mention_ = "";
+      /**
+       * <pre>
+       *接收者  &#64;user:123 / &#64;channel:all // 和chat接口的mention参数一样
+       * </pre>
+       *
+       * <code>string mention = 4;</code>
+       * @return The mention.
+       */
+      public String getMention() {
+        Object ref = mention_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          mention_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *接收者  &#64;user:123 / &#64;channel:all // 和chat接口的mention参数一样
+       * </pre>
+       *
+       * <code>string mention = 4;</code>
+       * @return The bytes for mention.
+       */
+      public com.google.protobuf.ByteString
+          getMentionBytes() {
+        Object ref = mention_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          mention_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *接收者  &#64;user:123 / &#64;channel:all // 和chat接口的mention参数一样
+       * </pre>
+       *
+       * <code>string mention = 4;</code>
+       * @param value The mention to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMention(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        mention_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *接收者  &#64;user:123 / &#64;channel:all // 和chat接口的mention参数一样
+       * </pre>
+       *
+       * <code>string mention = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMention() {
+        
+        mention_ = getDefaultInstance().getMention();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *接收者  &#64;user:123 / &#64;channel:all // 和chat接口的mention参数一样
+       * </pre>
+       *
+       * <code>string mention = 4;</code>
+       * @param value The bytes for mention to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMentionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        mention_ = value;
+        onChanged();
+        return this;
+      }
+
+      private Object rootId_ = "";
+      /**
+       * <pre>
+       * 可能为空 当消息是回复时有值
+       * </pre>
+       *
+       * <code>string root_id = 5;</code>
+       * @return The rootId.
+       */
+      public String getRootId() {
+        Object ref = rootId_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          rootId_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 可能为空 当消息是回复时有值
+       * </pre>
+       *
+       * <code>string root_id = 5;</code>
+       * @return The bytes for rootId.
+       */
+      public com.google.protobuf.ByteString
+          getRootIdBytes() {
+        Object ref = rootId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          rootId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 可能为空 当消息是回复时有值
+       * </pre>
+       *
+       * <code>string root_id = 5;</code>
+       * @param value The rootId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRootId(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        rootId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 可能为空 当消息是回复时有值
+       * </pre>
+       *
+       * <code>string root_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRootId() {
+        
+        rootId_ = getDefaultInstance().getRootId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 可能为空 当消息是回复时有值
+       * </pre>
+       *
+       * <code>string root_id = 5;</code>
+       * @param value The bytes for rootId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRootIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        rootId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private Object replyId_ = "";
+      /**
+       * <pre>
+       * 可能为空 当消息是回复时有值
+       * </pre>
+       *
+       * <code>string reply_id = 6;</code>
+       * @return The replyId.
+       */
+      public String getReplyId() {
+        Object ref = replyId_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          replyId_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 可能为空 当消息是回复时有值
+       * </pre>
+       *
+       * <code>string reply_id = 6;</code>
+       * @return The bytes for replyId.
+       */
+      public com.google.protobuf.ByteString
+          getReplyIdBytes() {
+        Object ref = replyId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          replyId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 可能为空 当消息是回复时有值
+       * </pre>
+       *
+       * <code>string reply_id = 6;</code>
+       * @param value The replyId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReplyId(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        replyId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 可能为空 当消息是回复时有值
+       * </pre>
+       *
+       * <code>string reply_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReplyId() {
+        
+        replyId_ = getDefaultInstance().getReplyId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 可能为空 当消息是回复时有值
+       * </pre>
+       *
+       * <code>string reply_id = 6;</code>
+       * @param value The bytes for replyId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReplyIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        replyId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int replyCount_ ;
+      /**
+       * <pre>
+       *被回复数 // 有值
+       * </pre>
+       *
+       * <code>int32 reply_count = 7;</code>
+       * @return The replyCount.
+       */
+      @Override
+      public int getReplyCount() {
+        return replyCount_;
+      }
+      /**
+       * <pre>
+       *被回复数 // 有值
+       * </pre>
+       *
+       * <code>int32 reply_count = 7;</code>
+       * @param value The replyCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReplyCount(int value) {
+        
+        replyCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *被回复数 // 有值
+       * </pre>
+       *
+       * <code>int32 reply_count = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReplyCount() {
+        
+        replyCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int upCount_ ;
+      /**
+       * <pre>
+       *被点赞数 //有值
+       * </pre>
+       *
+       * <code>int32 up_count = 8;</code>
+       * @return The upCount.
+       */
+      @Override
+      public int getUpCount() {
+        return upCount_;
+      }
+      /**
+       * <pre>
+       *被点赞数 //有值
+       * </pre>
+       *
+       * <code>int32 up_count = 8;</code>
+       * @param value The upCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpCount(int value) {
+        
+        upCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *被点赞数 //有值
+       * </pre>
+       *
+       * <code>int32 up_count = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUpCount() {
+        
+        upCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private Object channelId_ = "";
+      /**
+       * <pre>
+       * 使用Channel替代
+       * </pre>
+       *
+       * <code>string channel_id = 10 [deprecated = true];</code>
+       * @deprecated
+       * @return The channelId.
+       */
+      @Deprecated public String getChannelId() {
+        Object ref = channelId_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          channelId_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 使用Channel替代
+       * </pre>
+       *
+       * <code>string channel_id = 10 [deprecated = true];</code>
+       * @deprecated
+       * @return The bytes for channelId.
+       */
+      @Deprecated public com.google.protobuf.ByteString
+          getChannelIdBytes() {
+        Object ref = channelId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          channelId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 使用Channel替代
+       * </pre>
+       *
+       * <code>string channel_id = 10 [deprecated = true];</code>
+       * @deprecated
+       * @param value The channelId to set.
+       * @return This builder for chaining.
+       */
+      @Deprecated public Builder setChannelId(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        channelId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 使用Channel替代
+       * </pre>
+       *
+       * <code>string channel_id = 10 [deprecated = true];</code>
+       * @deprecated
+       * @return This builder for chaining.
+       */
+      @Deprecated public Builder clearChannelId() {
+        
+        channelId_ = getDefaultInstance().getChannelId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 使用Channel替代
+       * </pre>
+       *
+       * <code>string channel_id = 10 [deprecated = true];</code>
+       * @deprecated
+       * @param value The bytes for channelId to set.
+       * @return This builder for chaining.
+       */
+      @Deprecated public Builder setChannelIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        channelId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private Object roomId_ = "";
+      /**
+       * <pre>
+       * 使用Room替代
+       * </pre>
+       *
+       * <code>string room_id = 11 [deprecated = true];</code>
+       * @deprecated
+       * @return The roomId.
+       */
+      @Deprecated public String getRoomId() {
+        Object ref = roomId_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          roomId_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 使用Room替代
+       * </pre>
+       *
+       * <code>string room_id = 11 [deprecated = true];</code>
+       * @deprecated
+       * @return The bytes for roomId.
+       */
+      @Deprecated public com.google.protobuf.ByteString
+          getRoomIdBytes() {
+        Object ref = roomId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          roomId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 使用Room替代
+       * </pre>
+       *
+       * <code>string room_id = 11 [deprecated = true];</code>
+       * @deprecated
+       * @param value The roomId to set.
+       * @return This builder for chaining.
+       */
+      @Deprecated public Builder setRoomId(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        roomId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 使用Room替代
+       * </pre>
+       *
+       * <code>string room_id = 11 [deprecated = true];</code>
+       * @deprecated
+       * @return This builder for chaining.
+       */
+      @Deprecated public Builder clearRoomId() {
+        
+        roomId_ = getDefaultInstance().getRoomId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 使用Room替代
+       * </pre>
+       *
+       * <code>string room_id = 11 [deprecated = true];</code>
+       * @deprecated
+       * @param value The bytes for roomId to set.
+       * @return This builder for chaining.
+       */
+      @Deprecated public Builder setRoomIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        roomId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long timestamp_ ;
+      /**
+       * <pre>
+       * 字符串形式时间戳 // 有值
+       * </pre>
+       *
+       * <code>int64 timestamp = 13;</code>
+       * @return The timestamp.
+       */
+      @Override
+      public long getTimestamp() {
+        return timestamp_;
+      }
+      /**
+       * <pre>
+       * 字符串形式时间戳 // 有值
+       * </pre>
+       *
+       * <code>int64 timestamp = 13;</code>
+       * @param value The timestamp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTimestamp(long value) {
+        
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 字符串形式时间戳 // 有值
+       * </pre>
+       *
+       * <code>int64 timestamp = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTimestamp() {
+        
+        timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long editTimestamp_ ;
+      /**
+       * <pre>
+       * 未编辑过的消息为0
+       * </pre>
+       *
+       * <code>int64 edit_timestamp = 14;</code>
+       * @return The editTimestamp.
+       */
+      @Override
+      public long getEditTimestamp() {
+        return editTimestamp_;
+      }
+      /**
+       * <pre>
+       * 未编辑过的消息为0
+       * </pre>
+       *
+       * <code>int64 edit_timestamp = 14;</code>
+       * @param value The editTimestamp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEditTimestamp(long value) {
+        
+        editTimestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 未编辑过的消息为0
+       * </pre>
+       *
+       * <code>int64 edit_timestamp = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEditTimestamp() {
+        
+        editTimestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long deleteTimestamp_ ;
+      /**
+       * <pre>
+       * 未删除的消息为0
+       * </pre>
+       *
+       * <code>int64 delete_timestamp = 15;</code>
+       * @return The deleteTimestamp.
+       */
+      @Override
+      public long getDeleteTimestamp() {
+        return deleteTimestamp_;
+      }
+      /**
+       * <pre>
+       * 未删除的消息为0
+       * </pre>
+       *
+       * <code>int64 delete_timestamp = 15;</code>
+       * @param value The deleteTimestamp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDeleteTimestamp(long value) {
+        
+        deleteTimestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 未删除的消息为0
+       * </pre>
+       *
+       * <code>int64 delete_timestamp = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDeleteTimestamp() {
+        
+        deleteTimestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private Object plainText_ = "";
+      /**
+       * <pre>
+       * repeated Attitude attitudes = 16 [deprecated = true];// 使用reaction_list替代
+       * repeated UserProfile mentions = 17 [deprecated = true]; // 不一定有
+       * </pre>
+       *
+       * <code>string plain_text = 18;</code>
+       * @return The plainText.
+       */
+      public String getPlainText() {
+        Object ref = plainText_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          plainText_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * repeated Attitude attitudes = 16 [deprecated = true];// 使用reaction_list替代
+       * repeated UserProfile mentions = 17 [deprecated = true]; // 不一定有
+       * </pre>
+       *
+       * <code>string plain_text = 18;</code>
+       * @return The bytes for plainText.
+       */
+      public com.google.protobuf.ByteString
+          getPlainTextBytes() {
+        Object ref = plainText_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          plainText_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * repeated Attitude attitudes = 16 [deprecated = true];// 使用reaction_list替代
+       * repeated UserProfile mentions = 17 [deprecated = true]; // 不一定有
+       * </pre>
+       *
+       * <code>string plain_text = 18;</code>
+       * @param value The plainText to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlainText(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        plainText_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * repeated Attitude attitudes = 16 [deprecated = true];// 使用reaction_list替代
+       * repeated UserProfile mentions = 17 [deprecated = true]; // 不一定有
+       * </pre>
+       *
+       * <code>string plain_text = 18;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPlainText() {
+        
+        plainText_ = getDefaultInstance().getPlainText();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * repeated Attitude attitudes = 16 [deprecated = true];// 使用reaction_list替代
+       * repeated UserProfile mentions = 17 [deprecated = true]; // 不一定有
+       * </pre>
+       *
+       * <code>string plain_text = 18;</code>
+       * @param value The bytes for plainText to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlainTextBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        plainText_ = value;
+        onChanged();
+        return this;
+      }
+
+      private Room room_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          Room, Room.Builder, RoomOrBuilder> roomBuilder_;
+      /**
+       * <pre>
+       * repeated Reaction reactions = 19 [deprecated = true]; // 使用reaction_list替代
+       * </pre>
+       *
+       * <code>.shuo.Message.Room room = 20;</code>
+       * @return Whether the room field is set.
+       */
+      public boolean hasRoom() {
+        return roomBuilder_ != null || room_ != null;
+      }
+      /**
+       * <pre>
+       * repeated Reaction reactions = 19 [deprecated = true]; // 使用reaction_list替代
+       * </pre>
+       *
+       * <code>.shuo.Message.Room room = 20;</code>
+       * @return The room.
+       */
+      public Room getRoom() {
+        if (roomBuilder_ == null) {
+          return room_ == null ? Room.getDefaultInstance() : room_;
+        } else {
+          return roomBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * repeated Reaction reactions = 19 [deprecated = true]; // 使用reaction_list替代
+       * </pre>
+       *
+       * <code>.shuo.Message.Room room = 20;</code>
+       */
+      public Builder setRoom(Room value) {
+        if (roomBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          room_ = value;
+          onChanged();
+        } else {
+          roomBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * repeated Reaction reactions = 19 [deprecated = true]; // 使用reaction_list替代
+       * </pre>
+       *
+       * <code>.shuo.Message.Room room = 20;</code>
+       */
+      public Builder setRoom(
+          Room.Builder builderForValue) {
+        if (roomBuilder_ == null) {
+          room_ = builderForValue.build();
+          onChanged();
+        } else {
+          roomBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * repeated Reaction reactions = 19 [deprecated = true]; // 使用reaction_list替代
+       * </pre>
+       *
+       * <code>.shuo.Message.Room room = 20;</code>
+       */
+      public Builder mergeRoom(Room value) {
+        if (roomBuilder_ == null) {
+          if (room_ != null) {
+            room_ =
+              Room.newBuilder(room_).mergeFrom(value).buildPartial();
+          } else {
+            room_ = value;
+          }
+          onChanged();
+        } else {
+          roomBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * repeated Reaction reactions = 19 [deprecated = true]; // 使用reaction_list替代
+       * </pre>
+       *
+       * <code>.shuo.Message.Room room = 20;</code>
+       */
+      public Builder clearRoom() {
+        if (roomBuilder_ == null) {
+          room_ = null;
+          onChanged();
+        } else {
+          room_ = null;
+          roomBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * repeated Reaction reactions = 19 [deprecated = true]; // 使用reaction_list替代
+       * </pre>
+       *
+       * <code>.shuo.Message.Room room = 20;</code>
+       */
+      public Room.Builder getRoomBuilder() {
+        
+        onChanged();
+        return getRoomFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * repeated Reaction reactions = 19 [deprecated = true]; // 使用reaction_list替代
+       * </pre>
+       *
+       * <code>.shuo.Message.Room room = 20;</code>
+       */
+      public RoomOrBuilder getRoomOrBuilder() {
+        if (roomBuilder_ != null) {
+          return roomBuilder_.getMessageOrBuilder();
+        } else {
+          return room_ == null ?
+              Room.getDefaultInstance() : room_;
+        }
+      }
+      /**
+       * <pre>
+       * repeated Reaction reactions = 19 [deprecated = true]; // 使用reaction_list替代
+       * </pre>
+       *
+       * <code>.shuo.Message.Room room = 20;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          Room, Room.Builder, RoomOrBuilder>
+          getRoomFieldBuilder() {
+        if (roomBuilder_ == null) {
+          roomBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              Room, Room.Builder, RoomOrBuilder>(
+                  getRoom(),
+                  getParentForChildren(),
+                  isClean());
+          room_ = null;
+        }
+        return roomBuilder_;
+      }
+
+      private Channel channel_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          Channel, Channel.Builder, ChannelOrBuilder> channelBuilder_;
+      /**
+       * <pre>
+       * 一定有
+       * </pre>
+       *
+       * <code>.shuo.Message.Channel channel = 21;</code>
+       * @return Whether the channel field is set.
+       */
+      public boolean hasChannel() {
+        return channelBuilder_ != null || channel_ != null;
+      }
+      /**
+       * <pre>
+       * 一定有
+       * </pre>
+       *
+       * <code>.shuo.Message.Channel channel = 21;</code>
+       * @return The channel.
+       */
+      public Channel getChannel() {
+        if (channelBuilder_ == null) {
+          return channel_ == null ? Channel.getDefaultInstance() : channel_;
+        } else {
+          return channelBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 一定有
+       * </pre>
+       *
+       * <code>.shuo.Message.Channel channel = 21;</code>
+       */
+      public Builder setChannel(Channel value) {
+        if (channelBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          channel_ = value;
+          onChanged();
+        } else {
+          channelBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * 一定有
+       * </pre>
+       *
+       * <code>.shuo.Message.Channel channel = 21;</code>
+       */
+      public Builder setChannel(
+          Channel.Builder builderForValue) {
+        if (channelBuilder_ == null) {
+          channel_ = builderForValue.build();
+          onChanged();
+        } else {
+          channelBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * 一定有
+       * </pre>
+       *
+       * <code>.shuo.Message.Channel channel = 21;</code>
+       */
+      public Builder mergeChannel(Channel value) {
+        if (channelBuilder_ == null) {
+          if (channel_ != null) {
+            channel_ =
+              Channel.newBuilder(channel_).mergeFrom(value).buildPartial();
+          } else {
+            channel_ = value;
+          }
+          onChanged();
+        } else {
+          channelBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * 一定有
+       * </pre>
+       *
+       * <code>.shuo.Message.Channel channel = 21;</code>
+       */
+      public Builder clearChannel() {
+        if (channelBuilder_ == null) {
+          channel_ = null;
+          onChanged();
+        } else {
+          channel_ = null;
+          channelBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * 一定有
+       * </pre>
+       *
+       * <code>.shuo.Message.Channel channel = 21;</code>
+       */
+      public Channel.Builder getChannelBuilder() {
+        
+        onChanged();
+        return getChannelFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 一定有
+       * </pre>
+       *
+       * <code>.shuo.Message.Channel channel = 21;</code>
+       */
+      public ChannelOrBuilder getChannelOrBuilder() {
+        if (channelBuilder_ != null) {
+          return channelBuilder_.getMessageOrBuilder();
+        } else {
+          return channel_ == null ?
+              Channel.getDefaultInstance() : channel_;
+        }
+      }
+      /**
+       * <pre>
+       * 一定有
+       * </pre>
+       *
+       * <code>.shuo.Message.Channel channel = 21;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          Channel, Channel.Builder, ChannelOrBuilder>
+          getChannelFieldBuilder() {
+        if (channelBuilder_ == null) {
+          channelBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              Channel, Channel.Builder, ChannelOrBuilder>(
+                  getChannel(),
+                  getParentForChildren(),
+                  isClean());
+          channel_ = null;
+        }
+        return channelBuilder_;
+      }
+
+      private Object cid_ = "";
+      /**
+       * <pre>
+       * repeated LinkMeta link_metas = 22; // 可能空
+       * repeated Image images = 23; // 可能空
+       * </pre>
+       *
+       * <code>string cid = 24;</code>
+       * @return The cid.
+       */
+      public String getCid() {
+        Object ref = cid_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          cid_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * repeated LinkMeta link_metas = 22; // 可能空
+       * repeated Image images = 23; // 可能空
+       * </pre>
+       *
+       * <code>string cid = 24;</code>
+       * @return The bytes for cid.
+       */
+      public com.google.protobuf.ByteString
+          getCidBytes() {
+        Object ref = cid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          cid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * repeated LinkMeta link_metas = 22; // 可能空
+       * repeated Image images = 23; // 可能空
+       * </pre>
+       *
+       * <code>string cid = 24;</code>
+       * @param value The cid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCid(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        cid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * repeated LinkMeta link_metas = 22; // 可能空
+       * repeated Image images = 23; // 可能空
+       * </pre>
+       *
+       * <code>string cid = 24;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCid() {
+        
+        cid_ = getDefaultInstance().getCid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * repeated LinkMeta link_metas = 22; // 可能空
+       * repeated Image images = 23; // 可能空
+       * </pre>
+       *
+       * <code>string cid = 24;</code>
+       * @param value The bytes for cid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        cid_ = value;
+        onChanged();
+        return this;
+      }
+
+      private Object type_ = "";
+      /**
+       * <pre>
+       * 使用 message_type 代替
+       * </pre>
+       *
+       * <code>string type = 25 [deprecated = true];</code>
+       * @deprecated
+       * @return The type.
+       */
+      @Deprecated public String getType() {
+        Object ref = type_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 使用 message_type 代替
+       * </pre>
+       *
+       * <code>string type = 25 [deprecated = true];</code>
+       * @deprecated
+       * @return The bytes for type.
+       */
+      @Deprecated public com.google.protobuf.ByteString
+          getTypeBytes() {
+        Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 使用 message_type 代替
+       * </pre>
+       *
+       * <code>string type = 25 [deprecated = true];</code>
+       * @deprecated
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      @Deprecated public Builder setType(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 使用 message_type 代替
+       * </pre>
+       *
+       * <code>string type = 25 [deprecated = true];</code>
+       * @deprecated
+       * @return This builder for chaining.
+       */
+      @Deprecated public Builder clearType() {
+        
+        type_ = getDefaultInstance().getType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 使用 message_type 代替
+       * </pre>
+       *
+       * <code>string type = 25 [deprecated = true];</code>
+       * @deprecated
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
+       */
+      @Deprecated public Builder setTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int auditStatus_ ;
+      /**
+       * <pre>
+       *   - text 文本消息
+       *  - sticker 贴图（表情包）
+       *  - refer_message 分享/转发消息
+       *  - refer_room 分享房间
+       * Sticker sticker = 26;
+       * RoomMember sender = 27;
+       * </pre>
+       *
+       * <code>int32 audit_status = 28;</code>
+       * @return The auditStatus.
+       */
+      @Override
+      public int getAuditStatus() {
+        return auditStatus_;
+      }
+      /**
+       * <pre>
+       *   - text 文本消息
+       *  - sticker 贴图（表情包）
+       *  - refer_message 分享/转发消息
+       *  - refer_room 分享房间
+       * Sticker sticker = 26;
+       * RoomMember sender = 27;
+       * </pre>
+       *
+       * <code>int32 audit_status = 28;</code>
+       * @param value The auditStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuditStatus(int value) {
+        
+        auditStatus_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *   - text 文本消息
+       *  - sticker 贴图（表情包）
+       *  - refer_message 分享/转发消息
+       *  - refer_room 分享房间
+       * Sticker sticker = 26;
+       * RoomMember sender = 27;
+       * </pre>
+       *
+       * <code>int32 audit_status = 28;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAuditStatus() {
+        
+        auditStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private Message referMessage_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          Message, Builder, MessageOrBuilder> referMessageBuilder_;
+      /**
+       * <pre>
+       * type = refer_message 转发消息
+       * </pre>
+       *
+       * <code>optional .shuo.Message refer_message = 30;</code>
+       * @return Whether the referMessage field is set.
+       */
+      public boolean hasReferMessage() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <pre>
+       * type = refer_message 转发消息
+       * </pre>
+       *
+       * <code>optional .shuo.Message refer_message = 30;</code>
+       * @return The referMessage.
+       */
+      public Message getReferMessage() {
+        if (referMessageBuilder_ == null) {
+          return referMessage_ == null ? Message.getDefaultInstance() : referMessage_;
+        } else {
+          return referMessageBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * type = refer_message 转发消息
+       * </pre>
+       *
+       * <code>optional .shuo.Message refer_message = 30;</code>
+       */
+      public Builder setReferMessage(Message value) {
+        if (referMessageBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          referMessage_ = value;
+          onChanged();
+        } else {
+          referMessageBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <pre>
+       * type = refer_message 转发消息
+       * </pre>
+       *
+       * <code>optional .shuo.Message refer_message = 30;</code>
+       */
+      public Builder setReferMessage(
+          Builder builderForValue) {
+        if (referMessageBuilder_ == null) {
+          referMessage_ = builderForValue.build();
+          onChanged();
+        } else {
+          referMessageBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <pre>
+       * type = refer_message 转发消息
+       * </pre>
+       *
+       * <code>optional .shuo.Message refer_message = 30;</code>
+       */
+      public Builder mergeReferMessage(Message value) {
+        if (referMessageBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0) &&
+              referMessage_ != null &&
+              referMessage_ != Message.getDefaultInstance()) {
+            referMessage_ =
+              Message.newBuilder(referMessage_).mergeFrom(value).buildPartial();
+          } else {
+            referMessage_ = value;
+          }
+          onChanged();
+        } else {
+          referMessageBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <pre>
+       * type = refer_message 转发消息
+       * </pre>
+       *
+       * <code>optional .shuo.Message refer_message = 30;</code>
+       */
+      public Builder clearReferMessage() {
+        if (referMessageBuilder_ == null) {
+          referMessage_ = null;
+          onChanged();
+        } else {
+          referMessageBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+      /**
+       * <pre>
+       * type = refer_message 转发消息
+       * </pre>
+       *
+       * <code>optional .shuo.Message refer_message = 30;</code>
+       */
+      public Builder getReferMessageBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getReferMessageFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * type = refer_message 转发消息
+       * </pre>
+       *
+       * <code>optional .shuo.Message refer_message = 30;</code>
+       */
+      public MessageOrBuilder getReferMessageOrBuilder() {
+        if (referMessageBuilder_ != null) {
+          return referMessageBuilder_.getMessageOrBuilder();
+        } else {
+          return referMessage_ == null ?
+              Message.getDefaultInstance() : referMessage_;
+        }
+      }
+      /**
+       * <pre>
+       * type = refer_message 转发消息
+       * </pre>
+       *
+       * <code>optional .shuo.Message refer_message = 30;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          Message, Builder, MessageOrBuilder>
+          getReferMessageFieldBuilder() {
+        if (referMessageBuilder_ == null) {
+          referMessageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              Message, Builder, MessageOrBuilder>(
+                  getReferMessage(),
+                  getParentForChildren(),
+                  isClean());
+          referMessage_ = null;
+        }
+        return referMessageBuilder_;
+      }
+
+      private int messageType_ = 0;
+      /**
+       * <pre>
+       * type = refer_room 分享房间
+       * optional ReferRoom refer_room = 31;
+       * </pre>
+       *
+       * <code>.shuo.MessageType message_type = 32;</code>
+       * @return The enum numeric value on the wire for messageType.
+       */
+      @Override public int getMessageTypeValue() {
+        return messageType_;
+      }
+      /**
+       * <pre>
+       * type = refer_room 分享房间
+       * optional ReferRoom refer_room = 31;
+       * </pre>
+       *
+       * <code>.shuo.MessageType message_type = 32;</code>
+       * @param value The enum numeric value on the wire for messageType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageTypeValue(int value) {
+        
+        messageType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * type = refer_room 分享房间
+       * optional ReferRoom refer_room = 31;
+       * </pre>
+       *
+       * <code>.shuo.MessageType message_type = 32;</code>
+       * @return The messageType.
+       */
+      @Override
+      public com.gomicroim.lib.protos.Constants.MessageType getMessageType() {
+        @SuppressWarnings("deprecation")
+        com.gomicroim.lib.protos.Constants.MessageType result = com.gomicroim.lib.protos.Constants.MessageType.valueOf(messageType_);
+        return result == null ? com.gomicroim.lib.protos.Constants.MessageType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * type = refer_room 分享房间
+       * optional ReferRoom refer_room = 31;
+       * </pre>
+       *
+       * <code>.shuo.MessageType message_type = 32;</code>
+       * @param value The messageType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageType(com.gomicroim.lib.protos.Constants.MessageType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        messageType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * type = refer_room 分享房间
+       * optional ReferRoom refer_room = 31;
+       * </pre>
+       *
+       * <code>.shuo.MessageType message_type = 32;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMessageType() {
+        
+        messageType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int status_ = 0;
+      /**
+       * <code>.shuo.MessageStatus status = 33;</code>
+       * @return The enum numeric value on the wire for status.
+       */
+      @Override public int getStatusValue() {
+        return status_;
+      }
+      /**
+       * <code>.shuo.MessageStatus status = 33;</code>
+       * @param value The enum numeric value on the wire for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusValue(int value) {
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.shuo.MessageStatus status = 33;</code>
+       * @return The status.
+       */
+      @Override
+      public com.gomicroim.lib.protos.Constants.MessageStatus getStatus() {
+        @SuppressWarnings("deprecation")
+        com.gomicroim.lib.protos.Constants.MessageStatus result = com.gomicroim.lib.protos.Constants.MessageStatus.valueOf(status_);
+        return result == null ? com.gomicroim.lib.protos.Constants.MessageStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.shuo.MessageStatus status = 33;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(com.gomicroim.lib.protos.Constants.MessageStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        status_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.shuo.MessageStatus status = 33;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isPin_ ;
+      /**
+       * <pre>
+       * map&lt;string, MessageMention&gt; mentions_map = 34;
+       * repeated MessageReaction reaction_list = 35;
+       * 消息是否置顶，
+       * </pre>
+       *
+       * <code>bool is_pin = 36;</code>
+       * @return The isPin.
+       */
+      @Override
+      public boolean getIsPin() {
+        return isPin_;
+      }
+      /**
+       * <pre>
+       * map&lt;string, MessageMention&gt; mentions_map = 34;
+       * repeated MessageReaction reaction_list = 35;
+       * 消息是否置顶，
+       * </pre>
+       *
+       * <code>bool is_pin = 36;</code>
+       * @param value The isPin to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsPin(boolean value) {
+        
+        isPin_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * map&lt;string, MessageMention&gt; mentions_map = 34;
+       * repeated MessageReaction reaction_list = 35;
+       * 消息是否置顶，
+       * </pre>
+       *
+       * <code>bool is_pin = 36;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsPin() {
+        
+        isPin_ = false;
+        onChanged();
+        return this;
+      }
+
+      private long pinTimestamp_ ;
+      /**
+       * <pre>
+       * 置顶时间字符串形式时间戳
+       * </pre>
+       *
+       * <code>int64 pin_timestamp = 38;</code>
+       * @return The pinTimestamp.
+       */
+      @Override
+      public long getPinTimestamp() {
+        return pinTimestamp_;
+      }
+      /**
+       * <pre>
+       * 置顶时间字符串形式时间戳
+       * </pre>
+       *
+       * <code>int64 pin_timestamp = 38;</code>
+       * @param value The pinTimestamp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPinTimestamp(long value) {
+        
+        pinTimestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 置顶时间字符串形式时间戳
+       * </pre>
+       *
+       * <code>int64 pin_timestamp = 38;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPinTimestamp() {
+        
+        pinTimestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private boolean showInAll_ ;
+      /**
+       * <pre>
+       * 展示在"全部消息"
+       * </pre>
+       *
+       * <code>bool show_in_all = 39;</code>
+       * @return The showInAll.
+       */
+      @Override
+      public boolean getShowInAll() {
+        return showInAll_;
+      }
+      /**
+       * <pre>
+       * 展示在"全部消息"
+       * </pre>
+       *
+       * <code>bool show_in_all = 39;</code>
+       * @param value The showInAll to set.
+       * @return This builder for chaining.
+       */
+      public Builder setShowInAll(boolean value) {
+        
+        showInAll_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 展示在"全部消息"
+       * </pre>
+       *
+       * <code>bool show_in_all = 39;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearShowInAll() {
+        
+        showInAll_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean isHot_ ;
+      /**
+       * <pre>
+       * 是否热门
+       * </pre>
+       *
+       * <code>bool is_hot = 40;</code>
+       * @return The isHot.
+       */
+      @Override
+      public boolean getIsHot() {
+        return isHot_;
+      }
+      /**
+       * <pre>
+       * 是否热门
+       * </pre>
+       *
+       * <code>bool is_hot = 40;</code>
+       * @param value The isHot to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsHot(boolean value) {
+        
+        isHot_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 是否热门
+       * </pre>
+       *
+       * <code>bool is_hot = 40;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsHot() {
+        
+        isHot_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean edited_ ;
+      /**
+       * <code>bool edited = 41;</code>
+       * @return The edited.
+       */
+      @Override
+      public boolean getEdited() {
+        return edited_;
+      }
+      /**
+       * <code>bool edited = 41;</code>
+       * @param value The edited to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEdited(boolean value) {
+        
+        edited_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool edited = 41;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEdited() {
+        
+        edited_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean showInChannel_ ;
+      /**
+       * <pre>
+       * 回复是否需要展示在对应的频道中
+       * </pre>
+       *
+       * <code>bool show_in_channel = 42;</code>
+       * @return The showInChannel.
+       */
+      @Override
+      public boolean getShowInChannel() {
+        return showInChannel_;
+      }
+      /**
+       * <pre>
+       * 回复是否需要展示在对应的频道中
+       * </pre>
+       *
+       * <code>bool show_in_channel = 42;</code>
+       * @param value The showInChannel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setShowInChannel(boolean value) {
+        
+        showInChannel_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 回复是否需要展示在对应的频道中
+       * </pre>
+       *
+       * <code>bool show_in_channel = 42;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearShowInChannel() {
+        
+        showInChannel_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean privateChannel_ ;
+      /**
+       * <pre>
+       * optional ReferChannel refer_channel = 43;
+       * </pre>
+       *
+       * <code>bool private_channel = 44;</code>
+       * @return The privateChannel.
+       */
+      @Override
+      public boolean getPrivateChannel() {
+        return privateChannel_;
+      }
+      /**
+       * <pre>
+       * optional ReferChannel refer_channel = 43;
+       * </pre>
+       *
+       * <code>bool private_channel = 44;</code>
+       * @param value The privateChannel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrivateChannel(boolean value) {
+        
+        privateChannel_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * optional ReferChannel refer_channel = 43;
+       * </pre>
+       *
+       * <code>bool private_channel = 44;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPrivateChannel() {
+        
+        privateChannel_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean tmpChat_ ;
+      /**
+       * <pre>
+       * 是否临时聊天
+       * </pre>
+       *
+       * <code>bool tmp_chat = 45;</code>
+       * @return The tmpChat.
+       */
+      @Override
+      public boolean getTmpChat() {
+        return tmpChat_;
+      }
+      /**
+       * <pre>
+       * 是否临时聊天
+       * </pre>
+       *
+       * <code>bool tmp_chat = 45;</code>
+       * @param value The tmpChat to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTmpChat(boolean value) {
+        
+        tmpChat_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 是否临时聊天
+       * </pre>
+       *
+       * <code>bool tmp_chat = 45;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTmpChat() {
+        
+        tmpChat_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean showInChatList_ ;
+      /**
+       * <pre>
+       * optional ReferTeam refer_team = 46;
+       * RoomMemberLevelResp memberLevel = 47; //用户房间内的等级
+       * </pre>
+       *
+       * <code>bool show_in_chat_list = 48;</code>
+       * @return The showInChatList.
+       */
+      @Override
+      public boolean getShowInChatList() {
+        return showInChatList_;
+      }
+      /**
+       * <pre>
+       * optional ReferTeam refer_team = 46;
+       * RoomMemberLevelResp memberLevel = 47; //用户房间内的等级
+       * </pre>
+       *
+       * <code>bool show_in_chat_list = 48;</code>
+       * @param value The showInChatList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setShowInChatList(boolean value) {
+        
+        showInChatList_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * optional ReferTeam refer_team = 46;
+       * RoomMemberLevelResp memberLevel = 47; //用户房间内的等级
+       * </pre>
+       *
+       * <code>bool show_in_chat_list = 48;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearShowInChatList() {
+        
+        showInChatList_ = false;
+        onChanged();
+        return this;
+      }
+
+      private Object localIdentical_ = "";
+      /**
+       * <pre>
+       *仅用于本地每次标识
+       * </pre>
+       *
+       * <code>string local_identical = 52;</code>
+       * @return The localIdentical.
+       */
+      public String getLocalIdentical() {
+        Object ref = localIdentical_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          localIdentical_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *仅用于本地每次标识
+       * </pre>
+       *
+       * <code>string local_identical = 52;</code>
+       * @return The bytes for localIdentical.
+       */
+      public com.google.protobuf.ByteString
+          getLocalIdenticalBytes() {
+        Object ref = localIdentical_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          localIdentical_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *仅用于本地每次标识
+       * </pre>
+       *
+       * <code>string local_identical = 52;</code>
+       * @param value The localIdentical to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLocalIdentical(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        localIdentical_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *仅用于本地每次标识
+       * </pre>
+       *
+       * <code>string local_identical = 52;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLocalIdentical() {
+        
+        localIdentical_ = getDefaultInstance().getLocalIdentical();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *仅用于本地每次标识
+       * </pre>
+       *
+       * <code>string local_identical = 52;</code>
+       * @param value The bytes for localIdentical to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLocalIdenticalBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        localIdentical_ = value;
+        onChanged();
+        return this;
+      }
+
+      private LevelUp levelUp_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          LevelUp, LevelUp.Builder, LevelUpOrBuilder> levelUpBuilder_;
+      /**
+       * <code>.shuo.Message.LevelUp level_up = 53;</code>
+       * @return Whether the levelUp field is set.
+       */
+      public boolean hasLevelUp() {
+        return levelUpBuilder_ != null || levelUp_ != null;
+      }
+      /**
+       * <code>.shuo.Message.LevelUp level_up = 53;</code>
+       * @return The levelUp.
+       */
+      public LevelUp getLevelUp() {
+        if (levelUpBuilder_ == null) {
+          return levelUp_ == null ? LevelUp.getDefaultInstance() : levelUp_;
+        } else {
+          return levelUpBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.shuo.Message.LevelUp level_up = 53;</code>
+       */
+      public Builder setLevelUp(LevelUp value) {
+        if (levelUpBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          levelUp_ = value;
+          onChanged();
+        } else {
+          levelUpBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.shuo.Message.LevelUp level_up = 53;</code>
+       */
+      public Builder setLevelUp(
+          LevelUp.Builder builderForValue) {
+        if (levelUpBuilder_ == null) {
+          levelUp_ = builderForValue.build();
+          onChanged();
+        } else {
+          levelUpBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.shuo.Message.LevelUp level_up = 53;</code>
+       */
+      public Builder mergeLevelUp(LevelUp value) {
+        if (levelUpBuilder_ == null) {
+          if (levelUp_ != null) {
+            levelUp_ =
+              LevelUp.newBuilder(levelUp_).mergeFrom(value).buildPartial();
+          } else {
+            levelUp_ = value;
+          }
+          onChanged();
+        } else {
+          levelUpBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.shuo.Message.LevelUp level_up = 53;</code>
+       */
+      public Builder clearLevelUp() {
+        if (levelUpBuilder_ == null) {
+          levelUp_ = null;
+          onChanged();
+        } else {
+          levelUp_ = null;
+          levelUpBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.shuo.Message.LevelUp level_up = 53;</code>
+       */
+      public LevelUp.Builder getLevelUpBuilder() {
+        
+        onChanged();
+        return getLevelUpFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.shuo.Message.LevelUp level_up = 53;</code>
+       */
+      public LevelUpOrBuilder getLevelUpOrBuilder() {
+        if (levelUpBuilder_ != null) {
+          return levelUpBuilder_.getMessageOrBuilder();
+        } else {
+          return levelUp_ == null ?
+              LevelUp.getDefaultInstance() : levelUp_;
+        }
+      }
+      /**
+       * <code>.shuo.Message.LevelUp level_up = 53;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          LevelUp, LevelUp.Builder, LevelUpOrBuilder>
+          getLevelUpFieldBuilder() {
+        if (levelUpBuilder_ == null) {
+          levelUpBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              LevelUp, LevelUp.Builder, LevelUpOrBuilder>(
+                  getLevelUp(),
+                  getParentForChildren(),
+                  isClean());
+          levelUp_ = null;
+        }
+        return levelUpBuilder_;
+      }
+
+      private boolean isAuto_ ;
+      /**
+       * <pre>
+       * optional PlaymateCard playmate_card = 56; // 玩伴卡
+       * </pre>
+       *
+       * <code>bool is_auto = 57;</code>
+       * @return The isAuto.
+       */
+      @Override
+      public boolean getIsAuto() {
+        return isAuto_;
+      }
+      /**
+       * <pre>
+       * optional PlaymateCard playmate_card = 56; // 玩伴卡
+       * </pre>
+       *
+       * <code>bool is_auto = 57;</code>
+       * @param value The isAuto to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsAuto(boolean value) {
+        
+        isAuto_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * optional PlaymateCard playmate_card = 56; // 玩伴卡
+       * </pre>
+       *
+       * <code>bool is_auto = 57;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsAuto() {
+        
+        isAuto_ = false;
+        onChanged();
+        return this;
+      }
+      @Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:shuo.Message)
+    }
+
+    // @@protoc_insertion_point(class_scope:shuo.Message)
+    private static final Message DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new Message();
+    }
+
+    public static Message getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Message>
+        PARSER = new com.google.protobuf.AbstractParser<Message>() {
+      @Override
+      public Message parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Message(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Message> parser() {
+      return PARSER;
+    }
+
+    @Override
+    public com.google.protobuf.Parser<Message> getParserForType() {
+      return PARSER;
+    }
+
+    @Override
+    public Message getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1868,7 +10006,7 @@ public final class Websocket {
      * <code>.shuo.WebSocketHeader header = 1;</code>
      * @return The header.
      */
-    com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader getHeader();
+    WebSocketHeader getHeader();
     /**
      * <pre>
      * 头部
@@ -1876,7 +10014,7 @@ public final class Websocket {
      *
      * <code>.shuo.WebSocketHeader header = 1;</code>
      */
-    com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeaderOrBuilder getHeaderOrBuilder();
+    WebSocketHeaderOrBuilder getHeaderOrBuilder();
 
     /**
      * <pre>
@@ -1895,7 +10033,7 @@ public final class Websocket {
      * <code>.shuo.ClientMessage data = 2;</code>
      * @return The data.
      */
-    com.gomicroim.lib.protos.websocket.Websocket.ClientMessage getData();
+    ClientMessage getData();
     /**
      * <pre>
      * 数据部
@@ -1903,7 +10041,7 @@ public final class Websocket {
      *
      * <code>.shuo.ClientMessage data = 2;</code>
      */
-    com.gomicroim.lib.protos.websocket.Websocket.ClientMessageOrBuilder getDataOrBuilder();
+    ClientMessageOrBuilder getDataOrBuilder();
   }
   /**
    * <pre>
@@ -1924,14 +10062,14 @@ public final class Websocket {
     private C2SWebsocketMessage() {
     }
 
-    @java.lang.Override
+    @Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected Object newInstance(
         UnusedPrivateParameter unused) {
       return new C2SWebsocketMessage();
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -1942,7 +10080,7 @@ public final class Websocket {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1955,11 +10093,11 @@ public final class Websocket {
               done = true;
               break;
             case 10: {
-              com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.Builder subBuilder = null;
+              WebSocketHeader.Builder subBuilder = null;
               if (header_ != null) {
                 subBuilder = header_.toBuilder();
               }
-              header_ = input.readMessage(com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.parser(), extensionRegistry);
+              header_ = input.readMessage(WebSocketHeader.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(header_);
                 header_ = subBuilder.buildPartial();
@@ -1968,11 +10106,11 @@ public final class Websocket {
               break;
             }
             case 18: {
-              com.gomicroim.lib.protos.websocket.Websocket.ClientMessage.Builder subBuilder = null;
+              ClientMessage.Builder subBuilder = null;
               if (data_ != null) {
                 subBuilder = data_.toBuilder();
               }
-              data_ = input.readMessage(com.gomicroim.lib.protos.websocket.Websocket.ClientMessage.parser(), extensionRegistry);
+              data_ = input.readMessage(ClientMessage.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(data_);
                 data_ = subBuilder.buildPartial();
@@ -2001,19 +10139,19 @@ public final class Websocket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_C2SWebsocketMessage_descriptor;
+      return Websocket.internal_static_shuo_C2SWebsocketMessage_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_C2SWebsocketMessage_fieldAccessorTable
+      return Websocket.internal_static_shuo_C2SWebsocketMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage.class, com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage.Builder.class);
+              C2SWebsocketMessage.class, Builder.class);
     }
 
     public static final int HEADER_FIELD_NUMBER = 1;
-    private com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader header_;
+    private WebSocketHeader header_;
     /**
      * <pre>
      * 头部
@@ -2022,7 +10160,7 @@ public final class Websocket {
      * <code>.shuo.WebSocketHeader header = 1;</code>
      * @return Whether the header field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasHeader() {
       return header_ != null;
     }
@@ -2034,9 +10172,9 @@ public final class Websocket {
      * <code>.shuo.WebSocketHeader header = 1;</code>
      * @return The header.
      */
-    @java.lang.Override
-    public com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader getHeader() {
-      return header_ == null ? com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.getDefaultInstance() : header_;
+    @Override
+    public WebSocketHeader getHeader() {
+      return header_ == null ? WebSocketHeader.getDefaultInstance() : header_;
     }
     /**
      * <pre>
@@ -2045,13 +10183,13 @@ public final class Websocket {
      *
      * <code>.shuo.WebSocketHeader header = 1;</code>
      */
-    @java.lang.Override
-    public com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeaderOrBuilder getHeaderOrBuilder() {
+    @Override
+    public WebSocketHeaderOrBuilder getHeaderOrBuilder() {
       return getHeader();
     }
 
     public static final int DATA_FIELD_NUMBER = 2;
-    private com.gomicroim.lib.protos.websocket.Websocket.ClientMessage data_;
+    private ClientMessage data_;
     /**
      * <pre>
      * 数据部
@@ -2060,7 +10198,7 @@ public final class Websocket {
      * <code>.shuo.ClientMessage data = 2;</code>
      * @return Whether the data field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasData() {
       return data_ != null;
     }
@@ -2072,9 +10210,9 @@ public final class Websocket {
      * <code>.shuo.ClientMessage data = 2;</code>
      * @return The data.
      */
-    @java.lang.Override
-    public com.gomicroim.lib.protos.websocket.Websocket.ClientMessage getData() {
-      return data_ == null ? com.gomicroim.lib.protos.websocket.Websocket.ClientMessage.getDefaultInstance() : data_;
+    @Override
+    public ClientMessage getData() {
+      return data_ == null ? ClientMessage.getDefaultInstance() : data_;
     }
     /**
      * <pre>
@@ -2083,13 +10221,13 @@ public final class Websocket {
      *
      * <code>.shuo.ClientMessage data = 2;</code>
      */
-    @java.lang.Override
-    public com.gomicroim.lib.protos.websocket.Websocket.ClientMessageOrBuilder getDataOrBuilder() {
+    @Override
+    public ClientMessageOrBuilder getDataOrBuilder() {
       return getData();
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2099,7 +10237,7 @@ public final class Websocket {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (header_ != null) {
@@ -2111,7 +10249,7 @@ public final class Websocket {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
+    @Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2130,15 +10268,15 @@ public final class Websocket {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage)) {
+      if (!(obj instanceof C2SWebsocketMessage)) {
         return super.equals(obj);
       }
-      com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage other = (com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage) obj;
+      C2SWebsocketMessage other = (C2SWebsocketMessage) obj;
 
       if (hasHeader() != other.hasHeader()) return false;
       if (hasHeader()) {
@@ -2154,7 +10292,7 @@ public final class Websocket {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -2174,69 +10312,69 @@ public final class Websocket {
       return hash;
     }
 
-    public static com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage parseFrom(
+    public static C2SWebsocketMessage parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage parseFrom(
+    public static C2SWebsocketMessage parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage parseFrom(
+    public static C2SWebsocketMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage parseFrom(
+    public static C2SWebsocketMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage parseFrom(byte[] data)
+    public static C2SWebsocketMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage parseFrom(
+    public static C2SWebsocketMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage parseFrom(java.io.InputStream input)
+    public static C2SWebsocketMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage parseFrom(
+    public static C2SWebsocketMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage parseDelimitedFrom(java.io.InputStream input)
+    public static C2SWebsocketMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage parseDelimitedFrom(
+    public static C2SWebsocketMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage parseFrom(
+    public static C2SWebsocketMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage parseFrom(
+    public static C2SWebsocketMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2244,23 +10382,23 @@ public final class Websocket {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage prototype) {
+    public static Builder newBuilder(C2SWebsocketMessage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -2274,18 +10412,18 @@ public final class Websocket {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:shuo.C2SWebsocketMessage)
-        com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessageOrBuilder {
+        C2SWebsocketMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_C2SWebsocketMessage_descriptor;
+        return Websocket.internal_static_shuo_C2SWebsocketMessage_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      @Override
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_C2SWebsocketMessage_fieldAccessorTable
+        return Websocket.internal_static_shuo_C2SWebsocketMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage.class, com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage.Builder.class);
+                C2SWebsocketMessage.class, Builder.class);
       }
 
       // Construct using com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage.newBuilder()
@@ -2294,7 +10432,7 @@ public final class Websocket {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -2303,7 +10441,7 @@ public final class Websocket {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
+      @Override
       public Builder clear() {
         super.clear();
         if (headerBuilder_ == null) {
@@ -2321,29 +10459,29 @@ public final class Websocket {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_C2SWebsocketMessage_descriptor;
+        return Websocket.internal_static_shuo_C2SWebsocketMessage_descriptor;
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage getDefaultInstanceForType() {
-        return com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage.getDefaultInstance();
+      @Override
+      public C2SWebsocketMessage getDefaultInstanceForType() {
+        return C2SWebsocketMessage.getDefaultInstance();
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage build() {
-        com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage result = buildPartial();
+      @Override
+      public C2SWebsocketMessage build() {
+        C2SWebsocketMessage result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage buildPartial() {
-        com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage result = new com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage(this);
+      @Override
+      public C2SWebsocketMessage buildPartial() {
+        C2SWebsocketMessage result = new C2SWebsocketMessage(this);
         if (headerBuilder_ == null) {
           result.header_ = header_;
         } else {
@@ -2358,50 +10496,50 @@ public final class Websocket {
         return result;
       }
 
-      @java.lang.Override
+      @Override
       public Builder clone() {
         return super.clone();
       }
-      @java.lang.Override
+      @Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.setField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+      @Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
+      @Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage) {
-          return mergeFrom((com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage)other);
+        if (other instanceof C2SWebsocketMessage) {
+          return mergeFrom((C2SWebsocketMessage)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage other) {
-        if (other == com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage.getDefaultInstance()) return this;
+      public Builder mergeFrom(C2SWebsocketMessage other) {
+        if (other == C2SWebsocketMessage.getDefaultInstance()) return this;
         if (other.hasHeader()) {
           mergeHeader(other.getHeader());
         }
@@ -2413,21 +10551,21 @@ public final class Websocket {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage parsedMessage = null;
+        C2SWebsocketMessage parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage) e.getUnfinishedMessage();
+          parsedMessage = (C2SWebsocketMessage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2437,9 +10575,9 @@ public final class Websocket {
         return this;
       }
 
-      private com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader header_;
+      private WebSocketHeader header_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader, com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.Builder, com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeaderOrBuilder> headerBuilder_;
+          WebSocketHeader, WebSocketHeader.Builder, WebSocketHeaderOrBuilder> headerBuilder_;
       /**
        * <pre>
        * 头部
@@ -2459,9 +10597,9 @@ public final class Websocket {
        * <code>.shuo.WebSocketHeader header = 1;</code>
        * @return The header.
        */
-      public com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader getHeader() {
+      public WebSocketHeader getHeader() {
         if (headerBuilder_ == null) {
-          return header_ == null ? com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.getDefaultInstance() : header_;
+          return header_ == null ? WebSocketHeader.getDefaultInstance() : header_;
         } else {
           return headerBuilder_.getMessage();
         }
@@ -2473,7 +10611,7 @@ public final class Websocket {
        *
        * <code>.shuo.WebSocketHeader header = 1;</code>
        */
-      public Builder setHeader(com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader value) {
+      public Builder setHeader(WebSocketHeader value) {
         if (headerBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2494,7 +10632,7 @@ public final class Websocket {
        * <code>.shuo.WebSocketHeader header = 1;</code>
        */
       public Builder setHeader(
-          com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.Builder builderForValue) {
+          WebSocketHeader.Builder builderForValue) {
         if (headerBuilder_ == null) {
           header_ = builderForValue.build();
           onChanged();
@@ -2511,11 +10649,11 @@ public final class Websocket {
        *
        * <code>.shuo.WebSocketHeader header = 1;</code>
        */
-      public Builder mergeHeader(com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader value) {
+      public Builder mergeHeader(WebSocketHeader value) {
         if (headerBuilder_ == null) {
           if (header_ != null) {
             header_ =
-              com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.newBuilder(header_).mergeFrom(value).buildPartial();
+              WebSocketHeader.newBuilder(header_).mergeFrom(value).buildPartial();
           } else {
             header_ = value;
           }
@@ -2551,7 +10689,7 @@ public final class Websocket {
        *
        * <code>.shuo.WebSocketHeader header = 1;</code>
        */
-      public com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.Builder getHeaderBuilder() {
+      public WebSocketHeader.Builder getHeaderBuilder() {
         
         onChanged();
         return getHeaderFieldBuilder().getBuilder();
@@ -2563,12 +10701,12 @@ public final class Websocket {
        *
        * <code>.shuo.WebSocketHeader header = 1;</code>
        */
-      public com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeaderOrBuilder getHeaderOrBuilder() {
+      public WebSocketHeaderOrBuilder getHeaderOrBuilder() {
         if (headerBuilder_ != null) {
           return headerBuilder_.getMessageOrBuilder();
         } else {
           return header_ == null ?
-              com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.getDefaultInstance() : header_;
+              WebSocketHeader.getDefaultInstance() : header_;
         }
       }
       /**
@@ -2579,11 +10717,11 @@ public final class Websocket {
        * <code>.shuo.WebSocketHeader header = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader, com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.Builder, com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeaderOrBuilder> 
+          WebSocketHeader, WebSocketHeader.Builder, WebSocketHeaderOrBuilder>
           getHeaderFieldBuilder() {
         if (headerBuilder_ == null) {
           headerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader, com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeader.Builder, com.gomicroim.lib.protos.websocket.Websocket.WebSocketHeaderOrBuilder>(
+              WebSocketHeader, WebSocketHeader.Builder, WebSocketHeaderOrBuilder>(
                   getHeader(),
                   getParentForChildren(),
                   isClean());
@@ -2592,9 +10730,9 @@ public final class Websocket {
         return headerBuilder_;
       }
 
-      private com.gomicroim.lib.protos.websocket.Websocket.ClientMessage data_;
+      private ClientMessage data_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.gomicroim.lib.protos.websocket.Websocket.ClientMessage, com.gomicroim.lib.protos.websocket.Websocket.ClientMessage.Builder, com.gomicroim.lib.protos.websocket.Websocket.ClientMessageOrBuilder> dataBuilder_;
+          ClientMessage, ClientMessage.Builder, ClientMessageOrBuilder> dataBuilder_;
       /**
        * <pre>
        * 数据部
@@ -2614,9 +10752,9 @@ public final class Websocket {
        * <code>.shuo.ClientMessage data = 2;</code>
        * @return The data.
        */
-      public com.gomicroim.lib.protos.websocket.Websocket.ClientMessage getData() {
+      public ClientMessage getData() {
         if (dataBuilder_ == null) {
-          return data_ == null ? com.gomicroim.lib.protos.websocket.Websocket.ClientMessage.getDefaultInstance() : data_;
+          return data_ == null ? ClientMessage.getDefaultInstance() : data_;
         } else {
           return dataBuilder_.getMessage();
         }
@@ -2628,7 +10766,7 @@ public final class Websocket {
        *
        * <code>.shuo.ClientMessage data = 2;</code>
        */
-      public Builder setData(com.gomicroim.lib.protos.websocket.Websocket.ClientMessage value) {
+      public Builder setData(ClientMessage value) {
         if (dataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2649,7 +10787,7 @@ public final class Websocket {
        * <code>.shuo.ClientMessage data = 2;</code>
        */
       public Builder setData(
-          com.gomicroim.lib.protos.websocket.Websocket.ClientMessage.Builder builderForValue) {
+          ClientMessage.Builder builderForValue) {
         if (dataBuilder_ == null) {
           data_ = builderForValue.build();
           onChanged();
@@ -2666,11 +10804,11 @@ public final class Websocket {
        *
        * <code>.shuo.ClientMessage data = 2;</code>
        */
-      public Builder mergeData(com.gomicroim.lib.protos.websocket.Websocket.ClientMessage value) {
+      public Builder mergeData(ClientMessage value) {
         if (dataBuilder_ == null) {
           if (data_ != null) {
             data_ =
-              com.gomicroim.lib.protos.websocket.Websocket.ClientMessage.newBuilder(data_).mergeFrom(value).buildPartial();
+              ClientMessage.newBuilder(data_).mergeFrom(value).buildPartial();
           } else {
             data_ = value;
           }
@@ -2706,7 +10844,7 @@ public final class Websocket {
        *
        * <code>.shuo.ClientMessage data = 2;</code>
        */
-      public com.gomicroim.lib.protos.websocket.Websocket.ClientMessage.Builder getDataBuilder() {
+      public ClientMessage.Builder getDataBuilder() {
         
         onChanged();
         return getDataFieldBuilder().getBuilder();
@@ -2718,12 +10856,12 @@ public final class Websocket {
        *
        * <code>.shuo.ClientMessage data = 2;</code>
        */
-      public com.gomicroim.lib.protos.websocket.Websocket.ClientMessageOrBuilder getDataOrBuilder() {
+      public ClientMessageOrBuilder getDataOrBuilder() {
         if (dataBuilder_ != null) {
           return dataBuilder_.getMessageOrBuilder();
         } else {
           return data_ == null ?
-              com.gomicroim.lib.protos.websocket.Websocket.ClientMessage.getDefaultInstance() : data_;
+              ClientMessage.getDefaultInstance() : data_;
         }
       }
       /**
@@ -2734,11 +10872,11 @@ public final class Websocket {
        * <code>.shuo.ClientMessage data = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.gomicroim.lib.protos.websocket.Websocket.ClientMessage, com.gomicroim.lib.protos.websocket.Websocket.ClientMessage.Builder, com.gomicroim.lib.protos.websocket.Websocket.ClientMessageOrBuilder> 
+          ClientMessage, ClientMessage.Builder, ClientMessageOrBuilder>
           getDataFieldBuilder() {
         if (dataBuilder_ == null) {
           dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.gomicroim.lib.protos.websocket.Websocket.ClientMessage, com.gomicroim.lib.protos.websocket.Websocket.ClientMessage.Builder, com.gomicroim.lib.protos.websocket.Websocket.ClientMessageOrBuilder>(
+              ClientMessage, ClientMessage.Builder, ClientMessageOrBuilder>(
                   getData(),
                   getParentForChildren(),
                   isClean());
@@ -2746,13 +10884,13 @@ public final class Websocket {
         }
         return dataBuilder_;
       }
-      @java.lang.Override
+      @Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+      @Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -2763,18 +10901,18 @@ public final class Websocket {
     }
 
     // @@protoc_insertion_point(class_scope:shuo.C2SWebsocketMessage)
-    private static final com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage DEFAULT_INSTANCE;
+    private static final C2SWebsocketMessage DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage();
+      DEFAULT_INSTANCE = new C2SWebsocketMessage();
     }
 
-    public static com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage getDefaultInstance() {
+    public static C2SWebsocketMessage getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<C2SWebsocketMessage>
         PARSER = new com.google.protobuf.AbstractParser<C2SWebsocketMessage>() {
-      @java.lang.Override
+      @Override
       public C2SWebsocketMessage parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2787,13 +10925,13 @@ public final class Websocket {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<C2SWebsocketMessage> getParserForType() {
       return PARSER;
     }
 
-    @java.lang.Override
-    public com.gomicroim.lib.protos.websocket.Websocket.C2SWebsocketMessage getDefaultInstanceForType() {
+    @Override
+    public C2SWebsocketMessage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2802,39 +10940,6 @@ public final class Websocket {
   public interface WebsocketMessageOrBuilder extends
       // @@protoc_insertion_point(interface_extends:shuo.WebsocketMessage)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * 使用 msg_type
-     * </pre>
-     *
-     * <code>string type = 1 [deprecated = true];</code>
-     * @deprecated
-     * @return The type.
-     */
-    @java.lang.Deprecated java.lang.String getType();
-    /**
-     * <pre>
-     * 使用 msg_type
-     * </pre>
-     *
-     * <code>string type = 1 [deprecated = true];</code>
-     * @deprecated
-     * @return The bytes for type.
-     */
-    @java.lang.Deprecated com.google.protobuf.ByteString
-        getTypeBytes();
-
-    /**
-     * <pre>
-     * 使用 any_data
-     * </pre>
-     *
-     * <code>bytes data = 2 [deprecated = true];</code>
-     * @deprecated
-     * @return The data.
-     */
-    @java.lang.Deprecated com.google.protobuf.ByteString getData();
 
     /**
      * <pre>
@@ -2892,10 +10997,6 @@ public final class Websocket {
     com.google.protobuf.AnyOrBuilder getAnyDataOrBuilder();
   }
   /**
-   * <pre>
-   * 服务端-&gt;客户端(s2c)数据部
-   * </pre>
-   *
    * Protobuf type {@code shuo.WebsocketMessage}
    */
   public static final class WebsocketMessage extends
@@ -2908,19 +11009,17 @@ public final class Websocket {
       super(builder);
     }
     private WebsocketMessage() {
-      type_ = "";
-      data_ = com.google.protobuf.ByteString.EMPTY;
       msgType_ = 0;
     }
 
-    @java.lang.Override
+    @Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected Object newInstance(
         UnusedPrivateParameter unused) {
       return new WebsocketMessage();
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -2931,7 +11030,7 @@ public final class Websocket {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2943,17 +11042,6 @@ public final class Websocket {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              type_ = s;
-              break;
-            }
-            case 18: {
-
-              data_ = input.readBytes();
-              break;
-            }
             case 24: {
               int rawValue = input.readEnum();
 
@@ -2994,79 +11082,15 @@ public final class Websocket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_WebsocketMessage_descriptor;
+      return Websocket.internal_static_shuo_WebsocketMessage_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_WebsocketMessage_fieldAccessorTable
+      return Websocket.internal_static_shuo_WebsocketMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage.class, com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage.Builder.class);
-    }
-
-    public static final int TYPE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object type_;
-    /**
-     * <pre>
-     * 使用 msg_type
-     * </pre>
-     *
-     * <code>string type = 1 [deprecated = true];</code>
-     * @deprecated
-     * @return The type.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated public java.lang.String getType() {
-      java.lang.Object ref = type_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        type_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * 使用 msg_type
-     * </pre>
-     *
-     * <code>string type = 1 [deprecated = true];</code>
-     * @deprecated
-     * @return The bytes for type.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated public com.google.protobuf.ByteString
-        getTypeBytes() {
-      java.lang.Object ref = type_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        type_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int DATA_FIELD_NUMBER = 2;
-    private com.google.protobuf.ByteString data_;
-    /**
-     * <pre>
-     * 使用 any_data
-     * </pre>
-     *
-     * <code>bytes data = 2 [deprecated = true];</code>
-     * @deprecated
-     * @return The data.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated public com.google.protobuf.ByteString getData() {
-      return data_;
+              WebsocketMessage.class, Builder.class);
     }
 
     public static final int MSG_TYPE_FIELD_NUMBER = 3;
@@ -3079,7 +11103,7 @@ public final class Websocket {
      * <code>.shuo.WSMessageType msg_type = 3;</code>
      * @return The enum numeric value on the wire for msgType.
      */
-    @java.lang.Override public int getMsgTypeValue() {
+    @Override public int getMsgTypeValue() {
       return msgType_;
     }
     /**
@@ -3090,7 +11114,7 @@ public final class Websocket {
      * <code>.shuo.WSMessageType msg_type = 3;</code>
      * @return The msgType.
      */
-    @java.lang.Override public com.gomicroim.lib.protos.Constants.WSMessageType getMsgType() {
+    @Override public com.gomicroim.lib.protos.Constants.WSMessageType getMsgType() {
       @SuppressWarnings("deprecation")
       com.gomicroim.lib.protos.Constants.WSMessageType result = com.gomicroim.lib.protos.Constants.WSMessageType.valueOf(msgType_);
       return result == null ? com.gomicroim.lib.protos.Constants.WSMessageType.UNRECOGNIZED : result;
@@ -3109,7 +11133,7 @@ public final class Websocket {
      * <code>.google.protobuf.Any any_data = 4;</code>
      * @return Whether the anyData field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasAnyData() {
       return anyData_ != null;
     }
@@ -3124,7 +11148,7 @@ public final class Websocket {
      * <code>.google.protobuf.Any any_data = 4;</code>
      * @return The anyData.
      */
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Any getAnyData() {
       return anyData_ == null ? com.google.protobuf.Any.getDefaultInstance() : anyData_;
     }
@@ -3138,13 +11162,13 @@ public final class Websocket {
      *
      * <code>.google.protobuf.Any any_data = 4;</code>
      */
-    @java.lang.Override
+    @Override
     public com.google.protobuf.AnyOrBuilder getAnyDataOrBuilder() {
       return getAnyData();
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3154,15 +11178,9 @@ public final class Websocket {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
-      }
-      if (!data_.isEmpty()) {
-        output.writeBytes(2, data_);
-      }
       if (msgType_ != com.gomicroim.lib.protos.Constants.WSMessageType.NewMessage.getNumber()) {
         output.writeEnum(3, msgType_);
       }
@@ -3172,19 +11190,12 @@ public final class Websocket {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
+    @Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
-      }
-      if (!data_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, data_);
-      }
       if (msgType_ != com.gomicroim.lib.protos.Constants.WSMessageType.NewMessage.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, msgType_);
@@ -3198,20 +11209,16 @@ public final class Websocket {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage)) {
+      if (!(obj instanceof WebsocketMessage)) {
         return super.equals(obj);
       }
-      com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage other = (com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage) obj;
+      WebsocketMessage other = (WebsocketMessage) obj;
 
-      if (!getType()
-          .equals(other.getType())) return false;
-      if (!getData()
-          .equals(other.getData())) return false;
       if (msgType_ != other.msgType_) return false;
       if (hasAnyData() != other.hasAnyData()) return false;
       if (hasAnyData()) {
@@ -3222,17 +11229,13 @@ public final class Websocket {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getType().hashCode();
-      hash = (37 * hash) + DATA_FIELD_NUMBER;
-      hash = (53 * hash) + getData().hashCode();
       hash = (37 * hash) + MSG_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + msgType_;
       if (hasAnyData()) {
@@ -3244,69 +11247,69 @@ public final class Websocket {
       return hash;
     }
 
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage parseFrom(
+    public static WebsocketMessage parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage parseFrom(
+    public static WebsocketMessage parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage parseFrom(
+    public static WebsocketMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage parseFrom(
+    public static WebsocketMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage parseFrom(byte[] data)
+    public static WebsocketMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage parseFrom(
+    public static WebsocketMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage parseFrom(java.io.InputStream input)
+    public static WebsocketMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage parseFrom(
+    public static WebsocketMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage parseDelimitedFrom(java.io.InputStream input)
+    public static WebsocketMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage parseDelimitedFrom(
+    public static WebsocketMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage parseFrom(
+    public static WebsocketMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage parseFrom(
+    public static WebsocketMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3314,48 +11317,44 @@ public final class Websocket {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage prototype) {
+    public static Builder newBuilder(WebsocketMessage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
-     * <pre>
-     * 服务端-&gt;客户端(s2c)数据部
-     * </pre>
-     *
      * Protobuf type {@code shuo.WebsocketMessage}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:shuo.WebsocketMessage)
-        com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessageOrBuilder {
+        WebsocketMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_WebsocketMessage_descriptor;
+        return Websocket.internal_static_shuo_WebsocketMessage_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      @Override
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_WebsocketMessage_fieldAccessorTable
+        return Websocket.internal_static_shuo_WebsocketMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage.class, com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage.Builder.class);
+                WebsocketMessage.class, Builder.class);
       }
 
       // Construct using com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage.newBuilder()
@@ -3364,7 +11363,7 @@ public final class Websocket {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -3373,13 +11372,9 @@ public final class Websocket {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
+      @Override
       public Builder clear() {
         super.clear();
-        type_ = "";
-
-        data_ = com.google.protobuf.ByteString.EMPTY;
-
         msgType_ = 0;
 
         if (anyDataBuilder_ == null) {
@@ -3391,31 +11386,29 @@ public final class Websocket {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_WebsocketMessage_descriptor;
+        return Websocket.internal_static_shuo_WebsocketMessage_descriptor;
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage getDefaultInstanceForType() {
-        return com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage.getDefaultInstance();
+      @Override
+      public WebsocketMessage getDefaultInstanceForType() {
+        return WebsocketMessage.getDefaultInstance();
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage build() {
-        com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage result = buildPartial();
+      @Override
+      public WebsocketMessage build() {
+        WebsocketMessage result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage buildPartial() {
-        com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage result = new com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage(this);
-        result.type_ = type_;
-        result.data_ = data_;
+      @Override
+      public WebsocketMessage buildPartial() {
+        WebsocketMessage result = new WebsocketMessage(this);
         result.msgType_ = msgType_;
         if (anyDataBuilder_ == null) {
           result.anyData_ = anyData_;
@@ -3426,57 +11419,50 @@ public final class Websocket {
         return result;
       }
 
-      @java.lang.Override
+      @Override
       public Builder clone() {
         return super.clone();
       }
-      @java.lang.Override
+      @Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.setField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+      @Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
+      @Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage) {
-          return mergeFrom((com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage)other);
+        if (other instanceof WebsocketMessage) {
+          return mergeFrom((WebsocketMessage)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage other) {
-        if (other == com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage.getDefaultInstance()) return this;
-        if (!other.getType().isEmpty()) {
-          type_ = other.type_;
-          onChanged();
-        }
-        if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
-          setData(other.getData());
-        }
+      public Builder mergeFrom(WebsocketMessage other) {
+        if (other == WebsocketMessage.getDefaultInstance()) return this;
         if (other.msgType_ != 0) {
           setMsgTypeValue(other.getMsgTypeValue());
         }
@@ -3488,177 +11474,27 @@ public final class Websocket {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage parsedMessage = null;
+        WebsocketMessage parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage) e.getUnfinishedMessage();
+          parsedMessage = (WebsocketMessage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private java.lang.Object type_ = "";
-      /**
-       * <pre>
-       * 使用 msg_type
-       * </pre>
-       *
-       * <code>string type = 1 [deprecated = true];</code>
-       * @deprecated
-       * @return The type.
-       */
-      @java.lang.Deprecated public java.lang.String getType() {
-        java.lang.Object ref = type_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          type_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 使用 msg_type
-       * </pre>
-       *
-       * <code>string type = 1 [deprecated = true];</code>
-       * @deprecated
-       * @return The bytes for type.
-       */
-      @java.lang.Deprecated public com.google.protobuf.ByteString
-          getTypeBytes() {
-        java.lang.Object ref = type_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          type_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 使用 msg_type
-       * </pre>
-       *
-       * <code>string type = 1 [deprecated = true];</code>
-       * @deprecated
-       * @param value The type to set.
-       * @return This builder for chaining.
-       */
-      @java.lang.Deprecated public Builder setType(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 使用 msg_type
-       * </pre>
-       *
-       * <code>string type = 1 [deprecated = true];</code>
-       * @deprecated
-       * @return This builder for chaining.
-       */
-      @java.lang.Deprecated public Builder clearType() {
-        
-        type_ = getDefaultInstance().getType();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 使用 msg_type
-       * </pre>
-       *
-       * <code>string type = 1 [deprecated = true];</code>
-       * @deprecated
-       * @param value The bytes for type to set.
-       * @return This builder for chaining.
-       */
-      @java.lang.Deprecated public Builder setTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        type_ = value;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <pre>
-       * 使用 any_data
-       * </pre>
-       *
-       * <code>bytes data = 2 [deprecated = true];</code>
-       * @deprecated
-       * @return The data.
-       */
-      @java.lang.Override
-      @java.lang.Deprecated public com.google.protobuf.ByteString getData() {
-        return data_;
-      }
-      /**
-       * <pre>
-       * 使用 any_data
-       * </pre>
-       *
-       * <code>bytes data = 2 [deprecated = true];</code>
-       * @deprecated
-       * @param value The data to set.
-       * @return This builder for chaining.
-       */
-      @java.lang.Deprecated public Builder setData(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        data_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 使用 any_data
-       * </pre>
-       *
-       * <code>bytes data = 2 [deprecated = true];</code>
-       * @deprecated
-       * @return This builder for chaining.
-       */
-      @java.lang.Deprecated public Builder clearData() {
-        
-        data_ = getDefaultInstance().getData();
-        onChanged();
         return this;
       }
 
@@ -3671,7 +11507,7 @@ public final class Websocket {
        * <code>.shuo.WSMessageType msg_type = 3;</code>
        * @return The enum numeric value on the wire for msgType.
        */
-      @java.lang.Override public int getMsgTypeValue() {
+      @Override public int getMsgTypeValue() {
         return msgType_;
       }
       /**
@@ -3697,7 +11533,7 @@ public final class Websocket {
        * <code>.shuo.WSMessageType msg_type = 3;</code>
        * @return The msgType.
        */
-      @java.lang.Override
+      @Override
       public com.gomicroim.lib.protos.Constants.WSMessageType getMsgType() {
         @SuppressWarnings("deprecation")
         com.gomicroim.lib.protos.Constants.WSMessageType result = com.gomicroim.lib.protos.Constants.WSMessageType.valueOf(msgType_);
@@ -3917,13 +11753,13 @@ public final class Websocket {
         }
         return anyDataBuilder_;
       }
-      @java.lang.Override
+      @Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+      @Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -3934,18 +11770,18 @@ public final class Websocket {
     }
 
     // @@protoc_insertion_point(class_scope:shuo.WebsocketMessage)
-    private static final com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage DEFAULT_INSTANCE;
+    private static final WebsocketMessage DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage();
+      DEFAULT_INSTANCE = new WebsocketMessage();
     }
 
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage getDefaultInstance() {
+    public static WebsocketMessage getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<WebsocketMessage>
         PARSER = new com.google.protobuf.AbstractParser<WebsocketMessage>() {
-      @java.lang.Override
+      @Override
       public WebsocketMessage parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3958,13 +11794,13 @@ public final class Websocket {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<WebsocketMessage> getParserForType() {
       return PARSER;
     }
 
-    @java.lang.Override
-    public com.gomicroim.lib.protos.websocket.Websocket.WebsocketMessage getDefaultInstanceForType() {
+    @Override
+    public WebsocketMessage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4009,10 +11845,6 @@ public final class Websocket {
     com.google.protobuf.AnyOrBuilder getDataOrBuilder();
   }
   /**
-   * <pre>
-   * 客户端-&gt;服务端(c2s)数据部
-   * </pre>
-   *
    * Protobuf type {@code shuo.ClientMessage}
    */
   public static final class ClientMessage extends
@@ -4028,14 +11860,14 @@ public final class Websocket {
       type_ = 0;
     }
 
-    @java.lang.Override
+    @Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected Object newInstance(
         UnusedPrivateParameter unused) {
       return new ClientMessage();
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -4046,7 +11878,7 @@ public final class Websocket {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -4098,15 +11930,15 @@ public final class Websocket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_ClientMessage_descriptor;
+      return Websocket.internal_static_shuo_ClientMessage_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_ClientMessage_fieldAccessorTable
+      return Websocket.internal_static_shuo_ClientMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.gomicroim.lib.protos.websocket.Websocket.ClientMessage.class, com.gomicroim.lib.protos.websocket.Websocket.ClientMessage.Builder.class);
+              ClientMessage.class, Builder.class);
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
@@ -4119,7 +11951,7 @@ public final class Websocket {
      * <code>.shuo.ClientMessageType type = 1;</code>
      * @return The enum numeric value on the wire for type.
      */
-    @java.lang.Override public int getTypeValue() {
+    @Override public int getTypeValue() {
       return type_;
     }
     /**
@@ -4130,7 +11962,7 @@ public final class Websocket {
      * <code>.shuo.ClientMessageType type = 1;</code>
      * @return The type.
      */
-    @java.lang.Override public com.gomicroim.lib.protos.Constants.ClientMessageType getType() {
+    @Override public com.gomicroim.lib.protos.Constants.ClientMessageType getType() {
       @SuppressWarnings("deprecation")
       com.gomicroim.lib.protos.Constants.ClientMessageType result = com.gomicroim.lib.protos.Constants.ClientMessageType.valueOf(type_);
       return result == null ? com.gomicroim.lib.protos.Constants.ClientMessageType.UNRECOGNIZED : result;
@@ -4142,7 +11974,7 @@ public final class Websocket {
      * <code>.google.protobuf.Any data = 2;</code>
      * @return Whether the data field is set.
      */
-    @java.lang.Override
+    @Override
     public boolean hasData() {
       return data_ != null;
     }
@@ -4150,20 +11982,20 @@ public final class Websocket {
      * <code>.google.protobuf.Any data = 2;</code>
      * @return The data.
      */
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Any getData() {
       return data_ == null ? com.google.protobuf.Any.getDefaultInstance() : data_;
     }
     /**
      * <code>.google.protobuf.Any data = 2;</code>
      */
-    @java.lang.Override
+    @Override
     public com.google.protobuf.AnyOrBuilder getDataOrBuilder() {
       return getData();
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4173,7 +12005,7 @@ public final class Websocket {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (type_ != com.gomicroim.lib.protos.Constants.ClientMessageType.UndefinedMessage.getNumber()) {
@@ -4185,7 +12017,7 @@ public final class Websocket {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
+    @Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4204,15 +12036,15 @@ public final class Websocket {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.gomicroim.lib.protos.websocket.Websocket.ClientMessage)) {
+      if (!(obj instanceof ClientMessage)) {
         return super.equals(obj);
       }
-      com.gomicroim.lib.protos.websocket.Websocket.ClientMessage other = (com.gomicroim.lib.protos.websocket.Websocket.ClientMessage) obj;
+      ClientMessage other = (ClientMessage) obj;
 
       if (type_ != other.type_) return false;
       if (hasData() != other.hasData()) return false;
@@ -4224,7 +12056,7 @@ public final class Websocket {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -4242,69 +12074,69 @@ public final class Websocket {
       return hash;
     }
 
-    public static com.gomicroim.lib.protos.websocket.Websocket.ClientMessage parseFrom(
+    public static ClientMessage parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.ClientMessage parseFrom(
+    public static ClientMessage parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.ClientMessage parseFrom(
+    public static ClientMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.ClientMessage parseFrom(
+    public static ClientMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.ClientMessage parseFrom(byte[] data)
+    public static ClientMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.ClientMessage parseFrom(
+    public static ClientMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.ClientMessage parseFrom(java.io.InputStream input)
+    public static ClientMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.ClientMessage parseFrom(
+    public static ClientMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.ClientMessage parseDelimitedFrom(java.io.InputStream input)
+    public static ClientMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.ClientMessage parseDelimitedFrom(
+    public static ClientMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.ClientMessage parseFrom(
+    public static ClientMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.ClientMessage parseFrom(
+    public static ClientMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4312,48 +12144,44 @@ public final class Websocket {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.gomicroim.lib.protos.websocket.Websocket.ClientMessage prototype) {
+    public static Builder newBuilder(ClientMessage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
-     * <pre>
-     * 客户端-&gt;服务端(c2s)数据部
-     * </pre>
-     *
      * Protobuf type {@code shuo.ClientMessage}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:shuo.ClientMessage)
-        com.gomicroim.lib.protos.websocket.Websocket.ClientMessageOrBuilder {
+        ClientMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_ClientMessage_descriptor;
+        return Websocket.internal_static_shuo_ClientMessage_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      @Override
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_ClientMessage_fieldAccessorTable
+        return Websocket.internal_static_shuo_ClientMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.gomicroim.lib.protos.websocket.Websocket.ClientMessage.class, com.gomicroim.lib.protos.websocket.Websocket.ClientMessage.Builder.class);
+                ClientMessage.class, Builder.class);
       }
 
       // Construct using com.gomicroim.lib.protos.websocket.Websocket.ClientMessage.newBuilder()
@@ -4362,7 +12190,7 @@ public final class Websocket {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -4371,7 +12199,7 @@ public final class Websocket {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
+      @Override
       public Builder clear() {
         super.clear();
         type_ = 0;
@@ -4385,29 +12213,29 @@ public final class Websocket {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_ClientMessage_descriptor;
+        return Websocket.internal_static_shuo_ClientMessage_descriptor;
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.ClientMessage getDefaultInstanceForType() {
-        return com.gomicroim.lib.protos.websocket.Websocket.ClientMessage.getDefaultInstance();
+      @Override
+      public ClientMessage getDefaultInstanceForType() {
+        return ClientMessage.getDefaultInstance();
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.ClientMessage build() {
-        com.gomicroim.lib.protos.websocket.Websocket.ClientMessage result = buildPartial();
+      @Override
+      public ClientMessage build() {
+        ClientMessage result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.ClientMessage buildPartial() {
-        com.gomicroim.lib.protos.websocket.Websocket.ClientMessage result = new com.gomicroim.lib.protos.websocket.Websocket.ClientMessage(this);
+      @Override
+      public ClientMessage buildPartial() {
+        ClientMessage result = new ClientMessage(this);
         result.type_ = type_;
         if (dataBuilder_ == null) {
           result.data_ = data_;
@@ -4418,50 +12246,50 @@ public final class Websocket {
         return result;
       }
 
-      @java.lang.Override
+      @Override
       public Builder clone() {
         return super.clone();
       }
-      @java.lang.Override
+      @Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.setField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+      @Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
+      @Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.gomicroim.lib.protos.websocket.Websocket.ClientMessage) {
-          return mergeFrom((com.gomicroim.lib.protos.websocket.Websocket.ClientMessage)other);
+        if (other instanceof ClientMessage) {
+          return mergeFrom((ClientMessage)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.gomicroim.lib.protos.websocket.Websocket.ClientMessage other) {
-        if (other == com.gomicroim.lib.protos.websocket.Websocket.ClientMessage.getDefaultInstance()) return this;
+      public Builder mergeFrom(ClientMessage other) {
+        if (other == ClientMessage.getDefaultInstance()) return this;
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
@@ -4473,21 +12301,21 @@ public final class Websocket {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.gomicroim.lib.protos.websocket.Websocket.ClientMessage parsedMessage = null;
+        ClientMessage parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.gomicroim.lib.protos.websocket.Websocket.ClientMessage) e.getUnfinishedMessage();
+          parsedMessage = (ClientMessage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4506,7 +12334,7 @@ public final class Websocket {
        * <code>.shuo.ClientMessageType type = 1;</code>
        * @return The enum numeric value on the wire for type.
        */
-      @java.lang.Override public int getTypeValue() {
+      @Override public int getTypeValue() {
         return type_;
       }
       /**
@@ -4532,7 +12360,7 @@ public final class Websocket {
        * <code>.shuo.ClientMessageType type = 1;</code>
        * @return The type.
        */
-      @java.lang.Override
+      @Override
       public com.gomicroim.lib.protos.Constants.ClientMessageType getType() {
         @SuppressWarnings("deprecation")
         com.gomicroim.lib.protos.Constants.ClientMessageType result = com.gomicroim.lib.protos.Constants.ClientMessageType.valueOf(type_);
@@ -4689,13 +12517,13 @@ public final class Websocket {
         }
         return dataBuilder_;
       }
-      @java.lang.Override
+      @Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+      @Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -4706,18 +12534,18 @@ public final class Websocket {
     }
 
     // @@protoc_insertion_point(class_scope:shuo.ClientMessage)
-    private static final com.gomicroim.lib.protos.websocket.Websocket.ClientMessage DEFAULT_INSTANCE;
+    private static final ClientMessage DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.gomicroim.lib.protos.websocket.Websocket.ClientMessage();
+      DEFAULT_INSTANCE = new ClientMessage();
     }
 
-    public static com.gomicroim.lib.protos.websocket.Websocket.ClientMessage getDefaultInstance() {
+    public static ClientMessage getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<ClientMessage>
         PARSER = new com.google.protobuf.AbstractParser<ClientMessage>() {
-      @java.lang.Override
+      @Override
       public ClientMessage parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4730,13 +12558,13 @@ public final class Websocket {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<ClientMessage> getParserForType() {
       return PARSER;
     }
 
-    @java.lang.Override
-    public com.gomicroim.lib.protos.websocket.Websocket.ClientMessage getDefaultInstanceForType() {
+    @Override
+    public ClientMessage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4750,7 +12578,7 @@ public final class Websocket {
      * <code>string roomId = 1;</code>
      * @return The roomId.
      */
-    java.lang.String getRoomId();
+    String getRoomId();
     /**
      * <code>string roomId = 1;</code>
      * @return The bytes for roomId.
@@ -4766,7 +12594,7 @@ public final class Websocket {
      * <code>string channelId = 2;</code>
      * @return The channelId.
      */
-    java.lang.String getChannelId();
+    String getChannelId();
     /**
      * <pre>
      * _all_ _involved_ _hot_ 其他用频道id
@@ -4786,7 +12614,7 @@ public final class Websocket {
      * <code>string type = 3;</code>
      * @return The type.
      */
-    java.lang.String getType();
+    String getType();
     /**
      * <pre>
      * "alive, exit"
@@ -4820,14 +12648,14 @@ public final class Websocket {
       type_ = "";
     }
 
-    @java.lang.Override
+    @Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected Object newInstance(
         UnusedPrivateParameter unused) {
       return new EventRoom();
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -4838,7 +12666,7 @@ public final class Websocket {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -4851,19 +12679,19 @@ public final class Websocket {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               roomId_ = s;
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               channelId_ = s;
               break;
             }
             case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               type_ = s;
               break;
@@ -4889,32 +12717,32 @@ public final class Websocket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_EventRoom_descriptor;
+      return Websocket.internal_static_shuo_EventRoom_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_EventRoom_fieldAccessorTable
+      return Websocket.internal_static_shuo_EventRoom_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.gomicroim.lib.protos.websocket.Websocket.EventRoom.class, com.gomicroim.lib.protos.websocket.Websocket.EventRoom.Builder.class);
+              EventRoom.class, Builder.class);
     }
 
     public static final int ROOMID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object roomId_;
+    private volatile Object roomId_;
     /**
      * <code>string roomId = 1;</code>
      * @return The roomId.
      */
-    @java.lang.Override
-    public java.lang.String getRoomId() {
-      java.lang.Object ref = roomId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    @Override
+    public String getRoomId() {
+      Object ref = roomId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         roomId_ = s;
         return s;
       }
@@ -4923,14 +12751,14 @@ public final class Websocket {
      * <code>string roomId = 1;</code>
      * @return The bytes for roomId.
      */
-    @java.lang.Override
+    @Override
     public com.google.protobuf.ByteString
         getRoomIdBytes() {
-      java.lang.Object ref = roomId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = roomId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         roomId_ = b;
         return b;
       } else {
@@ -4939,7 +12767,7 @@ public final class Websocket {
     }
 
     public static final int CHANNELID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object channelId_;
+    private volatile Object channelId_;
     /**
      * <pre>
      * _all_ _involved_ _hot_ 其他用频道id
@@ -4948,15 +12776,15 @@ public final class Websocket {
      * <code>string channelId = 2;</code>
      * @return The channelId.
      */
-    @java.lang.Override
-    public java.lang.String getChannelId() {
-      java.lang.Object ref = channelId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    @Override
+    public String getChannelId() {
+      Object ref = channelId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         channelId_ = s;
         return s;
       }
@@ -4969,14 +12797,14 @@ public final class Websocket {
      * <code>string channelId = 2;</code>
      * @return The bytes for channelId.
      */
-    @java.lang.Override
+    @Override
     public com.google.protobuf.ByteString
         getChannelIdBytes() {
-      java.lang.Object ref = channelId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = channelId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         channelId_ = b;
         return b;
       } else {
@@ -4985,7 +12813,7 @@ public final class Websocket {
     }
 
     public static final int TYPE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object type_;
+    private volatile Object type_;
     /**
      * <pre>
      * "alive, exit"
@@ -4994,15 +12822,15 @@ public final class Websocket {
      * <code>string type = 3;</code>
      * @return The type.
      */
-    @java.lang.Override
-    public java.lang.String getType() {
-      java.lang.Object ref = type_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    @Override
+    public String getType() {
+      Object ref = type_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         type_ = s;
         return s;
       }
@@ -5015,14 +12843,14 @@ public final class Websocket {
      * <code>string type = 3;</code>
      * @return The bytes for type.
      */
-    @java.lang.Override
+    @Override
     public com.google.protobuf.ByteString
         getTypeBytes() {
-      java.lang.Object ref = type_;
-      if (ref instanceof java.lang.String) {
+      Object ref = type_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         type_ = b;
         return b;
       } else {
@@ -5031,7 +12859,7 @@ public final class Websocket {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5041,7 +12869,7 @@ public final class Websocket {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roomId_)) {
@@ -5056,7 +12884,7 @@ public final class Websocket {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
+    @Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5076,15 +12904,15 @@ public final class Websocket {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.gomicroim.lib.protos.websocket.Websocket.EventRoom)) {
+      if (!(obj instanceof EventRoom)) {
         return super.equals(obj);
       }
-      com.gomicroim.lib.protos.websocket.Websocket.EventRoom other = (com.gomicroim.lib.protos.websocket.Websocket.EventRoom) obj;
+      EventRoom other = (EventRoom) obj;
 
       if (!getRoomId()
           .equals(other.getRoomId())) return false;
@@ -5096,7 +12924,7 @@ public final class Websocket {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -5114,69 +12942,69 @@ public final class Websocket {
       return hash;
     }
 
-    public static com.gomicroim.lib.protos.websocket.Websocket.EventRoom parseFrom(
+    public static EventRoom parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.EventRoom parseFrom(
+    public static EventRoom parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.EventRoom parseFrom(
+    public static EventRoom parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.EventRoom parseFrom(
+    public static EventRoom parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.EventRoom parseFrom(byte[] data)
+    public static EventRoom parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.EventRoom parseFrom(
+    public static EventRoom parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.EventRoom parseFrom(java.io.InputStream input)
+    public static EventRoom parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.EventRoom parseFrom(
+    public static EventRoom parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.EventRoom parseDelimitedFrom(java.io.InputStream input)
+    public static EventRoom parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.EventRoom parseDelimitedFrom(
+    public static EventRoom parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.EventRoom parseFrom(
+    public static EventRoom parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.EventRoom parseFrom(
+    public static EventRoom parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5184,23 +13012,23 @@ public final class Websocket {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.gomicroim.lib.protos.websocket.Websocket.EventRoom prototype) {
+    public static Builder newBuilder(EventRoom prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -5214,18 +13042,18 @@ public final class Websocket {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:shuo.EventRoom)
-        com.gomicroim.lib.protos.websocket.Websocket.EventRoomOrBuilder {
+        EventRoomOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_EventRoom_descriptor;
+        return Websocket.internal_static_shuo_EventRoom_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      @Override
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_EventRoom_fieldAccessorTable
+        return Websocket.internal_static_shuo_EventRoom_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.gomicroim.lib.protos.websocket.Websocket.EventRoom.class, com.gomicroim.lib.protos.websocket.Websocket.EventRoom.Builder.class);
+                EventRoom.class, Builder.class);
       }
 
       // Construct using com.gomicroim.lib.protos.websocket.Websocket.EventRoom.newBuilder()
@@ -5234,7 +13062,7 @@ public final class Websocket {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -5243,7 +13071,7 @@ public final class Websocket {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
+      @Override
       public Builder clear() {
         super.clear();
         roomId_ = "";
@@ -5255,29 +13083,29 @@ public final class Websocket {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_EventRoom_descriptor;
+        return Websocket.internal_static_shuo_EventRoom_descriptor;
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.EventRoom getDefaultInstanceForType() {
-        return com.gomicroim.lib.protos.websocket.Websocket.EventRoom.getDefaultInstance();
+      @Override
+      public EventRoom getDefaultInstanceForType() {
+        return EventRoom.getDefaultInstance();
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.EventRoom build() {
-        com.gomicroim.lib.protos.websocket.Websocket.EventRoom result = buildPartial();
+      @Override
+      public EventRoom build() {
+        EventRoom result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.EventRoom buildPartial() {
-        com.gomicroim.lib.protos.websocket.Websocket.EventRoom result = new com.gomicroim.lib.protos.websocket.Websocket.EventRoom(this);
+      @Override
+      public EventRoom buildPartial() {
+        EventRoom result = new EventRoom(this);
         result.roomId_ = roomId_;
         result.channelId_ = channelId_;
         result.type_ = type_;
@@ -5285,50 +13113,50 @@ public final class Websocket {
         return result;
       }
 
-      @java.lang.Override
+      @Override
       public Builder clone() {
         return super.clone();
       }
-      @java.lang.Override
+      @Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.setField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+      @Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
+      @Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.gomicroim.lib.protos.websocket.Websocket.EventRoom) {
-          return mergeFrom((com.gomicroim.lib.protos.websocket.Websocket.EventRoom)other);
+        if (other instanceof EventRoom) {
+          return mergeFrom((EventRoom)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.gomicroim.lib.protos.websocket.Websocket.EventRoom other) {
-        if (other == com.gomicroim.lib.protos.websocket.Websocket.EventRoom.getDefaultInstance()) return this;
+      public Builder mergeFrom(EventRoom other) {
+        if (other == EventRoom.getDefaultInstance()) return this;
         if (!other.getRoomId().isEmpty()) {
           roomId_ = other.roomId_;
           onChanged();
@@ -5346,21 +13174,21 @@ public final class Websocket {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.gomicroim.lib.protos.websocket.Websocket.EventRoom parsedMessage = null;
+        EventRoom parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.gomicroim.lib.protos.websocket.Websocket.EventRoom) e.getUnfinishedMessage();
+          parsedMessage = (EventRoom) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -5370,21 +13198,21 @@ public final class Websocket {
         return this;
       }
 
-      private java.lang.Object roomId_ = "";
+      private Object roomId_ = "";
       /**
        * <code>string roomId = 1;</code>
        * @return The roomId.
        */
-      public java.lang.String getRoomId() {
-        java.lang.Object ref = roomId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getRoomId() {
+        Object ref = roomId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           roomId_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -5393,11 +13221,11 @@ public final class Websocket {
        */
       public com.google.protobuf.ByteString
           getRoomIdBytes() {
-        java.lang.Object ref = roomId_;
+        Object ref = roomId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           roomId_ = b;
           return b;
         } else {
@@ -5410,7 +13238,7 @@ public final class Websocket {
        * @return This builder for chaining.
        */
       public Builder setRoomId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -5446,7 +13274,7 @@ public final class Websocket {
         return this;
       }
 
-      private java.lang.Object channelId_ = "";
+      private Object channelId_ = "";
       /**
        * <pre>
        * _all_ _involved_ _hot_ 其他用频道id
@@ -5455,16 +13283,16 @@ public final class Websocket {
        * <code>string channelId = 2;</code>
        * @return The channelId.
        */
-      public java.lang.String getChannelId() {
-        java.lang.Object ref = channelId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getChannelId() {
+        Object ref = channelId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           channelId_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -5477,11 +13305,11 @@ public final class Websocket {
        */
       public com.google.protobuf.ByteString
           getChannelIdBytes() {
-        java.lang.Object ref = channelId_;
+        Object ref = channelId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           channelId_ = b;
           return b;
         } else {
@@ -5498,7 +13326,7 @@ public final class Websocket {
        * @return This builder for chaining.
        */
       public Builder setChannelId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -5542,7 +13370,7 @@ public final class Websocket {
         return this;
       }
 
-      private java.lang.Object type_ = "";
+      private Object type_ = "";
       /**
        * <pre>
        * "alive, exit"
@@ -5551,16 +13379,16 @@ public final class Websocket {
        * <code>string type = 3;</code>
        * @return The type.
        */
-      public java.lang.String getType() {
-        java.lang.Object ref = type_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getType() {
+        Object ref = type_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           type_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -5573,11 +13401,11 @@ public final class Websocket {
        */
       public com.google.protobuf.ByteString
           getTypeBytes() {
-        java.lang.Object ref = type_;
+        Object ref = type_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           type_ = b;
           return b;
         } else {
@@ -5594,7 +13422,7 @@ public final class Websocket {
        * @return This builder for chaining.
        */
       public Builder setType(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -5637,13 +13465,13 @@ public final class Websocket {
         onChanged();
         return this;
       }
-      @java.lang.Override
+      @Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+      @Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -5654,18 +13482,18 @@ public final class Websocket {
     }
 
     // @@protoc_insertion_point(class_scope:shuo.EventRoom)
-    private static final com.gomicroim.lib.protos.websocket.Websocket.EventRoom DEFAULT_INSTANCE;
+    private static final EventRoom DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.gomicroim.lib.protos.websocket.Websocket.EventRoom();
+      DEFAULT_INSTANCE = new EventRoom();
     }
 
-    public static com.gomicroim.lib.protos.websocket.Websocket.EventRoom getDefaultInstance() {
+    public static EventRoom getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<EventRoom>
         PARSER = new com.google.protobuf.AbstractParser<EventRoom>() {
-      @java.lang.Override
+      @Override
       public EventRoom parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5678,13 +13506,13 @@ public final class Websocket {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<EventRoom> getParserForType() {
       return PARSER;
     }
 
-    @java.lang.Override
-    public com.gomicroim.lib.protos.websocket.Websocket.EventRoom getDefaultInstanceForType() {
+    @Override
+    public EventRoom getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5698,7 +13526,7 @@ public final class Websocket {
      * <code>string roomId = 1;</code>
      * @return The roomId.
      */
-    java.lang.String getRoomId();
+    String getRoomId();
     /**
      * <code>string roomId = 1;</code>
      * @return The bytes for roomId.
@@ -5723,7 +13551,7 @@ public final class Websocket {
      * <code>.shuo.RoomMemberChangedEventType eventType = 2;</code>
      * @return The eventType.
      */
-    com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEventType getEventType();
+    RoomMemberChangedEventType getEventType();
 
     /**
      * <pre>
@@ -5756,14 +13584,14 @@ public final class Websocket {
       eventType_ = 0;
     }
 
-    @java.lang.Override
+    @Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected Object newInstance(
         UnusedPrivateParameter unused) {
       return new RoomMemberChangedEvent();
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -5774,7 +13602,7 @@ public final class Websocket {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -5787,7 +13615,7 @@ public final class Websocket {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               roomId_ = s;
               break;
@@ -5824,32 +13652,32 @@ public final class Websocket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_RoomMemberChangedEvent_descriptor;
+      return Websocket.internal_static_shuo_RoomMemberChangedEvent_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_RoomMemberChangedEvent_fieldAccessorTable
+      return Websocket.internal_static_shuo_RoomMemberChangedEvent_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent.class, com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent.Builder.class);
+              RoomMemberChangedEvent.class, Builder.class);
     }
 
     public static final int ROOMID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object roomId_;
+    private volatile Object roomId_;
     /**
      * <code>string roomId = 1;</code>
      * @return The roomId.
      */
-    @java.lang.Override
-    public java.lang.String getRoomId() {
-      java.lang.Object ref = roomId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    @Override
+    public String getRoomId() {
+      Object ref = roomId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         roomId_ = s;
         return s;
       }
@@ -5858,14 +13686,14 @@ public final class Websocket {
      * <code>string roomId = 1;</code>
      * @return The bytes for roomId.
      */
-    @java.lang.Override
+    @Override
     public com.google.protobuf.ByteString
         getRoomIdBytes() {
-      java.lang.Object ref = roomId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = roomId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         roomId_ = b;
         return b;
       } else {
@@ -5883,7 +13711,7 @@ public final class Websocket {
      * <code>.shuo.RoomMemberChangedEventType eventType = 2;</code>
      * @return The enum numeric value on the wire for eventType.
      */
-    @java.lang.Override public int getEventTypeValue() {
+    @Override public int getEventTypeValue() {
       return eventType_;
     }
     /**
@@ -5894,10 +13722,10 @@ public final class Websocket {
      * <code>.shuo.RoomMemberChangedEventType eventType = 2;</code>
      * @return The eventType.
      */
-    @java.lang.Override public com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEventType getEventType() {
+    @Override public RoomMemberChangedEventType getEventType() {
       @SuppressWarnings("deprecation")
-      com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEventType result = com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEventType.valueOf(eventType_);
-      return result == null ? com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEventType.UNRECOGNIZED : result;
+      RoomMemberChangedEventType result = RoomMemberChangedEventType.valueOf(eventType_);
+      return result == null ? RoomMemberChangedEventType.UNRECOGNIZED : result;
     }
 
     public static final int USERID_FIELD_NUMBER = 3;
@@ -5910,13 +13738,13 @@ public final class Websocket {
      * <code>int64 userId = 3;</code>
      * @return The userId.
      */
-    @java.lang.Override
+    @Override
     public long getUserId() {
       return userId_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5926,13 +13754,13 @@ public final class Websocket {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roomId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, roomId_);
       }
-      if (eventType_ != com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEventType.Unknown.getNumber()) {
+      if (eventType_ != RoomMemberChangedEventType.Unknown.getNumber()) {
         output.writeEnum(2, eventType_);
       }
       if (userId_ != 0L) {
@@ -5941,7 +13769,7 @@ public final class Websocket {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
+    @Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5950,7 +13778,7 @@ public final class Websocket {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roomId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, roomId_);
       }
-      if (eventType_ != com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEventType.Unknown.getNumber()) {
+      if (eventType_ != RoomMemberChangedEventType.Unknown.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, eventType_);
       }
@@ -5963,15 +13791,15 @@ public final class Websocket {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent)) {
+      if (!(obj instanceof RoomMemberChangedEvent)) {
         return super.equals(obj);
       }
-      com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent other = (com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent) obj;
+      RoomMemberChangedEvent other = (RoomMemberChangedEvent) obj;
 
       if (!getRoomId()
           .equals(other.getRoomId())) return false;
@@ -5982,7 +13810,7 @@ public final class Websocket {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -6001,69 +13829,69 @@ public final class Websocket {
       return hash;
     }
 
-    public static com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent parseFrom(
+    public static RoomMemberChangedEvent parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent parseFrom(
+    public static RoomMemberChangedEvent parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent parseFrom(
+    public static RoomMemberChangedEvent parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent parseFrom(
+    public static RoomMemberChangedEvent parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent parseFrom(byte[] data)
+    public static RoomMemberChangedEvent parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent parseFrom(
+    public static RoomMemberChangedEvent parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent parseFrom(java.io.InputStream input)
+    public static RoomMemberChangedEvent parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent parseFrom(
+    public static RoomMemberChangedEvent parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent parseDelimitedFrom(java.io.InputStream input)
+    public static RoomMemberChangedEvent parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent parseDelimitedFrom(
+    public static RoomMemberChangedEvent parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent parseFrom(
+    public static RoomMemberChangedEvent parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent parseFrom(
+    public static RoomMemberChangedEvent parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6071,23 +13899,23 @@ public final class Websocket {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent prototype) {
+    public static Builder newBuilder(RoomMemberChangedEvent prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -6101,18 +13929,18 @@ public final class Websocket {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:shuo.RoomMemberChangedEvent)
-        com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEventOrBuilder {
+        RoomMemberChangedEventOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_RoomMemberChangedEvent_descriptor;
+        return Websocket.internal_static_shuo_RoomMemberChangedEvent_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      @Override
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_RoomMemberChangedEvent_fieldAccessorTable
+        return Websocket.internal_static_shuo_RoomMemberChangedEvent_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent.class, com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent.Builder.class);
+                RoomMemberChangedEvent.class, Builder.class);
       }
 
       // Construct using com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent.newBuilder()
@@ -6121,7 +13949,7 @@ public final class Websocket {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -6130,7 +13958,7 @@ public final class Websocket {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
+      @Override
       public Builder clear() {
         super.clear();
         roomId_ = "";
@@ -6142,29 +13970,29 @@ public final class Websocket {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_RoomMemberChangedEvent_descriptor;
+        return Websocket.internal_static_shuo_RoomMemberChangedEvent_descriptor;
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent getDefaultInstanceForType() {
-        return com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent.getDefaultInstance();
+      @Override
+      public RoomMemberChangedEvent getDefaultInstanceForType() {
+        return RoomMemberChangedEvent.getDefaultInstance();
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent build() {
-        com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent result = buildPartial();
+      @Override
+      public RoomMemberChangedEvent build() {
+        RoomMemberChangedEvent result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent buildPartial() {
-        com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent result = new com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent(this);
+      @Override
+      public RoomMemberChangedEvent buildPartial() {
+        RoomMemberChangedEvent result = new RoomMemberChangedEvent(this);
         result.roomId_ = roomId_;
         result.eventType_ = eventType_;
         result.userId_ = userId_;
@@ -6172,50 +14000,50 @@ public final class Websocket {
         return result;
       }
 
-      @java.lang.Override
+      @Override
       public Builder clone() {
         return super.clone();
       }
-      @java.lang.Override
+      @Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.setField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+      @Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
+      @Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent) {
-          return mergeFrom((com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent)other);
+        if (other instanceof RoomMemberChangedEvent) {
+          return mergeFrom((RoomMemberChangedEvent)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent other) {
-        if (other == com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent.getDefaultInstance()) return this;
+      public Builder mergeFrom(RoomMemberChangedEvent other) {
+        if (other == RoomMemberChangedEvent.getDefaultInstance()) return this;
         if (!other.getRoomId().isEmpty()) {
           roomId_ = other.roomId_;
           onChanged();
@@ -6231,21 +14059,21 @@ public final class Websocket {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent parsedMessage = null;
+        RoomMemberChangedEvent parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent) e.getUnfinishedMessage();
+          parsedMessage = (RoomMemberChangedEvent) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -6255,21 +14083,21 @@ public final class Websocket {
         return this;
       }
 
-      private java.lang.Object roomId_ = "";
+      private Object roomId_ = "";
       /**
        * <code>string roomId = 1;</code>
        * @return The roomId.
        */
-      public java.lang.String getRoomId() {
-        java.lang.Object ref = roomId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getRoomId() {
+        Object ref = roomId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           roomId_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -6278,11 +14106,11 @@ public final class Websocket {
        */
       public com.google.protobuf.ByteString
           getRoomIdBytes() {
-        java.lang.Object ref = roomId_;
+        Object ref = roomId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           roomId_ = b;
           return b;
         } else {
@@ -6295,7 +14123,7 @@ public final class Websocket {
        * @return This builder for chaining.
        */
       public Builder setRoomId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6340,7 +14168,7 @@ public final class Websocket {
        * <code>.shuo.RoomMemberChangedEventType eventType = 2;</code>
        * @return The enum numeric value on the wire for eventType.
        */
-      @java.lang.Override public int getEventTypeValue() {
+      @Override public int getEventTypeValue() {
         return eventType_;
       }
       /**
@@ -6366,11 +14194,11 @@ public final class Websocket {
        * <code>.shuo.RoomMemberChangedEventType eventType = 2;</code>
        * @return The eventType.
        */
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEventType getEventType() {
+      @Override
+      public RoomMemberChangedEventType getEventType() {
         @SuppressWarnings("deprecation")
-        com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEventType result = com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEventType.valueOf(eventType_);
-        return result == null ? com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEventType.UNRECOGNIZED : result;
+        RoomMemberChangedEventType result = RoomMemberChangedEventType.valueOf(eventType_);
+        return result == null ? RoomMemberChangedEventType.UNRECOGNIZED : result;
       }
       /**
        * <pre>
@@ -6381,7 +14209,7 @@ public final class Websocket {
        * @param value The eventType to set.
        * @return This builder for chaining.
        */
-      public Builder setEventType(com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEventType value) {
+      public Builder setEventType(RoomMemberChangedEventType value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -6414,7 +14242,7 @@ public final class Websocket {
        * <code>int64 userId = 3;</code>
        * @return The userId.
        */
-      @java.lang.Override
+      @Override
       public long getUserId() {
         return userId_;
       }
@@ -6447,13 +14275,13 @@ public final class Websocket {
         onChanged();
         return this;
       }
-      @java.lang.Override
+      @Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+      @Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -6464,18 +14292,18 @@ public final class Websocket {
     }
 
     // @@protoc_insertion_point(class_scope:shuo.RoomMemberChangedEvent)
-    private static final com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent DEFAULT_INSTANCE;
+    private static final RoomMemberChangedEvent DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent();
+      DEFAULT_INSTANCE = new RoomMemberChangedEvent();
     }
 
-    public static com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent getDefaultInstance() {
+    public static RoomMemberChangedEvent getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<RoomMemberChangedEvent>
         PARSER = new com.google.protobuf.AbstractParser<RoomMemberChangedEvent>() {
-      @java.lang.Override
+      @Override
       public RoomMemberChangedEvent parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6488,13 +14316,13 @@ public final class Websocket {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<RoomMemberChangedEvent> getParserForType() {
       return PARSER;
     }
 
-    @java.lang.Override
-    public com.gomicroim.lib.protos.websocket.Websocket.RoomMemberChangedEvent getDefaultInstanceForType() {
+    @Override
+    public RoomMemberChangedEvent getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6508,7 +14336,7 @@ public final class Websocket {
      * <code>string title = 1;</code>
      * @return The title.
      */
-    java.lang.String getTitle();
+    String getTitle();
     /**
      * <code>string title = 1;</code>
      * @return The bytes for title.
@@ -6520,7 +14348,7 @@ public final class Websocket {
      * <code>string body = 2;</code>
      * @return The body.
      */
-    java.lang.String getBody();
+    String getBody();
     /**
      * <code>string body = 2;</code>
      * @return The bytes for body.
@@ -6532,7 +14360,7 @@ public final class Websocket {
      * <code>string icon = 3;</code>
      * @return The icon.
      */
-    java.lang.String getIcon();
+    String getIcon();
     /**
      * <code>string icon = 3;</code>
      * @return The bytes for icon.
@@ -6544,7 +14372,7 @@ public final class Websocket {
      * <code>string link = 4;</code>
      * @return The link.
      */
-    java.lang.String getLink();
+    String getLink();
     /**
      * <code>string link = 4;</code>
      * @return The bytes for link.
@@ -6556,7 +14384,7 @@ public final class Websocket {
      * <code>string id = 5;</code>
      * @return The id.
      */
-    java.lang.String getId();
+    String getId();
     /**
      * <code>string id = 5;</code>
      * @return The bytes for id.
@@ -6582,7 +14410,7 @@ public final class Websocket {
      * <code>string sound = 7;</code>
      * @return The sound.
      */
-    java.lang.String getSound();
+    String getSound();
     /**
      * <pre>
      *声音
@@ -6598,7 +14426,7 @@ public final class Websocket {
      * <code>string thread_id = 8;</code>
      * @return The threadId.
      */
-    java.lang.String getThreadId();
+    String getThreadId();
     /**
      * <code>string thread_id = 8;</code>
      * @return The bytes for threadId.
@@ -6648,14 +14476,14 @@ public final class Websocket {
       type_ = 0;
     }
 
-    @java.lang.Override
+    @Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected Object newInstance(
         UnusedPrivateParameter unused) {
       return new WebsocketNotice();
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -6666,7 +14494,7 @@ public final class Websocket {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -6679,31 +14507,31 @@ public final class Websocket {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               title_ = s;
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               body_ = s;
               break;
             }
             case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               icon_ = s;
               break;
             }
             case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               link_ = s;
               break;
             }
             case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               id_ = s;
               break;
@@ -6714,13 +14542,13 @@ public final class Websocket {
               break;
             }
             case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               sound_ = s;
               break;
             }
             case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               threadId_ = s;
               break;
@@ -6752,32 +14580,32 @@ public final class Websocket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_WebsocketNotice_descriptor;
+      return Websocket.internal_static_shuo_WebsocketNotice_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_WebsocketNotice_fieldAccessorTable
+      return Websocket.internal_static_shuo_WebsocketNotice_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice.class, com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice.Builder.class);
+              WebsocketNotice.class, Builder.class);
     }
 
     public static final int TITLE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object title_;
+    private volatile Object title_;
     /**
      * <code>string title = 1;</code>
      * @return The title.
      */
-    @java.lang.Override
-    public java.lang.String getTitle() {
-      java.lang.Object ref = title_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    @Override
+    public String getTitle() {
+      Object ref = title_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         title_ = s;
         return s;
       }
@@ -6786,14 +14614,14 @@ public final class Websocket {
      * <code>string title = 1;</code>
      * @return The bytes for title.
      */
-    @java.lang.Override
+    @Override
     public com.google.protobuf.ByteString
         getTitleBytes() {
-      java.lang.Object ref = title_;
-      if (ref instanceof java.lang.String) {
+      Object ref = title_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         title_ = b;
         return b;
       } else {
@@ -6802,20 +14630,20 @@ public final class Websocket {
     }
 
     public static final int BODY_FIELD_NUMBER = 2;
-    private volatile java.lang.Object body_;
+    private volatile Object body_;
     /**
      * <code>string body = 2;</code>
      * @return The body.
      */
-    @java.lang.Override
-    public java.lang.String getBody() {
-      java.lang.Object ref = body_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    @Override
+    public String getBody() {
+      Object ref = body_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         body_ = s;
         return s;
       }
@@ -6824,14 +14652,14 @@ public final class Websocket {
      * <code>string body = 2;</code>
      * @return The bytes for body.
      */
-    @java.lang.Override
+    @Override
     public com.google.protobuf.ByteString
         getBodyBytes() {
-      java.lang.Object ref = body_;
-      if (ref instanceof java.lang.String) {
+      Object ref = body_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         body_ = b;
         return b;
       } else {
@@ -6840,20 +14668,20 @@ public final class Websocket {
     }
 
     public static final int ICON_FIELD_NUMBER = 3;
-    private volatile java.lang.Object icon_;
+    private volatile Object icon_;
     /**
      * <code>string icon = 3;</code>
      * @return The icon.
      */
-    @java.lang.Override
-    public java.lang.String getIcon() {
-      java.lang.Object ref = icon_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    @Override
+    public String getIcon() {
+      Object ref = icon_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         icon_ = s;
         return s;
       }
@@ -6862,14 +14690,14 @@ public final class Websocket {
      * <code>string icon = 3;</code>
      * @return The bytes for icon.
      */
-    @java.lang.Override
+    @Override
     public com.google.protobuf.ByteString
         getIconBytes() {
-      java.lang.Object ref = icon_;
-      if (ref instanceof java.lang.String) {
+      Object ref = icon_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         icon_ = b;
         return b;
       } else {
@@ -6878,20 +14706,20 @@ public final class Websocket {
     }
 
     public static final int LINK_FIELD_NUMBER = 4;
-    private volatile java.lang.Object link_;
+    private volatile Object link_;
     /**
      * <code>string link = 4;</code>
      * @return The link.
      */
-    @java.lang.Override
-    public java.lang.String getLink() {
-      java.lang.Object ref = link_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    @Override
+    public String getLink() {
+      Object ref = link_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         link_ = s;
         return s;
       }
@@ -6900,14 +14728,14 @@ public final class Websocket {
      * <code>string link = 4;</code>
      * @return The bytes for link.
      */
-    @java.lang.Override
+    @Override
     public com.google.protobuf.ByteString
         getLinkBytes() {
-      java.lang.Object ref = link_;
-      if (ref instanceof java.lang.String) {
+      Object ref = link_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         link_ = b;
         return b;
       } else {
@@ -6916,20 +14744,20 @@ public final class Websocket {
     }
 
     public static final int ID_FIELD_NUMBER = 5;
-    private volatile java.lang.Object id_;
+    private volatile Object id_;
     /**
      * <code>string id = 5;</code>
      * @return The id.
      */
-    @java.lang.Override
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    @Override
+    public String getId() {
+      Object ref = id_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         id_ = s;
         return s;
       }
@@ -6938,14 +14766,14 @@ public final class Websocket {
      * <code>string id = 5;</code>
      * @return The bytes for id.
      */
-    @java.lang.Override
+    @Override
     public com.google.protobuf.ByteString
         getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
+      Object ref = id_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         id_ = b;
         return b;
       } else {
@@ -6963,13 +14791,13 @@ public final class Websocket {
      * <code>int32 badge = 6;</code>
      * @return The badge.
      */
-    @java.lang.Override
+    @Override
     public int getBadge() {
       return badge_;
     }
 
     public static final int SOUND_FIELD_NUMBER = 7;
-    private volatile java.lang.Object sound_;
+    private volatile Object sound_;
     /**
      * <pre>
      *声音
@@ -6978,15 +14806,15 @@ public final class Websocket {
      * <code>string sound = 7;</code>
      * @return The sound.
      */
-    @java.lang.Override
-    public java.lang.String getSound() {
-      java.lang.Object ref = sound_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    @Override
+    public String getSound() {
+      Object ref = sound_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         sound_ = s;
         return s;
       }
@@ -6999,14 +14827,14 @@ public final class Websocket {
      * <code>string sound = 7;</code>
      * @return The bytes for sound.
      */
-    @java.lang.Override
+    @Override
     public com.google.protobuf.ByteString
         getSoundBytes() {
-      java.lang.Object ref = sound_;
-      if (ref instanceof java.lang.String) {
+      Object ref = sound_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         sound_ = b;
         return b;
       } else {
@@ -7015,20 +14843,20 @@ public final class Websocket {
     }
 
     public static final int THREAD_ID_FIELD_NUMBER = 8;
-    private volatile java.lang.Object threadId_;
+    private volatile Object threadId_;
     /**
      * <code>string thread_id = 8;</code>
      * @return The threadId.
      */
-    @java.lang.Override
-    public java.lang.String getThreadId() {
-      java.lang.Object ref = threadId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    @Override
+    public String getThreadId() {
+      Object ref = threadId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         threadId_ = s;
         return s;
       }
@@ -7037,14 +14865,14 @@ public final class Websocket {
      * <code>string thread_id = 8;</code>
      * @return The bytes for threadId.
      */
-    @java.lang.Override
+    @Override
     public com.google.protobuf.ByteString
         getThreadIdBytes() {
-      java.lang.Object ref = threadId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = threadId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         threadId_ = b;
         return b;
       } else {
@@ -7062,7 +14890,7 @@ public final class Websocket {
      * <code>.shuo.WebsocketNoticeType Type = 9;</code>
      * @return The enum numeric value on the wire for type.
      */
-    @java.lang.Override public int getTypeValue() {
+    @Override public int getTypeValue() {
       return type_;
     }
     /**
@@ -7073,14 +14901,14 @@ public final class Websocket {
      * <code>.shuo.WebsocketNoticeType Type = 9;</code>
      * @return The type.
      */
-    @java.lang.Override public com.gomicroim.lib.protos.Constants.WebsocketNoticeType getType() {
+    @Override public com.gomicroim.lib.protos.Constants.WebsocketNoticeType getType() {
       @SuppressWarnings("deprecation")
       com.gomicroim.lib.protos.Constants.WebsocketNoticeType result = com.gomicroim.lib.protos.Constants.WebsocketNoticeType.valueOf(type_);
       return result == null ? com.gomicroim.lib.protos.Constants.WebsocketNoticeType.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7090,7 +14918,7 @@ public final class Websocket {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
@@ -7123,7 +14951,7 @@ public final class Websocket {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
+    @Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -7163,15 +14991,15 @@ public final class Websocket {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice)) {
+      if (!(obj instanceof WebsocketNotice)) {
         return super.equals(obj);
       }
-      com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice other = (com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice) obj;
+      WebsocketNotice other = (WebsocketNotice) obj;
 
       if (!getTitle()
           .equals(other.getTitle())) return false;
@@ -7194,7 +15022,7 @@ public final class Websocket {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -7224,69 +15052,69 @@ public final class Websocket {
       return hash;
     }
 
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice parseFrom(
+    public static WebsocketNotice parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice parseFrom(
+    public static WebsocketNotice parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice parseFrom(
+    public static WebsocketNotice parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice parseFrom(
+    public static WebsocketNotice parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice parseFrom(byte[] data)
+    public static WebsocketNotice parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice parseFrom(
+    public static WebsocketNotice parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice parseFrom(java.io.InputStream input)
+    public static WebsocketNotice parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice parseFrom(
+    public static WebsocketNotice parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice parseDelimitedFrom(java.io.InputStream input)
+    public static WebsocketNotice parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice parseDelimitedFrom(
+    public static WebsocketNotice parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice parseFrom(
+    public static WebsocketNotice parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice parseFrom(
+    public static WebsocketNotice parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7294,23 +15122,23 @@ public final class Websocket {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice prototype) {
+    public static Builder newBuilder(WebsocketNotice prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -7320,18 +15148,18 @@ public final class Websocket {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:shuo.WebsocketNotice)
-        com.gomicroim.lib.protos.websocket.Websocket.WebsocketNoticeOrBuilder {
+        WebsocketNoticeOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_WebsocketNotice_descriptor;
+        return Websocket.internal_static_shuo_WebsocketNotice_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      @Override
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_WebsocketNotice_fieldAccessorTable
+        return Websocket.internal_static_shuo_WebsocketNotice_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice.class, com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice.Builder.class);
+                WebsocketNotice.class, Builder.class);
       }
 
       // Construct using com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice.newBuilder()
@@ -7340,7 +15168,7 @@ public final class Websocket {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -7349,7 +15177,7 @@ public final class Websocket {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
+      @Override
       public Builder clear() {
         super.clear();
         title_ = "";
@@ -7373,29 +15201,29 @@ public final class Websocket {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_WebsocketNotice_descriptor;
+        return Websocket.internal_static_shuo_WebsocketNotice_descriptor;
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice getDefaultInstanceForType() {
-        return com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice.getDefaultInstance();
+      @Override
+      public WebsocketNotice getDefaultInstanceForType() {
+        return WebsocketNotice.getDefaultInstance();
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice build() {
-        com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice result = buildPartial();
+      @Override
+      public WebsocketNotice build() {
+        WebsocketNotice result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice buildPartial() {
-        com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice result = new com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice(this);
+      @Override
+      public WebsocketNotice buildPartial() {
+        WebsocketNotice result = new WebsocketNotice(this);
         result.title_ = title_;
         result.body_ = body_;
         result.icon_ = icon_;
@@ -7409,50 +15237,50 @@ public final class Websocket {
         return result;
       }
 
-      @java.lang.Override
+      @Override
       public Builder clone() {
         return super.clone();
       }
-      @java.lang.Override
+      @Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.setField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+      @Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
+      @Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice) {
-          return mergeFrom((com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice)other);
+        if (other instanceof WebsocketNotice) {
+          return mergeFrom((WebsocketNotice)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice other) {
-        if (other == com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice.getDefaultInstance()) return this;
+      public Builder mergeFrom(WebsocketNotice other) {
+        if (other == WebsocketNotice.getDefaultInstance()) return this;
         if (!other.getTitle().isEmpty()) {
           title_ = other.title_;
           onChanged();
@@ -7492,21 +15320,21 @@ public final class Websocket {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice parsedMessage = null;
+        WebsocketNotice parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice) e.getUnfinishedMessage();
+          parsedMessage = (WebsocketNotice) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -7516,21 +15344,21 @@ public final class Websocket {
         return this;
       }
 
-      private java.lang.Object title_ = "";
+      private Object title_ = "";
       /**
        * <code>string title = 1;</code>
        * @return The title.
        */
-      public java.lang.String getTitle() {
-        java.lang.Object ref = title_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getTitle() {
+        Object ref = title_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           title_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -7539,11 +15367,11 @@ public final class Websocket {
        */
       public com.google.protobuf.ByteString
           getTitleBytes() {
-        java.lang.Object ref = title_;
+        Object ref = title_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           title_ = b;
           return b;
         } else {
@@ -7556,7 +15384,7 @@ public final class Websocket {
        * @return This builder for chaining.
        */
       public Builder setTitle(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -7592,21 +15420,21 @@ public final class Websocket {
         return this;
       }
 
-      private java.lang.Object body_ = "";
+      private Object body_ = "";
       /**
        * <code>string body = 2;</code>
        * @return The body.
        */
-      public java.lang.String getBody() {
-        java.lang.Object ref = body_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getBody() {
+        Object ref = body_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           body_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -7615,11 +15443,11 @@ public final class Websocket {
        */
       public com.google.protobuf.ByteString
           getBodyBytes() {
-        java.lang.Object ref = body_;
+        Object ref = body_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           body_ = b;
           return b;
         } else {
@@ -7632,7 +15460,7 @@ public final class Websocket {
        * @return This builder for chaining.
        */
       public Builder setBody(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -7668,21 +15496,21 @@ public final class Websocket {
         return this;
       }
 
-      private java.lang.Object icon_ = "";
+      private Object icon_ = "";
       /**
        * <code>string icon = 3;</code>
        * @return The icon.
        */
-      public java.lang.String getIcon() {
-        java.lang.Object ref = icon_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getIcon() {
+        Object ref = icon_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           icon_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -7691,11 +15519,11 @@ public final class Websocket {
        */
       public com.google.protobuf.ByteString
           getIconBytes() {
-        java.lang.Object ref = icon_;
+        Object ref = icon_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           icon_ = b;
           return b;
         } else {
@@ -7708,7 +15536,7 @@ public final class Websocket {
        * @return This builder for chaining.
        */
       public Builder setIcon(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -7744,21 +15572,21 @@ public final class Websocket {
         return this;
       }
 
-      private java.lang.Object link_ = "";
+      private Object link_ = "";
       /**
        * <code>string link = 4;</code>
        * @return The link.
        */
-      public java.lang.String getLink() {
-        java.lang.Object ref = link_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getLink() {
+        Object ref = link_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           link_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -7767,11 +15595,11 @@ public final class Websocket {
        */
       public com.google.protobuf.ByteString
           getLinkBytes() {
-        java.lang.Object ref = link_;
+        Object ref = link_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           link_ = b;
           return b;
         } else {
@@ -7784,7 +15612,7 @@ public final class Websocket {
        * @return This builder for chaining.
        */
       public Builder setLink(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -7820,21 +15648,21 @@ public final class Websocket {
         return this;
       }
 
-      private java.lang.Object id_ = "";
+      private Object id_ = "";
       /**
        * <code>string id = 5;</code>
        * @return The id.
        */
-      public java.lang.String getId() {
-        java.lang.Object ref = id_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getId() {
+        Object ref = id_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           id_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -7843,11 +15671,11 @@ public final class Websocket {
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
-        java.lang.Object ref = id_;
+        Object ref = id_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           id_ = b;
           return b;
         } else {
@@ -7860,7 +15688,7 @@ public final class Websocket {
        * @return This builder for chaining.
        */
       public Builder setId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -7905,7 +15733,7 @@ public final class Websocket {
        * <code>int32 badge = 6;</code>
        * @return The badge.
        */
-      @java.lang.Override
+      @Override
       public int getBadge() {
         return badge_;
       }
@@ -7939,7 +15767,7 @@ public final class Websocket {
         return this;
       }
 
-      private java.lang.Object sound_ = "";
+      private Object sound_ = "";
       /**
        * <pre>
        *声音
@@ -7948,16 +15776,16 @@ public final class Websocket {
        * <code>string sound = 7;</code>
        * @return The sound.
        */
-      public java.lang.String getSound() {
-        java.lang.Object ref = sound_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getSound() {
+        Object ref = sound_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           sound_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -7970,11 +15798,11 @@ public final class Websocket {
        */
       public com.google.protobuf.ByteString
           getSoundBytes() {
-        java.lang.Object ref = sound_;
+        Object ref = sound_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           sound_ = b;
           return b;
         } else {
@@ -7991,7 +15819,7 @@ public final class Websocket {
        * @return This builder for chaining.
        */
       public Builder setSound(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -8035,21 +15863,21 @@ public final class Websocket {
         return this;
       }
 
-      private java.lang.Object threadId_ = "";
+      private Object threadId_ = "";
       /**
        * <code>string thread_id = 8;</code>
        * @return The threadId.
        */
-      public java.lang.String getThreadId() {
-        java.lang.Object ref = threadId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getThreadId() {
+        Object ref = threadId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           threadId_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -8058,11 +15886,11 @@ public final class Websocket {
        */
       public com.google.protobuf.ByteString
           getThreadIdBytes() {
-        java.lang.Object ref = threadId_;
+        Object ref = threadId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           threadId_ = b;
           return b;
         } else {
@@ -8075,7 +15903,7 @@ public final class Websocket {
        * @return This builder for chaining.
        */
       public Builder setThreadId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -8120,7 +15948,7 @@ public final class Websocket {
        * <code>.shuo.WebsocketNoticeType Type = 9;</code>
        * @return The enum numeric value on the wire for type.
        */
-      @java.lang.Override public int getTypeValue() {
+      @Override public int getTypeValue() {
         return type_;
       }
       /**
@@ -8146,7 +15974,7 @@ public final class Websocket {
        * <code>.shuo.WebsocketNoticeType Type = 9;</code>
        * @return The type.
        */
-      @java.lang.Override
+      @Override
       public com.gomicroim.lib.protos.Constants.WebsocketNoticeType getType() {
         @SuppressWarnings("deprecation")
         com.gomicroim.lib.protos.Constants.WebsocketNoticeType result = com.gomicroim.lib.protos.Constants.WebsocketNoticeType.valueOf(type_);
@@ -8184,13 +16012,13 @@ public final class Websocket {
         onChanged();
         return this;
       }
-      @java.lang.Override
+      @Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+      @Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -8201,18 +16029,18 @@ public final class Websocket {
     }
 
     // @@protoc_insertion_point(class_scope:shuo.WebsocketNotice)
-    private static final com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice DEFAULT_INSTANCE;
+    private static final WebsocketNotice DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice();
+      DEFAULT_INSTANCE = new WebsocketNotice();
     }
 
-    public static com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice getDefaultInstance() {
+    public static WebsocketNotice getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<WebsocketNotice>
         PARSER = new com.google.protobuf.AbstractParser<WebsocketNotice>() {
-      @java.lang.Override
+      @Override
       public WebsocketNotice parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8225,13 +16053,13 @@ public final class Websocket {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<WebsocketNotice> getParserForType() {
       return PARSER;
     }
 
-    @java.lang.Override
-    public com.gomicroim.lib.protos.websocket.Websocket.WebsocketNotice getDefaultInstanceForType() {
+    @Override
+    public WebsocketNotice getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8286,14 +16114,14 @@ public final class Websocket {
       type_ = 0;
     }
 
-    @java.lang.Override
+    @Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected Object newInstance(
         UnusedPrivateParameter unused) {
       return new FriendChange();
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -8304,7 +16132,7 @@ public final class Websocket {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -8348,15 +16176,15 @@ public final class Websocket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_FriendChange_descriptor;
+      return Websocket.internal_static_shuo_FriendChange_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_FriendChange_fieldAccessorTable
+      return Websocket.internal_static_shuo_FriendChange_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.gomicroim.lib.protos.websocket.Websocket.FriendChange.class, com.gomicroim.lib.protos.websocket.Websocket.FriendChange.Builder.class);
+              FriendChange.class, Builder.class);
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
@@ -8369,7 +16197,7 @@ public final class Websocket {
      * <code>.shuo.FriendChangeType type = 1;</code>
      * @return The enum numeric value on the wire for type.
      */
-    @java.lang.Override public int getTypeValue() {
+    @Override public int getTypeValue() {
       return type_;
     }
     /**
@@ -8380,7 +16208,7 @@ public final class Websocket {
      * <code>.shuo.FriendChangeType type = 1;</code>
      * @return The type.
      */
-    @java.lang.Override public com.gomicroim.lib.protos.Constants.FriendChangeType getType() {
+    @Override public com.gomicroim.lib.protos.Constants.FriendChangeType getType() {
       @SuppressWarnings("deprecation")
       com.gomicroim.lib.protos.Constants.FriendChangeType result = com.gomicroim.lib.protos.Constants.FriendChangeType.valueOf(type_);
       return result == null ? com.gomicroim.lib.protos.Constants.FriendChangeType.UNRECOGNIZED : result;
@@ -8396,13 +16224,13 @@ public final class Websocket {
      * <code>int64 friend_user_id = 2;</code>
      * @return The friendUserId.
      */
-    @java.lang.Override
+    @Override
     public long getFriendUserId() {
       return friendUserId_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -8412,7 +16240,7 @@ public final class Websocket {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (type_ != com.gomicroim.lib.protos.Constants.FriendChangeType.FriendChangeTypeUndefined.getNumber()) {
@@ -8424,7 +16252,7 @@ public final class Websocket {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
+    @Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -8443,15 +16271,15 @@ public final class Websocket {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.gomicroim.lib.protos.websocket.Websocket.FriendChange)) {
+      if (!(obj instanceof FriendChange)) {
         return super.equals(obj);
       }
-      com.gomicroim.lib.protos.websocket.Websocket.FriendChange other = (com.gomicroim.lib.protos.websocket.Websocket.FriendChange) obj;
+      FriendChange other = (FriendChange) obj;
 
       if (type_ != other.type_) return false;
       if (getFriendUserId()
@@ -8460,7 +16288,7 @@ public final class Websocket {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -8477,69 +16305,69 @@ public final class Websocket {
       return hash;
     }
 
-    public static com.gomicroim.lib.protos.websocket.Websocket.FriendChange parseFrom(
+    public static FriendChange parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.FriendChange parseFrom(
+    public static FriendChange parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.FriendChange parseFrom(
+    public static FriendChange parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.FriendChange parseFrom(
+    public static FriendChange parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.FriendChange parseFrom(byte[] data)
+    public static FriendChange parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.FriendChange parseFrom(
+    public static FriendChange parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.FriendChange parseFrom(java.io.InputStream input)
+    public static FriendChange parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.FriendChange parseFrom(
+    public static FriendChange parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.FriendChange parseDelimitedFrom(java.io.InputStream input)
+    public static FriendChange parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.FriendChange parseDelimitedFrom(
+    public static FriendChange parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.FriendChange parseFrom(
+    public static FriendChange parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.FriendChange parseFrom(
+    public static FriendChange parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8547,23 +16375,23 @@ public final class Websocket {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.gomicroim.lib.protos.websocket.Websocket.FriendChange prototype) {
+    public static Builder newBuilder(FriendChange prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -8573,18 +16401,18 @@ public final class Websocket {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:shuo.FriendChange)
-        com.gomicroim.lib.protos.websocket.Websocket.FriendChangeOrBuilder {
+        FriendChangeOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_FriendChange_descriptor;
+        return Websocket.internal_static_shuo_FriendChange_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      @Override
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_FriendChange_fieldAccessorTable
+        return Websocket.internal_static_shuo_FriendChange_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.gomicroim.lib.protos.websocket.Websocket.FriendChange.class, com.gomicroim.lib.protos.websocket.Websocket.FriendChange.Builder.class);
+                FriendChange.class, Builder.class);
       }
 
       // Construct using com.gomicroim.lib.protos.websocket.Websocket.FriendChange.newBuilder()
@@ -8593,7 +16421,7 @@ public final class Websocket {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -8602,7 +16430,7 @@ public final class Websocket {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
+      @Override
       public Builder clear() {
         super.clear();
         type_ = 0;
@@ -8612,79 +16440,79 @@ public final class Websocket {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_FriendChange_descriptor;
+        return Websocket.internal_static_shuo_FriendChange_descriptor;
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.FriendChange getDefaultInstanceForType() {
-        return com.gomicroim.lib.protos.websocket.Websocket.FriendChange.getDefaultInstance();
+      @Override
+      public FriendChange getDefaultInstanceForType() {
+        return FriendChange.getDefaultInstance();
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.FriendChange build() {
-        com.gomicroim.lib.protos.websocket.Websocket.FriendChange result = buildPartial();
+      @Override
+      public FriendChange build() {
+        FriendChange result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.FriendChange buildPartial() {
-        com.gomicroim.lib.protos.websocket.Websocket.FriendChange result = new com.gomicroim.lib.protos.websocket.Websocket.FriendChange(this);
+      @Override
+      public FriendChange buildPartial() {
+        FriendChange result = new FriendChange(this);
         result.type_ = type_;
         result.friendUserId_ = friendUserId_;
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
+      @Override
       public Builder clone() {
         return super.clone();
       }
-      @java.lang.Override
+      @Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.setField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+      @Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
+      @Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.gomicroim.lib.protos.websocket.Websocket.FriendChange) {
-          return mergeFrom((com.gomicroim.lib.protos.websocket.Websocket.FriendChange)other);
+        if (other instanceof FriendChange) {
+          return mergeFrom((FriendChange)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.gomicroim.lib.protos.websocket.Websocket.FriendChange other) {
-        if (other == com.gomicroim.lib.protos.websocket.Websocket.FriendChange.getDefaultInstance()) return this;
+      public Builder mergeFrom(FriendChange other) {
+        if (other == FriendChange.getDefaultInstance()) return this;
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
@@ -8696,21 +16524,21 @@ public final class Websocket {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.gomicroim.lib.protos.websocket.Websocket.FriendChange parsedMessage = null;
+        FriendChange parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.gomicroim.lib.protos.websocket.Websocket.FriendChange) e.getUnfinishedMessage();
+          parsedMessage = (FriendChange) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -8729,7 +16557,7 @@ public final class Websocket {
        * <code>.shuo.FriendChangeType type = 1;</code>
        * @return The enum numeric value on the wire for type.
        */
-      @java.lang.Override public int getTypeValue() {
+      @Override public int getTypeValue() {
         return type_;
       }
       /**
@@ -8755,7 +16583,7 @@ public final class Websocket {
        * <code>.shuo.FriendChangeType type = 1;</code>
        * @return The type.
        */
-      @java.lang.Override
+      @Override
       public com.gomicroim.lib.protos.Constants.FriendChangeType getType() {
         @SuppressWarnings("deprecation")
         com.gomicroim.lib.protos.Constants.FriendChangeType result = com.gomicroim.lib.protos.Constants.FriendChangeType.valueOf(type_);
@@ -8803,7 +16631,7 @@ public final class Websocket {
        * <code>int64 friend_user_id = 2;</code>
        * @return The friendUserId.
        */
-      @java.lang.Override
+      @Override
       public long getFriendUserId() {
         return friendUserId_;
       }
@@ -8836,13 +16664,13 @@ public final class Websocket {
         onChanged();
         return this;
       }
-      @java.lang.Override
+      @Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+      @Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -8853,18 +16681,18 @@ public final class Websocket {
     }
 
     // @@protoc_insertion_point(class_scope:shuo.FriendChange)
-    private static final com.gomicroim.lib.protos.websocket.Websocket.FriendChange DEFAULT_INSTANCE;
+    private static final FriendChange DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.gomicroim.lib.protos.websocket.Websocket.FriendChange();
+      DEFAULT_INSTANCE = new FriendChange();
     }
 
-    public static com.gomicroim.lib.protos.websocket.Websocket.FriendChange getDefaultInstance() {
+    public static FriendChange getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<FriendChange>
         PARSER = new com.google.protobuf.AbstractParser<FriendChange>() {
-      @java.lang.Override
+      @Override
       public FriendChange parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8877,13 +16705,13 @@ public final class Websocket {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<FriendChange> getParserForType() {
       return PARSER;
     }
 
-    @java.lang.Override
-    public com.gomicroim.lib.protos.websocket.Websocket.FriendChange getDefaultInstanceForType() {
+    @Override
+    public FriendChange getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8938,14 +16766,14 @@ public final class Websocket {
       type_ = 0;
     }
 
-    @java.lang.Override
+    @Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
+    protected Object newInstance(
         UnusedPrivateParameter unused) {
       return new NewFriendRequestEvent();
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -8956,7 +16784,7 @@ public final class Websocket {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -9000,15 +16828,15 @@ public final class Websocket {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_NewFriendRequestEvent_descriptor;
+      return Websocket.internal_static_shuo_NewFriendRequestEvent_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_NewFriendRequestEvent_fieldAccessorTable
+      return Websocket.internal_static_shuo_NewFriendRequestEvent_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent.class, com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent.Builder.class);
+              NewFriendRequestEvent.class, Builder.class);
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
@@ -9021,7 +16849,7 @@ public final class Websocket {
      * <code>.shuo.NewFriendRequestType type = 1;</code>
      * @return The enum numeric value on the wire for type.
      */
-    @java.lang.Override public int getTypeValue() {
+    @Override public int getTypeValue() {
       return type_;
     }
     /**
@@ -9032,7 +16860,7 @@ public final class Websocket {
      * <code>.shuo.NewFriendRequestType type = 1;</code>
      * @return The type.
      */
-    @java.lang.Override public com.gomicroim.lib.protos.Constants.NewFriendRequestType getType() {
+    @Override public com.gomicroim.lib.protos.Constants.NewFriendRequestType getType() {
       @SuppressWarnings("deprecation")
       com.gomicroim.lib.protos.Constants.NewFriendRequestType result = com.gomicroim.lib.protos.Constants.NewFriendRequestType.valueOf(type_);
       return result == null ? com.gomicroim.lib.protos.Constants.NewFriendRequestType.UNRECOGNIZED : result;
@@ -9048,13 +16876,13 @@ public final class Websocket {
      * <code>int64 user_id = 2;</code>
      * @return The userId.
      */
-    @java.lang.Override
+    @Override
     public long getUserId() {
       return userId_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -9064,7 +16892,7 @@ public final class Websocket {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (type_ != com.gomicroim.lib.protos.Constants.NewFriendRequestType.NewFriendRequestTypeUndefined.getNumber()) {
@@ -9076,7 +16904,7 @@ public final class Websocket {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
+    @Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -9095,15 +16923,15 @@ public final class Websocket {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent)) {
+      if (!(obj instanceof NewFriendRequestEvent)) {
         return super.equals(obj);
       }
-      com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent other = (com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent) obj;
+      NewFriendRequestEvent other = (NewFriendRequestEvent) obj;
 
       if (type_ != other.type_) return false;
       if (getUserId()
@@ -9112,7 +16940,7 @@ public final class Websocket {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -9129,69 +16957,69 @@ public final class Websocket {
       return hash;
     }
 
-    public static com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent parseFrom(
+    public static NewFriendRequestEvent parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent parseFrom(
+    public static NewFriendRequestEvent parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent parseFrom(
+    public static NewFriendRequestEvent parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent parseFrom(
+    public static NewFriendRequestEvent parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent parseFrom(byte[] data)
+    public static NewFriendRequestEvent parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent parseFrom(
+    public static NewFriendRequestEvent parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent parseFrom(java.io.InputStream input)
+    public static NewFriendRequestEvent parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent parseFrom(
+    public static NewFriendRequestEvent parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent parseDelimitedFrom(java.io.InputStream input)
+    public static NewFriendRequestEvent parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent parseDelimitedFrom(
+    public static NewFriendRequestEvent parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent parseFrom(
+    public static NewFriendRequestEvent parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent parseFrom(
+    public static NewFriendRequestEvent parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -9199,23 +17027,23 @@ public final class Websocket {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent prototype) {
+    public static Builder newBuilder(NewFriendRequestEvent prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -9225,18 +17053,18 @@ public final class Websocket {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:shuo.NewFriendRequestEvent)
-        com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEventOrBuilder {
+        NewFriendRequestEventOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_NewFriendRequestEvent_descriptor;
+        return Websocket.internal_static_shuo_NewFriendRequestEvent_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      @Override
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_NewFriendRequestEvent_fieldAccessorTable
+        return Websocket.internal_static_shuo_NewFriendRequestEvent_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent.class, com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent.Builder.class);
+                NewFriendRequestEvent.class, Builder.class);
       }
 
       // Construct using com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent.newBuilder()
@@ -9245,7 +17073,7 @@ public final class Websocket {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -9254,7 +17082,7 @@ public final class Websocket {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
+      @Override
       public Builder clear() {
         super.clear();
         type_ = 0;
@@ -9264,79 +17092,79 @@ public final class Websocket {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.gomicroim.lib.protos.websocket.Websocket.internal_static_shuo_NewFriendRequestEvent_descriptor;
+        return Websocket.internal_static_shuo_NewFriendRequestEvent_descriptor;
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent getDefaultInstanceForType() {
-        return com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent.getDefaultInstance();
+      @Override
+      public NewFriendRequestEvent getDefaultInstanceForType() {
+        return NewFriendRequestEvent.getDefaultInstance();
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent build() {
-        com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent result = buildPartial();
+      @Override
+      public NewFriendRequestEvent build() {
+        NewFriendRequestEvent result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @java.lang.Override
-      public com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent buildPartial() {
-        com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent result = new com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent(this);
+      @Override
+      public NewFriendRequestEvent buildPartial() {
+        NewFriendRequestEvent result = new NewFriendRequestEvent(this);
         result.type_ = type_;
         result.userId_ = userId_;
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
+      @Override
       public Builder clone() {
         return super.clone();
       }
-      @java.lang.Override
+      @Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.setField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+      @Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
+      @Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent) {
-          return mergeFrom((com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent)other);
+        if (other instanceof NewFriendRequestEvent) {
+          return mergeFrom((NewFriendRequestEvent)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent other) {
-        if (other == com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent.getDefaultInstance()) return this;
+      public Builder mergeFrom(NewFriendRequestEvent other) {
+        if (other == NewFriendRequestEvent.getDefaultInstance()) return this;
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
@@ -9348,21 +17176,21 @@ public final class Websocket {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent parsedMessage = null;
+        NewFriendRequestEvent parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent) e.getUnfinishedMessage();
+          parsedMessage = (NewFriendRequestEvent) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -9381,7 +17209,7 @@ public final class Websocket {
        * <code>.shuo.NewFriendRequestType type = 1;</code>
        * @return The enum numeric value on the wire for type.
        */
-      @java.lang.Override public int getTypeValue() {
+      @Override public int getTypeValue() {
         return type_;
       }
       /**
@@ -9407,7 +17235,7 @@ public final class Websocket {
        * <code>.shuo.NewFriendRequestType type = 1;</code>
        * @return The type.
        */
-      @java.lang.Override
+      @Override
       public com.gomicroim.lib.protos.Constants.NewFriendRequestType getType() {
         @SuppressWarnings("deprecation")
         com.gomicroim.lib.protos.Constants.NewFriendRequestType result = com.gomicroim.lib.protos.Constants.NewFriendRequestType.valueOf(type_);
@@ -9455,7 +17283,7 @@ public final class Websocket {
        * <code>int64 user_id = 2;</code>
        * @return The userId.
        */
-      @java.lang.Override
+      @Override
       public long getUserId() {
         return userId_;
       }
@@ -9488,13 +17316,13 @@ public final class Websocket {
         onChanged();
         return this;
       }
-      @java.lang.Override
+      @Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+      @Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -9505,18 +17333,18 @@ public final class Websocket {
     }
 
     // @@protoc_insertion_point(class_scope:shuo.NewFriendRequestEvent)
-    private static final com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent DEFAULT_INSTANCE;
+    private static final NewFriendRequestEvent DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent();
+      DEFAULT_INSTANCE = new NewFriendRequestEvent();
     }
 
-    public static com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent getDefaultInstance() {
+    public static NewFriendRequestEvent getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<NewFriendRequestEvent>
         PARSER = new com.google.protobuf.AbstractParser<NewFriendRequestEvent>() {
-      @java.lang.Override
+      @Override
       public NewFriendRequestEvent parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9529,13 +17357,13 @@ public final class Websocket {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<NewFriendRequestEvent> getParserForType() {
       return PARSER;
     }
 
-    @java.lang.Override
-    public com.gomicroim.lib.protos.websocket.Websocket.NewFriendRequestEvent getDefaultInstanceForType() {
+    @Override
+    public NewFriendRequestEvent getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -9551,6 +17379,26 @@ public final class Websocket {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_shuo_S2CWebsocketMessage_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_shuo_Message_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_shuo_Message_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_shuo_Message_Room_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_shuo_Message_Room_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_shuo_Message_Channel_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_shuo_Message_Channel_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_shuo_Message_LevelUp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_shuo_Message_LevelUp_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_shuo_C2SWebsocketMessage_descriptor;
   private static final 
@@ -9599,37 +17447,64 @@ public final class Websocket {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n protoc/websocket/websocket.proto\022\004shuo" +
       "\032\026protoc/constants.proto\032\031google/protobu" +
       "f/any.proto\"\036\n\017WebSocketHeader\022\013\n\003seq\030\001 " +
       "\001(\005\"g\n\023S2CWebsocketMessage\022%\n\006header\030\001 \001" +
       "(\0132\025.shuo.WebSocketHeader\022)\n\tdata_list\030\002" +
-      " \003(\0132\026.shuo.WebsocketMessage\"_\n\023C2SWebso" +
-      "cketMessage\022%\n\006header\030\001 \001(\0132\025.shuo.WebSo" +
-      "cketHeader\022!\n\004data\030\002 \001(\0132\023.shuo.ClientMe" +
-      "ssage\"\205\001\n\020WebsocketMessage\022\020\n\004type\030\001 \001(\t" +
-      "B\002\030\001\022\020\n\004data\030\002 \001(\014B\002\030\001\022%\n\010msg_type\030\003 \001(\016" +
-      "2\023.shuo.WSMessageType\022&\n\010any_data\030\004 \001(\0132" +
-      "\024.google.protobuf.Any\"Z\n\rClientMessage\022%" +
-      "\n\004type\030\001 \001(\0162\027.shuo.ClientMessageType\022\"\n" +
-      "\004data\030\002 \001(\0132\024.google.protobuf.Any\"<\n\tEve" +
-      "ntRoom\022\016\n\006roomId\030\001 \001(\t\022\021\n\tchannelId\030\002 \001(" +
-      "\t\022\014\n\004type\030\003 \001(\t\"m\n\026RoomMemberChangedEven" +
-      "t\022\016\n\006roomId\030\001 \001(\t\0223\n\teventType\030\002 \001(\0162 .s" +
-      "huo.RoomMemberChangedEventType\022\016\n\006userId" +
-      "\030\003 \001(\003\"\260\001\n\017WebsocketNotice\022\r\n\005title\030\001 \001(" +
-      "\t\022\014\n\004body\030\002 \001(\t\022\014\n\004icon\030\003 \001(\t\022\014\n\004link\030\004 " +
-      "\001(\t\022\n\n\002id\030\005 \001(\t\022\r\n\005badge\030\006 \001(\005\022\r\n\005sound\030" +
-      "\007 \001(\t\022\021\n\tthread_id\030\010 \001(\t\022\'\n\004Type\030\t \001(\0162\031" +
-      ".shuo.WebsocketNoticeType\"L\n\014FriendChang" +
-      "e\022$\n\004type\030\001 \001(\0162\026.shuo.FriendChangeType\022" +
-      "\026\n\016friend_user_id\030\002 \001(\003\"R\n\025NewFriendRequ" +
-      "estEvent\022(\n\004type\030\001 \001(\0162\032.shuo.NewFriendR" +
-      "equestType\022\017\n\007user_id\030\002 \001(\003*=\n\032RoomMembe" +
-      "rChangedEventType\022\013\n\007Unknown\020\000\022\010\n\004Join\020\001" +
-      "\022\010\n\004Quit\020\002B2\n\"com.gomicroim.lib.protos.w" +
-      "ebsocketZ\014cloud/protosb\006proto3"
+      " \003(\0132\026.shuo.WebsocketMessage\"\305\010\n\007Message" +
+      "\022\n\n\002id\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\003\022\017\n\007content" +
+      "\030\003 \001(\t\022\017\n\007mention\030\004 \001(\t\022\017\n\007root_id\030\005 \001(\t" +
+      "\022\020\n\010reply_id\030\006 \001(\t\022\023\n\013reply_count\030\007 \001(\005\022" +
+      "\020\n\010up_count\030\010 \001(\005\022\026\n\nchannel_id\030\n \001(\tB\002\030" +
+      "\001\022\023\n\007room_id\030\013 \001(\tB\002\030\001\022\021\n\ttimestamp\030\r \001(" +
+      "\003\022\026\n\016edit_timestamp\030\016 \001(\003\022\030\n\020delete_time" +
+      "stamp\030\017 \001(\003\022\022\n\nplain_text\030\022 \001(\t\022 \n\004room\030" +
+      "\024 \001(\0132\022.shuo.Message.Room\022&\n\007channel\030\025 \001" +
+      "(\0132\025.shuo.Message.Channel\022\013\n\003cid\030\030 \001(\t\022\020" +
+      "\n\004type\030\031 \001(\tB\002\030\001\022\024\n\014audit_status\030\034 \001(\005\022)" +
+      "\n\rrefer_message\030\036 \001(\0132\r.shuo.MessageH\000\210\001" +
+      "\001\022\'\n\014message_type\030  \001(\0162\021.shuo.MessageTy" +
+      "pe\022#\n\006status\030! \001(\0162\023.shuo.MessageStatus\022" +
+      "\016\n\006is_pin\030$ \001(\010\022\025\n\rpin_timestamp\030& \001(\003\022\023" +
+      "\n\013show_in_all\030\' \001(\010\022\016\n\006is_hot\030( \001(\010\022\016\n\006e" +
+      "dited\030) \001(\010\022\027\n\017show_in_channel\030* \001(\010\022\027\n\017" +
+      "private_channel\030, \001(\010\022\020\n\010tmp_chat\030- \001(\010\022" +
+      "\031\n\021show_in_chat_list\0300 \001(\010\022\027\n\017local_iden" +
+      "tical\0304 \001(\t\022\'\n\010level_up\0305 \001(\0132\025.shuo.Mes" +
+      "sage.LevelUp\022\017\n\007is_auto\0309 \001(\010\032J\n\004Room\022\017\n" +
+      "\007room_id\030\001 \001(\t\022\021\n\troom_name\030\002 \001(\t\022\r\n\005int" +
+      "ro\030\005 \001(\t\022\017\n\007primary\030\006 \001(\003\032\212\001\n\007Channel\022\022\n" +
+      "\nchannel_id\030\001 \001(\t\022\024\n\014channel_name\030\002 \001(\t\022" +
+      "\017\n\007is_main\030\003 \001(\010\022\037\n\004type\030\004 \001(\0162\021.shuo.Ch" +
+      "annelType\022#\n\006status\030\005 \001(\0162\023.shuo.Channel" +
+      "Status\032:\n\007LevelUp\022\r\n\005level\030\001 \001(\005\022\r\n\005titl" +
+      "e\030\002 \001(\t\022\021\n\tplaintext\030\003 \001(\tB\020\n\016_refer_mes" +
+      "sage\"_\n\023C2SWebsocketMessage\022%\n\006header\030\001 " +
+      "\001(\0132\025.shuo.WebSocketHeader\022!\n\004data\030\002 \001(\013" +
+      "2\023.shuo.ClientMessage\"a\n\020WebsocketMessag" +
+      "e\022%\n\010msg_type\030\003 \001(\0162\023.shuo.WSMessageType" +
+      "\022&\n\010any_data\030\004 \001(\0132\024.google.protobuf.Any" +
+      "\"Z\n\rClientMessage\022%\n\004type\030\001 \001(\0162\027.shuo.C" +
+      "lientMessageType\022\"\n\004data\030\002 \001(\0132\024.google." +
+      "protobuf.Any\"<\n\tEventRoom\022\016\n\006roomId\030\001 \001(" +
+      "\t\022\021\n\tchannelId\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\"m\n\026Ro" +
+      "omMemberChangedEvent\022\016\n\006roomId\030\001 \001(\t\0223\n\t" +
+      "eventType\030\002 \001(\0162 .shuo.RoomMemberChanged" +
+      "EventType\022\016\n\006userId\030\003 \001(\003\"\260\001\n\017WebsocketN" +
+      "otice\022\r\n\005title\030\001 \001(\t\022\014\n\004body\030\002 \001(\t\022\014\n\004ic" +
+      "on\030\003 \001(\t\022\014\n\004link\030\004 \001(\t\022\n\n\002id\030\005 \001(\t\022\r\n\005ba" +
+      "dge\030\006 \001(\005\022\r\n\005sound\030\007 \001(\t\022\021\n\tthread_id\030\010 " +
+      "\001(\t\022\'\n\004Type\030\t \001(\0162\031.shuo.WebsocketNotice" +
+      "Type\"L\n\014FriendChange\022$\n\004type\030\001 \001(\0162\026.shu" +
+      "o.FriendChangeType\022\026\n\016friend_user_id\030\002 \001" +
+      "(\003\"R\n\025NewFriendRequestEvent\022(\n\004type\030\001 \001(" +
+      "\0162\032.shuo.NewFriendRequestType\022\017\n\007user_id" +
+      "\030\002 \001(\003*=\n\032RoomMemberChangedEventType\022\013\n\007" +
+      "Unknown\020\000\022\010\n\004Join\020\001\022\010\n\004Quit\020\002B2\n\"com.gom" +
+      "icroim.lib.protos.websocketZ\014cloud/proto" +
+      "sb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9642,61 +17517,85 @@ public final class Websocket {
     internal_static_shuo_WebSocketHeader_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_shuo_WebSocketHeader_descriptor,
-        new java.lang.String[] { "Seq", });
+        new String[] { "Seq", });
     internal_static_shuo_S2CWebsocketMessage_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_shuo_S2CWebsocketMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_shuo_S2CWebsocketMessage_descriptor,
-        new java.lang.String[] { "Header", "DataList", });
-    internal_static_shuo_C2SWebsocketMessage_descriptor =
+        new String[] { "Header", "DataList", });
+    internal_static_shuo_Message_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_shuo_Message_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_shuo_Message_descriptor,
+        new String[] { "Id", "UserId", "Content", "Mention", "RootId", "ReplyId", "ReplyCount", "UpCount", "ChannelId", "RoomId", "Timestamp", "EditTimestamp", "DeleteTimestamp", "PlainText", "Room", "Channel", "Cid", "Type", "AuditStatus", "ReferMessage", "MessageType", "Status", "IsPin", "PinTimestamp", "ShowInAll", "IsHot", "Edited", "ShowInChannel", "PrivateChannel", "TmpChat", "ShowInChatList", "LocalIdentical", "LevelUp", "IsAuto", "ReferMessage", });
+    internal_static_shuo_Message_Room_descriptor =
+      internal_static_shuo_Message_descriptor.getNestedTypes().get(0);
+    internal_static_shuo_Message_Room_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_shuo_Message_Room_descriptor,
+        new String[] { "RoomId", "RoomName", "Intro", "Primary", });
+    internal_static_shuo_Message_Channel_descriptor =
+      internal_static_shuo_Message_descriptor.getNestedTypes().get(1);
+    internal_static_shuo_Message_Channel_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_shuo_Message_Channel_descriptor,
+        new String[] { "ChannelId", "ChannelName", "IsMain", "Type", "Status", });
+    internal_static_shuo_Message_LevelUp_descriptor =
+      internal_static_shuo_Message_descriptor.getNestedTypes().get(2);
+    internal_static_shuo_Message_LevelUp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_shuo_Message_LevelUp_descriptor,
+        new String[] { "Level", "Title", "Plaintext", });
+    internal_static_shuo_C2SWebsocketMessage_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_shuo_C2SWebsocketMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_shuo_C2SWebsocketMessage_descriptor,
-        new java.lang.String[] { "Header", "Data", });
+        new String[] { "Header", "Data", });
     internal_static_shuo_WebsocketMessage_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_shuo_WebsocketMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_shuo_WebsocketMessage_descriptor,
-        new java.lang.String[] { "Type", "Data", "MsgType", "AnyData", });
+        new String[] { "MsgType", "AnyData", });
     internal_static_shuo_ClientMessage_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_shuo_ClientMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_shuo_ClientMessage_descriptor,
-        new java.lang.String[] { "Type", "Data", });
+        new String[] { "Type", "Data", });
     internal_static_shuo_EventRoom_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_shuo_EventRoom_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_shuo_EventRoom_descriptor,
-        new java.lang.String[] { "RoomId", "ChannelId", "Type", });
+        new String[] { "RoomId", "ChannelId", "Type", });
     internal_static_shuo_RoomMemberChangedEvent_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_shuo_RoomMemberChangedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_shuo_RoomMemberChangedEvent_descriptor,
-        new java.lang.String[] { "RoomId", "EventType", "UserId", });
+        new String[] { "RoomId", "EventType", "UserId", });
     internal_static_shuo_WebsocketNotice_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_shuo_WebsocketNotice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_shuo_WebsocketNotice_descriptor,
-        new java.lang.String[] { "Title", "Body", "Icon", "Link", "Id", "Badge", "Sound", "ThreadId", "Type", });
+        new String[] { "Title", "Body", "Icon", "Link", "Id", "Badge", "Sound", "ThreadId", "Type", });
     internal_static_shuo_FriendChange_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_shuo_FriendChange_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_shuo_FriendChange_descriptor,
-        new java.lang.String[] { "Type", "FriendUserId", });
+        new String[] { "Type", "FriendUserId", });
     internal_static_shuo_NewFriendRequestEvent_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_shuo_NewFriendRequestEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_shuo_NewFriendRequestEvent_descriptor,
-        new java.lang.String[] { "Type", "UserId", });
+        new String[] { "Type", "UserId", });
     com.gomicroim.lib.protos.Constants.getDescriptor();
     com.google.protobuf.AnyProto.getDescriptor();
   }
