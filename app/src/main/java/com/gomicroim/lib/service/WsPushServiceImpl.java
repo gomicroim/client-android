@@ -6,6 +6,7 @@ import com.gomicroim.lib.Observer;
 import com.gomicroim.lib.helper.OkHttpUtils;
 import com.gomicroim.lib.model.constant.StatusCode;
 import com.gomicroim.lib.protos.websocket.Websocket;
+import com.google.protobuf.InvalidProtocolBufferException;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -37,7 +38,7 @@ import okio.ByteString;
 /**
  * webSocket封装
  */
-public class WsPushServiceImpl extends WebSocketListener implements WsPushService {
+public class WsPushServiceImpl extends WebSocketListener implements WsPushService, Runnable {
     private WebSocket webSocket;
     private StatusCode statusCode;
     private String token;
@@ -46,10 +47,18 @@ public class WsPushServiceImpl extends WebSocketListener implements WsPushServic
     // 重连
     private boolean reConnect = true;
     private long reConnectCount = 0;
+    private long lastSendPingTime = 0;
+
+    private static final long PING_INTERVAL = 30; // 30 s
     private static final long MAX_RE_CONNECT_WAIT_TIME = 4;
 
     private final Logger log = LoggerFactory.getLogger(WsPushServiceImpl.class);
     private final LinkedList<WsPushListener> listeners = new LinkedList<>();
+
+    public WsPushServiceImpl() {
+        Thread thread = new Thread(this);
+        thread.start();
+    }
 
     @Override
     public void onClosed(@NotNull WebSocket webSocket, int code, @NotNull String reason) {
@@ -92,7 +101,17 @@ public class WsPushServiceImpl extends WebSocketListener implements WsPushServic
     @Override
     public void onMessage(@NotNull WebSocket webSocket, @NotNull ByteString bytes) {
         super.onMessage(webSocket, bytes);
-        log.debug("onMessage");
+
+        Websocket.S2CWebsocketMessage msg;
+        try {
+            msg = Websocket.S2CWebsocketMessage.parseFrom(bytes.toByteArray());
+            log.debug("onMessage,seq:{},dataListLen:{}", msg.getHeader().getSeq(), msg.getDataListCount());
+            for (WsPushListener item : listeners) {
+                item.onMessage(msg);
+            }
+        } catch (InvalidProtocolBufferException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -184,9 +203,25 @@ public class WsPushServiceImpl extends WebSocketListener implements WsPushServic
             return;
         }
         statusCode = code;
+        log.debug("updateStatusCode, before:{}, after:{}", before, code);
 
         for (WsPushListener item : listeners) {
             item.onStatusCodeChanged(before, code);
+        }
+    }
+
+    // ws ping thread
+    @Override
+    public void run() {
+        long curTime = System.currentTimeMillis() / 1000;
+        if (lastSendPingTime - curTime >= PING_INTERVAL) {
+            lastSendPingTime = curTime;
+            // webSocket.send()
+        }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }
