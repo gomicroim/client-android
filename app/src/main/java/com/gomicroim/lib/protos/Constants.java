@@ -26,7 +26,7 @@ public final class Constants {
      *
      * <code>NewMessage = 0 [deprecated = true];</code>
      */
-    @java.lang.Deprecated
+    @Deprecated
     NewMessage(0),
     /**
      * <pre>
@@ -102,7 +102,7 @@ public final class Constants {
     UpdateLinkMeta(9),
     /**
      * <pre>
-     * 有新的相关事件（比如有人回复消息时）
+     * 有新的相关事件
      * </pre>
      *
      * <code>NewInvolved = 10;</code>
@@ -255,7 +255,7 @@ public final class Constants {
      *
      * <code>TalkPlamateNotify = 31 [deprecated = true];</code>
      */
-    @java.lang.Deprecated
+    @Deprecated
     TalkPlamateNotify(31),
     /**
      * <pre>
@@ -299,12 +299,120 @@ public final class Constants {
     VideoUpdate(36),
     /**
      * <pre>
-     * 完成新房任务
+     * 完成全部新房任务
      * </pre>
      *
      * <code>CompletedRoomTasks = 37;</code>
      */
     CompletedRoomTasks(37),
+    /**
+     * <pre>
+     * 完成某个新房任务
+     * </pre>
+     *
+     * <code>CompletedRoomTask = 38;</code>
+     */
+    CompletedRoomTask(38),
+    /**
+     * <pre>
+     * 好友在动态流发布动态
+     * </pre>
+     *
+     * <code>PublishFriendFeedPost = 39;</code>
+     */
+    PublishFriendFeedPost(39),
+    /**
+     * <pre>
+     * 话题队伍创建成功
+     * </pre>
+     *
+     * <code>TeamCreated = 40;</code>
+     */
+    TeamCreated(40),
+    /**
+     * <pre>
+     * 话题解散
+     * </pre>
+     *
+     * <code>TeamDisband = 41;</code>
+     */
+    TeamDisband(41),
+    /**
+     * <pre>
+     * 好友在动态流发布动态
+     * </pre>
+     *
+     * <code>PublishHotFeedPost = 42;</code>
+     */
+    PublishHotFeedPost(42),
+    /**
+     * <pre>
+     * 发现页面房间更新
+     * </pre>
+     *
+     * <code>ExploreRoomUpdated = 43;</code>
+     */
+    ExploreRoomUpdated(43),
+    /**
+     * <pre>
+     * 推荐动态流发布动态
+     * </pre>
+     *
+     * <code>PublishRecommendFeedPost = 44;</code>
+     */
+    PublishRecommendFeedPost(44),
+    /**
+     * <pre>
+     * 车队成员更新
+     * </pre>
+     *
+     * <code>TeamMemberDetailUpdate = 45;</code>
+     */
+    TeamMemberDetailUpdate(45),
+    /**
+     * <code>UserProfileUpdated = 46;</code>
+     */
+    UserProfileUpdated(46),
+    /**
+     * <pre>
+     * team 预约时间推送至成员
+     * </pre>
+     *
+     * <code>ToTeamAppointmentTimeMemberPush = 47;</code>
+     */
+    ToTeamAppointmentTimeMemberPush(47),
+    /**
+     * <pre>
+     * 发布了新的频道笔记
+     * </pre>
+     *
+     * <code>PublishChannelNote = 48;</code>
+     */
+    PublishChannelNote(48),
+    /**
+     * <pre>
+     * 笔记系统通知
+     * </pre>
+     *
+     * <code>NoteNotify = 49;</code>
+     */
+    NoteNotify(49),
+    /**
+     * <pre>
+     * 车队更新
+     * </pre>
+     *
+     * <code>TeamDetailUpdate = 50;</code>
+     */
+    TeamDetailUpdate(50),
+    /**
+     * <pre>
+     * 玩伴推荐
+     * </pre>
+     *
+     * <code>PlaymateRecommend = 51;</code>
+     */
+    PlaymateRecommend(51),
     /**
      * <code>PongMessage = 1001;</code>
      */
@@ -319,7 +427,7 @@ public final class Constants {
      *
      * <code>NewMessage = 0 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public static final int NewMessage_VALUE = 0;
+    @Deprecated public static final int NewMessage_VALUE = 0;
     /**
      * <pre>
      * 有消息被编辑
@@ -394,7 +502,7 @@ public final class Constants {
     public static final int UpdateLinkMeta_VALUE = 9;
     /**
      * <pre>
-     * 有新的相关事件（比如有人回复消息时）
+     * 有新的相关事件
      * </pre>
      *
      * <code>NewInvolved = 10;</code>
@@ -547,7 +655,7 @@ public final class Constants {
      *
      * <code>TalkPlamateNotify = 31 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public static final int TalkPlamateNotify_VALUE = 31;
+    @Deprecated public static final int TalkPlamateNotify_VALUE = 31;
     /**
      * <pre>
      * 说说找玩伴通知
@@ -590,12 +698,120 @@ public final class Constants {
     public static final int VideoUpdate_VALUE = 36;
     /**
      * <pre>
-     * 完成新房任务
+     * 完成全部新房任务
      * </pre>
      *
      * <code>CompletedRoomTasks = 37;</code>
      */
     public static final int CompletedRoomTasks_VALUE = 37;
+    /**
+     * <pre>
+     * 完成某个新房任务
+     * </pre>
+     *
+     * <code>CompletedRoomTask = 38;</code>
+     */
+    public static final int CompletedRoomTask_VALUE = 38;
+    /**
+     * <pre>
+     * 好友在动态流发布动态
+     * </pre>
+     *
+     * <code>PublishFriendFeedPost = 39;</code>
+     */
+    public static final int PublishFriendFeedPost_VALUE = 39;
+    /**
+     * <pre>
+     * 话题队伍创建成功
+     * </pre>
+     *
+     * <code>TeamCreated = 40;</code>
+     */
+    public static final int TeamCreated_VALUE = 40;
+    /**
+     * <pre>
+     * 话题解散
+     * </pre>
+     *
+     * <code>TeamDisband = 41;</code>
+     */
+    public static final int TeamDisband_VALUE = 41;
+    /**
+     * <pre>
+     * 好友在动态流发布动态
+     * </pre>
+     *
+     * <code>PublishHotFeedPost = 42;</code>
+     */
+    public static final int PublishHotFeedPost_VALUE = 42;
+    /**
+     * <pre>
+     * 发现页面房间更新
+     * </pre>
+     *
+     * <code>ExploreRoomUpdated = 43;</code>
+     */
+    public static final int ExploreRoomUpdated_VALUE = 43;
+    /**
+     * <pre>
+     * 推荐动态流发布动态
+     * </pre>
+     *
+     * <code>PublishRecommendFeedPost = 44;</code>
+     */
+    public static final int PublishRecommendFeedPost_VALUE = 44;
+    /**
+     * <pre>
+     * 车队成员更新
+     * </pre>
+     *
+     * <code>TeamMemberDetailUpdate = 45;</code>
+     */
+    public static final int TeamMemberDetailUpdate_VALUE = 45;
+    /**
+     * <code>UserProfileUpdated = 46;</code>
+     */
+    public static final int UserProfileUpdated_VALUE = 46;
+    /**
+     * <pre>
+     * team 预约时间推送至成员
+     * </pre>
+     *
+     * <code>ToTeamAppointmentTimeMemberPush = 47;</code>
+     */
+    public static final int ToTeamAppointmentTimeMemberPush_VALUE = 47;
+    /**
+     * <pre>
+     * 发布了新的频道笔记
+     * </pre>
+     *
+     * <code>PublishChannelNote = 48;</code>
+     */
+    public static final int PublishChannelNote_VALUE = 48;
+    /**
+     * <pre>
+     * 笔记系统通知
+     * </pre>
+     *
+     * <code>NoteNotify = 49;</code>
+     */
+    public static final int NoteNotify_VALUE = 49;
+    /**
+     * <pre>
+     * 车队更新
+     * </pre>
+     *
+     * <code>TeamDetailUpdate = 50;</code>
+     */
+    public static final int TeamDetailUpdate_VALUE = 50;
+    /**
+     * <pre>
+     * 玩伴推荐
+     * </pre>
+     *
+     * <code>PlaymateRecommend = 51;</code>
+     */
+    public static final int PlaymateRecommend_VALUE = 51;
     /**
      * <code>PongMessage = 1001;</code>
      */
@@ -604,7 +820,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -615,7 +831,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static WSMessageType valueOf(int value) {
       return forNumber(value);
     }
@@ -662,6 +878,20 @@ public final class Constants {
         case 35: return ToTeamAppointmentTime;
         case 36: return VideoUpdate;
         case 37: return CompletedRoomTasks;
+        case 38: return CompletedRoomTask;
+        case 39: return PublishFriendFeedPost;
+        case 40: return TeamCreated;
+        case 41: return TeamDisband;
+        case 42: return PublishHotFeedPost;
+        case 43: return ExploreRoomUpdated;
+        case 44: return PublishRecommendFeedPost;
+        case 45: return TeamMemberDetailUpdate;
+        case 46: return UserProfileUpdated;
+        case 47: return ToTeamAppointmentTimeMemberPush;
+        case 48: return PublishChannelNote;
+        case 49: return NoteNotify;
+        case 50: return TeamDetailUpdate;
+        case 51: return PlaymateRecommend;
         case 1001: return PongMessage;
         default: return null;
       }
@@ -682,7 +912,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -693,7 +923,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(0);
+      return Constants.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final WSMessageType[] VALUES = values();
@@ -701,7 +931,7 @@ public final class Constants {
     public static WSMessageType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -727,7 +957,7 @@ public final class Constants {
     /**
      * <code>UndefinedBotMessage = 0 [deprecated = true];</code>
      */
-    @java.lang.Deprecated
+    @Deprecated
     UndefinedBotMessage(0),
     /**
      * <code>BotHaoShuoRoomAssistant = 1;</code>
@@ -749,13 +979,17 @@ public final class Constants {
      * <code>BotTalkPlaymateNotice = 5;</code>
      */
     BotTalkPlaymateNotice(5),
+    /**
+     * <code>BotNoteNotice = 6;</code>
+     */
+    BotNoteNotice(6),
     UNRECOGNIZED(-1),
     ;
 
     /**
      * <code>UndefinedBotMessage = 0 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public static final int UndefinedBotMessage_VALUE = 0;
+    @Deprecated public static final int UndefinedBotMessage_VALUE = 0;
     /**
      * <code>BotHaoShuoRoomAssistant = 1;</code>
      */
@@ -776,11 +1010,15 @@ public final class Constants {
      * <code>BotTalkPlaymateNotice = 5;</code>
      */
     public static final int BotTalkPlaymateNotice_VALUE = 5;
+    /**
+     * <code>BotNoteNotice = 6;</code>
+     */
+    public static final int BotNoteNotice_VALUE = 6;
 
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -791,7 +1029,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static SystemMessageType valueOf(int value) {
       return forNumber(value);
     }
@@ -808,6 +1046,7 @@ public final class Constants {
         case 3: return BotActivityNotice;
         case 4: return BotTalkNotice;
         case 5: return BotTalkPlaymateNotice;
+        case 6: return BotNoteNotice;
         default: return null;
       }
     }
@@ -827,7 +1066,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -838,7 +1077,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(1);
+      return Constants.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final SystemMessageType[] VALUES = values();
@@ -846,7 +1085,7 @@ public final class Constants {
     public static SystemMessageType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -862,147 +1101,6 @@ public final class Constants {
     }
 
     // @@protoc_insertion_point(enum_scope:shuo.SystemMessageType)
-  }
-
-  /**
-   * Protobuf enum {@code shuo.WsCmdType}
-   */
-  public enum WsCmdType
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <pre>
-     * 未知的类型
-     * </pre>
-     *
-     * <code>UnknownCmdType = 0;</code>
-     */
-    UnknownCmdType(0),
-    /**
-     * <pre>
-     * 服务端 -&gt; 客户端
-     * </pre>
-     *
-     * <code>S2C = 1;</code>
-     */
-    S2C(1),
-    /**
-     * <pre>
-     * 客户端 -&gt; 服务端
-     * </pre>
-     *
-     * <code>C2S = 2;</code>
-     */
-    C2S(2),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <pre>
-     * 未知的类型
-     * </pre>
-     *
-     * <code>UnknownCmdType = 0;</code>
-     */
-    public static final int UnknownCmdType_VALUE = 0;
-    /**
-     * <pre>
-     * 服务端 -&gt; 客户端
-     * </pre>
-     *
-     * <code>S2C = 1;</code>
-     */
-    public static final int S2C_VALUE = 1;
-    /**
-     * <pre>
-     * 客户端 -&gt; 服务端
-     * </pre>
-     *
-     * <code>C2S = 2;</code>
-     */
-    public static final int C2S_VALUE = 2;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static WsCmdType valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static WsCmdType forNumber(int value) {
-      switch (value) {
-        case 0: return UnknownCmdType;
-        case 1: return S2C;
-        case 2: return C2S;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<WsCmdType>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        WsCmdType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<WsCmdType>() {
-            public WsCmdType findValueByNumber(int number) {
-              return WsCmdType.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(2);
-    }
-
-    private static final WsCmdType[] VALUES = values();
-
-    public static WsCmdType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private WsCmdType(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:shuo.WsCmdType)
   }
 
   /**
@@ -1039,6 +1137,14 @@ public final class Constants {
      */
     BackgroundActiveMessage(4),
     /**
+     * <pre>
+     * ack确认包
+     * </pre>
+     *
+     * <code>AckMessage = 5;</code>
+     */
+    AckMessage(5),
+    /**
      * <code>UnknownMessage = -1;</code>
      */
     UnknownMessage(-1),
@@ -1074,6 +1180,14 @@ public final class Constants {
      */
     public static final int BackgroundActiveMessage_VALUE = 4;
     /**
+     * <pre>
+     * ack确认包
+     * </pre>
+     *
+     * <code>AckMessage = 5;</code>
+     */
+    public static final int AckMessage_VALUE = 5;
+    /**
      * <code>UnknownMessage = -1;</code>
      */
     public static final int UnknownMessage_VALUE = -1;
@@ -1081,7 +1195,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -1092,7 +1206,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static ClientMessageType valueOf(int value) {
       return forNumber(value);
     }
@@ -1108,6 +1222,7 @@ public final class Constants {
         case 2: return RoomEventMessage;
         case 3: return FrontActiveMessage;
         case 4: return BackgroundActiveMessage;
+        case 5: return AckMessage;
         case -1: return UnknownMessage;
         default: return null;
       }
@@ -1128,7 +1243,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -1139,7 +1254,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(3);
+      return Constants.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final ClientMessageType[] VALUES = values();
@@ -1147,7 +1262,7 @@ public final class Constants {
     public static ClientMessageType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -1214,6 +1329,18 @@ public final class Constants {
      * <code>MessageTypeReferPost = 10;</code>
      */
     MessageTypeReferPost(10),
+    /**
+     * <code>MessageTypeNote = 11;</code>
+     */
+    MessageTypeNote(11),
+    /**
+     * <code>MessageTypeReferNote = 12;</code>
+     */
+    MessageTypeReferNote(12),
+    /**
+     * <code>MessageTypePlaymate = 13;</code>
+     */
+    MessageTypePlaymate(13),
     UNRECOGNIZED(-1),
     ;
 
@@ -1261,11 +1388,23 @@ public final class Constants {
      * <code>MessageTypeReferPost = 10;</code>
      */
     public static final int MessageTypeReferPost_VALUE = 10;
+    /**
+     * <code>MessageTypeNote = 11;</code>
+     */
+    public static final int MessageTypeNote_VALUE = 11;
+    /**
+     * <code>MessageTypeReferNote = 12;</code>
+     */
+    public static final int MessageTypeReferNote_VALUE = 12;
+    /**
+     * <code>MessageTypePlaymate = 13;</code>
+     */
+    public static final int MessageTypePlaymate_VALUE = 13;
 
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -1276,7 +1415,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static MessageType valueOf(int value) {
       return forNumber(value);
     }
@@ -1298,6 +1437,9 @@ public final class Constants {
         case 8: return MessageTypeMemberLevelUp;
         case 9: return MessageTypeTalkPost;
         case 10: return MessageTypeReferPost;
+        case 11: return MessageTypeNote;
+        case 12: return MessageTypeReferNote;
+        case 13: return MessageTypePlaymate;
         default: return null;
       }
     }
@@ -1317,7 +1459,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -1328,7 +1470,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(4);
+      return Constants.getDescriptor().getEnumTypes().get(3);
     }
 
     private static final MessageType[] VALUES = values();
@@ -1336,7 +1478,7 @@ public final class Constants {
     public static MessageType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -1363,14 +1505,6 @@ public final class Constants {
      * <code>MessageStatusUnknown = 0;</code>
      */
     MessageStatusUnknown(0),
-    /**
-     * <pre>
-     * 正常
-     * </pre>
-     *
-     * <code>MessageStatusOK = 1;</code>
-     */
-    MessageStatusOK(1),
     /**
      * <pre>
      * 已删除
@@ -1405,28 +1539,12 @@ public final class Constants {
     MessageStatusThreadHide(-4),
     /**
      * <pre>
-     * 主动删除消息
+     * 正常
      * </pre>
      *
-     * <code>MessageStatusDeletedBySelf = -5;</code>
+     * <code>MessageStatusOK = 1;</code>
      */
-    MessageStatusDeletedBySelf(-5),
-    /**
-     * <pre>
-     * 消息被其他人删除
-     * </pre>
-     *
-     * <code>MessageStatusDeletedByOther = -6;</code>
-     */
-    MessageStatusDeletedByOther(-6),
-    /**
-     * <pre>
-     * 消息被后台删除  
-     * </pre>
-     *
-     * <code>MessageStatusDeletedByAdmin = -7;</code>
-     */
-    MessageStatusDeletedByAdmin(-7),
+    MessageStatusOK(1),
     UNRECOGNIZED(-1),
     ;
 
@@ -1434,14 +1552,6 @@ public final class Constants {
      * <code>MessageStatusUnknown = 0;</code>
      */
     public static final int MessageStatusUnknown_VALUE = 0;
-    /**
-     * <pre>
-     * 正常
-     * </pre>
-     *
-     * <code>MessageStatusOK = 1;</code>
-     */
-    public static final int MessageStatusOK_VALUE = 1;
     /**
      * <pre>
      * 已删除
@@ -1476,33 +1586,17 @@ public final class Constants {
     public static final int MessageStatusThreadHide_VALUE = -4;
     /**
      * <pre>
-     * 主动删除消息
+     * 正常
      * </pre>
      *
-     * <code>MessageStatusDeletedBySelf = -5;</code>
+     * <code>MessageStatusOK = 1;</code>
      */
-    public static final int MessageStatusDeletedBySelf_VALUE = -5;
-    /**
-     * <pre>
-     * 消息被其他人删除
-     * </pre>
-     *
-     * <code>MessageStatusDeletedByOther = -6;</code>
-     */
-    public static final int MessageStatusDeletedByOther_VALUE = -6;
-    /**
-     * <pre>
-     * 消息被后台删除  
-     * </pre>
-     *
-     * <code>MessageStatusDeletedByAdmin = -7;</code>
-     */
-    public static final int MessageStatusDeletedByAdmin_VALUE = -7;
+    public static final int MessageStatusOK_VALUE = 1;
 
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -1513,7 +1607,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static MessageStatus valueOf(int value) {
       return forNumber(value);
     }
@@ -1525,14 +1619,11 @@ public final class Constants {
     public static MessageStatus forNumber(int value) {
       switch (value) {
         case 0: return MessageStatusUnknown;
-        case 1: return MessageStatusOK;
         case -1: return MessageStatusDeleted;
         case -2: return MessageStatusChannelDeleted;
         case -3: return MessageStatusHide;
         case -4: return MessageStatusThreadHide;
-        case -5: return MessageStatusDeletedBySelf;
-        case -6: return MessageStatusDeletedByOther;
-        case -7: return MessageStatusDeletedByAdmin;
+        case 1: return MessageStatusOK;
         default: return null;
       }
     }
@@ -1552,7 +1643,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -1563,7 +1654,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(5);
+      return Constants.getDescriptor().getEnumTypes().get(4);
     }
 
     private static final MessageStatus[] VALUES = values();
@@ -1571,7 +1662,7 @@ public final class Constants {
     public static MessageStatus valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -1625,7 +1716,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -1636,7 +1727,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static RoomType valueOf(int value) {
       return forNumber(value);
     }
@@ -1668,7 +1759,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -1679,7 +1770,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(6);
+      return Constants.getDescriptor().getEnumTypes().get(5);
     }
 
     private static final RoomType[] VALUES = values();
@@ -1687,7 +1778,7 @@ public final class Constants {
     public static RoomType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -1805,7 +1896,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -1816,7 +1907,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static RoomStatus valueOf(int value) {
       return forNumber(value);
     }
@@ -1852,7 +1943,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -1863,7 +1954,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(7);
+      return Constants.getDescriptor().getEnumTypes().get(6);
     }
 
     private static final RoomStatus[] VALUES = values();
@@ -1871,7 +1962,7 @@ public final class Constants {
     public static RoomStatus valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -2053,7 +2144,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -2064,7 +2155,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static PermissionType valueOf(int value) {
       return forNumber(value);
     }
@@ -2104,7 +2195,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -2115,7 +2206,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(8);
+      return Constants.getDescriptor().getEnumTypes().get(7);
     }
 
     private static final PermissionType[] VALUES = values();
@@ -2123,7 +2214,7 @@ public final class Constants {
     public static PermissionType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -2273,7 +2364,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -2284,7 +2375,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static ChannelType valueOf(int value) {
       return forNumber(value);
     }
@@ -2322,7 +2413,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -2333,7 +2424,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(9);
+      return Constants.getDescriptor().getEnumTypes().get(8);
     }
 
     private static final ChannelType[] VALUES = values();
@@ -2341,7 +2432,7 @@ public final class Constants {
     public static ChannelType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -2395,7 +2486,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -2406,7 +2497,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static ChannelStatus valueOf(int value) {
       return forNumber(value);
     }
@@ -2439,7 +2530,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -2450,7 +2541,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(10);
+      return Constants.getDescriptor().getEnumTypes().get(9);
     }
 
     private static final ChannelStatus[] VALUES = values();
@@ -2458,7 +2549,7 @@ public final class Constants {
     public static ChannelStatus valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -2576,7 +2667,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -2587,7 +2678,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static UserStatus valueOf(int value) {
       return forNumber(value);
     }
@@ -2623,7 +2714,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -2634,7 +2725,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(11);
+      return Constants.getDescriptor().getEnumTypes().get(10);
     }
 
     private static final UserStatus[] VALUES = values();
@@ -2642,7 +2733,7 @@ public final class Constants {
     public static UserStatus valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -2688,7 +2779,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -2699,7 +2790,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static UserIdentity valueOf(int value) {
       return forNumber(value);
     }
@@ -2731,7 +2822,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -2742,7 +2833,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(12);
+      return Constants.getDescriptor().getEnumTypes().get(11);
     }
 
     private static final UserIdentity[] VALUES = values();
@@ -2750,7 +2841,7 @@ public final class Constants {
     public static UserIdentity valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -2836,7 +2927,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -2847,7 +2938,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static RoomMemberStatus valueOf(int value) {
       return forNumber(value);
     }
@@ -2881,7 +2972,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -2892,7 +2983,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(13);
+      return Constants.getDescriptor().getEnumTypes().get(12);
     }
 
     private static final RoomMemberStatus[] VALUES = values();
@@ -2900,7 +2991,7 @@ public final class Constants {
     public static RoomMemberStatus valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -3343,6 +3434,22 @@ public final class Constants {
      * <code>RoomOpWelcomeAudit = 1051;</code>
      */
     RoomOpWelcomeAudit(1051),
+    /**
+     * <pre>
+     * 举报房间
+     * </pre>
+     *
+     * <code>RoomOpReport = 1052;</code>
+     */
+    RoomOpReport(1052),
+    /**
+     * <pre>
+     * 举报房间审核
+     * </pre>
+     *
+     * <code>RoomOpReportAudit = 1053;</code>
+     */
+    RoomOpReportAudit(1053),
     UNRECOGNIZED(-1),
     ;
 
@@ -3762,11 +3869,27 @@ public final class Constants {
      * <code>RoomOpWelcomeAudit = 1051;</code>
      */
     public static final int RoomOpWelcomeAudit_VALUE = 1051;
+    /**
+     * <pre>
+     * 举报房间
+     * </pre>
+     *
+     * <code>RoomOpReport = 1052;</code>
+     */
+    public static final int RoomOpReport_VALUE = 1052;
+    /**
+     * <pre>
+     * 举报房间审核
+     * </pre>
+     *
+     * <code>RoomOpReportAudit = 1053;</code>
+     */
+    public static final int RoomOpReportAudit_VALUE = 1053;
 
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -3777,7 +3900,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static RoomOp valueOf(int value) {
       return forNumber(value);
     }
@@ -3840,6 +3963,8 @@ public final class Constants {
         case 1049: return RoomOpRoomGroupAudit;
         case 1050: return RoomOpSquareAudit;
         case 1051: return RoomOpWelcomeAudit;
+        case 1052: return RoomOpReport;
+        case 1053: return RoomOpReportAudit;
         default: return null;
       }
     }
@@ -3859,7 +3984,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -3870,7 +3995,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(14);
+      return Constants.getDescriptor().getEnumTypes().get(13);
     }
 
     private static final RoomOp[] VALUES = values();
@@ -3878,7 +4003,7 @@ public final class Constants {
     public static RoomOp valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -4776,7 +4901,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -4787,7 +4912,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static UserOp valueOf(int value) {
       return forNumber(value);
     }
@@ -4871,7 +4996,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -4882,7 +5007,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(15);
+      return Constants.getDescriptor().getEnumTypes().get(14);
     }
 
     private static final UserOp[] VALUES = values();
@@ -4890,7 +5015,7 @@ public final class Constants {
     public static UserOp valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -5165,6 +5290,78 @@ public final class Constants {
      * <code>MessageOpChatTalkAudit = 3030;</code>
      */
     MessageOpChatTalkAudit(3030),
+    /**
+     * <pre>
+     * 私聊视频消息审核
+     * </pre>
+     *
+     * <code>MessageOpPrivateChatVideoAudit = 3031;</code>
+     */
+    MessageOpPrivateChatVideoAudit(3031),
+    /**
+     * <pre>
+     * 群聊视频消息审核
+     * </pre>
+     *
+     * <code>MessageOpGroupChatVideoAudit = 3032;</code>
+     */
+    MessageOpGroupChatVideoAudit(3032),
+    /**
+     * <pre>
+     * 动态视频消息审核
+     * </pre>
+     *
+     * <code>MessageOpTalkVideoAudit = 3033;</code>
+     */
+    MessageOpTalkVideoAudit(3033),
+    /**
+     * <pre>
+     * 举报私聊视频消息
+     * </pre>
+     *
+     * <code>MessageOpReportPrivateChatVideo = 3034;</code>
+     */
+    MessageOpReportPrivateChatVideo(3034),
+    /**
+     * <pre>
+     * 举报群聊视频消息
+     * </pre>
+     *
+     * <code>MessageOpReportGroupChatVideo = 3035;</code>
+     */
+    MessageOpReportGroupChatVideo(3035),
+    /**
+     * <pre>
+     * 举报动态视频消息
+     * </pre>
+     *
+     * <code>MessageOpReportTalkVideo = 3036;</code>
+     */
+    MessageOpReportTalkVideo(3036),
+    /**
+     * <pre>
+     * 举报私聊视频消息审核
+     * </pre>
+     *
+     * <code>MessageOpReportPrivateChatVideoAudit = 3037;</code>
+     */
+    MessageOpReportPrivateChatVideoAudit(3037),
+    /**
+     * <pre>
+     * 举报群聊视频消息审核
+     * </pre>
+     *
+     * <code>MessageOpReportGroupChatVideoAudit = 3038;</code>
+     */
+    MessageOpReportGroupChatVideoAudit(3038),
+    /**
+     * <pre>
+     * 举报动态视频消息审核
+     * </pre>
+     *
+     * <code>MessageOpReportTalkVideoAudit = 3039;</code>
+     */
+    MessageOpReportTalkVideoAudit(3039),
     UNRECOGNIZED(-1),
     ;
 
@@ -5416,11 +5613,83 @@ public final class Constants {
      * <code>MessageOpChatTalkAudit = 3030;</code>
      */
     public static final int MessageOpChatTalkAudit_VALUE = 3030;
+    /**
+     * <pre>
+     * 私聊视频消息审核
+     * </pre>
+     *
+     * <code>MessageOpPrivateChatVideoAudit = 3031;</code>
+     */
+    public static final int MessageOpPrivateChatVideoAudit_VALUE = 3031;
+    /**
+     * <pre>
+     * 群聊视频消息审核
+     * </pre>
+     *
+     * <code>MessageOpGroupChatVideoAudit = 3032;</code>
+     */
+    public static final int MessageOpGroupChatVideoAudit_VALUE = 3032;
+    /**
+     * <pre>
+     * 动态视频消息审核
+     * </pre>
+     *
+     * <code>MessageOpTalkVideoAudit = 3033;</code>
+     */
+    public static final int MessageOpTalkVideoAudit_VALUE = 3033;
+    /**
+     * <pre>
+     * 举报私聊视频消息
+     * </pre>
+     *
+     * <code>MessageOpReportPrivateChatVideo = 3034;</code>
+     */
+    public static final int MessageOpReportPrivateChatVideo_VALUE = 3034;
+    /**
+     * <pre>
+     * 举报群聊视频消息
+     * </pre>
+     *
+     * <code>MessageOpReportGroupChatVideo = 3035;</code>
+     */
+    public static final int MessageOpReportGroupChatVideo_VALUE = 3035;
+    /**
+     * <pre>
+     * 举报动态视频消息
+     * </pre>
+     *
+     * <code>MessageOpReportTalkVideo = 3036;</code>
+     */
+    public static final int MessageOpReportTalkVideo_VALUE = 3036;
+    /**
+     * <pre>
+     * 举报私聊视频消息审核
+     * </pre>
+     *
+     * <code>MessageOpReportPrivateChatVideoAudit = 3037;</code>
+     */
+    public static final int MessageOpReportPrivateChatVideoAudit_VALUE = 3037;
+    /**
+     * <pre>
+     * 举报群聊视频消息审核
+     * </pre>
+     *
+     * <code>MessageOpReportGroupChatVideoAudit = 3038;</code>
+     */
+    public static final int MessageOpReportGroupChatVideoAudit_VALUE = 3038;
+    /**
+     * <pre>
+     * 举报动态视频消息审核
+     * </pre>
+     *
+     * <code>MessageOpReportTalkVideoAudit = 3039;</code>
+     */
+    public static final int MessageOpReportTalkVideoAudit_VALUE = 3039;
 
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -5431,7 +5700,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static MessageOp valueOf(int value) {
       return forNumber(value);
     }
@@ -5473,6 +5742,15 @@ public final class Constants {
         case 3028: return MessageOpReportTalkAudit;
         case 3029: return MessageOpLinkMetaTalkAudit;
         case 3030: return MessageOpChatTalkAudit;
+        case 3031: return MessageOpPrivateChatVideoAudit;
+        case 3032: return MessageOpGroupChatVideoAudit;
+        case 3033: return MessageOpTalkVideoAudit;
+        case 3034: return MessageOpReportPrivateChatVideo;
+        case 3035: return MessageOpReportGroupChatVideo;
+        case 3036: return MessageOpReportTalkVideo;
+        case 3037: return MessageOpReportPrivateChatVideoAudit;
+        case 3038: return MessageOpReportGroupChatVideoAudit;
+        case 3039: return MessageOpReportTalkVideoAudit;
         default: return null;
       }
     }
@@ -5492,7 +5770,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -5503,7 +5781,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(16);
+      return Constants.getDescriptor().getEnumTypes().get(15);
     }
 
     private static final MessageOp[] VALUES = values();
@@ -5511,7 +5789,7 @@ public final class Constants {
     public static MessageOp valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -5721,7 +5999,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -5732,7 +6010,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static SystemOp valueOf(int value) {
       return forNumber(value);
     }
@@ -5773,7 +6051,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -5784,7 +6062,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(17);
+      return Constants.getDescriptor().getEnumTypes().get(16);
     }
 
     private static final SystemOp[] VALUES = values();
@@ -5792,7 +6070,7 @@ public final class Constants {
     public static SystemOp valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -5842,7 +6120,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -5853,7 +6131,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static GameOp valueOf(int value) {
       return forNumber(value);
     }
@@ -5884,7 +6162,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -5895,7 +6173,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(18);
+      return Constants.getDescriptor().getEnumTypes().get(17);
     }
 
     private static final GameOp[] VALUES = values();
@@ -5903,7 +6181,7 @@ public final class Constants {
     public static GameOp valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -6002,6 +6280,22 @@ public final class Constants {
      * <code>TeamOpMsgAudioAudit = 6008;</code>
      */
     TeamOpMsgAudioAudit(6008),
+    /**
+     * <pre>
+     * 举报车队
+     * </pre>
+     *
+     * <code>TeamOpReport = 6009;</code>
+     */
+    TeamOpReport(6009),
+    /**
+     * <pre>
+     * 举报车队审核
+     * </pre>
+     *
+     * <code>TeamOpReportAudit = 6010;</code>
+     */
+    TeamOpReportAudit(6010),
     UNRECOGNIZED(-1),
     ;
 
@@ -6077,11 +6371,27 @@ public final class Constants {
      * <code>TeamOpMsgAudioAudit = 6008;</code>
      */
     public static final int TeamOpMsgAudioAudit_VALUE = 6008;
+    /**
+     * <pre>
+     * 举报车队
+     * </pre>
+     *
+     * <code>TeamOpReport = 6009;</code>
+     */
+    public static final int TeamOpReport_VALUE = 6009;
+    /**
+     * <pre>
+     * 举报车队审核
+     * </pre>
+     *
+     * <code>TeamOpReportAudit = 6010;</code>
+     */
+    public static final int TeamOpReportAudit_VALUE = 6010;
 
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -6092,7 +6402,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static TeamOp valueOf(int value) {
       return forNumber(value);
     }
@@ -6112,6 +6422,8 @@ public final class Constants {
         case 6006: return TeamOpAuditAnnounce;
         case 6007: return TeamOpMsgAudit;
         case 6008: return TeamOpMsgAudioAudit;
+        case 6009: return TeamOpReport;
+        case 6010: return TeamOpReportAudit;
         default: return null;
       }
     }
@@ -6131,7 +6443,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -6142,7 +6454,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(19);
+      return Constants.getDescriptor().getEnumTypes().get(18);
     }
 
     private static final TeamOp[] VALUES = values();
@@ -6150,7 +6462,7 @@ public final class Constants {
     public static TeamOp valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -6312,7 +6624,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -6323,7 +6635,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static NoteOp valueOf(int value) {
       return forNumber(value);
     }
@@ -6361,7 +6673,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -6372,7 +6684,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(20);
+      return Constants.getDescriptor().getEnumTypes().get(19);
     }
 
     private static final NoteOp[] VALUES = values();
@@ -6380,7 +6692,7 @@ public final class Constants {
     public static NoteOp valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -6462,7 +6774,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -6473,7 +6785,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static AuditOp valueOf(int value) {
       return forNumber(value);
     }
@@ -6506,7 +6818,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -6517,7 +6829,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(21);
+      return Constants.getDescriptor().getEnumTypes().get(20);
     }
 
     private static final AuditOp[] VALUES = values();
@@ -6525,7 +6837,7 @@ public final class Constants {
     public static AuditOp valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -6592,6 +6904,14 @@ public final class Constants {
      * <code>ChatTypeSystemBot = 5;</code>
      */
     ChatTypeSystemBot(5),
+    /**
+     * <pre>
+     * 派对
+     * </pre>
+     *
+     * <code>ChatTypeTeam = 6;</code>
+     */
+    ChatTypeTeam(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -6639,11 +6959,19 @@ public final class Constants {
      * <code>ChatTypeSystemBot = 5;</code>
      */
     public static final int ChatTypeSystemBot_VALUE = 5;
+    /**
+     * <pre>
+     * 派对
+     * </pre>
+     *
+     * <code>ChatTypeTeam = 6;</code>
+     */
+    public static final int ChatTypeTeam_VALUE = 6;
 
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -6654,7 +6982,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static ChatType valueOf(int value) {
       return forNumber(value);
     }
@@ -6671,6 +6999,7 @@ public final class Constants {
         case 3: return ChatTypeUser;
         case 4: return ChatTypeTempGroup;
         case 5: return ChatTypeSystemBot;
+        case 6: return ChatTypeTeam;
         default: return null;
       }
     }
@@ -6690,7 +7019,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -6701,7 +7030,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(22);
+      return Constants.getDescriptor().getEnumTypes().get(21);
     }
 
     private static final ChatType[] VALUES = values();
@@ -6709,7 +7038,7 @@ public final class Constants {
     public static ChatType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -6760,6 +7089,10 @@ public final class Constants {
      * <code>FriendSourceTalk = 6;</code>
      */
     FriendSourceTalk(6),
+    /**
+     * <code>FriendSourceTypePlaymate = 7;</code>
+     */
+    FriendSourceTypePlaymate(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -6791,11 +7124,15 @@ public final class Constants {
      * <code>FriendSourceTalk = 6;</code>
      */
     public static final int FriendSourceTalk_VALUE = 6;
+    /**
+     * <code>FriendSourceTypePlaymate = 7;</code>
+     */
+    public static final int FriendSourceTypePlaymate_VALUE = 7;
 
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -6806,7 +7143,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static FriendSourceType valueOf(int value) {
       return forNumber(value);
     }
@@ -6824,6 +7161,7 @@ public final class Constants {
         case 4: return FriendSourceTypeFeaturedTopic;
         case 5: return FriendSourceTypeTeam;
         case 6: return FriendSourceTalk;
+        case 7: return FriendSourceTypePlaymate;
         default: return null;
       }
     }
@@ -6843,7 +7181,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -6854,7 +7192,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(23);
+      return Constants.getDescriptor().getEnumTypes().get(22);
     }
 
     private static final FriendSourceType[] VALUES = values();
@@ -6862,7 +7200,7 @@ public final class Constants {
     public static FriendSourceType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -6924,7 +7262,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -6935,7 +7273,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static FriendRequestStatus valueOf(int value) {
       return forNumber(value);
     }
@@ -6969,7 +7307,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -6980,7 +7318,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(24);
+      return Constants.getDescriptor().getEnumTypes().get(23);
     }
 
     private static final FriendRequestStatus[] VALUES = values();
@@ -6988,7 +7326,7 @@ public final class Constants {
     public static FriendRequestStatus valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -7042,7 +7380,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -7053,7 +7391,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static FriendChangeType valueOf(int value) {
       return forNumber(value);
     }
@@ -7086,7 +7424,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -7097,7 +7435,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(25);
+      return Constants.getDescriptor().getEnumTypes().get(24);
     }
 
     private static final FriendChangeType[] VALUES = values();
@@ -7105,7 +7443,7 @@ public final class Constants {
     public static FriendChangeType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -7159,7 +7497,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -7170,7 +7508,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static WebsocketNoticeType valueOf(int value) {
       return forNumber(value);
     }
@@ -7203,7 +7541,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -7214,7 +7552,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(26);
+      return Constants.getDescriptor().getEnumTypes().get(25);
     }
 
     private static final WebsocketNoticeType[] VALUES = values();
@@ -7222,7 +7560,7 @@ public final class Constants {
     public static WebsocketNoticeType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -7292,7 +7630,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -7303,7 +7641,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static NewFriendRequestType valueOf(int value) {
       return forNumber(value);
     }
@@ -7336,7 +7674,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -7347,7 +7685,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(27);
+      return Constants.getDescriptor().getEnumTypes().get(26);
     }
 
     private static final NewFriendRequestType[] VALUES = values();
@@ -7355,7 +7693,7 @@ public final class Constants {
     public static NewFriendRequestType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -7417,7 +7755,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -7428,7 +7766,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static OnlineDeviceType valueOf(int value) {
       return forNumber(value);
     }
@@ -7462,7 +7800,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -7473,7 +7811,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(28);
+      return Constants.getDescriptor().getEnumTypes().get(27);
     }
 
     private static final OnlineDeviceType[] VALUES = values();
@@ -7481,7 +7819,7 @@ public final class Constants {
     public static OnlineDeviceType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -7535,7 +7873,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -7546,7 +7884,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static TalkPostType valueOf(int value) {
       return forNumber(value);
     }
@@ -7579,7 +7917,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -7590,7 +7928,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(29);
+      return Constants.getDescriptor().getEnumTypes().get(28);
     }
 
     private static final TalkPostType[] VALUES = values();
@@ -7598,7 +7936,7 @@ public final class Constants {
     public static TalkPostType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -7652,7 +7990,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -7663,7 +8001,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static TalkPostTagType valueOf(int value) {
       return forNumber(value);
     }
@@ -7696,7 +8034,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -7707,7 +8045,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(30);
+      return Constants.getDescriptor().getEnumTypes().get(29);
     }
 
     private static final TalkPostTagType[] VALUES = values();
@@ -7715,7 +8053,7 @@ public final class Constants {
     public static TalkPostTagType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -7825,7 +8163,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -7836,7 +8174,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static TalkPostStatus valueOf(int value) {
       return forNumber(value);
     }
@@ -7871,7 +8209,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -7882,7 +8220,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(31);
+      return Constants.getDescriptor().getEnumTypes().get(30);
     }
 
     private static final TalkPostStatus[] VALUES = values();
@@ -7890,7 +8228,7 @@ public final class Constants {
     public static TalkPostStatus valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -7906,6 +8244,211 @@ public final class Constants {
     }
 
     // @@protoc_insertion_point(enum_scope:shuo.TalkPostStatus)
+  }
+
+  /**
+   * <pre>
+   * 动态流的数据来源
+   * </pre>
+   *
+   * Protobuf enum {@code shuo.TalkFeedSource}
+   */
+  public enum TalkFeedSource
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>FeedSourceEmpty = 0;</code>
+     */
+    FeedSourceEmpty(0),
+    /**
+     * <pre>
+     * 来源于动态流
+     * </pre>
+     *
+     * <code>FeedSourcePost = 1;</code>
+     */
+    FeedSourcePost(1),
+    /**
+     * <pre>
+     * 来源于热门动态
+     * </pre>
+     *
+     * <code>FeedSourceHot = 2;</code>
+     */
+    FeedSourceHot(2),
+    /**
+     * <pre>
+     * 来源于好友动态
+     * </pre>
+     *
+     * <code>FeedSourceFriend = 3;</code>
+     */
+    FeedSourceFriend(3),
+    /**
+     * <pre>
+     * 来源于关注标签
+     * </pre>
+     *
+     * <code>FeedSourceFollowTag = 4;</code>
+     */
+    FeedSourceFollowTag(4),
+    /**
+     * <pre>
+     * 来源于推荐标签
+     * </pre>
+     *
+     * <code>FeedSourceReccomendTag = 5;</code>
+     */
+    FeedSourceReccomendTag(5),
+    /**
+     * <pre>
+     * 来源于好友互动
+     * </pre>
+     *
+     * <code>FeedSourceFriendInteract = 6;</code>
+     */
+    FeedSourceFriendInteract(6),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>FeedSourceEmpty = 0;</code>
+     */
+    public static final int FeedSourceEmpty_VALUE = 0;
+    /**
+     * <pre>
+     * 来源于动态流
+     * </pre>
+     *
+     * <code>FeedSourcePost = 1;</code>
+     */
+    public static final int FeedSourcePost_VALUE = 1;
+    /**
+     * <pre>
+     * 来源于热门动态
+     * </pre>
+     *
+     * <code>FeedSourceHot = 2;</code>
+     */
+    public static final int FeedSourceHot_VALUE = 2;
+    /**
+     * <pre>
+     * 来源于好友动态
+     * </pre>
+     *
+     * <code>FeedSourceFriend = 3;</code>
+     */
+    public static final int FeedSourceFriend_VALUE = 3;
+    /**
+     * <pre>
+     * 来源于关注标签
+     * </pre>
+     *
+     * <code>FeedSourceFollowTag = 4;</code>
+     */
+    public static final int FeedSourceFollowTag_VALUE = 4;
+    /**
+     * <pre>
+     * 来源于推荐标签
+     * </pre>
+     *
+     * <code>FeedSourceReccomendTag = 5;</code>
+     */
+    public static final int FeedSourceReccomendTag_VALUE = 5;
+    /**
+     * <pre>
+     * 来源于好友互动
+     * </pre>
+     *
+     * <code>FeedSourceFriendInteract = 6;</code>
+     */
+    public static final int FeedSourceFriendInteract_VALUE = 6;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @Deprecated
+    public static TalkFeedSource valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TalkFeedSource forNumber(int value) {
+      switch (value) {
+        case 0: return FeedSourceEmpty;
+        case 1: return FeedSourcePost;
+        case 2: return FeedSourceHot;
+        case 3: return FeedSourceFriend;
+        case 4: return FeedSourceFollowTag;
+        case 5: return FeedSourceReccomendTag;
+        case 6: return FeedSourceFriendInteract;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TalkFeedSource>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        TalkFeedSource> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<TalkFeedSource>() {
+            public TalkFeedSource findValueByNumber(int number) {
+              return TalkFeedSource.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return Constants.getDescriptor().getEnumTypes().get(31);
+    }
+
+    private static final TalkFeedSource[] VALUES = values();
+
+    public static TalkFeedSource valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TalkFeedSource(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:shuo.TalkFeedSource)
   }
 
   /**
@@ -7944,7 +8487,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -7955,7 +8498,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static FeaturedTopicType valueOf(int value) {
       return forNumber(value);
     }
@@ -7988,7 +8531,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -7999,7 +8542,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(32);
+      return Constants.getDescriptor().getEnumTypes().get(32);
     }
 
     private static final FeaturedTopicType[] VALUES = values();
@@ -8007,7 +8550,7 @@ public final class Constants {
     public static FeaturedTopicType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -8109,7 +8652,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -8120,7 +8663,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static TeamStatus valueOf(int value) {
       return forNumber(value);
     }
@@ -8155,7 +8698,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -8166,7 +8709,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(33);
+      return Constants.getDescriptor().getEnumTypes().get(33);
     }
 
     private static final TeamStatus[] VALUES = values();
@@ -8174,7 +8717,7 @@ public final class Constants {
     public static TeamStatus valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -8324,7 +8867,7 @@ public final class Constants {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -8335,7 +8878,7 @@ public final class Constants {
      * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static AuditStatus valueOf(int value) {
       return forNumber(value);
     }
@@ -8373,7 +8916,7 @@ public final class Constants {
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
+        throw new IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
@@ -8384,7 +8927,7 @@ public final class Constants {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.gomicroim.lib.protos.Constants.getDescriptor().getEnumTypes().get(34);
+      return Constants.getDescriptor().getEnumTypes().get(34);
     }
 
     private static final AuditStatus[] VALUES = values();
@@ -8392,7 +8935,7 @@ public final class Constants {
     public static AuditStatus valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -8410,6 +8953,132 @@ public final class Constants {
     // @@protoc_insertion_point(enum_scope:shuo.AuditStatus)
   }
 
+  /**
+   * Protobuf enum {@code shuo.PushType}
+   */
+  public enum PushType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>PushTypeUndefined = 0;</code>
+     */
+    PushTypeUndefined(0),
+    /**
+     * <code>PushTypeAli = 1;</code>
+     */
+    PushTypeAli(1),
+    /**
+     * <code>PushTypeApns = 2;</code>
+     */
+    PushTypeApns(2),
+    /**
+     * <code>PushTypeFCM = 3;</code>
+     */
+    PushTypeFCM(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>PushTypeUndefined = 0;</code>
+     */
+    public static final int PushTypeUndefined_VALUE = 0;
+    /**
+     * <code>PushTypeAli = 1;</code>
+     */
+    public static final int PushTypeAli_VALUE = 1;
+    /**
+     * <code>PushTypeApns = 2;</code>
+     */
+    public static final int PushTypeApns_VALUE = 2;
+    /**
+     * <code>PushTypeFCM = 3;</code>
+     */
+    public static final int PushTypeFCM_VALUE = 3;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @Deprecated
+    public static PushType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static PushType forNumber(int value) {
+      switch (value) {
+        case 0: return PushTypeUndefined;
+        case 1: return PushTypeAli;
+        case 2: return PushTypeApns;
+        case 3: return PushTypeFCM;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PushType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        PushType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<PushType>() {
+            public PushType findValueByNumber(int number) {
+              return PushType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return Constants.getDescriptor().getEnumTypes().get(35);
+    }
+
+    private static final PushType[] VALUES = values();
+
+    public static PushType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private PushType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:shuo.PushType)
+  }
+
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -8418,8 +9087,8 @@ public final class Constants {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
-      "\n\026protoc/constants.proto\022\004shuo*\200\006\n\rWSMes" +
+    String[] descriptorData = {
+      "\n\026protoc/constants.proto\022\004shuo*\320\010\n\rWSMes" +
       "sageType\022\022\n\nNewMessage\020\000\032\002\010\001\022\017\n\013EditMess" +
       "age\020\001\022\021\n\rDeleteMessage\020\002\022\017\n\013AddAttitude\020" +
       "\003\022\022\n\016DeleteAttitude\020\004\022\024\n\020UpdateReplyCoun" +
@@ -8438,17 +9107,25 @@ public final class Constants {
       "TalkPlaymateNotify\020 \022\031\n\025PublishGlobalTal" +
       "kPost\020!\022\032\n\026PublishChannelTalkPost\020\"\022\031\n\025T" +
       "oTeamAppointmentTime\020#\022\017\n\013VideoUpdate\020$\022" +
-      "\026\n\022CompletedRoomTasks\020%\022\020\n\013PongMessage\020\351" +
-      "\007*\241\001\n\021SystemMessageType\022\033\n\023UndefinedBotM" +
-      "essage\020\000\032\002\010\001\022\033\n\027BotHaoShuoRoomAssistant\020" +
-      "\001\022\r\n\tBotSysMsg\020\002\022\025\n\021BotActivityNotice\020\003\022" +
-      "\021\n\rBotTalkNotice\020\004\022\031\n\025BotTalkPlaymateNot" +
-      "ice\020\005*1\n\tWsCmdType\022\022\n\016UnknownCmdType\020\000\022\007" +
-      "\n\003S2C\020\001\022\007\n\003C2S\020\002*\242\001\n\021ClientMessageType\022\024" +
-      "\n\020UndefinedMessage\020\000\022\017\n\013PingMessage\020\001\022\024\n" +
-      "\020RoomEventMessage\020\002\022\026\n\022FrontActiveMessag" +
-      "e\020\003\022\033\n\027BackgroundActiveMessage\020\004\022\033\n\016Unkn" +
-      "ownMessage\020\377\377\377\377\377\377\377\377\377\001*\253\002\n\013MessageType\022\030\n" +
+      "\026\n\022CompletedRoomTasks\020%\022\025\n\021CompletedRoom" +
+      "Task\020&\022\031\n\025PublishFriendFeedPost\020\'\022\017\n\013Tea" +
+      "mCreated\020(\022\017\n\013TeamDisband\020)\022\026\n\022PublishHo" +
+      "tFeedPost\020*\022\026\n\022ExploreRoomUpdated\020+\022\034\n\030P" +
+      "ublishRecommendFeedPost\020,\022\032\n\026TeamMemberD" +
+      "etailUpdate\020-\022\026\n\022UserProfileUpdated\020.\022#\n" +
+      "\037ToTeamAppointmentTimeMemberPush\020/\022\026\n\022Pu" +
+      "blishChannelNote\0200\022\016\n\nNoteNotify\0201\022\024\n\020Te" +
+      "amDetailUpdate\0202\022\025\n\021PlaymateRecommend\0203\022" +
+      "\020\n\013PongMessage\020\351\007*\264\001\n\021SystemMessageType\022" +
+      "\033\n\023UndefinedBotMessage\020\000\032\002\010\001\022\033\n\027BotHaoSh" +
+      "uoRoomAssistant\020\001\022\r\n\tBotSysMsg\020\002\022\025\n\021BotA" +
+      "ctivityNotice\020\003\022\021\n\rBotTalkNotice\020\004\022\031\n\025Bo" +
+      "tTalkPlaymateNotice\020\005\022\021\n\rBotNoteNotice\020\006" +
+      "*\262\001\n\021ClientMessageType\022\024\n\020UndefinedMessa" +
+      "ge\020\000\022\017\n\013PingMessage\020\001\022\024\n\020RoomEventMessag" +
+      "e\020\002\022\026\n\022FrontActiveMessage\020\003\022\033\n\027Backgroun" +
+      "dActiveMessage\020\004\022\016\n\nAckMessage\020\005\022\033\n\016Unkn" +
+      "ownMessage\020\377\377\377\377\377\377\377\377\377\001*\363\002\n\013MessageType\022\030\n" +
       "\024MessageTypeUndefined\020\000\022\023\n\017MessageTypeTe" +
       "xt\020\001\022\026\n\022MessageTypeSticker\020\002\022\033\n\027MessageT" +
       "ypeReferMessage\020\003\022\030\n\024MessageTypeReferRoo" +
@@ -8456,201 +9133,218 @@ public final class Constants {
       "peReferChannel\020\006\022\030\n\024MessageTypeReferTeam" +
       "\020\007\022\034\n\030MessageTypeMemberLevelUp\020\010\022\027\n\023Mess" +
       "ageTypeTalkPost\020\t\022\030\n\024MessageTypeReferPos" +
-      "t\020\n*\316\002\n\rMessageStatus\022\030\n\024MessageStatusUn" +
-      "known\020\000\022\023\n\017MessageStatusOK\020\001\022!\n\024MessageS" +
-      "tatusDeleted\020\377\377\377\377\377\377\377\377\377\001\022(\n\033MessageStatus" +
-      "ChannelDeleted\020\376\377\377\377\377\377\377\377\377\001\022\036\n\021MessageStat" +
-      "usHide\020\375\377\377\377\377\377\377\377\377\001\022$\n\027MessageStatusThread" +
-      "Hide\020\374\377\377\377\377\377\377\377\377\001\022\'\n\032MessageStatusDeletedB" +
-      "ySelf\020\373\377\377\377\377\377\377\377\377\001\022(\n\033MessageStatusDeleted" +
-      "ByOther\020\372\377\377\377\377\377\377\377\377\001\022(\n\033MessageStatusDelet" +
-      "edByAdmin\020\371\377\377\377\377\377\377\377\377\001*3\n\010RoomType\022\025\n\021Room" +
-      "TypeUndefined\020\000\022\020\n\014RoomTypeGame\020\001*\246\001\n\nRo" +
-      "omStatus\022\025\n\021RoomStatusUnknown\020\000\022\037\n\022RoomS" +
-      "tatusArchived\020\376\377\377\377\377\377\377\377\377\001\022\036\n\021RoomStatusDe" +
-      "leted\020\377\377\377\377\377\377\377\377\377\001\022\025\n\021RoomStatusCanJoin\020\001\022" +
-      "\020\n\014RoomStatusOK\020\002\022\027\n\023RoomStatusRecommend" +
-      "\020\003*\310\002\n\016PermissionType\022\033\n\027PermissionTypeU" +
-      "ndefined\020\000\022\034\n\030PermissionTypeManageRoom\020\001" +
-      "\022\036\n\032PermissionTypeManageMember\020\002\022\037\n\033Perm" +
-      "issionTypeManageChannel\020\003\022\035\n\031PermissionT" +
-      "ypeManageOplog\020\004\022!\n\035PermissionTypeManage" +
-      "RoomGroup\020\005\022\027\n\023PermissionTypeAdmin\020\006\022!\n\035" +
-      "PermissionTypeAtEveryoneGroup\020\007\022\034\n\030Permi" +
-      "ssionTypePinMessage\020\010\022\036\n\032PermissionTypeA" +
-      "nnounceChat\020\t*\316\001\n\013ChannelType\022\030\n\024Channel" +
-      "TypeUndefined\020\000\022\023\n\017ChannelTypeText\020\001\022\027\n\023" +
-      "ChannelTypeAnnounce\020\002\022\033\n\027ChannelTypeExte" +
-      "rnalLink\020\003\022\026\n\022ChannelTypePrivate\020\004\022\027\n\023Ch" +
-      "annelTypeTalkPost\020\007\022\023\n\017ChannelTypeNote\020\010" +
-      "\022\024\n\020ChannelTypeTopic\020\t*d\n\rChannelStatus\022" +
-      "\032\n\026ChannelStatusUndefined\020\000\022\023\n\017ChannelSt" +
-      "atusOK\020\001\022\"\n\025ChannelStatusArchived\020\376\377\377\377\377\377" +
-      "\377\377\377\001*\275\001\n\nUserStatus\022\027\n\023UserStatusUndefin" +
-      "ed\020\000\022\032\n\rUserStatusBan\020\377\377\377\377\377\377\377\377\377\001\022\033\n\016User" +
-      "StatusMute\020\376\377\377\377\377\377\377\377\377\001\022&\n\031UserStatusPreAc" +
-      "countClose\020\375\377\377\377\377\377\377\377\377\001\022#\n\026UserStatusAccou" +
-      "ntClose\020\374\377\377\377\377\377\377\377\377\001\022\020\n\014UserStatusOK\020\001*D\n\014" +
-      "UserIdentity\022\031\n\025UserIdentityUndefined\020\000\022" +
-      "\031\n\025UserIdentityDeveloper\020\001*\231\001\n\020RoomMembe" +
-      "rStatus\022\035\n\031RoomMemberStatusUndefined\020\000\022 " +
-      "\n\023GlobalUserStatusBan\020\377\377\377\377\377\377\377\377\377\001\022!\n\024Glob" +
-      "alUserStatusMute\020\376\377\377\377\377\377\377\377\377\001\022!\n\024RoomMembe" +
-      "rStatusMute\020\375\377\377\377\377\377\377\377\377\001*\360\n\n\006RoomOp\022\021\n\rRoo" +
-      "mOpUnknown\020\000\022\025\n\020RoomOpRoomCreate\020\351\007\022\025\n\020R" +
-      "oomOpRoomUpdate\020\352\007\022\025\n\020RoomOpRoomDelete\020\353" +
-      "\007\022\030\n\023RoomOpChannelCreate\020\354\007\022\030\n\023RoomOpCha" +
-      "nnelUpdate\020\355\007\022\030\n\023RoomOpChannelDelete\020\356\007\022" +
-      "\035\n\030RoomOpChannelGroupCreate\020\357\007\022\035\n\030RoomOp" +
-      "ChannelGroupUpdate\020\360\007\022\035\n\030RoomOpChannelGr" +
-      "oupDelete\020\361\007\022\026\n\021RoomOpChannelSort\020\362\007\022\033\n\026" +
-      "RoomOpChannelGroupSort\020\363\007\022\032\n\025RoomOpRoomG" +
-      "roupCreate\020\364\007\022\032\n\025RoomOpRoomGroupDelete\020\365" +
-      "\007\022\032\n\025RoomOpRoomGroupUpdate\020\366\007\022\030\n\023RoomOpM" +
-      "emberKickout\020\367\007\022\032\n\025RoomOpMemberUnKickout" +
-      "\020\370\007\022\030\n\023RoomOpMemberNospeak\020\371\007\022\032\n\025RoomOpM" +
-      "emberUnNospeak\020\372\007\022$\n\037RoomOpMemberRemoveF" +
-      "romRoomGroup\020\373\007\022\037\n\032RoomOpMemberAddToRoom" +
-      "Group\020\374\007\022\026\n\021RoomOpMessageHide\020\375\007\022\030\n\023Room" +
-      "OpMessageDelete\020\376\007\022\025\n\020RoomOpMessagePin\020\377" +
-      "\007\022\027\n\022RoomOpMessageUnPin\020\200\010\022\032\n\025RoomOpRoom" +
-      "OwnerChange\020\201\010\022\026\n\021RoomOpRoomArchive\020\202\010\022\035" +
-      "\n\030RoomOpExternalLinkCreate\020\203\010\022\035\n\030RoomOpE" +
-      "xternalLinkUpdate\020\204\010\022\035\n\030RoomOpExternalLi" +
-      "nkDelete\020\205\010\022\027\n\022RoomOpSquareCreate\020\206\010\022\027\n\022" +
-      "RoomOpSquareUpdate\020\207\010\022\031\n\024RoomOpChannelAr" +
-      "chive\020\210\010\022\021\n\014RoomOpTagAdd\020\211\010\022\024\n\017RoomOpTag" +
-      "Delete\020\212\010\022\030\n\023RoomOpWelcomeCreate\020\213\010\022\030\n\023R" +
-      "oomOpWelcomeUpdate\020\214\010\022\024\n\017RoomOpRoomAudit" +
-      "\020\215\010\022\034\n\027RoomOpExternalLinkAudit\020\216\010\022\026\n\021Roo" +
-      "mOpLevelUpdate\020\217\010\022\022\n\rRoomOpBotJoin\020\220\010\022\023\n" +
-      "\016RoomOpBotLeave\020\221\010\022\027\n\022RoomOpChannelAudit" +
-      "\020\222\010\022\033\n\026RoomOpBotAuditGreeting\020\223\010\022\034\n\027Room" +
-      "OpChannelGroupAudit\020\224\010\022\034\n\027RoomOpBotAudit" +
-      "AutoReply\020\225\010\022\034\n\027RoomOpMemberLevelCreate\020" +
-      "\226\010\022\034\n\027RoomOpMemberLevelUpdate\020\227\010\022\033\n\026Room" +
-      "OpMemberLevelAudit\020\230\010\022\031\n\024RoomOpRoomGroup" +
-      "Audit\020\231\010\022\026\n\021RoomOpSquareAudit\020\232\010\022\027\n\022Room" +
-      "OpWelcomeAudit\020\233\010*\250\n\n\006UserOp\022\021\n\rUserOpUn" +
-      "known\020\000\022\031\n\024UserOpNicknameUpdate\020\321\017\022\027\n\022Us" +
-      "erOpAvatarUpdate\020\322\017\022\030\n\023UserOpNicknameAud" +
-      "it\020\323\017\022\026\n\021UserOpAvatarAudit\020\324\017\022\030\n\023UserOpP" +
-      "rofileUpdate\020\325\017\022\023\n\016UserOpJoinRoom\020\326\017\022\023\n\016" +
-      "UserOpQuitRoom\020\327\017\022\022\n\rUserOpKickout\020\330\017\022\024\n" +
-      "\017UserOpUnKickout\020\331\017\022\022\n\rUserOpNospeak\020\332\017\022" +
-      "\024\n\017UserOpUnNospeak\020\333\017\022\017\n\nUserOpMute\020\334\017\022\021" +
-      "\n\014UserOpUnMute\020\335\017\022\016\n\tUserOpBan\020\336\017\022\020\n\013Use" +
-      "rOpUnBan\020\337\017\022\036\n\031UserOpRemoveFromRoomGroup" +
-      "\020\340\017\022\031\n\024UserOpAddToRoomGroup\020\341\017\022\021\n\014UserOp" +
-      "Report\020\342\017\022\026\n\021UserOpReportAudit\020\343\017\022\027\n\022Use" +
-      "rOpRoomOwnerSet\020\344\017\022\031\n\024UserOpRoomOwnerUns" +
-      "et\020\345\017\022\030\n\023UserOpNicknameReset\020\346\017\022\026\n\021UserO" +
-      "pAvatarReset\020\347\017\022\023\n\016UserOpImprison\020\350\017\022\025\n\020" +
-      "UserOpUnImprison\020\351\017\022\030\n\023UserOpDevloperApp" +
-      "ly\020\352\017\022\031\n\024UserOpDevloperCancel\020\353\017\022\030\n\023User" +
-      "OpDevloperAudit\020\354\017\022\030\n\023UserOpIdentityVeri" +
-      "f\020\355\017\022\027\n\022UserOpSystemNotify\020\356\017\022\026\n\021UserOpA" +
-      "dminRemark\020\357\017\022\030\n\023UserOpReportPrivate\020\360\017\022" +
-      "\035\n\030UserOpReportPrivateAudit\020\361\017\022\023\n\016UserOp" +
-      "Register\020\362\017\022\020\n\013UserOpLogin\020\363\017\022\030\n\023UserOpR" +
-      "egisterAudit\020\364\017\022\025\n\020UserOpLoginAudit\020\365\017\022 " +
-      "\n\033UserOpOfficialCertification\020\366\017\022\025\n\020User" +
-      "OpNoteCreate\020\367\017\022\025\n\020UserOpNoteUpdate\020\370\017\022\025" +
-      "\n\020UserOpNoteDelete\020\371\017\022\024\n\017UserOpNoteAudit" +
-      "\020\372\017\022 \n\033UserOpNicknameAuditFeedback\020\373\017\022\036\n" +
-      "\031UserOpAvatarAuditFeedback\020\374\017\022\025\n\020UserOpR" +
-      "eportTeam\020\375\017\022\032\n\025UserOpReportTeamAudit\020\376\017" +
-      "\022\025\n\020UserOpReportTalk\020\377\017\022\032\n\025UserOpReportT" +
-      "alkAudit\020\200\020\022\032\n\025UserOpPreCloseAccount\020\201\020\022" +
-      "\026\n\021UserOpCoverUpdate\020\202\020\022\025\n\020UserOpCoverAu" +
-      "dit\020\203\020\022\025\n\020UserOpCoverReset\020\204\020\022\035\n\030UserOpC" +
-      "overAuditFeedback\020\205\020*\271\006\n\tMessageOp\022\024\n\020Me" +
-      "ssageOpUnknown\020\000\022\021\n\014MessageOpNew\020\271\027\022\022\n\rM" +
-      "essageOpEdit\020\272\027\022\024\n\017MessageOpDelete\020\273\027\022\022\n" +
-      "\rMessageOpHide\020\274\027\022\022\n\rMessageOpShow\020\275\027\022\027\n" +
-      "\022MessageOpChatAudit\020\276\027\022\024\n\017MessageOpRepor" +
-      "t\020\277\027\022\031\n\024MessageOpReportAudit\020\300\027\022\021\n\014Messa" +
-      "geOpPin\020\301\027\022\023\n\016MessageOpUnPin\020\302\027\022\021\n\014Messa" +
-      "geOpHot\020\303\027\022\023\n\016MessageOpUnHot\020\304\027\022\026\n\021Messa" +
-      "geOpHotAudit\020\305\027\022\030\n\023MessageOpHotCollect\020\306" +
-      "\027\022\032\n\025MessageOpUnHotCollect\020\307\027\022\035\n\030Message" +
-      "OpHotCollectAudit\020\310\027\022\033\n\026MessageOpLinkMet" +
-      "aAudit\020\311\027\022\"\n\035MessageOpLinkMetaPrivateAud" +
-      "it\020\312\027\022\036\n\031MessageOpChatPrivateAudit\020\313\027\022\033\n" +
-      "\026MessageOpReportPrivate\020\314\027\022 \n\033MessageOpR" +
-      "eportPrivateAudit\020\315\027\022\034\n\027MessageOpRecomme" +
-      "ndAudit\020\316\027\022\030\n\023MessageOpReportTeam\020\317\027\022\035\n\030" +
-      "MessageOpReportTeamAudit\020\320\027\022\037\n\032MessageOp" +
-      "LinkMetaTeamAudit\020\321\027\022\033\n\026MessageOpChatTea" +
-      "mAudit\020\322\027\022\030\n\023MessageOpReportTalk\020\323\027\022\035\n\030M" +
-      "essageOpReportTalkAudit\020\324\027\022\037\n\032MessageOpL" +
-      "inkMetaTalkAudit\020\325\027\022\033\n\026MessageOpChatTalk" +
-      "Audit\020\326\027*\300\002\n\010SystemOp\022\023\n\017SystemOpUnknown" +
-      "\020\000\022\034\n\027SystemOpRiskWordsCreate\020\241\037\022\034\n\027Syst" +
-      "emOpRiskWordsUpdate\020\242\037\022\034\n\027SystemOpRiskWo" +
-      "rdsDelete\020\243\037\022\034\n\027SystemOpRiskLabelCreate\020" +
-      "\244\037\022\034\n\027SystemOpRiskLabelUpdate\020\245\037\022\034\n\027Syst" +
-      "emOpRiskLabelDelete\020\246\037\022\033\n\026SystemOpActivi" +
-      "tyCreate\020\247\037\022\033\n\026SystemOpActivityUpdate\020\250\037" +
-      "\022\032\n\025SystemOpActivityClose\020\251\037\022\025\n\020SystemOp" +
-      "NewOrder\020\252\037*\033\n\006GameOp\022\021\n\rGameOpUnknown\020\000" +
-      "*\312\001\n\006TeamOp\022\021\n\rTeamOpUnknown\020\000\022\021\n\014TeamOp" +
-      "Create\020\361.\022\021\n\014TeamOpUpdate\020\362.\022\021\n\014TeamOpDe" +
-      "lete\020\363.\022\025\n\020TeamOpAuditIntro\020\364.\022\024\n\017TeamOp" +
-      "AuditTags\020\365.\022\030\n\023TeamOpAuditAnnounce\020\366.\022\023" +
-      "\n\016TeamOpMsgAudit\020\367.\022\030\n\023TeamOpMsgAudioAud" +
-      "it\020\370.*\267\001\n\006NoteOp\022\021\n\rNoteOpUnknown\020\000\022\021\n\014N" +
+      "t\020\n\022\023\n\017MessageTypeNote\020\013\022\030\n\024MessageTypeR" +
+      "eferNote\020\014\022\027\n\023MessageTypePlaymate\020\r*\321\001\n\r" +
+      "MessageStatus\022\030\n\024MessageStatusUnknown\020\000\022" +
+      "!\n\024MessageStatusDeleted\020\377\377\377\377\377\377\377\377\377\001\022(\n\033Me" +
+      "ssageStatusChannelDeleted\020\376\377\377\377\377\377\377\377\377\001\022\036\n\021" +
+      "MessageStatusHide\020\375\377\377\377\377\377\377\377\377\001\022$\n\027MessageS" +
+      "tatusThreadHide\020\374\377\377\377\377\377\377\377\377\001\022\023\n\017MessageSta" +
+      "tusOK\020\001*3\n\010RoomType\022\025\n\021RoomTypeUndefined" +
+      "\020\000\022\020\n\014RoomTypeGame\020\001*\246\001\n\nRoomStatus\022\025\n\021R" +
+      "oomStatusUnknown\020\000\022\037\n\022RoomStatusArchived" +
+      "\020\376\377\377\377\377\377\377\377\377\001\022\036\n\021RoomStatusDeleted\020\377\377\377\377\377\377\377" +
+      "\377\377\001\022\025\n\021RoomStatusCanJoin\020\001\022\020\n\014RoomStatus" +
+      "OK\020\002\022\027\n\023RoomStatusRecommend\020\003*\310\002\n\016Permis" +
+      "sionType\022\033\n\027PermissionTypeUndefined\020\000\022\034\n" +
+      "\030PermissionTypeManageRoom\020\001\022\036\n\032Permissio" +
+      "nTypeManageMember\020\002\022\037\n\033PermissionTypeMan" +
+      "ageChannel\020\003\022\035\n\031PermissionTypeManageOplo" +
+      "g\020\004\022!\n\035PermissionTypeManageRoomGroup\020\005\022\027" +
+      "\n\023PermissionTypeAdmin\020\006\022!\n\035PermissionTyp" +
+      "eAtEveryoneGroup\020\007\022\034\n\030PermissionTypePinM" +
+      "essage\020\010\022\036\n\032PermissionTypeAnnounceChat\020\t" +
+      "*\316\001\n\013ChannelType\022\030\n\024ChannelTypeUndefined" +
+      "\020\000\022\023\n\017ChannelTypeText\020\001\022\027\n\023ChannelTypeAn" +
+      "nounce\020\002\022\033\n\027ChannelTypeExternalLink\020\003\022\026\n" +
+      "\022ChannelTypePrivate\020\004\022\027\n\023ChannelTypeTalk" +
+      "Post\020\007\022\023\n\017ChannelTypeNote\020\010\022\024\n\020ChannelTy" +
+      "peTopic\020\t*d\n\rChannelStatus\022\032\n\026ChannelSta" +
+      "tusUndefined\020\000\022\023\n\017ChannelStatusOK\020\001\022\"\n\025C" +
+      "hannelStatusArchived\020\376\377\377\377\377\377\377\377\377\001*\275\001\n\nUser" +
+      "Status\022\027\n\023UserStatusUndefined\020\000\022\032\n\rUserS" +
+      "tatusBan\020\377\377\377\377\377\377\377\377\377\001\022\033\n\016UserStatusMute\020\376\377" +
+      "\377\377\377\377\377\377\377\001\022&\n\031UserStatusPreAccountClose\020\375\377" +
+      "\377\377\377\377\377\377\377\001\022#\n\026UserStatusAccountClose\020\374\377\377\377\377" +
+      "\377\377\377\377\001\022\020\n\014UserStatusOK\020\001*D\n\014UserIdentity\022" +
+      "\031\n\025UserIdentityUndefined\020\000\022\031\n\025UserIdenti" +
+      "tyDeveloper\020\001*\231\001\n\020RoomMemberStatus\022\035\n\031Ro" +
+      "omMemberStatusUndefined\020\000\022 \n\023GlobalUserS" +
+      "tatusBan\020\377\377\377\377\377\377\377\377\377\001\022!\n\024GlobalUserStatusM" +
+      "ute\020\376\377\377\377\377\377\377\377\377\001\022!\n\024RoomMemberStatusMute\020\375" +
+      "\377\377\377\377\377\377\377\377\001*\233\013\n\006RoomOp\022\021\n\rRoomOpUnknown\020\000\022" +
+      "\025\n\020RoomOpRoomCreate\020\351\007\022\025\n\020RoomOpRoomUpda" +
+      "te\020\352\007\022\025\n\020RoomOpRoomDelete\020\353\007\022\030\n\023RoomOpCh" +
+      "annelCreate\020\354\007\022\030\n\023RoomOpChannelUpdate\020\355\007" +
+      "\022\030\n\023RoomOpChannelDelete\020\356\007\022\035\n\030RoomOpChan" +
+      "nelGroupCreate\020\357\007\022\035\n\030RoomOpChannelGroupU" +
+      "pdate\020\360\007\022\035\n\030RoomOpChannelGroupDelete\020\361\007\022" +
+      "\026\n\021RoomOpChannelSort\020\362\007\022\033\n\026RoomOpChannel" +
+      "GroupSort\020\363\007\022\032\n\025RoomOpRoomGroupCreate\020\364\007" +
+      "\022\032\n\025RoomOpRoomGroupDelete\020\365\007\022\032\n\025RoomOpRo" +
+      "omGroupUpdate\020\366\007\022\030\n\023RoomOpMemberKickout\020" +
+      "\367\007\022\032\n\025RoomOpMemberUnKickout\020\370\007\022\030\n\023RoomOp" +
+      "MemberNospeak\020\371\007\022\032\n\025RoomOpMemberUnNospea" +
+      "k\020\372\007\022$\n\037RoomOpMemberRemoveFromRoomGroup\020" +
+      "\373\007\022\037\n\032RoomOpMemberAddToRoomGroup\020\374\007\022\026\n\021R" +
+      "oomOpMessageHide\020\375\007\022\030\n\023RoomOpMessageDele" +
+      "te\020\376\007\022\025\n\020RoomOpMessagePin\020\377\007\022\027\n\022RoomOpMe" +
+      "ssageUnPin\020\200\010\022\032\n\025RoomOpRoomOwnerChange\020\201" +
+      "\010\022\026\n\021RoomOpRoomArchive\020\202\010\022\035\n\030RoomOpExter" +
+      "nalLinkCreate\020\203\010\022\035\n\030RoomOpExternalLinkUp" +
+      "date\020\204\010\022\035\n\030RoomOpExternalLinkDelete\020\205\010\022\027" +
+      "\n\022RoomOpSquareCreate\020\206\010\022\027\n\022RoomOpSquareU" +
+      "pdate\020\207\010\022\031\n\024RoomOpChannelArchive\020\210\010\022\021\n\014R" +
+      "oomOpTagAdd\020\211\010\022\024\n\017RoomOpTagDelete\020\212\010\022\030\n\023" +
+      "RoomOpWelcomeCreate\020\213\010\022\030\n\023RoomOpWelcomeU" +
+      "pdate\020\214\010\022\024\n\017RoomOpRoomAudit\020\215\010\022\034\n\027RoomOp" +
+      "ExternalLinkAudit\020\216\010\022\026\n\021RoomOpLevelUpdat" +
+      "e\020\217\010\022\022\n\rRoomOpBotJoin\020\220\010\022\023\n\016RoomOpBotLea" +
+      "ve\020\221\010\022\027\n\022RoomOpChannelAudit\020\222\010\022\033\n\026RoomOp" +
+      "BotAuditGreeting\020\223\010\022\034\n\027RoomOpChannelGrou" +
+      "pAudit\020\224\010\022\034\n\027RoomOpBotAuditAutoReply\020\225\010\022" +
+      "\034\n\027RoomOpMemberLevelCreate\020\226\010\022\034\n\027RoomOpM" +
+      "emberLevelUpdate\020\227\010\022\033\n\026RoomOpMemberLevel" +
+      "Audit\020\230\010\022\031\n\024RoomOpRoomGroupAudit\020\231\010\022\026\n\021R" +
+      "oomOpSquareAudit\020\232\010\022\027\n\022RoomOpWelcomeAudi" +
+      "t\020\233\010\022\021\n\014RoomOpReport\020\234\010\022\026\n\021RoomOpReportA" +
+      "udit\020\235\010*\250\n\n\006UserOp\022\021\n\rUserOpUnknown\020\000\022\031\n" +
+      "\024UserOpNicknameUpdate\020\321\017\022\027\n\022UserOpAvatar" +
+      "Update\020\322\017\022\030\n\023UserOpNicknameAudit\020\323\017\022\026\n\021U" +
+      "serOpAvatarAudit\020\324\017\022\030\n\023UserOpProfileUpda" +
+      "te\020\325\017\022\023\n\016UserOpJoinRoom\020\326\017\022\023\n\016UserOpQuit" +
+      "Room\020\327\017\022\022\n\rUserOpKickout\020\330\017\022\024\n\017UserOpUnK" +
+      "ickout\020\331\017\022\022\n\rUserOpNospeak\020\332\017\022\024\n\017UserOpU" +
+      "nNospeak\020\333\017\022\017\n\nUserOpMute\020\334\017\022\021\n\014UserOpUn" +
+      "Mute\020\335\017\022\016\n\tUserOpBan\020\336\017\022\020\n\013UserOpUnBan\020\337" +
+      "\017\022\036\n\031UserOpRemoveFromRoomGroup\020\340\017\022\031\n\024Use" +
+      "rOpAddToRoomGroup\020\341\017\022\021\n\014UserOpReport\020\342\017\022" +
+      "\026\n\021UserOpReportAudit\020\343\017\022\027\n\022UserOpRoomOwn" +
+      "erSet\020\344\017\022\031\n\024UserOpRoomOwnerUnset\020\345\017\022\030\n\023U" +
+      "serOpNicknameReset\020\346\017\022\026\n\021UserOpAvatarRes" +
+      "et\020\347\017\022\023\n\016UserOpImprison\020\350\017\022\025\n\020UserOpUnIm" +
+      "prison\020\351\017\022\030\n\023UserOpDevloperApply\020\352\017\022\031\n\024U" +
+      "serOpDevloperCancel\020\353\017\022\030\n\023UserOpDevloper" +
+      "Audit\020\354\017\022\030\n\023UserOpIdentityVerif\020\355\017\022\027\n\022Us" +
+      "erOpSystemNotify\020\356\017\022\026\n\021UserOpAdminRemark" +
+      "\020\357\017\022\030\n\023UserOpReportPrivate\020\360\017\022\035\n\030UserOpR" +
+      "eportPrivateAudit\020\361\017\022\023\n\016UserOpRegister\020\362" +
+      "\017\022\020\n\013UserOpLogin\020\363\017\022\030\n\023UserOpRegisterAud" +
+      "it\020\364\017\022\025\n\020UserOpLoginAudit\020\365\017\022 \n\033UserOpOf" +
+      "ficialCertification\020\366\017\022\025\n\020UserOpNoteCrea" +
+      "te\020\367\017\022\025\n\020UserOpNoteUpdate\020\370\017\022\025\n\020UserOpNo" +
+      "teDelete\020\371\017\022\024\n\017UserOpNoteAudit\020\372\017\022 \n\033Use" +
+      "rOpNicknameAuditFeedback\020\373\017\022\036\n\031UserOpAva" +
+      "tarAuditFeedback\020\374\017\022\025\n\020UserOpReportTeam\020" +
+      "\375\017\022\032\n\025UserOpReportTeamAudit\020\376\017\022\025\n\020UserOp" +
+      "ReportTalk\020\377\017\022\032\n\025UserOpReportTalkAudit\020\200" +
+      "\020\022\032\n\025UserOpPreCloseAccount\020\201\020\022\026\n\021UserOpC" +
+      "overUpdate\020\202\020\022\025\n\020UserOpCoverAudit\020\203\020\022\025\n\020" +
+      "UserOpCoverReset\020\204\020\022\035\n\030UserOpCoverAuditF" +
+      "eedback\020\205\020*\200\t\n\tMessageOp\022\024\n\020MessageOpUnk" +
+      "nown\020\000\022\021\n\014MessageOpNew\020\271\027\022\022\n\rMessageOpEd" +
+      "it\020\272\027\022\024\n\017MessageOpDelete\020\273\027\022\022\n\rMessageOp" +
+      "Hide\020\274\027\022\022\n\rMessageOpShow\020\275\027\022\027\n\022MessageOp" +
+      "ChatAudit\020\276\027\022\024\n\017MessageOpReport\020\277\027\022\031\n\024Me" +
+      "ssageOpReportAudit\020\300\027\022\021\n\014MessageOpPin\020\301\027" +
+      "\022\023\n\016MessageOpUnPin\020\302\027\022\021\n\014MessageOpHot\020\303\027" +
+      "\022\023\n\016MessageOpUnHot\020\304\027\022\026\n\021MessageOpHotAud" +
+      "it\020\305\027\022\030\n\023MessageOpHotCollect\020\306\027\022\032\n\025Messa" +
+      "geOpUnHotCollect\020\307\027\022\035\n\030MessageOpHotColle" +
+      "ctAudit\020\310\027\022\033\n\026MessageOpLinkMetaAudit\020\311\027\022" +
+      "\"\n\035MessageOpLinkMetaPrivateAudit\020\312\027\022\036\n\031M" +
+      "essageOpChatPrivateAudit\020\313\027\022\033\n\026MessageOp" +
+      "ReportPrivate\020\314\027\022 \n\033MessageOpReportPriva" +
+      "teAudit\020\315\027\022\034\n\027MessageOpRecommendAudit\020\316\027" +
+      "\022\030\n\023MessageOpReportTeam\020\317\027\022\035\n\030MessageOpR" +
+      "eportTeamAudit\020\320\027\022\037\n\032MessageOpLinkMetaTe" +
+      "amAudit\020\321\027\022\033\n\026MessageOpChatTeamAudit\020\322\027\022" +
+      "\030\n\023MessageOpReportTalk\020\323\027\022\035\n\030MessageOpRe" +
+      "portTalkAudit\020\324\027\022\037\n\032MessageOpLinkMetaTal" +
+      "kAudit\020\325\027\022\033\n\026MessageOpChatTalkAudit\020\326\027\022#" +
+      "\n\036MessageOpPrivateChatVideoAudit\020\327\027\022!\n\034M" +
+      "essageOpGroupChatVideoAudit\020\330\027\022\034\n\027Messag" +
+      "eOpTalkVideoAudit\020\331\027\022$\n\037MessageOpReportP" +
+      "rivateChatVideo\020\332\027\022\"\n\035MessageOpReportGro" +
+      "upChatVideo\020\333\027\022\035\n\030MessageOpReportTalkVid" +
+      "eo\020\334\027\022)\n$MessageOpReportPrivateChatVideo" +
+      "Audit\020\335\027\022\'\n\"MessageOpReportGroupChatVide" +
+      "oAudit\020\336\027\022\"\n\035MessageOpReportTalkVideoAud" +
+      "it\020\337\027*\300\002\n\010SystemOp\022\023\n\017SystemOpUnknown\020\000\022" +
+      "\034\n\027SystemOpRiskWordsCreate\020\241\037\022\034\n\027SystemO" +
+      "pRiskWordsUpdate\020\242\037\022\034\n\027SystemOpRiskWords" +
+      "Delete\020\243\037\022\034\n\027SystemOpRiskLabelCreate\020\244\037\022" +
+      "\034\n\027SystemOpRiskLabelUpdate\020\245\037\022\034\n\027SystemO" +
+      "pRiskLabelDelete\020\246\037\022\033\n\026SystemOpActivityC" +
+      "reate\020\247\037\022\033\n\026SystemOpActivityUpdate\020\250\037\022\032\n" +
+      "\025SystemOpActivityClose\020\251\037\022\025\n\020SystemOpNew" +
+      "Order\020\252\037*\033\n\006GameOp\022\021\n\rGameOpUnknown\020\000*\365\001" +
+      "\n\006TeamOp\022\021\n\rTeamOpUnknown\020\000\022\021\n\014TeamOpCre" +
+      "ate\020\361.\022\021\n\014TeamOpUpdate\020\362.\022\021\n\014TeamOpDelet" +
+      "e\020\363.\022\025\n\020TeamOpAuditIntro\020\364.\022\024\n\017TeamOpAud" +
+      "itTags\020\365.\022\030\n\023TeamOpAuditAnnounce\020\366.\022\023\n\016T" +
+      "eamOpMsgAudit\020\367.\022\030\n\023TeamOpMsgAudioAudit\020" +
+      "\370.\022\021\n\014TeamOpReport\020\371.\022\026\n\021TeamOpReportAud" +
+      "it\020\372.*\267\001\n\006NoteOp\022\021\n\rNoteOpUnknown\020\000\022\021\n\014N" +
       "oteOpCreate\020\3316\022\021\n\014NoteOpUpdate\020\3326\022\021\n\014Not" +
       "eOpDelete\020\3336\022\020\n\013NoteOpAudit\020\3346\022\031\n\024NoteOp" +
       "InfoConfCreate\020\3356\022\031\n\024NoteOpInfoConfUpdat" +
       "e\020\3366\022\031\n\024NoteOpInfoConfDelete\020\3376*B\n\007Audit" +
       "Op\022\022\n\016AuditOpUnknown\020\000\022\020\n\013AuditOpText\020\301>" +
-      "\022\021\n\014AuditOpImage\020\302>*\210\001\n\010ChatType\022\025\n\021Chat" +
+      "\022\021\n\014AuditOpImage\020\302>*\232\001\n\010ChatType\022\025\n\021Chat" +
       "TypeUndefined\020\000\022\020\n\014ChatTypeRoom\020\001\022\023\n\017Cha" +
       "tTypeChannel\020\002\022\020\n\014ChatTypeUser\020\003\022\025\n\021Chat" +
-      "TypeTempGroup\020\004\022\025\n\021ChatTypeSystemBot\020\005*\332" +
-      "\001\n\020FriendSourceType\022\035\n\031FriendSourceTypeU" +
-      "ndefined\020\000\022\031\n\025FriendSourceTypeGroup\020\001\022\032\n" +
-      "\026FriendSourceTypeSearch\020\002\022\035\n\031FriendSourc" +
-      "eTypeRecommend\020\003\022!\n\035FriendSourceTypeFeat" +
-      "uredTopic\020\004\022\030\n\024FriendSourceTypeTeam\020\005\022\024\n" +
-      "\020FriendSourceTalk\020\006*\224\001\n\023FriendRequestSta" +
-      "tus\022 \n\034FriendRequestStatusUndefined\020\000\022\037\n" +
-      "\033FriendRequestStatusWaitPass\020\001\022\033\n\027Friend" +
-      "RequestStatusPass\020\002\022\035\n\031FriendRequestStat" +
-      "usRefuse\020\003*f\n\020FriendChangeType\022\035\n\031Friend" +
-      "ChangeTypeUndefined\020\000\022\027\n\023FriendChangeTyp" +
-      "eAdd\020\001\022\032\n\026FriendChangeTypeRemove\020\002*r\n\023We" +
-      "bsocketNoticeType\022\036\n\032WebsocketNoticeType" +
-      "Default\020\000\022\036\n\032WebsocketNoticeTypeMessage\020" +
-      "\001\022\033\n\027WebsocketNoticeTypeTalk\020\002*x\n\024NewFri" +
-      "endRequestType\022!\n\035NewFriendRequestTypeUn" +
-      "defined\020\000\022\034\n\030NewFriendRequestTypeSend\020\001\022" +
-      "\037\n\033NewFriendRequestTypeReceive\020\002*~\n\020Onli" +
-      "neDeviceType\022\035\n\031OnlineDeviceTypeUndefine" +
-      "d\020\000\022\027\n\023OnlineDeviceTypeWeb\020\001\022\027\n\023OnlineDe" +
-      "viceTypeApp\020\002\022\031\n\025OnlineDeviceTypeMulti\020\003" +
-      "*N\n\014TalkPostType\022\025\n\021PostTypeUndefined\020\000\022" +
-      "\021\n\rPostTypeShare\020\001\022\024\n\020PostTypePlaymate\020\002" +
-      "*Z\n\017TalkPostTagType\022\030\n\024PostTagTypeUndefi" +
-      "ned\020\000\022\024\n\020PostTagTypeShare\020\001\022\027\n\023PostTagTy" +
-      "pePlaymate\020\002*\202\001\n\016TalkPostStatus\022\025\n\021PostS" +
-      "tatusPending\020\000\022\025\n\021PostStatusCreated\020\001\022\025\n" +
-      "\021PostStatusSuccess\020\002\022\025\n\021PostStatusDelete" +
-      "d\020\003\022\024\n\020PostStatusHidden\020\004*R\n\021FeaturedTop" +
-      "icType\022\024\n\020TopicTypeDefault\020\000\022\024\n\020TopicTyp" +
-      "eMessage\020\001\022\021\n\rTopicTypePost\020\002*\213\001\n\nTeamSt" +
-      "atus\022\027\n\023TeamStatusUndefined\020\000\022\020\n\014TeamSta" +
-      "tusOK\020\001\022\027\n\023TeamStatusDeparture\020\002\022\036\n\021Team" +
-      "StatusDisband\020\375\377\377\377\377\377\377\377\377\001\022\031\n\025TeamStatusAp" +
-      "pointment\020\005*\334\001\n\013AuditStatus\022\030\n\024AuditStat" +
-      "usUndefined\020\000\022\023\n\017AuditStatusPass\020\001\022\025\n\021Au" +
-      "ditStatusReject\020\002\022\025\n\021AuditStatusReview\020\003" +
-      "\022\027\n\023AuditStatusDarkRoom\020\020\022\031\n\025AuditStatus" +
-      "RoomReject\020\023\022 \n\034AuditStatusPrivateChatRe" +
-      "ject\020\024\022\032\n\026AuditStatusNewUserRisk\020\026B(\n\030co" +
-      "m.gomicroim.lib.protosZ\014cloud/protosb\006pr" +
-      "oto3"
+      "TypeTempGroup\020\004\022\025\n\021ChatTypeSystemBot\020\005\022\020" +
+      "\n\014ChatTypeTeam\020\006*\370\001\n\020FriendSourceType\022\035\n" +
+      "\031FriendSourceTypeUndefined\020\000\022\031\n\025FriendSo" +
+      "urceTypeGroup\020\001\022\032\n\026FriendSourceTypeSearc" +
+      "h\020\002\022\035\n\031FriendSourceTypeRecommend\020\003\022!\n\035Fr" +
+      "iendSourceTypeFeaturedTopic\020\004\022\030\n\024FriendS" +
+      "ourceTypeTeam\020\005\022\024\n\020FriendSourceTalk\020\006\022\034\n" +
+      "\030FriendSourceTypePlaymate\020\007*\224\001\n\023FriendRe" +
+      "questStatus\022 \n\034FriendRequestStatusUndefi" +
+      "ned\020\000\022\037\n\033FriendRequestStatusWaitPass\020\001\022\033" +
+      "\n\027FriendRequestStatusPass\020\002\022\035\n\031FriendReq" +
+      "uestStatusRefuse\020\003*f\n\020FriendChangeType\022\035" +
+      "\n\031FriendChangeTypeUndefined\020\000\022\027\n\023FriendC" +
+      "hangeTypeAdd\020\001\022\032\n\026FriendChangeTypeRemove" +
+      "\020\002*r\n\023WebsocketNoticeType\022\036\n\032WebsocketNo" +
+      "ticeTypeDefault\020\000\022\036\n\032WebsocketNoticeType" +
+      "Message\020\001\022\033\n\027WebsocketNoticeTypeTalk\020\002*x" +
+      "\n\024NewFriendRequestType\022!\n\035NewFriendReque" +
+      "stTypeUndefined\020\000\022\034\n\030NewFriendRequestTyp" +
+      "eSend\020\001\022\037\n\033NewFriendRequestTypeReceive\020\002" +
+      "*~\n\020OnlineDeviceType\022\035\n\031OnlineDeviceType" +
+      "Undefined\020\000\022\027\n\023OnlineDeviceTypeWeb\020\001\022\027\n\023" +
+      "OnlineDeviceTypeApp\020\002\022\031\n\025OnlineDeviceTyp" +
+      "eMulti\020\003*N\n\014TalkPostType\022\025\n\021PostTypeUnde" +
+      "fined\020\000\022\021\n\rPostTypeShare\020\001\022\024\n\020PostTypePl" +
+      "aymate\020\002*Z\n\017TalkPostTagType\022\030\n\024PostTagTy" +
+      "peUndefined\020\000\022\024\n\020PostTagTypeShare\020\001\022\027\n\023P" +
+      "ostTagTypePlaymate\020\002*\202\001\n\016TalkPostStatus\022" +
+      "\025\n\021PostStatusPending\020\000\022\025\n\021PostStatusCrea" +
+      "ted\020\001\022\025\n\021PostStatusSuccess\020\002\022\025\n\021PostStat" +
+      "usDeleted\020\003\022\024\n\020PostStatusHidden\020\004*\265\001\n\016Ta" +
+      "lkFeedSource\022\023\n\017FeedSourceEmpty\020\000\022\022\n\016Fee" +
+      "dSourcePost\020\001\022\021\n\rFeedSourceHot\020\002\022\024\n\020Feed" +
+      "SourceFriend\020\003\022\027\n\023FeedSourceFollowTag\020\004\022" +
+      "\032\n\026FeedSourceReccomendTag\020\005\022\034\n\030FeedSourc" +
+      "eFriendInteract\020\006*R\n\021FeaturedTopicType\022\024" +
+      "\n\020TopicTypeDefault\020\000\022\024\n\020TopicTypeMessage" +
+      "\020\001\022\021\n\rTopicTypePost\020\002*\213\001\n\nTeamStatus\022\027\n\023" +
+      "TeamStatusUndefined\020\000\022\020\n\014TeamStatusOK\020\001\022" +
+      "\027\n\023TeamStatusDeparture\020\002\022\036\n\021TeamStatusDi" +
+      "sband\020\375\377\377\377\377\377\377\377\377\001\022\031\n\025TeamStatusAppointmen" +
+      "t\020\005*\334\001\n\013AuditStatus\022\030\n\024AuditStatusUndefi" +
+      "ned\020\000\022\023\n\017AuditStatusPass\020\001\022\025\n\021AuditStatu" +
+      "sReject\020\002\022\025\n\021AuditStatusReview\020\003\022\027\n\023Audi" +
+      "tStatusDarkRoom\020\020\022\031\n\025AuditStatusRoomReje" +
+      "ct\020\023\022 \n\034AuditStatusPrivateChatReject\020\024\022\032" +
+      "\n\026AuditStatusNewUserRisk\020\026*U\n\010PushType\022\025" +
+      "\n\021PushTypeUndefined\020\000\022\017\n\013PushTypeAli\020\001\022\020" +
+      "\n\014PushTypeApns\020\002\022\017\n\013PushTypeFCM\020\003B(\n\030com" +
+      ".gomicroim.lib.protosZ\014cloud/protosb\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

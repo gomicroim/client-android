@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import com.gomicroim.lib.Observer;
 import com.gomicroim.lib.helper.OkHttpUtils;
 import com.gomicroim.lib.model.constant.StatusCode;
+import com.gomicroim.lib.protos.Constants;
 import com.gomicroim.lib.protos.websocket.Websocket;
 import com.google.protobuf.InvalidProtocolBufferException;
 
@@ -111,7 +112,18 @@ public class WsPushServiceImpl extends WebSocketListener implements WsPushServic
             }
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();
+            return;
         }
+
+        // send ack
+        Websocket.ClientMessage data = Websocket.ClientMessage.newBuilder().
+                setType(Constants.ClientMessageType.AckMessage).
+                build();
+        Websocket.C2SWebsocketMessage ackMsg = Websocket.C2SWebsocketMessage.newBuilder()
+                .setHeader(Websocket.WebSocketHeader.newBuilder().setSeq(msg.getHeader().getSeq()).build())
+                .setData(data)
+                .build();
+        send(ackMsg);
     }
 
     @Override
