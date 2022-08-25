@@ -19,9 +19,8 @@ import com.gomicroim.discord.widget.LoadingDialog;
 import com.gomicroim.lib.Api;
 import com.gomicroim.lib.ApiOptions;
 import com.gomicroim.lib.LoginInfo;
-import com.gomicroim.lib.model.dto.DeviceReply;
-import com.gomicroim.lib.model.dto.DeviceReq;
 import com.gomicroim.lib.model.dto.LoginReply;
+import com.gomicroim.lib.protos.user.User;
 import com.gomicroim.lib.transport.RequestCallback;
 import com.gomicroim.lib.util.AndroidDeviceId;
 import com.gomicroim.lib.util.StringUtils;
@@ -101,20 +100,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         LoginActivity that = this;
 
         String deviceId = new AndroidDeviceId(this).getUniqueDeviceId();
+
+        User.RegisterRequest req = User.RegisterRequest.newBuilder().setDeviceId(deviceId).setOsVersion("android").build();
+
         // register
-        Api.getLoginService().deviceRegister(new DeviceReq(deviceId, "android")).setCallback(new RequestCallback<DeviceReply>() {
+        Api.getLoginService().deviceRegister(req).setCallback(new RequestCallback<User.RegisterReply>() {
             @Override
-            public void onSuccess(DeviceReply param) {
+            public void onSuccess(User.RegisterReply param) {
 
                 // login
                 Api.getLoginService().login("86" + etName.getText().toString().trim(),
                         etPassword.getText().toString().trim(),
-                        "1.0").setCallback(new RequestCallback<LoginReply>() {
+                        "1.0").setCallback(new RequestCallback<User.AuthReply>() {
                     @Override
-                    public void onSuccess(LoginReply param) {
+                    public void onSuccess(User.AuthReply param) {
                         runOnUiThread(() -> {
                             // 保存token，下次自动登录
-                            preferencesHelper.saveToken(param.accessToken);
+                            preferencesHelper.saveToken(param.getAccessToken());
 
                             hideLoading();
                             startActivity(new Intent(LoginActivity.this, MainActivity.class));

@@ -2,10 +2,11 @@ package com.gomicroim.lib.service;
 
 import com.gomicroim.lib.Observer;
 import com.gomicroim.lib.model.constant.StatusCode;
-import com.gomicroim.lib.model.dto.DeviceReply;
-import com.gomicroim.lib.model.dto.DeviceReq;
+import com.gomicroim.lib.protos.user.User;
 import com.gomicroim.lib.transport.InvocationFuture;
 import com.gomicroim.lib.model.dto.LoginReply;
+
+import java.io.IOException;
 
 /**
  * 登录业务
@@ -14,7 +15,7 @@ public interface LoginService {
     /**
      * 设备注册
      */
-    InvocationFuture<DeviceReply> deviceRegister(DeviceReq devInfo);
+    InvocationFuture<User.RegisterReply> deviceRegister(User.RegisterRequest devInfo);
 
     /**
      * 登录认证
@@ -24,7 +25,7 @@ public interface LoginService {
      * @param appVersion 客户端版本
      * @return 结果回调
      */
-    InvocationFuture<LoginReply> login(String phone, String code, String appVersion);
+    InvocationFuture<User.AuthReply> login(String phone, String code, String appVersion);
 
     /**
      * 连接观察器

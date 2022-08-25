@@ -1,8 +1,7 @@
 package com.gomicroim.lib.service;
 
-import com.gomicroim.lib.Observer;
 import com.gomicroim.lib.model.constant.StatusCode;
-import com.gomicroim.lib.protos.websocket.Websocket;
+import com.google.protobuf.Message;
 
 public interface WsPushService {
     /**
@@ -29,7 +28,7 @@ public interface WsPushService {
      *
      * @param message 字节数组
      */
-    void send(final Websocket.C2SWebsocketMessage message);
+    void send(final Message message);
 
     /**
      * 注册观察者

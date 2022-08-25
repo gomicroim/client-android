@@ -1,33 +1,16 @@
 package com.gomicroim.lib.service;
 
-import android.annotation.SuppressLint;
-
-import com.gomicroim.lib.Observer;
-import com.gomicroim.lib.helper.OkHttpUtils;
 import com.gomicroim.lib.model.constant.StatusCode;
-import com.gomicroim.lib.protos.Constants;
-import com.gomicroim.lib.protos.websocket.Websocket;
-import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.Message;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.EOFException;
-import java.security.SecureRandom;
-import java.security.cert.CertificateException;
-import java.security.cert.X509Certificate;
 import java.util.LinkedList;
-import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
-
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.SSLSocketFactory;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -79,7 +62,7 @@ public class WsPushServiceImpl extends WebSocketListener implements WsPushServic
         try {
             if (response != null) {
                 if (response.body() != null) {
-                    bodyStr = response.body().string();
+                    bodyStr = Objects.requireNonNull(response.body()).string();
                 }
                 httpCode = response.code();
                 httpMsg = response.message();
@@ -103,6 +86,7 @@ public class WsPushServiceImpl extends WebSocketListener implements WsPushServic
     public void onMessage(@NotNull WebSocket webSocket, @NotNull ByteString bytes) {
         super.onMessage(webSocket, bytes);
 
+        /*
         Websocket.S2CWebsocketMessage msg;
         try {
             msg = Websocket.S2CWebsocketMessage.parseFrom(bytes.toByteArray());
@@ -124,6 +108,7 @@ public class WsPushServiceImpl extends WebSocketListener implements WsPushServic
                 .setData(data)
                 .build();
         send(ackMsg);
+        */
     }
 
     @Override
@@ -195,7 +180,7 @@ public class WsPushServiceImpl extends WebSocketListener implements WsPushServic
     }
 
     @Override
-    public void send(Websocket.C2SWebsocketMessage message) {
+    public void send(Message message) {
         byte[] data = message.toByteArray();
         webSocket.send(ByteString.of(data));
     }

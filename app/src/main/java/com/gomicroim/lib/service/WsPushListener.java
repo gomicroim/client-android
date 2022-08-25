@@ -1,7 +1,7 @@
 package com.gomicroim.lib.service;
 
 import com.gomicroim.lib.model.constant.StatusCode;
-import com.gomicroim.lib.protos.websocket.Websocket;
+import com.google.protobuf.Message;
 
 /**
  * ws推送观察器
@@ -12,7 +12,7 @@ public interface WsPushListener {
      *
      * @param message pb数据
      */
-    void onMessage(Websocket.S2CWebsocketMessage message);
+    void onMessage(Message message);
 
     /**
      * 状态改变通知

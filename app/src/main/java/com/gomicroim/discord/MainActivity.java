@@ -1,7 +1,6 @@
 package com.gomicroim.discord;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -10,11 +9,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.gomicroim.lib.Api;
 import com.gomicroim.lib.model.constant.StatusCode;
-import com.gomicroim.lib.protos.Constants;
-import com.gomicroim.lib.protos.websocket.Websocket;
 import com.gomicroim.lib.service.WsPushListener;
-import com.google.protobuf.Any;
 import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.Message;
 
 import java.util.ArrayList;
 
@@ -40,7 +37,8 @@ public class MainActivity extends AppCompatActivity implements WsPushListener {
     }
 
     @Override
-    public void onMessage(Websocket.S2CWebsocketMessage message) {
+    public void onMessage(Message message) {
+        /*
         runOnUiThread(() -> {
             StringBuilder builder = new StringBuilder();
 
@@ -69,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements WsPushListener {
             // update listview
             lvMsgAdapter.notifyDataSetChanged();
         });
+        */
     }
 
     @Override

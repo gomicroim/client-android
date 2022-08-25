@@ -1,8 +1,7 @@
 package com.gomicroim.lib;
 
-import com.gomicroim.lib.model.dto.DeviceReply;
-import com.gomicroim.lib.model.dto.DeviceReq;
 import com.gomicroim.lib.model.dto.LoginReply;
+import com.gomicroim.lib.protos.user.User;
 import com.gomicroim.lib.transport.RequestCallback;
 
 import org.junit.Test;
@@ -16,15 +15,16 @@ public class LoginServiceTest {
     @Test
     public void TestDeviceRegister() throws InterruptedException {
         Api.init(ApiOptions.DEFAULT, null);
-        Api.getLoginService().deviceRegister(new DeviceReq()).setCallback(new RequestCallback<DeviceReply>() {
+        User.RegisterRequest req = User.RegisterRequest.newBuilder().setDeviceId("dddd").setOsVersion("android").build();
+        Api.getLoginService().deviceRegister(req).setCallback(new RequestCallback<User.RegisterReply>() {
             @Override
-            public void onSuccess(DeviceReply param) {
+            public void onSuccess(User.RegisterReply param) {
                 log.info("onSuccess: " + param.toString());
             }
 
             @Override
-            public void onFailed(int code) {
-                log.info("onFailed: " + code);
+            public void onFailed(int code, String message) {
+
             }
 
             @Override
@@ -38,17 +38,17 @@ public class LoginServiceTest {
     @Test
     public void TestAuthLogin() throws InterruptedException {
         Api.init(ApiOptions.DEFAULT, null);
-        Api.getLoginService().deviceRegister(new DeviceReq());
+        User.RegisterRequest req = User.RegisterRequest.newBuilder().setDeviceId("dddd").setOsVersion("android").build();
+        Api.getLoginService().deviceRegister(req);
         Thread.sleep(1000);
-        Api.getLoginService().login("8617300000000", "000000", "1.0").setCallback(new RequestCallback<LoginReply>() {
+        Api.getLoginService().login("8617300000000", "000000", "1.0").setCallback(new RequestCallback<User.AuthReply>() {
             @Override
-            public void onSuccess(LoginReply param) {
+            public void onSuccess(User.AuthReply param) {
                 log.info("onSuccess: " + param.toString());
             }
 
             @Override
-            public void onFailed(int code) {
-                log.info("onFailed: " + code);
+            public void onFailed(int code, String message) {
             }
 
             @Override
