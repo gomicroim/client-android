@@ -1,28 +1,26 @@
 package com.gomicroim.lib.service;
 
+import static com.gomicroim.lib.ApiUrl.URL_AUTH_LOGIN;
+import static com.gomicroim.lib.ApiUrl.URL_DEVICE_REGISTER;
+
 import com.gomicroim.lib.Api;
 import com.gomicroim.lib.Observer;
+import com.gomicroim.lib.helper.ApiHelper;
 import com.gomicroim.lib.helper.HttpSimpleResponse;
 import com.gomicroim.lib.helper.OkHttpUtils;
 import com.gomicroim.lib.model.constant.StatusCode;
-import com.gomicroim.lib.model.dto.LoginReply;
 import com.gomicroim.lib.protos.user.User;
 import com.gomicroim.lib.transport.InvocationFuture;
 import com.gomicroim.lib.transport.InvocationFutureImpl;
 import com.gomicroim.lib.util.ProtoJsonUtils;
-import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 public class LoginServiceImpl implements LoginService {
-    private static final String URL_DEVICE_REGISTER = "/auth/device/register";
-    private static final String URL_AUTH_LOGIN = "/auth/login";
     private Logger log = LoggerFactory.getLogger(LoginServiceImpl.class);
 
     @Override

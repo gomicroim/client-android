@@ -1,6 +1,8 @@
 package com.gomicroim.discord;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -15,8 +17,7 @@ import com.google.protobuf.Message;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements WsPushListener {
-    private static final String TAG = "MainActivity";
+public class MainActivity extends AppCompatActivity implements WsPushListener, View.OnClickListener {
     private ListView lvMsg;
     private TextView tvNetwork;
     private ArrayList<String> lvMsgArr = new ArrayList<>();
@@ -29,6 +30,9 @@ public class MainActivity extends AppCompatActivity implements WsPushListener {
 
         lvMsg = findViewById(R.id.lvMsg);
         tvNetwork = findViewById(R.id.tvNetwork);
+
+        findViewById(R.id.btn_c2c).setOnClickListener(this);
+        findViewById(R.id.btn_c2g).setOnClickListener(this);
 
         lvMsgAdapter = new ArrayAdapter<>(this, R.layout.activity_listview, R.id.textView, lvMsgArr);
         lvMsg.setAdapter(lvMsgAdapter);
@@ -94,5 +98,14 @@ public class MainActivity extends AppCompatActivity implements WsPushListener {
                     break;
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.btn_c2c) {
+            startActivity(new Intent(MainActivity.this, C2CActivity.class));
+        } else if (v.getId() == R.id.btn_c2g) {
+            startActivity(new Intent(MainActivity.this, C2GActivity.class));
+        }
     }
 }

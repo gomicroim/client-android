@@ -15,4 +15,9 @@
     <string name="account">手机号</string>
     <string name="loading">加载中</string>
     <string name="default_code">666666</string>
+    <string name="c2c_test">单聊测试</string>
+    <string name="c2g_test">群聊测试</string>
+    <string name="peer_id">对方ID</string>
+    <string name="btn_send">发送</string>
+    <string name="btn_query_history">查看历史记录</string>
 </resources>

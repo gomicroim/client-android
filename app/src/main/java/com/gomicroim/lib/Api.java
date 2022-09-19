@@ -1,6 +1,8 @@
 package com.gomicroim.lib;
 
 import com.gomicroim.lib.helper.OkHttpUtils;
+import com.gomicroim.lib.service.ChatService;
+import com.gomicroim.lib.service.ChatServiceImpl;
 import com.gomicroim.lib.service.LoginService;
 import com.gomicroim.lib.service.LoginServiceImpl;
 import com.gomicroim.lib.service.WsPushService;
@@ -13,6 +15,7 @@ public class Api {
     private static ApiOptions apiOptions = ApiOptions.DEFAULT;
     private static final LoginService loginService = new LoginServiceImpl();
     private static final WsPushService wsPushService = new WsPushServiceImpl();
+    private static final ChatService chatService = new ChatServiceImpl();
 
     /**
      * 获取API配置信息
@@ -49,6 +52,15 @@ public class Api {
      */
     public static LoginService getLoginService() {
         return loginService;
+    }
+
+    /**
+     * 获取 聊天 Service实例
+     *
+     * @return 实例
+     */
+    public static ChatService getChatService() {
+        return chatService;
     }
 
     /**

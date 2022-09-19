@@ -20,19 +20,27 @@
         android:theme="@style/Theme.Discord"
         tools:targetApi="31">
         <activity
+            android:name=".C2GActivity"
+            android:exported="false"
+            android:label="@string/c2g_test"/>
+        <activity
+            android:name=".C2CActivity"
+            android:exported="false"
+            android:label="@string/c2c_test" />
+        <activity
             android:name=".view.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
             android:exported="true"
-            android:theme="@style/Theme.Discord.NoActionBar"></activity>
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Discord.NoActionBar" />
     </application>
 
 </manifest>

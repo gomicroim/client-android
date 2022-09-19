@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".C2CActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/dp_40"
+                android:text="@string/peer_id" />
+
+            <EditText
+                android:id="@+id/et_c2c_peer_id"
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/dp_40" />
+            <Button
+                android:id="@+id/btn_c2c_query_history"
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text="@string/btn_query_history"/>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lv_c2c_msg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:dividerHeight="1dp"
+            android:layout_weight="1"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/dp_4">
+            <EditText
+                android:id="@+id/et_c2c_msg_text"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_weight="1"
+                />
+            <Button
+                android:id="@+id/btn_c2c_send"
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:text="@string/btn_send"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

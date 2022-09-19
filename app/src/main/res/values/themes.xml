@@ -24,7 +24,8 @@
     <style name="Theme.Discord.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <!--加载对话窗-->
-    <style name="BaseDialog" parent="@android:style/Theme.Dialog"/>
+    <style name="BaseDialog" parent="@android:style/Theme.Dialog" />
+
     <style name="Theme.Light.LoadingDialog" parent="@style/BaseDialog">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowFrame">@null</item>
