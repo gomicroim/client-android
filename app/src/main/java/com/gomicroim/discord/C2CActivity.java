@@ -29,6 +29,7 @@ public class C2CActivity extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_c2c);
         findViewById(R.id.btn_c2c_send).setOnClickListener(this);
+        findViewById(R.id.btn_c2c_query_history).setOnClickListener(this);
 
         etToUserId = findViewById(R.id.et_c2c_peer_id);
         etMsgText = findViewById(R.id.et_c2c_msg_text);
@@ -48,11 +49,8 @@ public class C2CActivity extends AppCompatActivity implements View.OnClickListen
     }
 
     public void onClickSend() {
-        long userId = 0;
-        try {
-            userId = Long.parseLong(etToUserId.getText().toString());
-        } catch (NumberFormatException ex) {
-            Toast.makeText(this, "userId is empty or not number", Toast.LENGTH_SHORT).show();
+        long userId = getUserId();
+        if (userId == 0) {
             return;
         }
 
@@ -65,11 +63,14 @@ public class C2CActivity extends AppCompatActivity implements View.OnClickListen
         Chat.SendMsgRequest req = Api.getChatService().
                 buildTextMsg(new ReceiverInfo(userId, ChatContant.IMSessionType.kCIM_SESSION_TYPE_SINGLE), text);
 
+
         Context ctx = this;
         Api.getChatService().sendMsg(req).setCallback(new RequestCallback<Chat.SendMsgReply>() {
             @Override
             public void onSuccess(Chat.SendMsgReply param) {
-
+                runOnUiThread(() -> {
+                    appendMsg(param.getMsgInfo());
+                });
             }
 
             @Override
@@ -85,10 +86,60 @@ public class C2CActivity extends AppCompatActivity implements View.OnClickListen
     }
 
     private void onClickQueryHistory() {
+        long userId = getUserId();
+        if (userId == 0) {
+            return;
+        }
 
+        Context ctx = this;
+        Api.getChatService().getMsgList(new ReceiverInfo(userId, ChatContant.IMSessionType.kCIM_SESSION_TYPE_SINGLE),
+                0, false, 20).setCallback(new RequestCallback<Chat.GetMsgListReply>() {
+            @Override
+            public void onSuccess(Chat.GetMsgListReply param) {
+                runOnUiThread(() -> {
+                    if (param.getMsgListList().size() <= 0) {
+                        Toast.makeText(ctx, "未查询到历史聊天记录", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    for (Chat.IMMsgInfo msg : param.getMsgListList()) {
+                        appendMsg(msg);
+                    }
+                });
+            }
+
+            @Override
+            public void onFailed(int code, String message) {
+                Toast.makeText(ctx, "getMsgList failed:" + message, Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onException(Throwable exception) {
+
+            }
+        });
     }
 
-    private void appendMsg(){
+    private void appendMsg(Chat.IMMsgInfo msgInfo) {
+        String builder = msgInfo.getFromUserId() +
+                " -> " +
+                msgInfo.getPeerId() +
+                ": " +
+                msgInfo.getMsgData();
 
+        this.lvMsgArr.add(builder);
+        this.lvMsgAdapter.notifyDataSetChanged();
+    }
+
+    private long getUserId() {
+        long userId = 0;
+        try {
+            userId = Long.parseLong(etToUserId.getText().toString());
+            if (userId == 0) {
+                Toast.makeText(this, "userId must not be 0", Toast.LENGTH_SHORT).show();
+            }
+        } catch (NumberFormatException ex) {
+            Toast.makeText(this, "userId is empty or not number", Toast.LENGTH_SHORT).show();
+        }
+        return userId;
     }
 }

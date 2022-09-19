@@ -65,14 +65,11 @@ public class OkHttpUtils {
     /**
      * 异步GET请求
      *
-     * @param url      地址
+     * @param uri      地址
      * @param param    参数
      * @param callback 结果
      */
-    public static void getAsync(String url, Map<String, String> param, HttpResponseCallBack callback) {
-        url = getUrl(url);
-        LOG.info("get, url:{}", url);
-
+    public static void getAsync(String uri, Map<String, String> param, HttpResponseCallBack callback) {
         if (param != null) {
             StringBuilder urlBuilder = new StringBuilder();
             for (String key : param.keySet()) {
@@ -81,8 +78,10 @@ public class OkHttpUtils {
                         append(Objects.requireNonNull(param.get(key))).
                         append("&");
             }
-            url = urlBuilder.substring(0, urlBuilder.length() - 1);
+            uri += "?" + urlBuilder.substring(0, urlBuilder.length() - 1);
         }
+        String url = getUrl(uri);
+        LOG.info("get, url:{}", url);
 
         Request request = new Request
                 .Builder()
@@ -255,10 +254,7 @@ public class OkHttpUtils {
 
     private static String getUrl(String uri) {
         // return BASE_URL + uri;
-        if (uri.contains("?")) {
-            return String.format("%s%s&format=json&skip=true", BASE_URL, uri);
-        }
-        return String.format("%s%s?format=json&skip=true", BASE_URL, uri);
+        return String.format("%s%s", BASE_URL, uri);
     }
 
     private static void onFailure(@NotNull HttpResponseCallBack res,

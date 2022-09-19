@@ -11514,6 +11514,33 @@ public final class Chat {
      * @return The resCode.
      */
     ChatContant.IMResCode getResCode();
+
+    /**
+     * <pre>
+     * 完整消息内容
+     * </pre>
+     *
+     * <code>.apichat.IMMsgInfo msg_info = 3;</code>
+     * @return Whether the msgInfo field is set.
+     */
+    boolean hasMsgInfo();
+    /**
+     * <pre>
+     * 完整消息内容
+     * </pre>
+     *
+     * <code>.apichat.IMMsgInfo msg_info = 3;</code>
+     * @return The msgInfo.
+     */
+    IMMsgInfo getMsgInfo();
+    /**
+     * <pre>
+     * 完整消息内容
+     * </pre>
+     *
+     * <code>.apichat.IMMsgInfo msg_info = 3;</code>
+     */
+    IMMsgInfoOrBuilder getMsgInfoOrBuilder();
   }
   /**
    * <pre>
@@ -11574,6 +11601,19 @@ public final class Chat {
               int rawValue = input.readEnum();
 
               resCode_ = rawValue;
+              break;
+            }
+            case 26: {
+              IMMsgInfo.Builder subBuilder = null;
+              if (msgInfo_ != null) {
+                subBuilder = msgInfo_.toBuilder();
+              }
+              msgInfo_ = input.readMessage(IMMsgInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(msgInfo_);
+                msgInfo_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -11652,6 +11692,44 @@ public final class Chat {
       return result == null ? ChatContant.IMResCode.UNRECOGNIZED : result;
     }
 
+    public static final int MSG_INFO_FIELD_NUMBER = 3;
+    private IMMsgInfo msgInfo_;
+    /**
+     * <pre>
+     * 完整消息内容
+     * </pre>
+     *
+     * <code>.apichat.IMMsgInfo msg_info = 3;</code>
+     * @return Whether the msgInfo field is set.
+     */
+    @Override
+    public boolean hasMsgInfo() {
+      return msgInfo_ != null;
+    }
+    /**
+     * <pre>
+     * 完整消息内容
+     * </pre>
+     *
+     * <code>.apichat.IMMsgInfo msg_info = 3;</code>
+     * @return The msgInfo.
+     */
+    @Override
+    public IMMsgInfo getMsgInfo() {
+      return msgInfo_ == null ? IMMsgInfo.getDefaultInstance() : msgInfo_;
+    }
+    /**
+     * <pre>
+     * 完整消息内容
+     * </pre>
+     *
+     * <code>.apichat.IMMsgInfo msg_info = 3;</code>
+     */
+    @Override
+    public IMMsgInfoOrBuilder getMsgInfoOrBuilder() {
+      return getMsgInfo();
+    }
+
     private byte memoizedIsInitialized = -1;
     @Override
     public final boolean isInitialized() {
@@ -11672,6 +11750,9 @@ public final class Chat {
       if (resCode_ != ChatContant.IMResCode.kCIM_RES_CODE_UNKNOWN.getNumber()) {
         output.writeEnum(2, resCode_);
       }
+      if (msgInfo_ != null) {
+        output.writeMessage(3, getMsgInfo());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -11688,6 +11769,10 @@ public final class Chat {
       if (resCode_ != ChatContant.IMResCode.kCIM_RES_CODE_UNKNOWN.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, resCode_);
+      }
+      if (msgInfo_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getMsgInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -11707,6 +11792,11 @@ public final class Chat {
       if (getServerMsgSeq()
           != other.getServerMsgSeq()) return false;
       if (resCode_ != other.resCode_) return false;
+      if (hasMsgInfo() != other.hasMsgInfo()) return false;
+      if (hasMsgInfo()) {
+        if (!getMsgInfo()
+            .equals(other.getMsgInfo())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -11723,6 +11813,10 @@ public final class Chat {
           getServerMsgSeq());
       hash = (37 * hash) + RES_CODE_FIELD_NUMBER;
       hash = (53 * hash) + resCode_;
+      if (hasMsgInfo()) {
+        hash = (37 * hash) + MSG_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getMsgInfo().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11864,6 +11958,12 @@ public final class Chat {
 
         resCode_ = 0;
 
+        if (msgInfoBuilder_ == null) {
+          msgInfo_ = null;
+        } else {
+          msgInfo_ = null;
+          msgInfoBuilder_ = null;
+        }
         return this;
       }
 
@@ -11892,6 +11992,11 @@ public final class Chat {
         SendMsgReply result = new SendMsgReply(this);
         result.serverMsgSeq_ = serverMsgSeq_;
         result.resCode_ = resCode_;
+        if (msgInfoBuilder_ == null) {
+          result.msgInfo_ = msgInfo_;
+        } else {
+          result.msgInfo_ = msgInfoBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -11945,6 +12050,9 @@ public final class Chat {
         }
         if (other.resCode_ != 0) {
           setResCodeValue(other.getResCodeValue());
+        }
+        if (other.hasMsgInfo()) {
+          mergeMsgInfo(other.getMsgInfo());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -12090,6 +12198,161 @@ public final class Chat {
         resCode_ = 0;
         onChanged();
         return this;
+      }
+
+      private IMMsgInfo msgInfo_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          IMMsgInfo, IMMsgInfo.Builder, IMMsgInfoOrBuilder> msgInfoBuilder_;
+      /**
+       * <pre>
+       * 完整消息内容
+       * </pre>
+       *
+       * <code>.apichat.IMMsgInfo msg_info = 3;</code>
+       * @return Whether the msgInfo field is set.
+       */
+      public boolean hasMsgInfo() {
+        return msgInfoBuilder_ != null || msgInfo_ != null;
+      }
+      /**
+       * <pre>
+       * 完整消息内容
+       * </pre>
+       *
+       * <code>.apichat.IMMsgInfo msg_info = 3;</code>
+       * @return The msgInfo.
+       */
+      public IMMsgInfo getMsgInfo() {
+        if (msgInfoBuilder_ == null) {
+          return msgInfo_ == null ? IMMsgInfo.getDefaultInstance() : msgInfo_;
+        } else {
+          return msgInfoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 完整消息内容
+       * </pre>
+       *
+       * <code>.apichat.IMMsgInfo msg_info = 3;</code>
+       */
+      public Builder setMsgInfo(IMMsgInfo value) {
+        if (msgInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          msgInfo_ = value;
+          onChanged();
+        } else {
+          msgInfoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * 完整消息内容
+       * </pre>
+       *
+       * <code>.apichat.IMMsgInfo msg_info = 3;</code>
+       */
+      public Builder setMsgInfo(
+          IMMsgInfo.Builder builderForValue) {
+        if (msgInfoBuilder_ == null) {
+          msgInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          msgInfoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * 完整消息内容
+       * </pre>
+       *
+       * <code>.apichat.IMMsgInfo msg_info = 3;</code>
+       */
+      public Builder mergeMsgInfo(IMMsgInfo value) {
+        if (msgInfoBuilder_ == null) {
+          if (msgInfo_ != null) {
+            msgInfo_ =
+              IMMsgInfo.newBuilder(msgInfo_).mergeFrom(value).buildPartial();
+          } else {
+            msgInfo_ = value;
+          }
+          onChanged();
+        } else {
+          msgInfoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * 完整消息内容
+       * </pre>
+       *
+       * <code>.apichat.IMMsgInfo msg_info = 3;</code>
+       */
+      public Builder clearMsgInfo() {
+        if (msgInfoBuilder_ == null) {
+          msgInfo_ = null;
+          onChanged();
+        } else {
+          msgInfo_ = null;
+          msgInfoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * 完整消息内容
+       * </pre>
+       *
+       * <code>.apichat.IMMsgInfo msg_info = 3;</code>
+       */
+      public IMMsgInfo.Builder getMsgInfoBuilder() {
+        
+        onChanged();
+        return getMsgInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 完整消息内容
+       * </pre>
+       *
+       * <code>.apichat.IMMsgInfo msg_info = 3;</code>
+       */
+      public IMMsgInfoOrBuilder getMsgInfoOrBuilder() {
+        if (msgInfoBuilder_ != null) {
+          return msgInfoBuilder_.getMessageOrBuilder();
+        } else {
+          return msgInfo_ == null ?
+              IMMsgInfo.getDefaultInstance() : msgInfo_;
+        }
+      }
+      /**
+       * <pre>
+       * 完整消息内容
+       * </pre>
+       *
+       * <code>.apichat.IMMsgInfo msg_info = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          IMMsgInfo, IMMsgInfo.Builder, IMMsgInfoOrBuilder>
+          getMsgInfoFieldBuilder() {
+        if (msgInfoBuilder_ == null) {
+          msgInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              IMMsgInfo, IMMsgInfo.Builder, IMMsgInfoOrBuilder>(
+                  getMsgInfo(),
+                  getParentForChildren(),
+                  isClean());
+          msgInfo_ = null;
+        }
+        return msgInfoBuilder_;
       }
       @Override
       public final Builder setUnknownFields(
@@ -14946,17 +15209,17 @@ public final class Chat {
       "msg_data\030\t \001(\014\"h\n\016SendMsgRequest\022\n\n\002to\030\001" +
       " \001(\t\022\025\n\rclient_msg_id\030\002 \001(\t\022!\n\010msg_type\030" +
       "\003 \001(\0162\017.chat.IMMsgType\022\020\n\010msg_data\030\004 \001(\t" +
-      "\"I\n\014SendMsgReply\022\026\n\016server_msg_seq\030\001 \001(\003" +
-      "\022!\n\010res_code\030\002 \001(\0162\017.chat.IMResCode\"F\n\022S" +
-      "yncMessageRequest\022\016\n\006member\030\001 \001(\t\022\021\n\tlas" +
-      "t_read\030\002 \001(\003\022\r\n\005count\030\003 \001(\005\"F\n\rTimelineE" +
-      "ntry\022\020\n\010sequence\030\001 \001(\003\022#\n\007message\030\002 \003(\0132" +
-      "\022.apichat.IMMessage\"m\n\020SyncMessageReply\022" +
-      "\022\n\nlatest_seq\030\001 \001(\003\022\032\n\022entry_set_last_se" +
-      "q\030\002 \001(\003\022)\n\tentry_set\030\003 \003(\0132\026.apichat.Tim" +
-      "elineEntryB=\n\035com.gomicroim.lib.protos.c" +
-      "hatB\004ChatZ\026apichat/api/chat/v1;v1b\006proto" +
-      "3"
+      "\"o\n\014SendMsgReply\022\026\n\016server_msg_seq\030\001 \001(\003" +
+      "\022!\n\010res_code\030\002 \001(\0162\017.chat.IMResCode\022$\n\010m" +
+      "sg_info\030\003 \001(\0132\022.apichat.IMMsgInfo\"F\n\022Syn" +
+      "cMessageRequest\022\016\n\006member\030\001 \001(\t\022\021\n\tlast_" +
+      "read\030\002 \001(\003\022\r\n\005count\030\003 \001(\005\"F\n\rTimelineEnt" +
+      "ry\022\020\n\010sequence\030\001 \001(\003\022#\n\007message\030\002 \003(\0132\022." +
+      "apichat.IMMessage\"m\n\020SyncMessageReply\022\022\n" +
+      "\nlatest_seq\030\001 \001(\003\022\032\n\022entry_set_last_seq\030" +
+      "\002 \001(\003\022)\n\tentry_set\030\003 \003(\0132\026.apichat.Timel" +
+      "ineEntryB=\n\035com.gomicroim.lib.protos.cha" +
+      "tB\004ChatZ\026apichat/api/chat/v1;v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -15029,7 +15292,7 @@ public final class Chat {
     internal_static_apichat_SendMsgReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_apichat_SendMsgReply_descriptor,
-        new String[] { "ServerMsgSeq", "ResCode", });
+        new String[] { "ServerMsgSeq", "ResCode", "MsgInfo", });
     internal_static_apichat_SyncMessageRequest_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_apichat_SyncMessageRequest_fieldAccessorTable = new

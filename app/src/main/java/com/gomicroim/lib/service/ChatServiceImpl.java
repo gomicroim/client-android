@@ -1,5 +1,7 @@
 package com.gomicroim.lib.service;
 
+import static com.gomicroim.lib.ApiUrl.URL_CHAT_GET_MSG_LIST;
+
 import com.gomicroim.lib.ApiUrl;
 import com.gomicroim.lib.helper.ApiHelper;
 import com.gomicroim.lib.model.dto.ReceiverInfo;
@@ -27,6 +29,9 @@ public class ChatServiceImpl implements ChatService {
 
     @Override
     public InvocationFuture<Chat.GetMsgListReply> getMsgList(ReceiverInfo peer, long msgSeq, boolean isForward, int limitCount) {
-        return null;
+        ApiHelper<Chat.GetMsgListReply> chat = new ApiHelper<>();
+        Chat.GetMsgListRequest req = Chat.GetMsgListRequest.newBuilder().
+                setPeerId(peer.toString()).setIsForward(isForward).setMsgSeq(msgSeq).setLimitCount(limitCount).build();
+        return chat.get(URL_CHAT_GET_MSG_LIST, req, Chat.GetMsgListReply.newBuilder());
     }
 }
