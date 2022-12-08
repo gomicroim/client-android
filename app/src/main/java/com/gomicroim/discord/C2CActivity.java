@@ -18,11 +18,14 @@ import com.gomicroim.lib.transport.RequestCallback;
 
 import java.util.ArrayList;
 
-public class C2CActivity extends AppCompatActivity implements View.OnClickListener {
+public class C2CActivity extends AppCompatActivity implements View.OnClickListener, RequestCallback<Chat.GetMsgListReply> {
     private EditText etToUserId;
     private EditText etMsgText;
     private ArrayList<String> lvMsgArr = new ArrayList<>();
     private ArrayAdapter<String> lvMsgAdapter;
+
+    // 设一个小值，方便观察循环拉取消息
+    private final int kLimitPageCount = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,13 +77,8 @@ public class C2CActivity extends AppCompatActivity implements View.OnClickListen
             }
 
             @Override
-            public void onFailed(int code, String message) {
+            public void onFailed(int code, String message, Throwable exception) {
                 Toast.makeText(ctx, "send failed:" + message, Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onException(Throwable exception) {
-                Toast.makeText(ctx, "send exception:" + exception.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -91,32 +89,12 @@ public class C2CActivity extends AppCompatActivity implements View.OnClickListen
             return;
         }
 
-        Context ctx = this;
+        lvMsgArr.clear();
+        lvMsgAdapter.notifyDataSetChanged();
+
+        long endMsgSeq = Long.MAX_VALUE;
         Api.getChatService().getMsgList(new ReceiverInfo(userId, ChatContant.IMSessionType.kCIM_SESSION_TYPE_SINGLE),
-                0, false, 20).setCallback(new RequestCallback<Chat.GetMsgListReply>() {
-            @Override
-            public void onSuccess(Chat.GetMsgListReply param) {
-                runOnUiThread(() -> {
-                    if (param.getMsgListList().size() <= 0) {
-                        Toast.makeText(ctx, "未查询到历史聊天记录", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                    for (Chat.IMMsgInfo msg : param.getMsgListList()) {
-                        appendMsg(msg);
-                    }
-                });
-            }
-
-            @Override
-            public void onFailed(int code, String message) {
-                Toast.makeText(ctx, "getMsgList failed:" + message, Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onException(Throwable exception) {
-
-            }
-        });
+                endMsgSeq, true, kLimitPageCount).setCallback(this);
     }
 
     private void appendMsg(Chat.IMMsgInfo msgInfo) {
@@ -141,5 +119,40 @@ public class C2CActivity extends AppCompatActivity implements View.OnClickListen
             Toast.makeText(this, "userId is empty or not number", Toast.LENGTH_SHORT).show();
         }
         return userId;
+    }
+
+    @Override
+    public void onSuccess(Chat.GetMsgListReply param) {
+        runOnUiThread(() -> {
+            if (param.getEndMsgSeq() == Long.MAX_VALUE && param.getMsgListList().size() <= 0) {
+                Toast.makeText(this, "未查询到历史聊天记录", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            for (Chat.IMMsgInfo msg : param.getMsgListList()) {
+                appendMsg(msg);
+            }
+        });
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ignored) {
+        }
+
+        // 继续拉取
+        if (param.getMsgListCount() != 0) {
+            long userId = getUserId();
+            if (userId == 0) {
+                return;
+            }
+            Api.getChatService().getMsgList(new ReceiverInfo(userId, ChatContant.IMSessionType.kCIM_SESSION_TYPE_SINGLE),
+                    param.getEndMsgSeq(), true, kLimitPageCount).setCallback(this);
+        }
+    }
+
+    @Override
+    public void onFailed(int code, String message, Throwable exception) {
+        runOnUiThread(() -> {
+            Toast.makeText(this, "failed:" + message, Toast.LENGTH_LONG).show();
+        });
     }
 }

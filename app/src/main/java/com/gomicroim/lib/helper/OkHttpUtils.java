@@ -1,6 +1,5 @@
 package com.gomicroim.lib.helper;
 
-import com.gomicroim.lib.service.LoginServiceImpl;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 
@@ -13,11 +12,12 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
+import javax.net.ssl.HttpsURLConnection;
+
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
 import okhttp3.MediaType;
-import okhttp3.OkHttp;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
@@ -261,7 +261,7 @@ public class OkHttpUtils {
                                   @NotNull Call call,
                                   @NotNull IOException e) {
         LOG.error("http onFailure:{}", e.getMessage());
-        res.onException(e);
+        res.onFailed(HttpsURLConnection.HTTP_BAD_REQUEST, "exception", e);
     }
 
     private static void onResponse(@NotNull HttpResponseCallBack res,
@@ -274,15 +274,15 @@ public class OkHttpUtils {
 
         LOG.debug("http success: {}", respBody);
         try {
-            if (response.code() != 200) {
+            if (response.code() != HttpsURLConnection.HTTP_OK) {
                 ErrorMessage msg = new Gson().fromJson(respBody, ErrorMessage.class);
-                res.onFailed(response.code(), msg.message, respBody);
+                res.onFailed(response.code(), msg.message, null);
             } else {
                 res.onSuccess(respBody);
             }
         } catch (JsonSyntaxException e) {
             e.printStackTrace();
-            res.onException(e);
+            res.onFailed(HttpsURLConnection.HTTP_BAD_REQUEST, "exception", e);
             //ActivityUtils.showLogToast("程序出现异常:" + e.getMessage());
         }
     }

@@ -4,8 +4,8 @@ import static com.gomicroim.lib.ApiUrl.URL_AUTH_LOGIN;
 import static com.gomicroim.lib.ApiUrl.URL_DEVICE_REGISTER;
 
 import com.gomicroim.lib.Api;
+import com.gomicroim.lib.ApiUrl;
 import com.gomicroim.lib.Observer;
-import com.gomicroim.lib.helper.ApiHelper;
 import com.gomicroim.lib.helper.HttpSimpleResponse;
 import com.gomicroim.lib.helper.OkHttpUtils;
 import com.gomicroim.lib.model.constant.StatusCode;
@@ -72,13 +72,43 @@ public class LoginServiceImpl implements LoginService {
                 cb.getCallback().onSuccess(reply);
 
                 // save token again
-                OkHttpUtils.setToken(reply.getAccessToken());
+                OkHttpUtils.setToken(reply.getToken().getAccessToken());
                 // auto connect
-                Api.getWsPushService().connect(reply.getAccessToken(), Api.getOptions().gatewayAddress);
+                Api.getWsPushService().connect(reply.getToken().getAccessToken(), Api.getOptions().gatewayAddress);
             }
         });
 
         return cb;
+    }
+
+    @Override
+    public InvocationFuture<User.AuthReply> autoLogin(User.TokenInfo tokenInfo) {
+        return null;
+    }
+
+    @Override
+    public InvocationFuture<User.RefreshTokenReply> refreshToken(String refreshToken) {
+        InvocationFutureImpl<User.RefreshTokenReply> cb = new InvocationFutureImpl<>();
+        User.RefreshTokenRequest req = User.RefreshTokenRequest.newBuilder().build();
+        String json = "";
+        try {
+            json = ProtoJsonUtils.toJson(req);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        OkHttpUtils.postAsyncJson(ApiUrl.URL_AUTH_TOKEN_REFRESH, json, new HttpSimpleResponse<User.RefreshTokenReply>(cb) {
+            @Override
+            public void onSuccess(String json) throws JsonSyntaxException, IOException {
+                User.RefreshTokenReply reply = (User.RefreshTokenReply) ProtoJsonUtils.toProtoBean(User.RefreshTokenReply.newBuilder(), json);
+                cb.getCallback().onSuccess(reply);
+
+                // update token
+                OkHttpUtils.setToken(reply.getToken().getAccessToken());
+            }
+        });
+
+        return null;
     }
 
     @Override

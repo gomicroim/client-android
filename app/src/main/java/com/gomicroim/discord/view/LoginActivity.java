@@ -21,9 +21,17 @@ import com.gomicroim.lib.ApiOptions;
 import com.gomicroim.lib.LoginInfo;
 import com.gomicroim.lib.model.dto.LoginReply;
 import com.gomicroim.lib.protos.user.User;
+import com.gomicroim.lib.service.LoginServiceImpl;
 import com.gomicroim.lib.transport.RequestCallback;
 import com.gomicroim.lib.util.AndroidDeviceId;
+import com.gomicroim.lib.util.ProtoJsonUtils;
 import com.gomicroim.lib.util.StringUtils;
+import com.gomicroim.lib.util.TokenUtils;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
     private EditText etName;
@@ -34,6 +42,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private LoadingDialog loadingDialog; //显示正在加载的对话框
     private SharedPreferencesHelper preferencesHelper;
+    private Logger log = LoggerFactory.getLogger(LoginActivity.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +57,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         cbRememberPwd = findViewById(R.id.checkBox_password);
         ivSeePassword = findViewById(R.id.iv_see_password);
 
-
         btnLogin.setOnClickListener(this);
         cbRememberPwd.setOnCheckedChangeListener(this);
         ivSeePassword.setOnClickListener(this);
@@ -56,14 +64,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         loadData();
         autoLogin();
         Api.init(ApiOptions.DEFAULT, getLoginInfo());
-    }
-
-    public LoginInfo getLoginInfo() {
-        String token = preferencesHelper.readToken();
-        if (!StringUtils.isEmpty(token)) {
-            return new LoginInfo(token);
-        }
-        return null;
     }
 
     @Override
@@ -85,8 +85,59 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         cbRememberPwd.setChecked(preferencesHelper.readRememberPwdChecked());
     }
 
+    private LoginInfo getLoginInfo() {
+        SharedPreferencesHelper.TokenInfo token = preferencesHelper.readTokenInfo();
+        if (token == null) {
+            return null;
+        }
+        if (TokenUtils.isTokenExpires(token.atExpires)) {
+            return null;
+        }
+        return new LoginInfo(token.accessToken);
+    }
+
     private void autoLogin() {
-        if (getLoginInfo() != null) {
+        SharedPreferencesHelper.TokenInfo token = preferencesHelper.readTokenInfo();
+        if (token == null) {
+            return;
+        }
+
+        if (TokenUtils.isTokenExpires(token.atExpires)) {
+            if (TokenUtils.isTokenExpires(token.rtExpires)) {
+                Toast.makeText(LoginActivity.this, "登录已过期，请重新登录！", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            LoginActivity that = this;
+            // refresh accessToken
+            Api.getLoginService().refreshToken(token.refreshToken).setCallback(new RequestCallback<User.RefreshTokenReply>() {
+                @Override
+                public void onSuccess(User.RefreshTokenReply param) {
+                    log.info("refresh token success");
+
+                    runOnUiThread(() -> {
+                        preferencesHelper.saveTokenInfo(new SharedPreferencesHelper.TokenInfo(
+                                token.userId,
+                                param.getToken().getAccessToken(),
+                                param.getToken().getAtExpires(),
+                                param.getToken().getRefreshToken(),
+                                param.getToken().getRtExpires()));
+
+                        User.TokenInfo t = User.TokenInfo.newBuilder().
+                                setAccessToken(param.getToken().getAccessToken()).
+                                setAtExpires(param.getToken().getAtExpires()).
+                                setRefreshToken(param.getToken().getRefreshToken()).
+                                setRtExpires(param.getToken().getRtExpires()).build();
+                        Api.getLoginService().autoLogin(t);
+                    });
+                }
+
+                @Override
+                public void onFailed(int code, String message, Throwable exception) {
+                    that.onFailed(code, message, exception);
+                }
+            });
+        } else {
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
             finish();
         }
@@ -96,27 +147,30 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         showLoading();
 
         preferencesHelper.savePhone(etName.getText().toString().trim());
-
         LoginActivity that = this;
-
         String deviceId = new AndroidDeviceId(this).getUniqueDeviceId();
-
         User.RegisterRequest req = User.RegisterRequest.newBuilder().setDeviceId(deviceId).setOsVersion("android").build();
 
-        // register
+        // step: 1 - register
         Api.getLoginService().deviceRegister(req).setCallback(new RequestCallback<User.RegisterReply>() {
             @Override
             public void onSuccess(User.RegisterReply param) {
 
-                // login
+                // step: 2 - login
                 Api.getLoginService().login("86" + etName.getText().toString().trim(),
                         etPassword.getText().toString().trim(),
                         "1.0").setCallback(new RequestCallback<User.AuthReply>() {
                     @Override
                     public void onSuccess(User.AuthReply param) {
                         runOnUiThread(() -> {
+
                             // 保存token，下次自动登录
-                            preferencesHelper.saveToken(param.getAccessToken());
+                            preferencesHelper.saveTokenInfo(new SharedPreferencesHelper.TokenInfo(
+                                    param.getUserId(),
+                                    param.getToken().getAccessToken(),
+                                    param.getToken().getAtExpires(),
+                                    param.getToken().getRefreshToken(),
+                                    param.getToken().getRtExpires()));
 
                             hideLoading();
                             startActivity(new Intent(LoginActivity.this, MainActivity.class));
@@ -125,25 +179,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     }
 
                     @Override
-                    public void onFailed(int code, String message) {
-                        that.onFailed(code, message);
-                    }
-
-                    @Override
-                    public void onException(Throwable exception) {
-                        that.onException(exception);
+                    public void onFailed(int code, String message, Throwable exception) {
+                        that.onFailed(code, message, exception);
                     }
                 });
             }
 
             @Override
-            public void onFailed(int code, String message) {
-                that.onFailed(code, message);
-            }
-
-            @Override
-            public void onException(Throwable exception) {
-                that.onException(exception);
+            public void onFailed(int code, String message, Throwable exception) {
+                that.onFailed(code, message, exception);
             }
         });
     }
@@ -165,16 +209,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    public void onFailed(int code, String message) {
+    public void onFailed(int code, String message, Throwable exception) {
         runOnUiThread(() -> {
-            Toast.makeText(LoginActivity.this, "登录失败:" + message, Toast.LENGTH_SHORT).show();
-            hideLoading();
-        });
-    }
-
-    public void onException(Throwable exception) {
-        runOnUiThread(() -> {
-            Toast.makeText(LoginActivity.this, "登录异常", Toast.LENGTH_SHORT).show();
+            if (exception != null) {
+                Toast.makeText(LoginActivity.this, "登录异常", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(LoginActivity.this, "登录失败:" + message, Toast.LENGTH_SHORT).show();
+            }
             hideLoading();
         });
     }

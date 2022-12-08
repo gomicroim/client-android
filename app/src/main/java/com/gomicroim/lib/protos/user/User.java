@@ -123,6 +123,8 @@ public final class User {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -892,6 +894,8 @@ public final class User {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -1565,6 +1569,8 @@ public final class User {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -1909,6 +1915,8 @@ public final class User {
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
@@ -3219,8 +3227,8 @@ public final class User {
 
   }
 
-  public interface AuthReplyOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:user.v1.AuthReply)
+  public interface TokenInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:user.v1.TokenInfo)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -3258,26 +3266,20 @@ public final class User {
      * @return The rtExpires.
      */
     long getRtExpires();
-
-    /**
-     * <code>int64 user_id = 5;</code>
-     * @return The userId.
-     */
-    long getUserId();
   }
   /**
-   * Protobuf type {@code user.v1.AuthReply}
+   * Protobuf type {@code user.v1.TokenInfo}
    */
-  public static final class AuthReply extends
+  public static final class TokenInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:user.v1.AuthReply)
-      AuthReplyOrBuilder {
+      // @@protoc_insertion_point(message_implements:user.v1.TokenInfo)
+      TokenInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use AuthReply.newBuilder() to construct.
-    private AuthReply(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use TokenInfo.newBuilder() to construct.
+    private TokenInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private AuthReply() {
+    private TokenInfo() {
       accessToken_ = "";
       refreshToken_ = "";
     }
@@ -3286,7 +3288,7 @@ public final class User {
     @SuppressWarnings({"unused"})
     protected Object newInstance(
         UnusedPrivateParameter unused) {
-      return new AuthReply();
+      return new TokenInfo();
     }
 
     @Override
@@ -3294,7 +3296,7 @@ public final class User {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AuthReply(
+    private TokenInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3334,11 +3336,6 @@ public final class User {
               rtExpires_ = input.readInt64();
               break;
             }
-            case 40: {
-
-              userId_ = input.readInt64();
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -3350,6 +3347,8 @@ public final class User {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -3360,15 +3359,15 @@ public final class User {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return User.internal_static_user_v1_AuthReply_descriptor;
+      return User.internal_static_user_v1_TokenInfo_descriptor;
     }
 
     @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return User.internal_static_user_v1_AuthReply_fieldAccessorTable
+      return User.internal_static_user_v1_TokenInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              AuthReply.class, Builder.class);
+              TokenInfo.class, Builder.class);
     }
 
     public static final int ACCESS_TOKEN_FIELD_NUMBER = 1;
@@ -3469,17 +3468,6 @@ public final class User {
       return rtExpires_;
     }
 
-    public static final int USER_ID_FIELD_NUMBER = 5;
-    private long userId_;
-    /**
-     * <code>int64 user_id = 5;</code>
-     * @return The userId.
-     */
-    @Override
-    public long getUserId() {
-      return userId_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @Override
     public final boolean isInitialized() {
@@ -3506,9 +3494,6 @@ public final class User {
       if (rtExpires_ != 0L) {
         output.writeInt64(4, rtExpires_);
       }
-      if (userId_ != 0L) {
-        output.writeInt64(5, userId_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -3532,10 +3517,6 @@ public final class User {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, rtExpires_);
       }
-      if (userId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, userId_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3546,10 +3527,10 @@ public final class User {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof AuthReply)) {
+      if (!(obj instanceof TokenInfo)) {
         return super.equals(obj);
       }
-      AuthReply other = (AuthReply) obj;
+      TokenInfo other = (TokenInfo) obj;
 
       if (!getAccessToken()
           .equals(other.getAccessToken())) return false;
@@ -3559,8 +3540,6 @@ public final class User {
           != other.getAtExpires()) return false;
       if (getRtExpires()
           != other.getRtExpires()) return false;
-      if (getUserId()
-          != other.getUserId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3582,77 +3561,74 @@ public final class User {
       hash = (37 * hash) + RT_EXPIRES_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRtExpires());
-      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getUserId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static AuthReply parseFrom(
+    public static TokenInfo parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static AuthReply parseFrom(
+    public static TokenInfo parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static AuthReply parseFrom(
+    public static TokenInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static AuthReply parseFrom(
+    public static TokenInfo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static AuthReply parseFrom(byte[] data)
+    public static TokenInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static AuthReply parseFrom(
+    public static TokenInfo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static AuthReply parseFrom(java.io.InputStream input)
+    public static TokenInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static AuthReply parseFrom(
+    public static TokenInfo parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static AuthReply parseDelimitedFrom(java.io.InputStream input)
+    public static TokenInfo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static AuthReply parseDelimitedFrom(
+    public static TokenInfo parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static AuthReply parseFrom(
+    public static TokenInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static AuthReply parseFrom(
+    public static TokenInfo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3665,7 +3641,7 @@ public final class User {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(AuthReply prototype) {
+    public static Builder newBuilder(TokenInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @Override
@@ -3681,26 +3657,26 @@ public final class User {
       return builder;
     }
     /**
-     * Protobuf type {@code user.v1.AuthReply}
+     * Protobuf type {@code user.v1.TokenInfo}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:user.v1.AuthReply)
-        AuthReplyOrBuilder {
+        // @@protoc_insertion_point(builder_implements:user.v1.TokenInfo)
+        TokenInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return User.internal_static_user_v1_AuthReply_descriptor;
+        return User.internal_static_user_v1_TokenInfo_descriptor;
       }
 
       @Override
       protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return User.internal_static_user_v1_AuthReply_fieldAccessorTable
+        return User.internal_static_user_v1_TokenInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                AuthReply.class, Builder.class);
+                TokenInfo.class, Builder.class);
       }
 
-      // Construct using com.gomicroim.lib.protos.user.User.AuthReply.newBuilder()
+      // Construct using com.gomicroim.lib.protos.user.User.TokenInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3726,25 +3702,23 @@ public final class User {
 
         rtExpires_ = 0L;
 
-        userId_ = 0L;
-
         return this;
       }
 
       @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return User.internal_static_user_v1_AuthReply_descriptor;
+        return User.internal_static_user_v1_TokenInfo_descriptor;
       }
 
       @Override
-      public AuthReply getDefaultInstanceForType() {
-        return AuthReply.getDefaultInstance();
+      public TokenInfo getDefaultInstanceForType() {
+        return TokenInfo.getDefaultInstance();
       }
 
       @Override
-      public AuthReply build() {
-        AuthReply result = buildPartial();
+      public TokenInfo build() {
+        TokenInfo result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3752,13 +3726,12 @@ public final class User {
       }
 
       @Override
-      public AuthReply buildPartial() {
-        AuthReply result = new AuthReply(this);
+      public TokenInfo buildPartial() {
+        TokenInfo result = new TokenInfo(this);
         result.accessToken_ = accessToken_;
         result.refreshToken_ = refreshToken_;
         result.atExpires_ = atExpires_;
         result.rtExpires_ = rtExpires_;
-        result.userId_ = userId_;
         onBuilt();
         return result;
       }
@@ -3797,16 +3770,16 @@ public final class User {
       }
       @Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof AuthReply) {
-          return mergeFrom((AuthReply)other);
+        if (other instanceof TokenInfo) {
+          return mergeFrom((TokenInfo)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(AuthReply other) {
-        if (other == AuthReply.getDefaultInstance()) return this;
+      public Builder mergeFrom(TokenInfo other) {
+        if (other == TokenInfo.getDefaultInstance()) return this;
         if (!other.getAccessToken().isEmpty()) {
           accessToken_ = other.accessToken_;
           onChanged();
@@ -3820,9 +3793,6 @@ public final class User {
         }
         if (other.getRtExpires() != 0L) {
           setRtExpires(other.getRtExpires());
-        }
-        if (other.getUserId() != 0L) {
-          setUserId(other.getUserId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3839,11 +3809,11 @@ public final class User {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        AuthReply parsedMessage = null;
+        TokenInfo parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (AuthReply) e.getUnfinishedMessage();
+          parsedMessage = (TokenInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4066,10 +4036,673 @@ public final class User {
         onChanged();
         return this;
       }
+      @Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:user.v1.TokenInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:user.v1.TokenInfo)
+    private static final TokenInfo DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new TokenInfo();
+    }
+
+    public static TokenInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TokenInfo>
+        PARSER = new com.google.protobuf.AbstractParser<TokenInfo>() {
+      @Override
+      public TokenInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TokenInfo(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TokenInfo> parser() {
+      return PARSER;
+    }
+
+    @Override
+    public com.google.protobuf.Parser<TokenInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @Override
+    public TokenInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AuthReplyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:user.v1.AuthReply)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.user.v1.TokenInfo token = 1;</code>
+     * @return Whether the token field is set.
+     */
+    boolean hasToken();
+    /**
+     * <code>.user.v1.TokenInfo token = 1;</code>
+     * @return The token.
+     */
+    TokenInfo getToken();
+    /**
+     * <code>.user.v1.TokenInfo token = 1;</code>
+     */
+    TokenInfoOrBuilder getTokenOrBuilder();
+
+    /**
+     * <code>int64 user_id = 2;</code>
+     * @return The userId.
+     */
+    long getUserId();
+  }
+  /**
+   * Protobuf type {@code user.v1.AuthReply}
+   */
+  public static final class AuthReply extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:user.v1.AuthReply)
+      AuthReplyOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AuthReply.newBuilder() to construct.
+    private AuthReply(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AuthReply() {
+    }
+
+    @Override
+    @SuppressWarnings({"unused"})
+    protected Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AuthReply();
+    }
+
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AuthReply(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              TokenInfo.Builder subBuilder = null;
+              if (token_ != null) {
+                subBuilder = token_.toBuilder();
+              }
+              token_ = input.readMessage(TokenInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(token_);
+                token_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              userId_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return User.internal_static_user_v1_AuthReply_descriptor;
+    }
+
+    @Override
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return User.internal_static_user_v1_AuthReply_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              AuthReply.class, Builder.class);
+    }
+
+    public static final int TOKEN_FIELD_NUMBER = 1;
+    private TokenInfo token_;
+    /**
+     * <code>.user.v1.TokenInfo token = 1;</code>
+     * @return Whether the token field is set.
+     */
+    @Override
+    public boolean hasToken() {
+      return token_ != null;
+    }
+    /**
+     * <code>.user.v1.TokenInfo token = 1;</code>
+     * @return The token.
+     */
+    @Override
+    public TokenInfo getToken() {
+      return token_ == null ? TokenInfo.getDefaultInstance() : token_;
+    }
+    /**
+     * <code>.user.v1.TokenInfo token = 1;</code>
+     */
+    @Override
+    public TokenInfoOrBuilder getTokenOrBuilder() {
+      return getToken();
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 2;
+    private long userId_;
+    /**
+     * <code>int64 user_id = 2;</code>
+     * @return The userId.
+     */
+    @Override
+    public long getUserId() {
+      return userId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (token_ != null) {
+        output.writeMessage(1, getToken());
+      }
+      if (userId_ != 0L) {
+        output.writeInt64(2, userId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (token_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getToken());
+      }
+      if (userId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, userId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof AuthReply)) {
+        return super.equals(obj);
+      }
+      AuthReply other = (AuthReply) obj;
+
+      if (hasToken() != other.hasToken()) return false;
+      if (hasToken()) {
+        if (!getToken()
+            .equals(other.getToken())) return false;
+      }
+      if (getUserId()
+          != other.getUserId()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasToken()) {
+        hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+        hash = (53 * hash) + getToken().hashCode();
+      }
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getUserId());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static AuthReply parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static AuthReply parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static AuthReply parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static AuthReply parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static AuthReply parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static AuthReply parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static AuthReply parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static AuthReply parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static AuthReply parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static AuthReply parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static AuthReply parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static AuthReply parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(AuthReply prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code user.v1.AuthReply}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:user.v1.AuthReply)
+        AuthReplyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return User.internal_static_user_v1_AuthReply_descriptor;
+      }
+
+      @Override
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return User.internal_static_user_v1_AuthReply_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                AuthReply.class, Builder.class);
+      }
+
+      // Construct using com.gomicroim.lib.protos.user.User.AuthReply.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @Override
+      public Builder clear() {
+        super.clear();
+        if (tokenBuilder_ == null) {
+          token_ = null;
+        } else {
+          token_ = null;
+          tokenBuilder_ = null;
+        }
+        userId_ = 0L;
+
+        return this;
+      }
+
+      @Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return User.internal_static_user_v1_AuthReply_descriptor;
+      }
+
+      @Override
+      public AuthReply getDefaultInstanceForType() {
+        return AuthReply.getDefaultInstance();
+      }
+
+      @Override
+      public AuthReply build() {
+        AuthReply result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @Override
+      public AuthReply buildPartial() {
+        AuthReply result = new AuthReply(this);
+        if (tokenBuilder_ == null) {
+          result.token_ = token_;
+        } else {
+          result.token_ = tokenBuilder_.build();
+        }
+        result.userId_ = userId_;
+        onBuilt();
+        return result;
+      }
+
+      @Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return super.setField(field, value);
+      }
+      @Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof AuthReply) {
+          return mergeFrom((AuthReply)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(AuthReply other) {
+        if (other == AuthReply.getDefaultInstance()) return this;
+        if (other.hasToken()) {
+          mergeToken(other.getToken());
+        }
+        if (other.getUserId() != 0L) {
+          setUserId(other.getUserId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        AuthReply parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (AuthReply) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private TokenInfo token_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          TokenInfo, TokenInfo.Builder, TokenInfoOrBuilder> tokenBuilder_;
+      /**
+       * <code>.user.v1.TokenInfo token = 1;</code>
+       * @return Whether the token field is set.
+       */
+      public boolean hasToken() {
+        return tokenBuilder_ != null || token_ != null;
+      }
+      /**
+       * <code>.user.v1.TokenInfo token = 1;</code>
+       * @return The token.
+       */
+      public TokenInfo getToken() {
+        if (tokenBuilder_ == null) {
+          return token_ == null ? TokenInfo.getDefaultInstance() : token_;
+        } else {
+          return tokenBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.user.v1.TokenInfo token = 1;</code>
+       */
+      public Builder setToken(TokenInfo value) {
+        if (tokenBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          token_ = value;
+          onChanged();
+        } else {
+          tokenBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.user.v1.TokenInfo token = 1;</code>
+       */
+      public Builder setToken(
+          TokenInfo.Builder builderForValue) {
+        if (tokenBuilder_ == null) {
+          token_ = builderForValue.build();
+          onChanged();
+        } else {
+          tokenBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.user.v1.TokenInfo token = 1;</code>
+       */
+      public Builder mergeToken(TokenInfo value) {
+        if (tokenBuilder_ == null) {
+          if (token_ != null) {
+            token_ =
+              TokenInfo.newBuilder(token_).mergeFrom(value).buildPartial();
+          } else {
+            token_ = value;
+          }
+          onChanged();
+        } else {
+          tokenBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.user.v1.TokenInfo token = 1;</code>
+       */
+      public Builder clearToken() {
+        if (tokenBuilder_ == null) {
+          token_ = null;
+          onChanged();
+        } else {
+          token_ = null;
+          tokenBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.user.v1.TokenInfo token = 1;</code>
+       */
+      public TokenInfo.Builder getTokenBuilder() {
+        
+        onChanged();
+        return getTokenFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.user.v1.TokenInfo token = 1;</code>
+       */
+      public TokenInfoOrBuilder getTokenOrBuilder() {
+        if (tokenBuilder_ != null) {
+          return tokenBuilder_.getMessageOrBuilder();
+        } else {
+          return token_ == null ?
+              TokenInfo.getDefaultInstance() : token_;
+        }
+      }
+      /**
+       * <code>.user.v1.TokenInfo token = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          TokenInfo, TokenInfo.Builder, TokenInfoOrBuilder>
+          getTokenFieldBuilder() {
+        if (tokenBuilder_ == null) {
+          tokenBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              TokenInfo, TokenInfo.Builder, TokenInfoOrBuilder>(
+                  getToken(),
+                  getParentForChildren(),
+                  isClean());
+          token_ = null;
+        }
+        return tokenBuilder_;
+      }
 
       private long userId_ ;
       /**
-       * <code>int64 user_id = 5;</code>
+       * <code>int64 user_id = 2;</code>
        * @return The userId.
        */
       @Override
@@ -4077,7 +4710,7 @@ public final class User {
         return userId_;
       }
       /**
-       * <code>int64 user_id = 5;</code>
+       * <code>int64 user_id = 2;</code>
        * @param value The userId to set.
        * @return This builder for chaining.
        */
@@ -4088,7 +4721,7 @@ public final class User {
         return this;
       }
       /**
-       * <code>int64 user_id = 5;</code>
+       * <code>int64 user_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearUserId() {
@@ -4150,6 +4783,1059 @@ public final class User {
 
   }
 
+  public interface RefreshTokenRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:user.v1.RefreshTokenRequest)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * refresh_token 也放在http头部，不单独携带进body
+   * string refresh_token = 1;
+   * </pre>
+   *
+   * Protobuf type {@code user.v1.RefreshTokenRequest}
+   */
+  public static final class RefreshTokenRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:user.v1.RefreshTokenRequest)
+      RefreshTokenRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RefreshTokenRequest.newBuilder() to construct.
+    private RefreshTokenRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RefreshTokenRequest() {
+    }
+
+    @Override
+    @SuppressWarnings({"unused"})
+    protected Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RefreshTokenRequest();
+    }
+
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RefreshTokenRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return User.internal_static_user_v1_RefreshTokenRequest_descriptor;
+    }
+
+    @Override
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return User.internal_static_user_v1_RefreshTokenRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              RefreshTokenRequest.class, Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof RefreshTokenRequest)) {
+        return super.equals(obj);
+      }
+      RefreshTokenRequest other = (RefreshTokenRequest) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static RefreshTokenRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RefreshTokenRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RefreshTokenRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RefreshTokenRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RefreshTokenRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RefreshTokenRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RefreshTokenRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static RefreshTokenRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static RefreshTokenRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static RefreshTokenRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static RefreshTokenRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static RefreshTokenRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(RefreshTokenRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * refresh_token 也放在http头部，不单独携带进body
+     * string refresh_token = 1;
+     * </pre>
+     *
+     * Protobuf type {@code user.v1.RefreshTokenRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:user.v1.RefreshTokenRequest)
+        RefreshTokenRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return User.internal_static_user_v1_RefreshTokenRequest_descriptor;
+      }
+
+      @Override
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return User.internal_static_user_v1_RefreshTokenRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                RefreshTokenRequest.class, Builder.class);
+      }
+
+      // Construct using com.gomicroim.lib.protos.user.User.RefreshTokenRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return User.internal_static_user_v1_RefreshTokenRequest_descriptor;
+      }
+
+      @Override
+      public RefreshTokenRequest getDefaultInstanceForType() {
+        return RefreshTokenRequest.getDefaultInstance();
+      }
+
+      @Override
+      public RefreshTokenRequest build() {
+        RefreshTokenRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @Override
+      public RefreshTokenRequest buildPartial() {
+        RefreshTokenRequest result = new RefreshTokenRequest(this);
+        onBuilt();
+        return result;
+      }
+
+      @Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return super.setField(field, value);
+      }
+      @Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof RefreshTokenRequest) {
+          return mergeFrom((RefreshTokenRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(RefreshTokenRequest other) {
+        if (other == RefreshTokenRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        RefreshTokenRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (RefreshTokenRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:user.v1.RefreshTokenRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:user.v1.RefreshTokenRequest)
+    private static final RefreshTokenRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new RefreshTokenRequest();
+    }
+
+    public static RefreshTokenRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RefreshTokenRequest>
+        PARSER = new com.google.protobuf.AbstractParser<RefreshTokenRequest>() {
+      @Override
+      public RefreshTokenRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RefreshTokenRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RefreshTokenRequest> parser() {
+      return PARSER;
+    }
+
+    @Override
+    public com.google.protobuf.Parser<RefreshTokenRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @Override
+    public RefreshTokenRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RefreshTokenReplyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:user.v1.RefreshTokenReply)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.user.v1.TokenInfo token = 1;</code>
+     * @return Whether the token field is set.
+     */
+    boolean hasToken();
+    /**
+     * <code>.user.v1.TokenInfo token = 1;</code>
+     * @return The token.
+     */
+    TokenInfo getToken();
+    /**
+     * <code>.user.v1.TokenInfo token = 1;</code>
+     */
+    TokenInfoOrBuilder getTokenOrBuilder();
+  }
+  /**
+   * Protobuf type {@code user.v1.RefreshTokenReply}
+   */
+  public static final class RefreshTokenReply extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:user.v1.RefreshTokenReply)
+      RefreshTokenReplyOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RefreshTokenReply.newBuilder() to construct.
+    private RefreshTokenReply(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RefreshTokenReply() {
+    }
+
+    @Override
+    @SuppressWarnings({"unused"})
+    protected Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RefreshTokenReply();
+    }
+
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RefreshTokenReply(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              TokenInfo.Builder subBuilder = null;
+              if (token_ != null) {
+                subBuilder = token_.toBuilder();
+              }
+              token_ = input.readMessage(TokenInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(token_);
+                token_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return User.internal_static_user_v1_RefreshTokenReply_descriptor;
+    }
+
+    @Override
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return User.internal_static_user_v1_RefreshTokenReply_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              RefreshTokenReply.class, Builder.class);
+    }
+
+    public static final int TOKEN_FIELD_NUMBER = 1;
+    private TokenInfo token_;
+    /**
+     * <code>.user.v1.TokenInfo token = 1;</code>
+     * @return Whether the token field is set.
+     */
+    @Override
+    public boolean hasToken() {
+      return token_ != null;
+    }
+    /**
+     * <code>.user.v1.TokenInfo token = 1;</code>
+     * @return The token.
+     */
+    @Override
+    public TokenInfo getToken() {
+      return token_ == null ? TokenInfo.getDefaultInstance() : token_;
+    }
+    /**
+     * <code>.user.v1.TokenInfo token = 1;</code>
+     */
+    @Override
+    public TokenInfoOrBuilder getTokenOrBuilder() {
+      return getToken();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (token_ != null) {
+        output.writeMessage(1, getToken());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (token_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getToken());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof RefreshTokenReply)) {
+        return super.equals(obj);
+      }
+      RefreshTokenReply other = (RefreshTokenReply) obj;
+
+      if (hasToken() != other.hasToken()) return false;
+      if (hasToken()) {
+        if (!getToken()
+            .equals(other.getToken())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasToken()) {
+        hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+        hash = (53 * hash) + getToken().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static RefreshTokenReply parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RefreshTokenReply parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RefreshTokenReply parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RefreshTokenReply parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RefreshTokenReply parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static RefreshTokenReply parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static RefreshTokenReply parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static RefreshTokenReply parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static RefreshTokenReply parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static RefreshTokenReply parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static RefreshTokenReply parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static RefreshTokenReply parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(RefreshTokenReply prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code user.v1.RefreshTokenReply}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:user.v1.RefreshTokenReply)
+        RefreshTokenReplyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return User.internal_static_user_v1_RefreshTokenReply_descriptor;
+      }
+
+      @Override
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return User.internal_static_user_v1_RefreshTokenReply_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                RefreshTokenReply.class, Builder.class);
+      }
+
+      // Construct using com.gomicroim.lib.protos.user.User.RefreshTokenReply.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @Override
+      public Builder clear() {
+        super.clear();
+        if (tokenBuilder_ == null) {
+          token_ = null;
+        } else {
+          token_ = null;
+          tokenBuilder_ = null;
+        }
+        return this;
+      }
+
+      @Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return User.internal_static_user_v1_RefreshTokenReply_descriptor;
+      }
+
+      @Override
+      public RefreshTokenReply getDefaultInstanceForType() {
+        return RefreshTokenReply.getDefaultInstance();
+      }
+
+      @Override
+      public RefreshTokenReply build() {
+        RefreshTokenReply result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @Override
+      public RefreshTokenReply buildPartial() {
+        RefreshTokenReply result = new RefreshTokenReply(this);
+        if (tokenBuilder_ == null) {
+          result.token_ = token_;
+        } else {
+          result.token_ = tokenBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return super.setField(field, value);
+      }
+      @Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof RefreshTokenReply) {
+          return mergeFrom((RefreshTokenReply)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(RefreshTokenReply other) {
+        if (other == RefreshTokenReply.getDefaultInstance()) return this;
+        if (other.hasToken()) {
+          mergeToken(other.getToken());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        RefreshTokenReply parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (RefreshTokenReply) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private TokenInfo token_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          TokenInfo, TokenInfo.Builder, TokenInfoOrBuilder> tokenBuilder_;
+      /**
+       * <code>.user.v1.TokenInfo token = 1;</code>
+       * @return Whether the token field is set.
+       */
+      public boolean hasToken() {
+        return tokenBuilder_ != null || token_ != null;
+      }
+      /**
+       * <code>.user.v1.TokenInfo token = 1;</code>
+       * @return The token.
+       */
+      public TokenInfo getToken() {
+        if (tokenBuilder_ == null) {
+          return token_ == null ? TokenInfo.getDefaultInstance() : token_;
+        } else {
+          return tokenBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.user.v1.TokenInfo token = 1;</code>
+       */
+      public Builder setToken(TokenInfo value) {
+        if (tokenBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          token_ = value;
+          onChanged();
+        } else {
+          tokenBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.user.v1.TokenInfo token = 1;</code>
+       */
+      public Builder setToken(
+          TokenInfo.Builder builderForValue) {
+        if (tokenBuilder_ == null) {
+          token_ = builderForValue.build();
+          onChanged();
+        } else {
+          tokenBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.user.v1.TokenInfo token = 1;</code>
+       */
+      public Builder mergeToken(TokenInfo value) {
+        if (tokenBuilder_ == null) {
+          if (token_ != null) {
+            token_ =
+              TokenInfo.newBuilder(token_).mergeFrom(value).buildPartial();
+          } else {
+            token_ = value;
+          }
+          onChanged();
+        } else {
+          tokenBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.user.v1.TokenInfo token = 1;</code>
+       */
+      public Builder clearToken() {
+        if (tokenBuilder_ == null) {
+          token_ = null;
+          onChanged();
+        } else {
+          token_ = null;
+          tokenBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.user.v1.TokenInfo token = 1;</code>
+       */
+      public TokenInfo.Builder getTokenBuilder() {
+        
+        onChanged();
+        return getTokenFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.user.v1.TokenInfo token = 1;</code>
+       */
+      public TokenInfoOrBuilder getTokenOrBuilder() {
+        if (tokenBuilder_ != null) {
+          return tokenBuilder_.getMessageOrBuilder();
+        } else {
+          return token_ == null ?
+              TokenInfo.getDefaultInstance() : token_;
+        }
+      }
+      /**
+       * <code>.user.v1.TokenInfo token = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          TokenInfo, TokenInfo.Builder, TokenInfoOrBuilder>
+          getTokenFieldBuilder() {
+        if (tokenBuilder_ == null) {
+          tokenBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              TokenInfo, TokenInfo.Builder, TokenInfoOrBuilder>(
+                  getToken(),
+                  getParentForChildren(),
+                  isClean());
+          token_ = null;
+        }
+        return tokenBuilder_;
+      }
+      @Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:user.v1.RefreshTokenReply)
+    }
+
+    // @@protoc_insertion_point(class_scope:user.v1.RefreshTokenReply)
+    private static final RefreshTokenReply DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new RefreshTokenReply();
+    }
+
+    public static RefreshTokenReply getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RefreshTokenReply>
+        PARSER = new com.google.protobuf.AbstractParser<RefreshTokenReply>() {
+      @Override
+      public RefreshTokenReply parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RefreshTokenReply(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RefreshTokenReply> parser() {
+      return PARSER;
+    }
+
+    @Override
+    public com.google.protobuf.Parser<RefreshTokenReply> getParserForType() {
+      return PARSER;
+    }
+
+    @Override
+    public RefreshTokenReply getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_user_v1_RegisterRequest_descriptor;
   private static final 
@@ -4171,10 +5857,25 @@ public final class User {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_user_v1_AuthRequest_MobileAuth_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_user_v1_TokenInfo_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_user_v1_TokenInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_user_v1_AuthReply_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_user_v1_AuthReply_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_user_v1_RefreshTokenRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_user_v1_RefreshTokenRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_user_v1_RefreshTokenReply_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_user_v1_RefreshTokenReply_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4196,12 +5897,15 @@ public final class User {
       "(\t\022\014\n\004code\030\003 \001(\t\" \n\tLoginType\022\023\n\017loginTy" +
       "peMobile\020\000\"`\n\nClientType\022\025\n\021clientTypeUn" +
       "known\020\000\022\021\n\rclientTypeApp\020\001\022\021\n\rclientType" +
-      "Web\020\002\022\025\n\021clientTypeDesktop\020\003\"q\n\tAuthRepl" +
-      "y\022\024\n\014access_token\030\001 \001(\t\022\025\n\rrefresh_token" +
+      "Web\020\002\022\025\n\021clientTypeDesktop\020\003\"`\n\tTokenInf" +
+      "o\022\024\n\014access_token\030\001 \001(\t\022\025\n\rrefresh_token" +
       "\030\002 \001(\t\022\022\n\nat_expires\030\003 \001(\003\022\022\n\nrt_expires" +
-      "\030\004 \001(\003\022\017\n\007user_id\030\005 \001(\003B=\n\035com.gomicroim" +
-      ".lib.protos.userB\004UserZ\026apiuser/api/user" +
-      "/v1;v1b\006proto3"
+      "\030\004 \001(\003\"?\n\tAuthReply\022!\n\005token\030\001 \001(\0132\022.use" +
+      "r.v1.TokenInfo\022\017\n\007user_id\030\002 \001(\003\"\025\n\023Refre" +
+      "shTokenRequest\"6\n\021RefreshTokenReply\022!\n\005t" +
+      "oken\030\001 \001(\0132\022.user.v1.TokenInfoB=\n\035com.go" +
+      "microim.lib.protos.userB\004UserZ\026apiuser/a" +
+      "pi/user/v1;v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4231,12 +5935,30 @@ public final class User {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_user_v1_AuthRequest_MobileAuth_descriptor,
         new String[] { "Phone", "Code", });
-    internal_static_user_v1_AuthReply_descriptor =
+    internal_static_user_v1_TokenInfo_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_user_v1_TokenInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_user_v1_TokenInfo_descriptor,
+        new String[] { "AccessToken", "RefreshToken", "AtExpires", "RtExpires", });
+    internal_static_user_v1_AuthReply_descriptor =
+      getDescriptor().getMessageTypes().get(4);
     internal_static_user_v1_AuthReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_user_v1_AuthReply_descriptor,
-        new String[] { "AccessToken", "RefreshToken", "AtExpires", "RtExpires", "UserId", });
+        new String[] { "Token", "UserId", });
+    internal_static_user_v1_RefreshTokenRequest_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_user_v1_RefreshTokenRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_user_v1_RefreshTokenRequest_descriptor,
+        new String[] { });
+    internal_static_user_v1_RefreshTokenReply_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_user_v1_RefreshTokenReply_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_user_v1_RefreshTokenReply_descriptor,
+        new String[] { "Token", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

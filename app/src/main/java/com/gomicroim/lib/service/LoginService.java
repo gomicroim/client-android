@@ -28,6 +28,22 @@ public interface LoginService {
     InvocationFuture<User.AuthReply> login(String phone, String code, String appVersion);
 
     /**
+     * 自动登录，如果本地保存了Token，需要调用
+     *
+     * @param tokenInfo: 本地保存的token
+     * @return 如果token过期，会返回新的token，需要替换本地保存的
+     */
+    InvocationFuture<User.AuthReply> autoLogin(User.TokenInfo tokenInfo);
+
+    /**
+     * 刷新token
+     *
+     * @param refreshToken: 用于获取新的accessToken，如果也过期，请重新登录
+     * @return 结果回调
+     */
+    InvocationFuture<User.RefreshTokenReply> refreshToken(String refreshToken);
+
+    /**
      * 连接观察器
      *
      * @param observer 观察器
