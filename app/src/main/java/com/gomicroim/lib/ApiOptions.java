@@ -13,6 +13,6 @@ public class ApiOptions {
     }
 
     // 10.0.2.2 从模拟器访问本机服务
-    public String apiServerAddress = "http://10.0.2.2:8000";
+    public String apiServerAddress = "http://10.0.2.2:8888";
     public String gatewayAddress = "ws://10.0.2.2:8102/ws";
 }
