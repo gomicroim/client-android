@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements WsPushListener, V
         lvMsg.setAdapter(lvMsgAdapter);
 
         Api.getWsPushService().observer(this, true);
+        loadConnectStatus(Api.getWsPushService().getStatusCode());
     }
 
     @Override
@@ -77,26 +78,7 @@ public class MainActivity extends AppCompatActivity implements WsPushListener, V
     @Override
     public void onStatusCodeChanged(StatusCode before, StatusCode after) {
         runOnUiThread(() -> {
-            switch (after) {
-                case NET_BROKEN:
-                    tvNetwork.setText("网络连接中断");
-                    break;
-                case LOGINED:
-                    tvNetwork.setText("登录成功");
-                    break;
-                case LOGINING:
-                    tvNetwork.setText("登录中...");
-                    break;
-                case CONNECTING:
-                    tvNetwork.setText("连接中...");
-                    break;
-                case UN_LOGIN:
-                    tvNetwork.setText("登录失败");
-                    break;
-                default:
-                    tvNetwork.setText("未知");
-                    break;
-            }
+            loadConnectStatus(after);
         });
     }
 
@@ -106,6 +88,29 @@ public class MainActivity extends AppCompatActivity implements WsPushListener, V
             startActivity(new Intent(MainActivity.this, C2CActivity.class));
         } else if (v.getId() == R.id.btn_c2g) {
             startActivity(new Intent(MainActivity.this, C2GActivity.class));
+        }
+    }
+
+    private void loadConnectStatus(StatusCode code) {
+        switch (code) {
+            case NET_BROKEN:
+                tvNetwork.setText("网络连接中断");
+                break;
+            case LOGINED:
+                tvNetwork.setText("登录成功");
+                break;
+            case LOGINING:
+                tvNetwork.setText("登录中...");
+                break;
+            case CONNECTING:
+                tvNetwork.setText("连接中...");
+                break;
+            case UN_LOGIN:
+                tvNetwork.setText("登录失败");
+                break;
+            default:
+                tvNetwork.setText("未知");
+                break;
         }
     }
 }
