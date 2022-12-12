@@ -61,9 +61,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         cbRememberPwd.setOnCheckedChangeListener(this);
         ivSeePassword.setOnClickListener(this);
 
+        Api.init(ApiOptions.DEFAULT, getLoginInfo());
+
         loadData();
         autoLogin();
-        Api.init(ApiOptions.DEFAULT, getLoginInfo());
     }
 
     @Override
